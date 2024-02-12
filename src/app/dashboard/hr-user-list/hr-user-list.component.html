@@ -1,0 +1,143 @@
+<div class="container table-container mt-5">
+
+  <div class="d-flex justify-content-between mt-5">
+    <div>
+      <h2>User List</h2>
+      <h4>Dashboard / Users</h4>
+    </div>
+
+  </div>
+  <div class="card mt-4">
+    <form [formGroup]="groupForm" (ngSubmit)="submitForm()">
+      <div class="d-flex justify-content-end mt-4">
+        <div class="refresh">
+          <div class="icon-tooltip" data-title="Refresh">
+            <fa-icon [icon]="faArrowsRotateIcon" (click)="onRefresh()"></fa-icon>
+          </div>
+        </div>
+        <input
+          type="text"
+          formControlName="searchTerm"
+          placeholder="Search..."
+          (input)="search()"
+        />
+      </div>
+      <table class="tables mt-3">
+        <thead>
+          <tr>
+            <!-- <th>Id</th> -->
+            <th>Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Role</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="
+              let group of filteredGroups
+                | slice
+                  : (currentPage - 1) * itemsPerPage
+                  : currentPage * itemsPerPage
+            "
+          >
+            <!-- <td
+              class="tooltip-container"
+              (mouseenter)="showTooltip($event)"
+              (mouseleave)="hideTooltip($event)"
+            >
+              {{ group.id }}
+              <div class="tooltip"  *ngIf="group.id">{{ group.id }}</div>
+            </td> -->
+            <td
+              class="tooltip-container"
+              (mouseenter)="showTooltip($event)"
+              (mouseleave)="hideTooltip($event)"
+            >
+              {{  group.name }}
+              <div class="tooltip" *ngIf="group.name">{{ group.name }}</div>
+            </td>
+            <td
+            class="tooltip-container"
+            (mouseenter)="showTooltip($event)"
+            (mouseleave)="hideTooltip($event)"
+          >
+            {{ group.email }}
+            <div class="tooltip"  *ngIf="group.email">{{ group.email }}</div>
+          </td>
+          <td
+          class="tooltip-container"
+          (mouseenter)="showTooltip($event)"
+          (mouseleave)="hideTooltip($event)"
+        >
+          {{ group.gender }}
+          <div class="tooltip"  *ngIf="group.gender">{{ group.gender }}</div>
+        </td>
+        <td
+        class="tooltip-container"
+        (mouseenter)="showTooltip($event)"
+        (mouseleave)="hideTooltip($event)"
+      >
+      {{ group.role ===''? 'Un Assigned':group.role}}
+        <div class="tooltip" >{{ group.role === '' ? 'Un Assigned':group.role}}</div>
+      </td>
+      <td
+      class="tooltip-container"
+      (mouseenter)="showTooltip($event)"
+      (mouseleave)="hideTooltip($event)"
+    >
+    {{group.isActive ? 'Active':'In Active'}}
+      <div class="tooltip" >{{ group.isActive ?'Active' : "In Active" }}</div>
+    </td>
+    <td
+      class="tooltip-container"
+      (mouseenter)="showTooltip($event)"
+      (mouseleave)="hideTooltip($event)"
+    >
+    <button class="btn btn-primary" *ngIf="group.role !=='admin'" (click)="updateUser(group.id)" mat-raised-button color="primary">Update</button>
+      <div class="tooltip">{{ 'Update' }}</div>
+    </td>
+
+          </tr>
+        </tbody>
+      </table>
+      <div class="d-flex justify-content-between">
+        <div class="items-per-page">
+          <label>Show </label>
+          <select
+            formControlName="itemsPerPage"
+            (change)="onItemsPerPageChange()"
+          >
+            <option *ngFor="let option of itemsPerPageOptions" [value]="option">
+              {{ option }}
+            </option>
+          </select>
+
+          Showing Results {{ getStartIndex() }} - {{ getEndIndex() }} of
+          {{ filteredGroups.length }} entries.
+        </div>
+
+        <div class="pagination-container">
+          <button
+            class="btn btn-primary pagination-button"
+            (click)="currentPage = currentPage - 1"
+            [disabled]="currentPage === 1"
+          >
+            Previous
+          </button>
+          <span class="pagination-page btn btn-primary">{{ currentPage }}</span>
+          <button
+            class="btn btn-primary pagination-button"
+            (click)="currentPage = currentPage + 1"
+            [disabled]="currentPage === getTotalPages()"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+

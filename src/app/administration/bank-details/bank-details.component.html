@@ -1,0 +1,159 @@
+<div class="container table-container">
+  <h2>Bank Details</h2>
+  <div class="d-flex justify-content-between">
+    <div>
+      <h4>Dashboard / Bank Details</h4>
+    </div>
+    <div>
+      <button class="btn btn-primary">
+        <i class="fa-solid fa-plus"></i> Add Details
+      </button>
+    </div>
+  </div>
+  <div class="card mt-4">
+    <form [formGroup]="groupForm" (ngSubmit)="submitForm()">
+      <div class="d-flex justify-content-end mt-4">
+        <div class="refresh">
+          <div class="icon-tooltip" data-title="Refresh">
+            <fa-icon
+              [icon]="faArrowsRotateIcon"
+              (click)="onRefresh()"
+            ></fa-icon>
+          </div>
+        </div>
+        <input
+          type="text"
+          formControlName="searchTerm"
+          placeholder="Search..."
+          (input)="search()"
+        />
+      </div>
+      <table class="tables mt-3">
+        <thead>
+          <tr>
+            <th>Sno</th>
+            <th>Emp Name</th>
+            <th>Bank Name</th>
+            <th>Account No</th>
+            <th>Branch</th>
+            <th>IFSC</th>
+            <th>Address</th>
+            <th>Pan No</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="
+              let group of filteredGroups
+                | slice
+                  : (currentPage - 1) * itemsPerPage
+                  : currentPage * itemsPerPage;
+              let i = index
+            "
+          >
+            <td>{{ i + 1 }}</td>
+            <td
+              class="tooltip-container"
+              (mouseenter)="showTooltip($event)"
+              (mouseleave)="hideTooltip($event)"
+            >
+              {{ group.Empname }}
+              <div class="tooltip">{{ group.Empname }}</div>
+            </td>
+            <td
+              class="tooltip-container"
+              (mouseenter)="showTooltip($event)"
+              (mouseleave)="hideTooltip($event)"
+            >
+              {{ group.bankname }}
+              <div class="tooltip">{{ group.bankname }}</div>
+            </td>
+            <td
+              class="tooltip-container"
+              (mouseenter)="showTooltip($event)"
+              (mouseleave)="hideTooltip($event)"
+            >
+              {{ group.accountNo }}
+              <div class="tooltip">{{ group.accountNo }}</div>
+            </td>
+            <td
+              class="tooltip-container"
+              (mouseenter)="showTooltip($event)"
+              (mouseleave)="hideTooltip($event)"
+            >
+              {{ group.branch }}
+              <div class="tooltip">{{ group.branch }}</div>
+            </td>
+            <td
+              class="tooltip-container"
+              (mouseenter)="showTooltip($event)"
+              (mouseleave)="hideTooltip($event)"
+            >
+              {{ group.ifsc }}
+              <div class="tooltip">{{ group.ifsc }}</div>
+            </td>
+            <td
+              class="tooltip-container"
+              (mouseenter)="showTooltip($event)"
+              (mouseleave)="hideTooltip($event)"
+            >
+              {{ group.panno }}
+              <div class="tooltip">{{ group.panno }}</div>
+            </td>
+            <td
+              class="tooltip-container"
+              (mouseenter)="showTooltip($event)"
+              (mouseleave)="hideTooltip($event)"
+            >
+              {{ group.address }}
+              <div class="tooltip">{{ group.address }}</div>
+            </td>
+            <td
+              class="tooltip-container"
+              (mouseenter)="showTooltip($event)"
+              (mouseleave)="hideTooltip($event)"
+            >
+              <fa-icon [icon]="faEyeIcon"></fa-icon>
+              <div class="tooltip">View</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="d-flex justify-content-between mt-3 mb-3">
+        <div class="items-per-page">
+          <label>Show </label>
+          <select
+            formControlName="itemsPerPage"
+            (change)="onItemsPerPageChange()"
+          >
+            <option *ngFor="let option of itemsPerPageOptions" [value]="option">
+              {{ option }}
+            </option>
+          </select>
+
+          Showing Results {{ getStartIndex() }} - {{ getEndIndex() }} of
+          {{ filteredGroups.length }} entries.
+        </div>
+
+        <div class="pagination-container">
+          <button
+            class="btn btn-primary pagination-button"
+            (click)="currentPage = currentPage - 1"
+            [disabled]="currentPage === 1"
+          >
+            Previous
+          </button>
+          <span class="pagination-page btn btn-primary">{{ currentPage }}</span>
+          <button
+            class="btn btn-primary pagination-button"
+            (click)="currentPage = currentPage + 1"
+            [disabled]="currentPage === getTotalPages()"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

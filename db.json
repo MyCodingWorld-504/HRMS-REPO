@@ -1,0 +1,29 @@
+{
+  "user": [
+    {
+      "id": "Admin",
+      "name": "Admin user",
+      "email": "admin@gmail.com",
+      "password": "Welcome@123",
+      "gender": "male",
+      "role": "Admin",
+      "isActive": true
+    },
+    {
+      "id": "818e",
+      "name": "Admin",
+      "password": "Welcome@123",
+      "email": "chrajendra@gmail.com",
+      "gender": "male",
+      "role": ""
+    },
+    {
+      "id": "55c2",
+      "name": "Raj",
+      "password": "Welcome@123",
+      "email": "chrajendra77@gmail.com",
+      "gender": "female",
+      "role": "developer"
+    }
+  ]
+}
