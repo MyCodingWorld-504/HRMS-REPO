@@ -1,0 +1,50 @@
+.container {
+  height: 100%;
+  max-width: -webkit-fill-available;
+  display: flex;
+  align-items: center;
+
+  .row {
+    width: 100%;
+  }
+
+  .col-md-6 {
+    margin-top: 3rem;
+  }
+}
+
+.container-gift {
+  position: fixed;
+  overflow: hidden;
+  height: 800px;
+  width: 100%;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.container-info {
+  padding: 20px;
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: 20px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin-bottom: 5px;
+  }
+}

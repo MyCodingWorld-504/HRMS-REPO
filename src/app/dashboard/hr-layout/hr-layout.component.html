@@ -1,0 +1,11 @@
+<div class="app-container">
+  <app-hr-sidebar [isExpanded]="isSidebarExpanded" (toggleSidebar)="toggleSidebar()"></app-hr-sidebar>
+
+  <div class="content-container">
+    <app-hr-navbar (toggleSidebar)="toggleSidebar()"></app-hr-navbar>
+
+    <div class="main-content">
+<router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
