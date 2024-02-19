@@ -1,0 +1,97 @@
+<div class="container table-container">
+  <h2>Group</h2>
+  <div class="d-flex justify-content-between">
+    <div>
+      <h4>Dashboard / Group</h4>
+    </div>
+    <div>
+      <button class="btn btn-primary">
+        <i class="fa-solid fa-plus"></i> Add Group
+      </button>
+    </div>
+  </div>
+  <div class="card mt-2">
+    <form [formGroup]="groupForm" (ngSubmit)="submitForm()">
+      <div class="d-flex justify-content-end mt-3">
+        <div class="refresh">
+          <div class="icon-tooltip" data-title="Refresh">
+            <fa-icon [icon]="faArrowsRotateIcon" (click)="onRefresh()"></fa-icon>
+          </div>
+        </div>
+        <input
+          type="text"
+          formControlName="searchTerm"
+          placeholder="Search..."
+          (input)="search()"
+        />
+      </div>
+      <table class="tables mt-3">
+        <thead>
+          <tr>
+            <th>Sno</th>
+            <th>Group Name</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="
+              let group of filteredGroups
+              | paginate : { itemsPerPage: itemsPerPage, currentPage: page }"
+          >
+            <td
+              class="tooltip-container"
+              (mouseenter)="showTooltip($event)"
+              (mouseleave)="hideTooltip($event)"
+            >
+              {{ group.id }}
+              <div class="tooltip">{{ group.id }}</div>
+            </td>
+            <td
+              class="tooltip-container"
+              (mouseenter)="showTooltip($event)"
+              (mouseleave)="hideTooltip($event)"
+            >
+              {{ group.name }}
+              <div class="tooltip">{{ group.name }}</div>
+            </td>
+            <td class="tooltip-container-icon">
+              <a (mouseenter)="showTooltipIcon('View', $event)" (mouseleave)="hideTooltipIcon()">
+                <fa-icon [icon]="faEyeIcon"></fa-icon>
+                <div class="tooltip-icon" *ngIf="isTooltipVisible && currentTooltip === 'View'">View</div>
+              </a>
+              <a (mouseenter)="showTooltipIcon('Edit', $event)" (mouseleave)="hideTooltipIcon()">
+                <fa-icon [icon]="faPenIcon"></fa-icon>
+                <div class="tooltip-icon" *ngIf="isTooltipVisible && currentTooltip === 'Edit'">Edit</div>
+              </a>
+              <a (mouseenter)="showTooltipIcon('Delete', $event)" (mouseleave)="hideTooltipIcon()">
+                <fa-icon [icon]="faTrashIcon"></fa-icon>
+                <div class="tooltip-icon" *ngIf="isTooltipVisible && currentTooltip === 'Delete'">Delete</div>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="d-flex justify-content-between mt-3">
+        <div class="items-per-page">
+          <select class="form-select" [formGroup]="groupForm" name="itemsPerPage" (change)="onItemsPerPageChange($event)">
+            <option *ngFor="let option of itemsPerPageOptions" [value]="option">
+              {{ option }}
+            </option>
+          </select>
+
+        </div>
+        <div class="select-show">
+
+            Showing Results {{ getStartIndex() }} - {{ getEndIndex() }} of {{ filteredGroups.length }} entries.
+
+        </div>
+        <div class="pagination-container">
+          <pagination-controls
+            (pageChange)="pageChanged($event)"
+          ></pagination-controls>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

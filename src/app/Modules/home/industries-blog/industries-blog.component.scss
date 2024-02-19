@@ -1,0 +1,98 @@
+.overlay {
+  position: absolute;
+  z-index: 1;
+  top: 40%;
+  transform: translateY(-50%);
+  transition:0s 180s;
+  padding-bottom: 20px;
+  transition-delay: 0.5s;
+  width: 95%;
+
+}
+
+.overlay .row {
+  margin: 0;
+}
+.overlay .col {
+  margin: 0;
+}
+
+.card-small {
+  background-color:  white;
+  transition: background-color 0.3s ease, transform 0.7s ease;
+  padding: 10px ;
+  border-radius: 10px;
+  margin: 0 25px  25px 0;
+  color: #454242;
+  height: 14vh;
+  transition: transform 0.5s ease, color 0.3s ease;
+}
+
+.card-small:hover {
+  background-color: #454242;
+  transform: scale(1.1);
+  color: whitesmoke;
+
+}
+
+.card-big {
+  width: 85%;
+ background: transparent;
+padding: 3px;
+
+}
+// .card-big:hover {
+//   transform: scale(1.1);
+//   color: whitesmoke;
+// }
+.card-title {
+  font-weight: bold;
+  font-size: 13px;
+}
+.card-text{
+  font-size: 12px;
+}
+.card-tiny{
+  height: 10vh;
+  background:   white;
+  margin: 5px 5px 15px 5px;
+  border-radius: 2%;
+  transition: transform 0.5s ease, color 0.3s ease;
+}
+.card-tiny:hover {
+  transform: scale(1.05); /* Adjust the scaling factor for a less pronounced effect */
+  color: #767676; /* Adjust the color for a subtle change */
+}
+.card-tiny img{
+  height: 6vh;
+  width: 80%;
+ margin: 12px 0 0 7px;
+}
+.text{
+  font-size: 14px;
+  color: #454242;
+ margin-top: 12px;
+ font-weight: bold;
+}
+.card-last
+{
+  height: 22vh;
+  background:   white;
+  margin: 5px 10px 20px 5px;
+  padding: 5px;
+  border-radius: 2%;
+  transition: transform 0.5s ease, color 0.3s ease;
+}
+.card-last img{
+ margin: 15px 0 0 1px;
+}
+.text-last{
+  font-size: 16px;
+  color: #454242;
+ margin-top: 40px;
+ font-weight: bold;
+}
+.card-last:hover {
+  transform: scale(1.05);
+  color: #767676;
+}

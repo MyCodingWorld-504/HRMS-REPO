@@ -1,0 +1,125 @@
+<div class="overlay">
+  <div class="login p-5 col-md-4">
+    <div class="form-header">
+      <h1>User Registration</h1>
+    </div>
+    <form
+      [formGroup]="registerForm"
+      (ngSubmit)="proceedregister()"
+      class="registration-form"
+    >
+    <div class="close-icon">
+      <fa-icon class="fa-2x" routerLink="" [icon]="faXIcon"></fa-icon>
+     </div>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          formControlName="name"
+          placeholder="Enter Your Name"
+        />
+        <div
+        class="error"
+          *ngIf="
+            registerForm.get('name')?.hasError('required') &&
+            registerForm.get('name')?.touched
+          "
+        >
+          Name is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          formControlName="password"
+          placeholder="Enter Your Password"
+        />
+        <div
+        class="error"
+          *ngIf="
+            registerForm.get('password')?.hasError('required') &&
+            registerForm.get('password')?.touched
+          "
+        >
+          Password is required.
+        </div>
+        <div
+        class="error"
+          *ngIf="
+            registerForm.get('password')?.hasError('pattern') &&
+            registerForm.get('password')?.touched
+          "
+        >
+          Password must contain at least 8 characters, including one uppercase
+          letter, one lowercase letter, one number, and one special character.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="text"
+          formControlName="email"
+          placeholder="Enter Your Email"
+        />
+        <div
+        class="error"
+          *ngIf="
+            registerForm.get('email')?.hasError('required') &&
+            registerForm.get('email')?.touched
+          "
+        >
+          Email is required.
+        </div>
+        <div
+        class="error"
+          *ngIf="
+            registerForm.get('email')?.hasError('email') &&
+            registerForm.get('email')?.touched
+          "
+        >
+          Enter a valid email address.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <div class="d-flex justify-content-evenly gender-options">
+          <label class="radio-label">
+            <input type="radio" formControlName="gender" value="male" /> Male
+          </label>
+          <label class="radio-label">
+            <input
+              type="radio"
+              class="radio"
+              formControlName="gender"
+              value="female"
+            />
+            Female
+          </label>
+        </div>
+        <div
+        class="error"
+          *ngIf="
+            registerForm.get('gender')?.hasError('required') &&
+            registerForm.get('gender')?.touched
+          "
+        >
+          Gender is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="role">Role</label>
+        <input
+          type="text"
+          formControlName="role"
+          placeholder="Enter Your Role"
+        />
+      </div>
+
+      <div class="form-group mt-4 d-flex justify-content-between">
+        <button class="button" type="submit">Sign Up</button>
+        <button routerLink="/login" class="button">Back to Login</button>
+      </div>
+    </form>
+  </div>
+</div>

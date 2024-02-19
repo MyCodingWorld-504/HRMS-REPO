@@ -1,0 +1,60 @@
+<div class="contain">
+  <nav class="navbar navbar-expand-lg bg-transparent">
+    <div class="container-fluid">
+      <a class="logo" routerLink="/layout">Sky hr</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <button class="button" (mouseenter)="onIndustryMouseEnter()">Industries & Solutions</button>
+          </li>
+          <li class="nav-item">
+            <button class="button" (mouseenter)="onHoverMouseEnter()">company</button>
+          </li>
+          <li class="nav-item">
+            <button class="button" (mouseenter)="onMouseEnter()">Interactive Demos</button>
+          </li>
+          <li class="nav-item">
+            <button class="button" routerLink="/login">login</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="content" id="content">
+    <small>Welcome to the Gateway of Innovation</small>
+    <h1>Unleashing<br />Your Digital Brilliance</h1>
+    <button type="button" class="button">Take a tour</button>
+  </div>
+  <div class="sidebar">
+    <img src="/assets/images/menu.png" class="menu" />
+    <div class="social-links">
+      <img src="/assets/images/fb.png" />
+      <img src="/assets/images/ig.png" />
+      <img src="/assets/images/tw.png" />
+    </div>
+    <div class="useful-links">
+      <img src="/assets/images/info.png" />
+      <img src="/assets/images/share.png" />
+    </div>
+  </div>
+  <div class="bubbles">
+    <img src="/assets/images/bubble.png" />
+    <img src="/assets/images/pngegg-1.png" />
+    <img src="/assets/images/bubble.png" />
+    <img src="/assets/images/pngegg.png" />
+    <img src="/assets/images/pngegg.png" />
+    <img src="/assets/images/bubble.png" />
+    <img src="/assets/images/pngegg-1.png" />
+  </div>
+  <div id="cursor"></div>
+</div>
+
+<div class="mt-5">
+  <router-outlet></router-outlet>
+</div>
+
+
+
