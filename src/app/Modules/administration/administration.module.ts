@@ -12,9 +12,12 @@ import { GroupService } from 'src/app/Core/services/group.service';
 import { BankDetailsComponent } from './bank-details/bank-details.component';
 import { BankDetailService } from './service/bank-detail.service';
 import { NgxPaginationModule } from 'ngx-pagination';
+<<<<<<< HEAD
 import { DepartmentsComponent } from './departments/departments.component';
 import { EmployeeProfilesComponent } from './employee-profiles/employee-profiles.component';
 import { FormsModule } from '@angular/forms';
+=======
+>>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4
 
 
 library.add(fas);
@@ -32,7 +35,10 @@ library.add(fas);
     FontAwesomeModule,
     ReactiveFormsModule,
     HttpClientModule,
+<<<<<<< HEAD
     FormsModule,
+=======
+>>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4
     NgxPaginationModule
   ],
   providers:[GroupService,BankDetailService]

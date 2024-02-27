@@ -14,11 +14,13 @@ $shadow-color: rgba(0, 0, 0, 0.1);
 .info-container {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
-
 .items-per-page {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
-
+.select-show{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-top: 6px;
+}
 .card {
   border: 1px solid $border-color;
   border-radius: 8px;
@@ -30,11 +32,14 @@ $shadow-color: rgba(0, 0, 0, 0.1);
     padding: 15px;
   }
 }
+<<<<<<<< HEAD:src/app/Modules/administration/departments/departments.component.scss
 .select-show{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   margin-top: 6px;
 }
 
+========
+>>>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4:src/app/Modules/administration/bank-details/bank-details.component.scss
 
 body,
 h1,
@@ -81,8 +86,11 @@ body {
   }
 }
 
+<<<<<<<< HEAD:src/app/Modules/administration/departments/departments.component.scss
 
 
+========
+>>>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4:src/app/Modules/administration/bank-details/bank-details.component.scss
 .refresh {
   cursor: pointer;
   border-width: 1px 0px 1px 1px;
@@ -120,7 +128,9 @@ body {
 .tooltip-container {
   position: relative;
   cursor: pointer;
-
+a {
+  margin-right: 10px !important;
+}
   .tooltip {
     display: none;
     position: absolute;
@@ -139,6 +149,10 @@ body {
     display: block;
   }
 }
+<<<<<<<< HEAD:src/app/Modules/administration/departments/departments.component.scss
+========
+
+>>>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4:src/app/Modules/administration/bank-details/bank-details.component.scss
 .tooltip-container-icon {
   position: relative;
 
@@ -180,9 +194,12 @@ body {
    border: solid 1px #e4e4e4 !important;
    text-decoration: none !important;
 }
+<<<<<<<< HEAD:src/app/Modules/administration/departments/departments.component.scss
 .add{
   margin-top: 15px;
 }
 
 
  
+========
+>>>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4:src/app/Modules/administration/bank-details/bank-details.component.scss

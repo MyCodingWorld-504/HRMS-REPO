@@ -1,14 +1,24 @@
+<<<<<<< HEAD
 $primary-color: #1da3ec;
+=======
+$primary-color: #333;
+>>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4
 $border-color: #ccc;
 $background-color: #f4f4f4;
 $hover-background-color: #f9f9f9;
 $shadow-color: rgba(0, 0, 0, 0.1);
 
 .container {
+<<<<<<< HEAD
   max-width: -webkit-fill-available;
   position: absolute;
   margin: 20px auto;
   font-size: smaller;
+=======
+ border: 1px solid #ccc;
+ max-width: -webkit-fill-available;
+ position: absolute;
+>>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4
 }
 
 
@@ -27,12 +37,17 @@ $shadow-color: rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   box-shadow: 0 4px 8px $shadow-color;
   padding: 0px 20px 20px 20px;
+<<<<<<< HEAD
   margin-bottom: 20PX;
+=======
+  
+>>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4
 
   &-body {
     padding: 15px;
   }
 }
+<<<<<<< HEAD
 
 .table-striped thead {
   background-color:  $primary-color; 
@@ -41,6 +56,17 @@ $shadow-color: rgba(0, 0, 0, 0.1);
   color: rgb(251, 248, 248); /* White text color for table header */
 }
 
+=======
+<<<<<<<< HEAD:src/app/Modules/administration/departments/departments.component.scss
+.select-show{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-top: 6px;
+}
+
+========
+>>>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4:src/app/Modules/administration/bank-details/bank-details.component.scss
+
+>>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4
 body,
 h1,
 h2,
@@ -56,12 +82,19 @@ dl,
 dd {
   margin: 0;
   padding: 0;
+<<<<<<< HEAD
 //   color: deepskyblue;
+=======
+>>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4
 }
 
 body {
   font-family: "Arial", sans-serif;
+<<<<<<< HEAD
   font-size: 5px;
+=======
+  font-size: 16px;
+>>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4
   line-height: 1.6;
   color: $primary-color;
 }
@@ -75,7 +108,10 @@ body {
   th,
   td {
     padding: 12px;
+<<<<<<< HEAD
     text-align: left;
+=======
+>>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4
     border-bottom: 1px solid $border-color;
   }
 
@@ -86,6 +122,7 @@ body {
   tbody tr:hover {
     background-color: $hover-background-color;
   }
+<<<<<<< HEAD
 
 
 
@@ -93,14 +130,26 @@ body {
 
 
 
+=======
+}
+
+<<<<<<<< HEAD:src/app/Modules/administration/departments/departments.component.scss
+
+
+========
+>>>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4:src/app/Modules/administration/bank-details/bank-details.component.scss
+>>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4
 .refresh {
   cursor: pointer;
   border-width: 1px 0px 1px 1px;
   border-style: solid;
   border-color: #333;
   padding: 8px 16px 5px 16px;
+<<<<<<< HEAD
   margin-bottom: 20PX;
   
+=======
+>>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4
 }
 
 .icon-tooltip {
@@ -140,11 +189,19 @@ a {
     position: absolute;
     white-space: nowrap;
     width: auto;
+<<<<<<< HEAD
     top: -45%;
     left: 65%;
     transform: translateX(-50%);
     padding: 0.5em;
     background-color: #333;
+=======
+    top: 15%;
+    left: 40%;
+    transform: translateX(-50%);
+    padding: 0.5em;
+    background-color: $primary-color;
+>>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4
     color: #fff;
     border-radius: 5px;
   }
@@ -153,7 +210,14 @@ a {
     display: block;
   }
 }
+<<<<<<< HEAD
 
+=======
+<<<<<<<< HEAD:src/app/Modules/administration/departments/departments.component.scss
+========
+
+>>>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4:src/app/Modules/administration/bank-details/bank-details.component.scss
+>>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4
 .tooltip-container-icon {
   position: relative;
 
@@ -195,6 +259,7 @@ a {
    border: solid 1px #e4e4e4 !important;
    text-decoration: none !important;
 }
+<<<<<<< HEAD
 
 
 .overlay {
@@ -269,3 +334,14 @@ a {
 .fa-x {
   color: #6c757d; /* Gray color for the close icon */
 }
+=======
+<<<<<<<< HEAD:src/app/Modules/administration/departments/departments.component.scss
+.add{
+  margin-top: 15px;
+}
+
+
+ 
+========
+>>>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4:src/app/Modules/administration/bank-details/bank-details.component.scss
+>>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4
