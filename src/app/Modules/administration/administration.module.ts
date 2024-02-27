@@ -15,6 +15,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { DepartmentsComponent } from './departments/departments.component';
 import { EmployeeProfilesComponent } from './employee-profiles/employee-profiles.component';
 import { FormsModule } from '@angular/forms';
+import { HolidaysComponent } from './holidays/holidays.component';
+import { ResignationComponent } from './resignation/resignation.component';
 
 
 library.add(fas);
@@ -24,7 +26,9 @@ library.add(fas);
     GroupsComponent,
     BankDetailsComponent,
     DepartmentsComponent,
-    EmployeeProfilesComponent
+    EmployeeProfilesComponent,
+    HolidaysComponent,
+    ResignationComponent
   ],
   imports: [
     CommonModule,

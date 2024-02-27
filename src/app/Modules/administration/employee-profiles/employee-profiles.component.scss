@@ -153,7 +153,8 @@
       border: solid 1px #e4e4e4 !important;
       text-decoration: none !important;
     }
-  
+
+
   
   
   .overlay {
@@ -176,9 +177,8 @@
     margin-left: 10px;
     width: 100%;
     max-width: 1000px; /* Adjust maximum width as needed */
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Two columns */
-    grid-template-rows: repeat(3, auto);
+    display: flex;
+    flex-direction: column;
      /* Spacing between rows */
   }
   
@@ -235,10 +235,13 @@
   
   .add-employee-overlay-content {
     background-color: #fff;
+    display: inline-block;
     padding: 20px;
     border-radius: 5px;
     width: 100%;
-    max-width: 600px; /* Adjust maximum width as needed */
+    max-width: 600px;
+    display: flex;
+    flex-direction: column; /* Adjust maximum width as needed */
   }
   
   .add-employee-form h2 {
@@ -247,15 +250,15 @@
   }
   
   .add-employee-form-group {
-    display: grid;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Two columns */
-    grid-template-rows: repeat(3, auto);
+   
+   
+    display: inline-block;
     gap: 10px;
   }
   
   .add-employee-form-group label {
     font-weight: bold;
+    display: inline-block;
   }
   
   .add-employee-form-group input
@@ -269,7 +272,7 @@
   
   .add-employee-form button
    {
-     margin-left: 20px;
+    
      margin-right: 40px;
     display: inline-block;
     background-color: cornflowerblue;
@@ -284,7 +287,7 @@
     border-radius: 4px;
     box-sizing: border-box;
     color: #f9f9f9; 
-    margin-left: 20px;
+    
   }
   
   

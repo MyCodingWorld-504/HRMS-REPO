@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BankDetailService } from '../service/bank-detail.service';
-import { faArrowsRotate, faEye, faPen, faTrash, faX } from '@fortawesome/free-solid-svg-icons';
+import { faArrowsRotate, faEye, faPen, faPlus, faTrash, faX } from '@fortawesome/free-solid-svg-icons';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
@@ -14,6 +14,7 @@ export class EmployeeProfilesComponent {
   faEyeIcon = faEye;
   faTrashIcon = faTrash;
   faPenIcon = faPen;
+  faplusIcon = faPlus
   faArrowsRotateIcon = faArrowsRotate;
   isEmployeeDetailsVisible = false;
 
@@ -91,7 +92,7 @@ addEmployee(){
 }
 
 reset(){
-  this.empForm.reset();
+  this.showAddDetailsForm = false;
 }
 
 openAddEmployeeOverlay() {

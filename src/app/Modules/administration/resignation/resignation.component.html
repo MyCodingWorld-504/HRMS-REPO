@@ -1,0 +1,133 @@
+
+<div class="group-section mt-2 mb-3">
+    <h2>Resignations</h2>
+    <div class="d-flex justify-content-between">
+      <div>
+        <h4>Dashboard</h4>
+      </div>
+    </div>
+  </div>
+  
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col mb-3 mt-2">
+        
+          <div class="card mt-2">
+            <form
+              [formGroup]="groupFormInternal"
+              (ngSubmit)="submitInternalForm()"
+            >
+              <div class="d-flex justify-content-end mt-3">
+                <div class="refresh">
+                  <div class="icon-tooltip" data-title="Refresh">
+                    <fa-icon
+                      [icon]="faArrowsRotateIcon"
+                      (click)="onRefreshInternal()"
+                    ></fa-icon>
+                  </div>
+                </div>
+                <input
+                  type="text"
+                  formControlName="searchTermInternal"
+                  placeholder="Search..."
+                  (input)="searchpublicholiday()"
+                />
+              </div>
+              <table class="tables mt-3">
+                <thead>
+                  <tr>
+                    <th>Emp ID</th>
+                    <th>Employee Name</th>
+                    <th>ResignationSubmittedDate</th>
+                    <th>lastWorkingDay</th>
+                    <th>StatusOfResignation</th>
+                    <th>ApprovedManager</th>
+                    <th>Reason</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    *ngFor="
+                      let entry of internalData
+                        | paginate
+                          : {
+                              id: 'internal-pagination',
+                              itemsPerPage: itemsPerPageInternalPage,
+                              currentPage: internalPage
+                            }
+                    "
+                  >
+                    <td>{{ entry.empID }}</td>
+                    <td  class="tooltip-container"
+                  (mouseenter)="showTooltip($event)"
+                     (mouseleave)="hideTooltip($event)">
+                        {{ entry.empName }}
+                          <div class="tooltip">{{ entry.empName  }}</div>
+                     </td>
+                <td  class="tooltip-container"
+                  (mouseenter)="showTooltip($event)"
+                    (mouseleave)="hideTooltip($event)">
+                      {{ entry.resignationSubmittedDate }}
+                        <div class="tooltip">{{ entry.resignationSubmittedDate  }}</div>
+                </td>
+                <td  class="tooltip-container"
+                   (mouseenter)="showTooltip($event)"
+                    (mouseleave)="hideTooltip($event)">
+                     {{ entry.lastWorkingDay }}
+                       <div class="tooltip">{{ entry.lastWorkingDay}}</div>
+              </td>
+              <td  class="tooltip-container"
+              (mouseenter)="showTooltip($event)"
+               (mouseleave)="hideTooltip($event)">
+                {{ entry.statusOfResignation }}
+                  <div class="tooltip">{{ entry.statusOfResignation}}</div>
+         </td>
+         <td  class="tooltip-container"
+         (mouseenter)="showTooltip($event)"
+          (mouseleave)="hideTooltip($event)">
+           {{ entry.approvedManager }}
+             <div class="tooltip">{{ entry.approvedManager}}</div>
+          </td>
+          <td  class="tooltip-container"
+          (mouseenter)="showTooltip($event)"
+           (mouseleave)="hideTooltip($event)">
+            {{ entry.reasonForResignation }}
+              <div class="tooltip">{{ entry.reasonForResignation}}</div>
+          </td>
+                   <td><fa-icon  [icon]="faEyeIcon" title="View"></fa-icon></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="d-flex justify-content-between mt-3">
+                <div class="items-per-page">
+                  <select
+                    class="form-select"
+                    [formGroup]="groupFormInternal"
+                    name="itemsPerPageInternal"
+                    (change)="onItemsPerPageChangeInternal($event)"
+                  >
+                    <option
+                      *ngFor="let option of itemsPerPageOptionsInternalPage"
+                      [value]="option"
+                    >
+                      {{ option }}
+                    </option>
+                  </select>
+                </div>
+                <div class="select-show">
+                  Showing Results {{ getStartIndexInternal() }} -
+                  {{ getEndIndexInternal() }} of
+                  {{ internalData.length }} entries.
+                </div>
+                <pagination-controls
+                  (pageChange)="pageChangedInternal($event)"
+                  [id]="'internal-pagination'"
+                ></pagination-controls>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>

@@ -139,6 +139,362 @@
       "designationOptions": ["Technician", "Engineer", "Specialist", "Administrator"],
       "selectedDesignation": ""
     }
+  ],
+
+  
+  "publicHolidays":[
+    {
+      "sno": 1,
+      "holiday_name": "Republic Day",
+      "date": "2024-01-26",
+      "day": "Friday"
+    },
+    {
+      "sno": 2,
+      "holiday_name": "Holi",
+      "date": "2024-03-25",
+      "day": "Monday"
+    },
+    {
+      "sno": 3,
+      "holiday_name": "Good Friday",
+      "date": "2024-03-29",
+      "day": "Friday"
+    },
+    {
+      "sno": 4,
+      "holiday_name": "Id-ul-Fitr",
+      "date": "2024-04-11",
+      "day": "Thursday"
+    },
+    {
+      "sno": 5,
+      "holiday_name": "Ram Navami",
+      "date": "2024-04-17",
+      "day": "Wednesday"
+    },
+    {
+      "sno": 6,
+      "holiday_name": "Mahavir Jayanti",
+      "date": "2024-04-21",
+      "day": "Sunday"
+    },
+    {
+      "sno": 7,
+      "holiday_name": "Buddha Purnima",
+      "date": "2024-05-23",
+      "day": "Thursday"
+    },
+    {
+      "sno": 8,
+      "holiday_name": "Id-ul-Zuha (Bakrid)",
+      "date": "2024-06-17",
+      "day": "Monday"
+    },
+    {
+      "sno": 9,
+      "holiday_name": "Muharram",
+      "date": "2024-07-17",
+      "day": "Wednesday"
+    },
+    {
+      "sno": 10,
+      "holiday_name": "Independence Day",
+      "date": "2024-08-15",
+      "day": "Thursday"
+    },
+    {
+      "sno": 11,
+      "holiday_name": "Janmashtami",
+      "date": "2024-08-26",
+      "day": "Monday"
+    },
+    {
+      "sno": 12,
+      "holiday_name": "Milad-un-Nabi (Birthday of Prophet Muhammad)",
+      "date": "2024-09-16",
+      "day": "Monday"
+    },
+    {
+      "sno": 13,
+      "holiday_name": "Mahatma Gandhi’s Birthday",
+      "date": "2024-10-02",
+      "day": "Wednesday"
+    },
+    {
+      "sno": 14,
+      "holiday_name": "Dussehra",
+      "date": "2024-10-12",
+      "day": "Saturday"
+    },
+    {
+      "sno": 15,
+      "holiday_name": "Diwali",
+      "date": "2024-10-31",
+      "day": "Thursday"
+    },
+    {
+      "sno": 16,
+      "holiday_name": "Guru Nanak’s Birthday",
+      "date": "2024-11-15",
+      "day": "Friday"
+    },
+    {
+      "sno": 17,
+      "holiday_name": "Christmas Day",
+      "date": "2024-12-25",
+      "day": "Wednesday"
+    }
+  ],
+
+  "optionalHolidays" :[
+    {
+      "sno": 1,
+      "holiday_name": "New Year’s Day",
+      "date": "2024-01-01",
+      "day": "Monday"
+    },
+    {
+      "sno": 2,
+      "holiday_name": "Lohri",
+      "date": "2024-01-13",
+      "day": "Saturday"
+    },
+    {
+      "sno": 3,
+      "holiday_name": "Makar Sankranti",
+      "date": "2024-01-14",
+      "day": "Sunday"
+    },
+    {
+      "sno": 4,
+      "holiday_name": "Pongal/Magha Bihu",
+      "date": "2024-01-15",
+      "day": "Monday"
+    },
+    {
+      "sno": 5,
+      "holiday_name": "Guru Gobind Singh’s Birthday",
+      "date": "2024-01-17",
+      "day": "Wednesday"
+    },
+    {
+      "sno": 6,
+      "holiday_name": "Hazrat Ali’s Birthday",
+      "date": "2024-01-25",
+      "day": "Thursday"
+    },
+    {
+      "sno": 7,
+      "holiday_name": "Basant Panchami",
+      "date": "2024-02-14",
+      "day": "Wednesday"
+    },
+    {
+      "sno": 8,
+      "holiday_name": "Shivaji Jayanti",
+      "date": "2024-02-19",
+      "day": "Monday"
+    },
+    {
+      "sno": 9,
+      "holiday_name": "Guru Ravidas’ Birthday",
+      "date": "2024-02-24",
+      "day": "Saturday"
+    },
+    {
+      "sno": 10,
+      "holiday_name": "Swami Dayananda Saraswati Jayanti",
+      "date": "2024-03-06",
+      "day": "Wednesday"
+    },
+    {
+      "sno": 11,
+      "holiday_name": "Maha Shivratri",
+      "date": "2024-03-08",
+      "day": "Friday"
+    },
+    {
+      "sno": 12,
+      "holiday_name": "Holika Dahan",
+      "date": "2024-03-24",
+      "day": "Sunday"
+    },
+    {
+      "sno": 13,
+      "holiday_name": "Easter Sunday",
+      "date": "2024-03-31",
+      "day": "Sunday"
+    },
+    {
+      "sno": 14,
+      "holiday_name": "Jamat-Ul-Vida",
+      "date": "2024-04-05",
+      "day": "Friday"
+    },
+    {
+      "sno": 15,
+      "holiday_name": "Chaitra Sukladi/Gudi Padava/Ugadi/Cheti Chand",
+      "date": "2024-04-09",
+      "day": "Tuesday"
+    },
+    {
+      "sno": 16,
+      "holiday_name": "Vaisakhi",
+      "date": "2024-04-13",
+      "day": "Saturday"
+    },
+    {
+      "sno": 17,
+      "holiday_name": "Meshadi (Tamil Nadu’s New Year’s Day)/ Vaisakhadi (Bengal) / Bahag Bihu (Assam)",
+      "date": "2024-04-14",
+      "day": "Sunday"
+    },
+    {
+      "sno": 18,
+      "holiday_name": "Guru Rabindranath’s Birthday",
+      "date": "2024-05-08",
+      "day": "Wednesday"
+    },
+    {
+      "sno": 19,
+      "holiday_name": "Rath Yatra",
+      "date": "2024-07-07",
+      "day": "Monday"
+    },
+    {
+      "sno": 20,
+      "holiday_name": "Raksha Bandhan",
+      "date": "2024-08-19",
+      "day": "Monday"
+    },
+    {
+      "sno": 21,
+      "holiday_name": "Ganesh Chaturthi / Vinayaka Chaturthi",
+      "date": "2024-09-07",
+      "day": "Saturday"
+    },
+    {
+      "sno": 22,
+      "holiday_name": "Onam or Thiru Onam Day",
+      "date": "2024-09-15",
+      "day": "Sunday"
+    },
+    {
+      "sno": 23,
+      "holiday_name": "Dussehra (Maha Saptami)",
+      "date": "2024-10-10",
+      "day": "Thursday"
+    },
+    {
+      "sno": 24,
+      "holiday_name": "Dussehra (Maha Ashtami) / Dussehra (Maha Navmi)",
+      "date": "2024-10-11",
+      "day": "Friday"
+    },
+    {
+      "sno": 25,
+      "holiday_name": "Karaka Chaturthi (Karva Chouth)",
+      "date": "2024-10-20",
+      "day": "Sunday"
+    },
+    {
+      "sno": 26,
+      "holiday_name": "Govardhan Puja",
+      "date": "2024-11-02",
+      "day": "Saturday"
+    },
+    {
+      "sno": 27,
+      "holiday_name": "Bhai Duj",
+      "date": "2024-11-03",
+      "day": "Sunday"
+    },
+    {
+      "sno": 28,
+      "holiday_name": "Chhat Puja (Pratihar Sashthi or Surya Sashthi)",
+      "date": "2024-11-07",
+      "day": "Thursday"
+    },
+    {
+      "sno": 29,
+      "holiday_name": "Guru Teg Bahadur’s Martyrdom Day",
+      "date": "2024-11-24",
+      "day": "Sunday"
+    },
+    {
+      "sno": 30,
+      "holiday_name": "Christmas Eve",
+      "date": "2024-12-24",
+      "day": "Tuesday"
+    }
+
+  ],
+
+  "resignedEmployees":[
+    {
+      "empID": "001",
+      "empName": "John Doe",
+      "resignationSubmittedDate": "2024-01-15",
+      "lastWorkingDay": "2024-01-31",
+      "statusOfResignation": "Pending",
+      "approvedManager": "",
+      "reasonForResignation": "Personal reasons"
+    },
+    {
+      "empID": "002",
+      "empName": "Jane Smith",
+      "resignationSubmittedDate": "2024-02-28",
+      "lastWorkingDay": "2024-03-15",
+      "statusOfResignation": "Approved",
+      "approvedManager": "Manager A",
+      "reasonForResignation": "Relocation"
+    },
+    {
+      "empID": "003",
+      "empName": "Alice Johnson",
+      "resignationSubmittedDate": "2024-04-10",
+      "lastWorkingDay": "2024-04-30",
+      "statusOfResignation": "Rejected",
+      "approvedManager": "Manager B",
+      "reasonForResignation": "Career change"
+    },
+    {
+      "empID": "004",
+      "empName": "Michael Brown",
+      "resignationSubmittedDate": "2024-05-20",
+      "lastWorkingDay": "2024-06-05",
+      "statusOfResignation": "Pending",
+      "approvedManager": "",
+      "reasonForResignation": "Better opportunity"
+    },
+    {
+      "empID": "005",
+      "empName": "Emily Wilson",
+      "resignationSubmittedDate": "2024-07-15",
+      "lastWorkingDay": "2024-07-31",
+      "statusOfResignation": "Approved",
+      "approvedManager": "Manager C",
+      "reasonForResignation": "Family reasons"
+    },
+    {
+      "empID": "006",
+      "empName": "David Clark",
+      "resignationSubmittedDate": "2024-08-10",
+      "lastWorkingDay": "2024-08-31",
+      "statusOfResignation": "Pending",
+      "approvedManager": "",
+      "reasonForResignation": "Job dissatisfaction"
+    },
+    {
+      "empID": "007",
+      "empName": "Sarah Martinez",
+      "resignationSubmittedDate": "2024-09-25",
+      "lastWorkingDay": "2024-10-10",
+      "statusOfResignation": "Approved",
+      "approvedManager": "Manager D",
+      "reasonForResignation": "Health issues"
+    }
   ]
 
 }
