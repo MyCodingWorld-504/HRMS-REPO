@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { faEye , faArrowsRotate, faPen, faTrash} from '@fortawesome/free-solid-svg-icons';
+import { faEye , faArrowsRotate, faPen, faTrash, faPlus} from '@fortawesome/free-solid-svg-icons';
 import { BankDetailService } from '../service/bank-detail.service';
 
 
@@ -13,6 +13,7 @@ import { BankDetailService } from '../service/bank-detail.service';
 export class BankDetailsComponent implements OnInit, OnDestroy{
   faArrowsRotateIcon = faArrowsRotate;
   faEyeIcon = faEye;
+  faplusIcon = faPlus;
   faTrashIcon = faTrash;
   faPenIcon = faPen;
   isTooltipVisible = false;
