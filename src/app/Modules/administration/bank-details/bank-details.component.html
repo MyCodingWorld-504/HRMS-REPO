@@ -5,11 +5,7 @@
       <h4>Dashboard / Bank Details</h4>
     </div>
     <div>
-<<<<<<< HEAD
       <button class="btn btn-primary" (click)="toggleAddBankDetailsForm()">
-=======
-      <button class="btn btn-primary">
->>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4
         <i class="fa-solid fa-plus"></i> Add Details
       </button>
     </div>
@@ -26,23 +22,15 @@
           </div>
         </div>
         <input
-<<<<<<< HEAD
           class="refresh"
-=======
->>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4
           type="text"
           formControlName="searchTerm"
           placeholder="Search..."
           (input)="search()"
         />
       </div>
-<<<<<<< HEAD
       <table class="table table-striped table-bordered">
         <thead >
-=======
-      <table class="tables mt-3">
-        <thead>
->>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4
           <tr>
             <th>Sno</th>
             <th>Emp Name</th>
@@ -50,14 +38,9 @@
             <th>Account No</th>
             <th>Branch</th>
             <th>IFSC</th>
-<<<<<<< HEAD
             <th>Aadhar Card</th>
             <th>Pan No</th>
             <th>Address</th>
-=======
-            <th>Address</th>
-            <th>Pan No</th>
->>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4
             <th>Action</th>
           </tr>
         </thead>
@@ -65,11 +48,7 @@
           <tr
             *ngFor="
               let group of filteredGroups
-<<<<<<< HEAD
                 | paginate : { itemsPerPage: itemsPerPage, currentPage: page };
-=======
-              | paginate : { itemsPerPage: itemsPerPage, currentPage: page };
->>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4
               let i = index
             "
           >
@@ -115,7 +94,6 @@
               <div class="tooltip">{{ group.ifsc }}</div>
             </td>
             <td
-<<<<<<< HEAD
             class="tooltip-container"
             (mouseenter)="showTooltip($event)"
             (mouseleave)="hideTooltip($event)"
@@ -124,8 +102,6 @@
             <div class="tooltip">{{ group.aadhar }}</div>
           </td>
             <td
-=======
->>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4
               class="tooltip-container"
               (mouseenter)="showTooltip($event)"
               (mouseleave)="hideTooltip($event)"
@@ -184,33 +160,20 @@
       </table>
       <div class="d-flex justify-content-between mt-3">
         <div class="items-per-page">
-<<<<<<< HEAD
           <select
             class="form-select"
             [formGroup]="groupForm"
             name="itemsPerPage"
             (change)="onItemsPerPageChange($event)"
           >
-=======
-          <select class="form-select" [formGroup]="groupForm" name="itemsPerPage" (change)="onItemsPerPageChange($event)">
->>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4
             <option *ngFor="let option of itemsPerPageOptions" [value]="option">
               {{ option }}
             </option>
           </select>
-<<<<<<< HEAD
         </div>
         <div class="select-show">
           Showing Results {{ getStartIndex() }} - {{ getEndIndex() }} of
           {{ filteredGroups.length }} entries.
-=======
-
-        </div>
-        <div class="select-show">
-
-            Showing Results {{ getStartIndex() }} - {{ getEndIndex() }} of {{ filteredGroups.length }} entries.
-
->>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4
         </div>
         <div class="pagination-container">
           <pagination-controls
@@ -221,7 +184,6 @@
     </form>
   </div>
 </div>
-<<<<<<< HEAD
 
 
 
@@ -272,5 +234,3 @@
 </form>
 </div>
 </div>
-=======
->>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4

@@ -16,12 +16,9 @@ import { GroupService } from 'src/app/Core/services/group.service';
   styleUrls: ['./groups.component.scss'],
 })
 export class GroupsComponent implements OnInit, OnDestroy {
-<<<<<<< HEAD
 submitInternalForm() {
 throw new Error('Method not implemented.');
 }
-=======
->>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4
   faArrowsRotateIcon = faArrowsRotate;
   faEyeIcon = faEye;
   faTrashIcon = faTrash;
@@ -29,7 +26,6 @@ throw new Error('Method not implemented.');
   isTooltipVisible = false;
   currentTooltip = '';
   itemsPerPageSelect: any;
-<<<<<<< HEAD
   internalGroups: any[] = [];
   externalGroups: any[] = [];
   internalData: any[] = [];
@@ -48,23 +44,10 @@ throw new Error('Method not implemented.');
   private groupSubscription: Subscription | undefined;
 
 
-=======
-  groups: any[] = [];
-  filteredGroups: any[] = [];
-  searchTerm: string = '';
-  page: number = 1;
-  itemsPerPageOptions: number[] = [5, 10, 15, 25, 50, 100];
-  itemsPerPage: number = this.itemsPerPageOptions[0];
-  groupForm: FormGroup;
-
-  private groupSubscription: Subscription | undefined;
-
->>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4
   constructor(
     private groupService: GroupService,
     private formBuilder: FormBuilder
   ) {
-<<<<<<< HEAD
     this.groupFormInternal = this.formBuilder.group({
       searchTermInternal: [''],
       itemsPerPageInternal: [this.itemsPerPageInternalPage],
@@ -84,19 +67,6 @@ throw new Error('Method not implemented.');
   ngOnInit(): void {
     this.fetchInternalData();
     this.fetchExternalData();
-=======
-    this.groupForm = this.formBuilder.group({
-      searchTerm: [''],
-      itemsPerPage: [this.itemsPerPage],
-    });
-    setTimeout(() => {
-      this.groupForm.get('itemsPerPage')?.setValue(this.itemsPerPage);
-    }, 0);
-  }
-
-  ngOnInit(): void {
-    this.fetchGroups();
->>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4
   }
 
   ngOnDestroy(): void {
@@ -105,19 +75,11 @@ throw new Error('Method not implemented.');
     }
   }
 
-<<<<<<< HEAD
   fetchInternalData() {
     this.groupSubscription = this.groupService.getInternalData().subscribe({
       next: (data: any) => {
         this.internalGroups = data;
         this.internalData = [...this.internalGroups];
-=======
-  fetchGroups() {
-    this.groupSubscription = this.groupService.getGroups().subscribe({
-      next: (data: any) => {
-        this.groups = data;
-        this.filteredGroups = [...this.groups];
->>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4
       },
       error: (error) => {
         console.error('Error fetching groups:', error);
@@ -125,7 +87,6 @@ throw new Error('Method not implemented.');
     });
   }
 
-<<<<<<< HEAD
 
   protected searchInternal() {
     const term = this.groupFormInternal.get('searchTermInternal')?.value;
@@ -202,20 +163,6 @@ throw new Error('Method not implemented.');
     this.externalData = this.externalGroups.filter((group) => this.searchInExternal(group, term));
   }
   private searchInExternal(group: any, term: string): boolean {
-=======
-  protected search() {
-    const term = this.groupForm.get('searchTerm')?.value;
-
-    if (!term) {
-      this.filteredGroups = [...this.groups];
-      return;
-    }
-
-    this.filteredGroups = this.groups.filter((group) => this.searchInGroup(group, term));
-  }
-
-  private searchInGroup(group: any, term: string): boolean {
->>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4
     for (const key in group) {
       if (group.hasOwnProperty(key)) {
         const value = group[key];
@@ -231,7 +178,6 @@ throw new Error('Method not implemented.');
     return false;
   }
 
-<<<<<<< HEAD
 
 
   onRefreshExternal() {
@@ -252,32 +198,6 @@ throw new Error('Method not implemented.');
   getEndIndexExternal(): number {
     const endIndex = this.externalPage * this.itemsPerPageExternalPage;
     return endIndex > this.externalData.length ? this.externalData.length : endIndex;
-=======
-  onItemsPerPageChange(event: Event) {
-    const target = event.target as HTMLSelectElement;
-    this.itemsPerPage = parseInt(target.value);
-    this.page = 1;
-  }
-
-
-  pageChanged(event: number) {
-    this.page = event;
-  }
-
-
-  getStartIndex(): number {
-    return (this.page - 1) * this.itemsPerPage + 1;
-  }
-
-  getEndIndex(): number {
-    const endIndex = this.page * this.itemsPerPage;
-    return endIndex > this.filteredGroups.length ? this.filteredGroups.length : endIndex;
-  }
-
-  onRefresh() {
-    this.groupForm.get('searchTerm')?.setValue('');
-    this.search();
->>>>>>> f46a5594cddea03cfaf4f734e9839dd0152f60f4
   }
   showTooltip(event: MouseEvent): void {
     const target = event.currentTarget as HTMLElement;
