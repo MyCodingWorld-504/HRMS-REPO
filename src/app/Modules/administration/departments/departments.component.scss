@@ -24,6 +24,7 @@ $shadow-color: rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   box-shadow: 0 4px 8px $shadow-color;
   padding: 0px 20px 20px 20px;
+  
 
   &-body {
     padding: 15px;
@@ -68,7 +69,6 @@ body {
   th,
   td {
     padding: 12px;
-    text-align: left;
     border-bottom: 1px solid $border-color;
   }
 
@@ -180,4 +180,9 @@ body {
    border: solid 1px #e4e4e4 !important;
    text-decoration: none !important;
 }
+.add{
+  margin-top: 15px;
+}
 
+
+ 

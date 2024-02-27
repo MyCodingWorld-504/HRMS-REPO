@@ -20,7 +20,7 @@ export class HrSidebarComponent {
     constructor(private router : Router){}
     menuItems: MenuItem[] = [
       { label: 'Dashboard', route:'dashboard',icon: faGauge },
-      { label: 'Administration', icon: faUserTie, submenu: [{ label: 'Groups', route: 'administration' }, { label: 'Bank Details', route: 'administration/bank-details' }, { label: 'Designation', route: '/shared/layout' }, { label: 'Employee Profiles', route: '/shared/layout' }, { label: 'Resignation', route: '/shared/layout' }] },
+      { label: 'Administration', icon: faUserTie, submenu: [ { label: 'Employee Profiles', route: 'administration/emp-profiles' },{ label: 'Groups', route: 'administration' }, { label: 'Departments ', route: 'administration/departments' }, { label: 'Bank Details', route: 'administration/bank-details' }, { label: 'Resignation', route: '/shared/layout' }] },
       { label: 'Attendence', icon: faClipboardUser, submenu: [{ label: 'Contact', route: '/login' }, { label: 'Service', route: '/service' }] },
       { label: 'Payrol', icon: faMoneyBill, submenu: [{ label: 'Contact', route: '/contact' }, { label: 'Service', route: '/service' }] },
       { label: 'Timesheet', icon:faClock, submenu: [{ label: 'Contact', route: '/contact' }, { label: 'Service', route: '/service' }] },

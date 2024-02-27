@@ -16,6 +16,9 @@ import { GroupService } from 'src/app/Core/services/group.service';
   styleUrls: ['./groups.component.scss'],
 })
 export class GroupsComponent implements OnInit, OnDestroy {
+submitInternalForm() {
+throw new Error('Method not implemented.');
+}
   faArrowsRotateIcon = faArrowsRotate;
   faEyeIcon = faEye;
   faTrashIcon = faTrash;
@@ -23,31 +26,47 @@ export class GroupsComponent implements OnInit, OnDestroy {
   isTooltipVisible = false;
   currentTooltip = '';
   itemsPerPageSelect: any;
-  groups: any[] = [];
-  filteredGroups: any[] = [];
-  searchTerm: string = '';
-  page: number = 1;
-  itemsPerPageOptions: number[] = [5, 10, 15, 25, 50, 100];
-  itemsPerPage: number = this.itemsPerPageOptions[0];
-  groupForm: FormGroup;
+  internalGroups: any[] = [];
+  externalGroups: any[] = [];
+  internalData: any[] = [];
+  externalData: any[] = [];
+  searchTermInternal: string = '';
+  searchTermExternal: string = '';
+  internalPage: number = 1;
+  itemsPerPageOptionsInternalPage: number[] = [5, 10, 15, 25, 50, 100];
+  itemsPerPageInternalPage: number = this.itemsPerPageOptionsInternalPage[0];
+  externalPage: number = 1;
+  itemsPerPageOptionsExternalPage: number[] = [5, 10, 15, 25, 50, 100];
+  itemsPerPageExternalPage: number = this.itemsPerPageOptionsExternalPage[0];
+  groupFormInternal: FormGroup;
+  groupFormExternal: FormGroup;
 
   private groupSubscription: Subscription | undefined;
+
 
   constructor(
     private groupService: GroupService,
     private formBuilder: FormBuilder
   ) {
-    this.groupForm = this.formBuilder.group({
-      searchTerm: [''],
-      itemsPerPage: [this.itemsPerPage],
+    this.groupFormInternal = this.formBuilder.group({
+      searchTermInternal: [''],
+      itemsPerPageInternal: [this.itemsPerPageInternalPage],
+      pageInternal: [this.internalPage],
     });
-    setTimeout(() => {
-      this.groupForm.get('itemsPerPage')?.setValue(this.itemsPerPage);
-    }, 0);
+
+    this.groupFormExternal = this.formBuilder.group({
+      searchTermExternal: [''],
+      itemsPerPageExternal: [this.itemsPerPageExternalPage],
+      pageExternal: [this.externalPage],
+    });
+
+
   }
 
+
   ngOnInit(): void {
-    this.fetchGroups();
+    this.fetchInternalData();
+    this.fetchExternalData();
   }
 
   ngOnDestroy(): void {
@@ -56,11 +75,11 @@ export class GroupsComponent implements OnInit, OnDestroy {
     }
   }
 
-  fetchGroups() {
-    this.groupSubscription = this.groupService.getGroups().subscribe({
+  fetchInternalData() {
+    this.groupSubscription = this.groupService.getInternalData().subscribe({
       next: (data: any) => {
-        this.groups = data;
-        this.filteredGroups = [...this.groups];
+        this.internalGroups = data;
+        this.internalData = [...this.internalGroups];
       },
       error: (error) => {
         console.error('Error fetching groups:', error);
@@ -68,18 +87,82 @@ export class GroupsComponent implements OnInit, OnDestroy {
     });
   }
 
-  protected search() {
-    const term = this.groupForm.get('searchTerm')?.value;
+
+  protected searchInternal() {
+    const term = this.groupFormInternal.get('searchTermInternal')?.value;
 
     if (!term) {
-      this.filteredGroups = [...this.groups];
+      this.internalData = [...this.internalGroups];
       return;
     }
 
-    this.filteredGroups = this.groups.filter((group) => this.searchInGroup(group, term));
+    this.internalData = this.internalGroups.filter((group) => this.searchInInternal(group, term));
   }
 
-  private searchInGroup(group: any, term: string): boolean {
+  private searchInInternal(group: any, term: string): boolean {
+    for (const key in group) {
+      if (group.hasOwnProperty(key)) {
+        const value = group[key];
+        if (
+          value !== null &&
+          typeof value !== 'object' &&
+          String(value).toLowerCase().includes(term.toLowerCase())
+        ) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+  onItemsPerPageChangeInternal(event: Event) {
+    const target = event.target as HTMLSelectElement;
+    this.itemsPerPageInternalPage = parseInt(target.value);
+    this.internalPage = 1;
+  }
+
+
+  pageChangedInternal(event: number) {
+    this.internalPage = event;
+  }
+
+
+  getStartIndexInternal(): number {
+    return (this.internalPage - 1) * this.itemsPerPageInternalPage + 1;
+  }
+
+  getEndIndexInternal(): number {
+    const endIndex = this.internalPage * this.itemsPerPageInternalPage;
+    return endIndex > this.internalData.length ? this.internalData.length : endIndex;
+  }
+
+  onRefreshInternal() {
+    this.groupFormInternal.get('searchTermInternal')?.setValue('');
+    this.searchInternal();
+  }
+
+
+  fetchExternalData() {
+    this.groupSubscription = this.groupService.getExternalData().subscribe({
+      next: (data: any) => {
+        this.externalGroups = data;
+        this.externalData = [...this.externalGroups];
+      },
+      error: (error) => {
+        console.error('Error fetching groups:', error);
+      },
+    });
+  }
+  protected searchExternal() {
+    const term = this.groupFormExternal.get('searchTermExternal')?.value;
+
+    if (!term) {
+      this.externalData = [...this.externalGroups];
+      return;
+    }
+
+    this.externalData = this.externalGroups.filter((group) => this.searchInExternal(group, term));
+  }
+  private searchInExternal(group: any, term: string): boolean {
     for (const key in group) {
       if (group.hasOwnProperty(key)) {
         const value = group[key];
@@ -95,30 +178,26 @@ export class GroupsComponent implements OnInit, OnDestroy {
     return false;
   }
 
-  onItemsPerPageChange(event: Event) {
+
+
+  onRefreshExternal() {
+    this.groupFormExternal.get('searchTermExternal')?.setValue('');
+    this.searchExternal();
+  }
+  onItemsPerPageChangeExternal(event: Event) {
     const target = event.target as HTMLSelectElement;
-    this.itemsPerPage = parseInt(target.value);
-    this.page = 1;
+    this.itemsPerPageExternalPage = parseInt(target.value);
+    this.externalPage = 1;
   }
-
-
-  pageChanged(event: number) {
-    this.page = event;
+  pageChangedExternal(event: number) {
+    this.externalPage = event;
   }
-
-
-  getStartIndex(): number {
-    return (this.page - 1) * this.itemsPerPage + 1;
+  getStartIndexExternal(): number {
+    return (this.externalPage - 1) * this.itemsPerPageExternalPage + 1;
   }
-
-  getEndIndex(): number {
-    const endIndex = this.page * this.itemsPerPage;
-    return endIndex > this.filteredGroups.length ? this.filteredGroups.length : endIndex;
-  }
-
-  onRefresh() {
-    this.groupForm.get('searchTerm')?.setValue('');
-    this.search();
+  getEndIndexExternal(): number {
+    const endIndex = this.externalPage * this.itemsPerPageExternalPage;
+    return endIndex > this.externalData.length ? this.externalData.length : endIndex;
   }
   showTooltip(event: MouseEvent): void {
     const target = event.currentTarget as HTMLElement;

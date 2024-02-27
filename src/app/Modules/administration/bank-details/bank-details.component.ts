@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { faEye , faArrowsRotate, faPen, faTrash} from '@fortawesome/free-solid-svg-icons';
 import { BankDetailService } from '../service/bank-detail.service';
@@ -25,6 +25,7 @@ export class BankDetailsComponent implements OnInit, OnDestroy{
   itemsPerPageOptions: number[] = [5, 10, 15, 25, 50, 100];
   itemsPerPage: number = this.itemsPerPageOptions[0];
   groupForm: FormGroup;
+  showAddBankDetailsForm = false;
 
   private groupSubscription: Subscription | undefined;
 
@@ -39,6 +40,12 @@ export class BankDetailsComponent implements OnInit, OnDestroy{
     setTimeout(() => {
       this.groupForm.get('itemsPerPage')?.setValue(this.itemsPerPage);
     }, 0);
+
+    this.groupForm = this.formBuilder.group({
+      empName: ['', Validators.required],
+      bankName: ['', Validators.required],
+      // Add other form controls and validators as needed
+    });
   }
 
   ngOnInit(): void {
@@ -158,5 +165,31 @@ export class BankDetailsComponent implements OnInit, OnDestroy{
   }
   submitForm() {
     throw new Error('Method not implemented.');
+  }
+
+
+  toggleAddBankDetailsForm() {
+    this.showAddBankDetailsForm = true;
+    // Reset the form when toggling visibility
+    if (!this.showAddBankDetailsForm) {
+      this.groupForm.reset();
+    }
+  }
+
+  submitBankDetailsForm() {
+    if (this.groupForm.valid) {
+      // Form is valid, submit the data
+      console.log('Bank details submitted:', this.groupForm.value);
+      // Add logic to save the form data to your data source (e.g., database)
+      // Reset the form and close the overlay
+      this.toggleAddBankDetailsForm();
+    } else {
+      // Form is invalid, display error message or toast
+      console.log('Please fill all fields.');
+    }
+  }
+
+  cancelAddBankDetailsForm() {
+    this.showAddBankDetailsForm = false;
   }
 }

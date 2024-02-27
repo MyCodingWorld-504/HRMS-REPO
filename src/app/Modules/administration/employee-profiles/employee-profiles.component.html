@@ -1,0 +1,241 @@
+
+<h2>Employee Profiles</h2>  
+<h4 class="heading">Dashboard/employee profiles</h4>
+<div class="card mt-2">
+    <form [formGroup]="empForm">
+      <div class="action-btn" (click)="openAddEmployeeOverlay()">
+        <button class="btn btn-primary">
+          <i class="fa-solid fa-plus"></i> Add Employee
+        </button>
+      </div>
+        <div class="d-flex justify-content-end mt-3">
+          <div class="refresh">
+            <div class="icon-tooltip" data-title="Refresh">
+              <fa-icon [icon]="faArrowsRotateIcon" (click)="onRefresh()"></fa-icon>
+            </div>
+          </div>
+          <input
+            type="text"
+            formControlName="searchTerm"
+            placeholder="Search..."
+            (input)="search()"
+          />
+        </div>
+  <table class="tables mt-3">
+    <thead>
+      <tr>
+        <th>EmpID</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Designation</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Location</th>
+        <th>Client</th>
+        <th>Permanent Address</th>
+        <th>BIO Data</th>
+        <th>View</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employeeProfiles">
+        <td>{{employee.empID}}</td>
+        <td>{{ employee.employeeName }}</td>
+        <td>{{ employee.department }}</td>
+        <td>{{ employee.designation }}</td>
+        <td>{{ employee.phoneNumber }}</td>
+        <td>{{ employee.email }}</td>
+        <td>{{ employee.workingLocation }}</td>
+        <td>{{ employee.workingClient }}</td>
+        <td>{{ employee.permanentAddress }}</td>
+        <td>{{ employee.bioData }}</td>
+        <td>
+          <fa-icon [icon]="faEyeIcon" title="View"  (click)="showEmployeeDetails(employee)"></fa-icon>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+</div>
+
+
+<!-- your-component.component.html -->
+<!-- <div class="overlay" *ngIf="showOverlay">
+<div class="overlay-content">
+  <h2>Employee Details</h2>
+  <div class="form-group">
+    <label for="empID">Employee ID:</label>
+    <input type="text" id="empID" [(ngModel)]="selectedEmployee.empID" placeholder="Employee ID">
+  </div>
+  <div class="form-group">
+    <label for="employeeName">Name:</label>
+    <input type="text" id="employeeName" [(ngModel)]="selectedEmployee.employeeName" placeholder="Name">
+  </div>
+  <div class="form-group">
+    <label for="department">Department:</label>
+    <input type="text" id="department" [(ngModel)]="selectedEmployee.department" placeholder="Department">
+  </div>
+  <div class="form-group">
+    <label for="designation">Designation:</label>
+    <input type="text" id="designation" [(ngModel)]="selectedEmployee.designation" placeholder="Designation">
+  </div>
+  <div class="form-group">
+    <label for="phoneNumber">Phone:</label>
+    <input type="text" id="phoneNumber" [(ngModel)]="selectedEmployee.phoneNumber" placeholder="Phone">
+  </div>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" id="email" [(ngModel)]="selectedEmployee.email" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label for="workingLocation">Location:</label>
+    <input type="text" id="workingLocation" [(ngModel)]="selectedEmployee.workingLocation" placeholder="Location">
+  </div>
+  <div class="form-group">
+    <label for="workingClient">Client:</label>
+    <input type="text" id="workingClient" [(ngModel)]="selectedEmployee.workingClient" placeholder="Client">
+  </div>
+  <div class="form-group">
+    <label for="permanentAddress">Permanent Address:</label>
+    <input type="text" id="permanentAddress" [(ngModel)]="selectedEmployee.permanentAddress" placeholder="Permanent Address">
+  </div>
+  <div class="form-group">
+    <label for="bioData">BIO Data:</label>
+    <textarea id="bioData" [(ngModel)]="selectedEmployee.bioData" placeholder="BIO Data"></textarea>
+  </div>
+
+  <div class="button-container">
+    <button class="edit-button">Edit</button>
+    <button class="delete-button">Delete</button>
+    <button class="close-button" (click)="closeEmpDetails()">Close</button>
+  </div>
+</div>
+</div> -->
+
+
+
+<div class="overlay" *ngIf="showOverlay">
+
+<div class="overlay-content">
+  <div class="overlay-heading">
+    <h2>Employee Details</h2>
+  </div>
+  <div class="form-group">
+    <label for="empID">Employee ID:</label>
+    <input *ngIf="editMode" type="text" id="empID" [(ngModel)]="selectedEmployee.empID" placeholder="Employee ID">
+    <span *ngIf="!editMode">{{ selectedEmployee.empID }}</span>
+  </div>
+  <div class="form-group">
+    <label for="employeeName">Name:</label>
+    <input *ngIf="editMode" type="text" id="employeeName" [(ngModel)]="selectedEmployee.employeeName" placeholder="Name">
+    <span *ngIf="!editMode">{{ selectedEmployee.employeeName }}</span>
+  </div>
+  <div class="form-group">
+    <label for="department">Department:</label>
+    <input *ngIf="editMode" type="text" id="department" [(ngModel)]="selectedEmployee.department" placeholder="Department">
+    <span *ngIf="!editMode">{{ selectedEmployee.department }}</span>
+  </div>
+  <div class="form-group">
+    <label for="designation">Designation:</label>
+    <input *ngIf="editMode" type="text" id="designation" [(ngModel)]="selectedEmployee.designation" placeholder="Designation">
+    <span *ngIf="!editMode">{{ selectedEmployee.designation }}</span>
+  </div>
+  <div class="form-group">
+    <label for="phoneNumber">Phone:</label>
+    <input *ngIf="editMode" type="text" id="phoneNumber" [(ngModel)]="selectedEmployee.phoneNumber" placeholder="Phone">
+    <span *ngIf="!editMode">{{ selectedEmployee.phoneNumber }}</span>
+  </div>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input *ngIf="editMode" type="email" id="email" [(ngModel)]="selectedEmployee.email" placeholder="Email">
+    <span *ngIf="!editMode">{{ selectedEmployee.email }}</span>
+  </div>
+  <div class="form-group">
+    <label for="workingLocation">Location:</label>
+    <input *ngIf="editMode" type="text" id="workingLocation" [(ngModel)]="selectedEmployee.workingLocation" placeholder="Location">
+    <span *ngIf="!editMode">{{ selectedEmployee.workingLocation }}</span>
+  </div>
+  <div class="form-group">
+    <label for="workingClient">Client:</label>
+    <input *ngIf="editMode" type="text" id="workingClient" [(ngModel)]="selectedEmployee.workingClient" placeholder="Client">
+    <span *ngIf="!editMode">{{ selectedEmployee.workingClient }}</span>
+  </div>
+  <div class="form-group">
+    <label for="permanentAddress">Permanent Address:</label>
+    <input *ngIf="editMode" type="text" id="permanentAddress" [(ngModel)]="selectedEmployee.permanentAddress" placeholder="Permanent Address">
+    <span *ngIf="!editMode">{{ selectedEmployee.permanentAddress }}</span>
+  </div>
+  <div class="form-group">
+    <label for="bioData">BIO Data:</label>
+    <textarea *ngIf="editMode" id="bioData" [(ngModel)]="selectedEmployee.bioData" placeholder="BIO Data"></textarea>
+    <span *ngIf="!editMode">{{ selectedEmployee.bioData }}</span>
+  </div>
+
+  <div class="button-container">
+    <fa-icon [icon]="faPenIcon" (click)="toggleEditMode()">EDIT</fa-icon>
+    <fa-icon [icon]="faTrashIcon" (click)="deleteEmployee()">Delete</fa-icon>
+    <fa-icon [icon]="faXIcon" (click)="closeEmpDetails()">Close</fa-icon>
+  </div>
+</div>
+</div>
+
+
+
+<!-- add-details.component.html -->
+
+<div class="add-details">
+<div class="overlay" *ngIf="showAddDetailsForm">
+<div class="overlay-content">
+  <div class="overlay-heading">
+    <h2>Add Employee Details</h2>
+  </div>
+  <div class="form-group">
+    <label for="newEmpID">Employee ID:</label>
+    <input type="text" id="newEmpID" [(ngModel)]="newEmployee.empID" placeholder="Employee ID">
+  </div>
+  <div class="form-group">
+    <label for="newEmployeeName">Name:</label>
+    <input type="text" id="newEmployeeName" [(ngModel)]="newEmployee.employeeName" placeholder="Name">
+  </div>
+  <div class="form-group">
+    <label for="newDepartment">Department:</label>
+    <input type="text" id="newDepartment" [(ngModel)]="newEmployee.department" placeholder="Department">
+  </div>
+  <div class="form-group">
+    <label for="newDesignation">Designation:</label>
+    <input type="text" id="newDesignation" [(ngModel)]="newEmployee.designation" placeholder="Designation">
+  </div>
+  <div class="form-group">
+    <label for="newPhoneNumber">Phone:</label>
+    <input type="text" id="newPhoneNumber" [(ngModel)]="newEmployee.phoneNumber" placeholder="Phone">
+  </div>
+  <div class="form-group">
+    <label for="newEmail">Email:</label>
+    <input type="email" id="newEmail" [(ngModel)]="newEmployee.email" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label for="newWorkingLocation">Location:</label>
+    <input type="text" id="newWorkingLocation" [(ngModel)]="newEmployee.workingLocation" placeholder="Location">
+  </div>
+  <div class="form-group">
+    <label for="newWorkingClient">Client:</label>
+    <input type="text" id="newWorkingClient" [(ngModel)]="newEmployee.workingClient" placeholder="Client">
+  </div>
+  <div class="form-group">
+    <label for="newPermanentAddress">Permanent Address:</label>
+    <input type="text" id="newPermanentAddress" [(ngModel)]="newEmployee.permanentAddress" placeholder="Permanent Address">
+  </div>
+  <div class="form-group">
+    <label for="newBioData">BIO Data:</label>
+    <textarea id="newBioData" [(ngModel)]="newEmployee.bioData" placeholder="BIO Data"></textarea>
+  </div>
+
+  <div class="button-container">
+    <button (click)="addEmployee()">ADD</button>
+    <button (click)="reset()">tyftgy</button>
+
+  </div>
+</div>
+</div>
+</div>
+

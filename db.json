@@ -24,6 +24,121 @@
       "email": "chrajendra77@gmail.com",
       "gender": "female",
       "role": "developer"
+        }
+  ],
+
+
+  "profiles" :[
+    {
+      "empID":"1",
+      "employeeName":"Rasi",
+      "department":"IT",
+      "designation":"developer",
+      "phoneNumber":"6658932258",
+      "email":"rasi25@gmail.com",
+      "workingLocation":"HYDERABAD",
+      "workingClient":"CHENNAI",
+      "permanentAddress":"22-LLI,HDGD STREET,999",
+      "bioData":"...."
+    },
+    {
+      "empID":"2",
+      "employeeName":"Rasi",
+      "department":"IT",
+      "designation":"developer",
+      "phoneNumber":"6658932258",
+      "email":"rasi25@gmail.com",
+      "workingLocation":"HYDERABAD",
+      "workingClient":"CHENNAI",
+      "permanentAddress":"22-LLI,HDGD STREET,999",
+      "bioData":"...."
+    },
+    {
+      "empID":"3",
+      "employeeName":"Rasi",
+      "department":"IT",
+      "designation":"developer",
+      "phoneNumber":"6658932258",
+      "email":"rasi25@gmail.com",
+      "workingLocation":"HYDERABAD",
+      "workingClient":"CHENNAI",
+      "permanentAddress":"22-LLI,HDGD STREET,999",
+      "bioData":"...."
+    },
+    {
+      "empID":"4",
+      "employeeName":"Rasi",
+      "department":"IT",
+      "designation":"developer",
+      "phoneNumber":"6658932258",
+      "email":"rasi25@gmail.com",
+      "workingLocation":"HYDERABAD",
+      "workingClient":"CHENNAI",
+      "permanentAddress":"22-LLI,HDGD STREET,999",
+      "bioData":"...."
+    }
+  ],
+
+ "internalData"  : [
+    { "sno": 1, "groupName": "Part-time" },
+    { "sno": 2, "groupName":" Full-time" },
+    { "sno": 3, "groupName":" Consultant/Freelancing"}
+  ],
+  "externalData"  : [
+    { "sno": 1, "groupName": "Part-time" },
+    { "sno": 2, "groupName":" Full-time" },
+    { "sno": 3, "groupName":" Consultant/Freelancing"}
+  ],
+
+  "deoartments" :[
+    {
+      "sno":"1",
+      "departmentName": "Department 3",
+      "designationOptions": ["Junior Engineer", "Senior Engineer"],
+      "selectedDesignation": ""
+    },
+    {
+      "sno":"2",
+      "departmentName": "Department 4",
+      "designationOptions": ["Manager", "Assistant Manager", "Supervisor"],
+      "selectedDesignation": ""
+    },
+    {
+      "sno":"3",
+      "departmentName": "Department 5",
+      "designationOptions": ["Analyst", "Developer", "Tester", "Architect", "Administrator"],
+      "selectedDesignation": ""
+    },
+    {
+      "sno":"4",
+      "departmentName": "Department 6",
+      "designationOptions": ["Coordinator", "Specialist", "Consultant"],
+      "selectedDesignation": ""
+    },
+    {
+      "sno":"5",
+      "departmentName": "Department 7",
+      "designationOptions": ["Researcher", "Scientist"],
+      "selectedDesignation": ""
+    },
+    {
+      "sno":"6",
+      "departmentName": "Department 8",
+      "designationOptions": ["Intern", "Trainee", "Associate", "Expert"],
+      "selectedDesignation": ""
+    },
+    {
+      "sno":"7",
+      "departmentName": "Department 9",
+      "designationOptions": ["Project Manager", "Team Leader", "Director"],
+      "selectedDesignation": ""
+    },
+    {
+      "sno":"8",
+      "departmentName": "Department 10",
+      "designationOptions": ["Technician", "Engineer", "Specialist", "Administrator"],
+      "selectedDesignation": ""
     }
   ]
+
 }

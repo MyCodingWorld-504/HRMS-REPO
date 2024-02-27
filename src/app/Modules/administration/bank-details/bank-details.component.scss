@@ -1,4 +1,4 @@
-$primary-color: #333;
+$primary-color: #1da3ec;
 $border-color: #ccc;
 $background-color: #f4f4f4;
 $hover-background-color: #f9f9f9;
@@ -8,6 +8,7 @@ $shadow-color: rgba(0, 0, 0, 0.1);
   max-width: -webkit-fill-available;
   position: absolute;
   margin: 20px auto;
+  font-size: smaller;
 }
 
 
@@ -26,10 +27,18 @@ $shadow-color: rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   box-shadow: 0 4px 8px $shadow-color;
   padding: 0px 20px 20px 20px;
+  margin-bottom: 20PX;
 
   &-body {
     padding: 15px;
   }
+}
+
+.table-striped thead {
+  background-color:  $primary-color; 
+  border-radius: 50% ;
+  border-radius: 20px 0px;/* Blue background color for table header */
+  color: rgb(251, 248, 248); /* White text color for table header */
 }
 
 body,
@@ -47,11 +56,12 @@ dl,
 dd {
   margin: 0;
   padding: 0;
+//   color: deepskyblue;
 }
 
 body {
   font-family: "Arial", sans-serif;
-  font-size: 16px;
+  font-size: 5px;
   line-height: 1.6;
   color: $primary-color;
 }
@@ -76,7 +86,12 @@ body {
   tbody tr:hover {
     background-color: $hover-background-color;
   }
+
+
+
 }
+
+
 
 .refresh {
   cursor: pointer;
@@ -84,6 +99,8 @@ body {
   border-style: solid;
   border-color: #333;
   padding: 8px 16px 5px 16px;
+  margin-bottom: 20PX;
+  
 }
 
 .icon-tooltip {
@@ -177,4 +194,78 @@ a {
 ::ng-deep .ngx-pagination a, .ngx-pagination button {
    border: solid 1px #e4e4e4 !important;
    text-decoration: none !important;
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.overlay-content {
+  background-color: #fff;
+  padding: 70px;
+  border-radius: 5px;
+  margin-left: 10px;
+  width: 100%;
+  max-width: 1000px; /* Adjust maximum width as needed */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Two columns */
+  grid-template-rows: repeat(3, auto);
+   /* Spacing between rows */
+}
+
+
+.form-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Two columns */
+  grid-template-rows: repeat(3, auto);
+  gap: 10px;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-left: 15px;
+ 
+}
+
+.form-group input {
+  
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-left:0;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-right: 30px;
+ 
+}
+
+.button-container fa-icon {
+  margin-right: 30px; /* Adjust the margin as needed */
+  padding: 5px; /* Add padding to create space inside the border */
+ 
+}
+
+.fa-pen {
+  color: #007bff; /* Blue color for the edit icon */
+}
+
+.fa-trash {
+  color: #dc3545; /* Red color for the delete icon */
+}
+
+.fa-x {
+  color: #6c757d; /* Gray color for the close icon */
 }
