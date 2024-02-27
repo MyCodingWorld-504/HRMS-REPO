@@ -1,0 +1,47 @@
+.overlay {
+  position: absolute;
+  z-index: 1;
+  top: 40%;
+  transform: translateY(-50%);
+  transition:0s 180s;
+  padding-bottom: 20px;
+  transition-delay: 0.5s;
+  width: 100%;
+
+}
+
+.overlay .row {
+  margin: 0;
+}
+.overlay .col {
+  margin: 0;
+}
+
+.card-small {
+  background-color:  white;
+  transition: background-color 0.3s ease, transform 0.7s ease;
+  padding: 10px ;
+  border-radius: 10px;
+  margin: 0 25px  25px 0;
+  color: #454242;
+}
+
+.card-small:hover {
+  background-color: #454242;
+  transform: scale(1.1);
+  color: whitesmoke;
+
+}
+.card-big img{
+  height: 48vh;
+}
+.card-big {
+  width: 85%;
+}
+.card-big:hover {
+  transform: scale(1.1);
+  color: whitesmoke;
+}
+h5 {
+  font-weight: bold;
+}

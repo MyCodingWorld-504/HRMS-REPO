@@ -1,0 +1,236 @@
+<div class="container table-container">
+  <h2>Bank Details</h2>
+  <div class="d-flex justify-content-between">
+    <div>
+      <h4>Dashboard / Bank Details</h4>
+    </div>
+    <div>
+      <button class="btn btn-primary" (click)="toggleAddBankDetailsForm()">
+        <i class="fa-solid fa-plus"></i> Add Details
+      </button>
+    </div>
+  </div>
+  <div class="card mt-2">
+    <form [formGroup]="groupForm" (ngSubmit)="submitForm()">
+      <div class="d-flex justify-content-end mt-3">
+        <div class="refresh">
+          <div class="icon-tooltip" data-title="Refresh">
+            <fa-icon
+              [icon]="faArrowsRotateIcon"
+              (click)="onRefresh()"
+            ></fa-icon>
+          </div>
+        </div>
+        <input
+          class="refresh"
+          type="text"
+          formControlName="searchTerm"
+          placeholder="Search..."
+          (input)="search()"
+        />
+      </div>
+      <table class="table table-striped table-bordered">
+        <thead >
+          <tr>
+            <th>Sno</th>
+            <th>Emp Name</th>
+            <th>Bank Name</th>
+            <th>Account No</th>
+            <th>Branch</th>
+            <th>IFSC</th>
+            <th>Aadhar Card</th>
+            <th>Pan No</th>
+            <th>Address</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="
+              let group of filteredGroups
+                | paginate : { itemsPerPage: itemsPerPage, currentPage: page };
+              let i = index
+            "
+          >
+            <td>{{ i + 1 }}</td>
+            <td
+              class="tooltip-container"
+              (mouseenter)="showTooltip($event)"
+              (mouseleave)="hideTooltip($event)"
+            >
+              {{ group.Empname }}
+              <div class="tooltip">{{ group.Empname }}</div>
+            </td>
+            <td
+              class="tooltip-container"
+              (mouseenter)="showTooltip($event)"
+              (mouseleave)="hideTooltip($event)"
+            >
+              {{ group.bankname }}
+              <div class="tooltip">{{ group.bankname }}</div>
+            </td>
+            <td
+              class="tooltip-container"
+              (mouseenter)="showTooltip($event)"
+              (mouseleave)="hideTooltip($event)"
+            >
+              {{ group.accountNo }}
+              <div class="tooltip">{{ group.accountNo }}</div>
+            </td>
+            <td
+              class="tooltip-container"
+              (mouseenter)="showTooltip($event)"
+              (mouseleave)="hideTooltip($event)"
+            >
+              {{ group.branch }}
+              <div class="tooltip">{{ group.branch }}</div>
+            </td>
+            <td
+              class="tooltip-container"
+              (mouseenter)="showTooltip($event)"
+              (mouseleave)="hideTooltip($event)"
+            >
+              {{ group.ifsc }}
+              <div class="tooltip">{{ group.ifsc }}</div>
+            </td>
+            <td
+            class="tooltip-container"
+            (mouseenter)="showTooltip($event)"
+            (mouseleave)="hideTooltip($event)"
+          >
+            {{ group.aadhar }}
+            <div class="tooltip">{{ group.aadhar }}</div>
+          </td>
+            <td
+              class="tooltip-container"
+              (mouseenter)="showTooltip($event)"
+              (mouseleave)="hideTooltip($event)"
+            >
+              {{ group.panno }}
+              <div class="tooltip">{{ group.panno }}</div>
+            </td>
+            <td
+              class="tooltip-container"
+              (mouseenter)="showTooltip($event)"
+              (mouseleave)="hideTooltip($event)"
+            >
+              {{ group.address }}
+              <div class="tooltip">{{ group.address }}</div>
+            </td>
+            <td class="tooltip-container-icon">
+              <a
+                (mouseenter)="showTooltipIcon('View', $event)"
+                (mouseleave)="hideTooltipIcon()"
+              >
+                <fa-icon [icon]="faEyeIcon"></fa-icon>
+                <div
+                  class="tooltip-icon"
+                  *ngIf="isTooltipVisible && currentTooltip === 'View'"
+                >
+                  View
+                </div>
+              </a>
+              <a
+                (mouseenter)="showTooltipIcon('Edit', $event)"
+                (mouseleave)="hideTooltipIcon()"
+              >
+                <fa-icon [icon]="faPenIcon"></fa-icon>
+                <div
+                  class="tooltip-icon"
+                  *ngIf="isTooltipVisible && currentTooltip === 'Edit'"
+                >
+                  Edit
+                </div>
+              </a>
+              <a
+                (mouseenter)="showTooltipIcon('Delete', $event)"
+                (mouseleave)="hideTooltipIcon()"
+              >
+                <fa-icon [icon]="faTrashIcon"></fa-icon>
+                <div
+                  class="tooltip-icon"
+                  *ngIf="isTooltipVisible && currentTooltip === 'Delete'"
+                >
+                  Delete
+                </div>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="d-flex justify-content-between mt-3">
+        <div class="items-per-page">
+          <select
+            class="form-select"
+            [formGroup]="groupForm"
+            name="itemsPerPage"
+            (change)="onItemsPerPageChange($event)"
+          >
+            <option *ngFor="let option of itemsPerPageOptions" [value]="option">
+              {{ option }}
+            </option>
+          </select>
+        </div>
+        <div class="select-show">
+          Showing Results {{ getStartIndex() }} - {{ getEndIndex() }} of
+          {{ filteredGroups.length }} entries.
+        </div>
+        <div class="pagination-container">
+          <pagination-controls
+            (pageChange)="pageChanged($event)"
+          ></pagination-controls>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+<div class="overlay" *ngIf="showAddBankDetailsForm">
+  <div class="overlay-content" >
+    <div class="overlay-heading">
+      <h2>Add Employee Details</h2>
+    </div>
+<form [formGroup]="groupForm" >
+  <div class="form-group">
+    <label for="empName">Employee Name:</label>
+    <input type="text" id="empName" formControlName="empName" placeholder="Employee Name">
+  </div>
+  <div class="form-group">
+    <label for="bankName">Bank Name:</label>
+    <input type="text" id="bankName" formControlName="bankName" placeholder="Bank Name">
+  </div>
+  <div class="form-group">
+    <label for="accountNo">Account Number:</label>
+    <input type="text" id="accountNo" formControlName="accountNo" placeholder="Account Number">
+  </div>
+  <div class="form-group">
+    <label for="branch">Branch:</label>
+    <input type="text" id="branch" formControlName="branch" placeholder="Branch">
+  </div>
+  <div class="form-group">
+    <label for="ifsc">IFSC Code:</label>
+    <input type="text" id="ifsc" formControlName="ifsc" placeholder="IFSC Code">
+  </div>
+  <div class="form-group">
+    <label for="aadhar">Aadhar Card Number:</label>
+    <input type="text" id="aadhar" formControlName="aadhar" placeholder="Aadhar Card Number">
+  </div>
+  <div class="form-group">
+    <label for="pan">PAN Number:</label>
+    <input type="text" id="pan" formControlName="pan" placeholder="PAN Number">
+  </div>
+  <div class="form-group">
+    <label for="address">Address:</label>
+    <textarea id="address" formControlName="address" placeholder="Address"></textarea>
+  </div>
+  <!-- Add other form fields as needed -->
+  
+  <div class="button-container">
+    <button type="submit" class="btn btn-primary" [disabled]="groupForm.invalid">Submit</button>
+    <button type="button" style="margin-left: 30px;" class="btn btn-secondary" (click)="cancelAddBankDetailsForm()">Cancel</button>
+  </div>
+</form>
+</div>
+</div>

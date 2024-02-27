@@ -1,0 +1,72 @@
+
+<div class="overlay">
+      <div class="login p-5 col-md-4">
+        <form
+          [formGroup]="loginForm"
+          (ngSubmit)="proceedLogin()"
+          class="login-form"
+        >
+       <div class="close-icon">
+        <fa-icon class="fa-2x" routerLink="" [icon]="faXIcon"></fa-icon>
+       </div>
+          <div class="mb-3 p-2">
+            <label for="exampleInputEmail1" class="form-label"
+              >User Name</label
+            >
+            <input
+              type="Name"
+              class="form-control"
+              formControlName="userName"
+              placeholder="Enter Your Name"
+            />
+            <div
+              class="error"
+              *ngIf="
+                loginForm.get('userName')?.hasError('required') &&
+                loginForm.get('userName')?.touched
+              "
+            >
+              Name is required.
+            </div>
+          </div>
+          <div class="mb-3 p-2">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              formControlName="password"
+              placeholder="Enter Your Password"
+            />
+            <div
+              class="error"
+              *ngIf="
+                loginForm.get('password')?.hasError('required') &&
+                loginForm.get('password')?.touched
+              "
+            >
+              Password is required.
+            </div>
+            <div
+              class="error"
+              *ngIf="
+                loginForm.get('password')?.hasError('pattern') &&
+                loginForm.get('password')?.touched
+              "
+            >
+              Password must contain at least 8 characters, including one uppercase
+              letter, one lowercase letter, one number, and one special character.
+            </div>
+          </div>
+          <div class="p-4 d-flex justify-content-between">
+            <button type="submit" class="button">Submit</button>
+            <a routerLink="/register" class="button">New User?</a>
+          </div>
+          <div>
+            <a type="submit" routerLink="/forgotPassword" class="forgot-pass">Forgot Password ?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+

@@ -1,0 +1,35 @@
+.overlay {
+  position: absolute;
+  z-index: 1;
+  top: 33%;
+  transform: translateY(-50%);
+  transition:0s 180s;
+  padding-bottom: 20px;
+  transition-delay: 0.5s;
+  width: 100%;
+
+}
+
+
+.overlay .row {
+  margin: 0;
+}
+.overlay .col {
+  margin: 0;
+}
+
+.card {
+  background-color:  white;
+  transition: background-color 0.3s ease, transform 0.7s ease;
+  padding: 10px ;
+  border-radius: 10px;
+  margin: 0 25px  0 0;
+}
+
+.card:hover {
+  background-color: #454242;
+  transform: scale(1.1);
+  color: whitesmoke;
+
+}
+

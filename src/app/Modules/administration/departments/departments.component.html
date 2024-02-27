@@ -1,0 +1,98 @@
+<div class="group-section mt-2 mb-3">
+  <h2>Departments</h2>
+  <div class="d-flex justify-content-between">
+    <div>
+      <h4>Dashboard / Departments</h4>
+    </div>
+  </div>
+</div>
+
+
+  <div class="container-fluid">
+    
+    <div class="row">
+
+      <div class="col mb-3 mt-2">
+        <div class="card mt-4">
+          <div class="add">
+            <button class="btn btn-primary" >
+              <i class="fa-solid fa-plus"></i> Add Details
+            </button>
+          </div>
+          <form
+            [formGroup]="groupFormDepartment"
+            (ngSubmit)="submitInternalForm()"
+          >
+            <div class="d-flex justify-content-end mt-3">
+              <div class="refresh">
+                <div class="icon-tooltip" data-title="Refresh">
+                  <fa-icon
+                    [icon]="faArrowsRotateIcon"
+                    (click)="onRefreshInternal()"
+                  ></fa-icon>
+                </div>
+              </div>
+              <input
+                type="text"
+                formControlName="searchTermInternal"
+                placeholder="Search..."
+                (input)="searchInternal()"
+              />
+            </div>
+            <table class="tables mt-3">
+              <thead>
+                <tr>
+                  <th>Sno</th>
+                  <th>Department</th>
+                  <th>Deaignations</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let entry of departmentsData | paginate: { id: 'internal-pagination', itemsPerPage: itemsPerPageDepartmentsPage, currentPage: departmentPage }">
+                  <td>{{ entry.sno }}</td>
+                  <td class="tooltip-container" (mouseenter)="showTooltip($event)" (mouseleave)="hideTooltip($event)">
+                    {{ entry.departmentName }}
+                    <div class="tooltip">{{ entry.departmentName }}</div>
+                  </td>
+                  <td>
+                    <select>
+                      <option *ngFor="let designation of entry.designationOptions" [value]="designation">
+                        {{ designation }}
+                      </option>
+                    </select>
+                  </td>
+                  <td><fa-icon [icon]="faEyeIcon" title="View"></fa-icon></td>
+                </tr>
+              </tbody>
+              
+            </table>
+            <div class="d-flex justify-content-between mt-3">
+              <div class="items-per-page">
+                <select
+                  class="form-select"
+                  [formGroup]="groupFormDepartment"
+                  name="itemsPerPageInternal"
+                  (change)="onItemsPerPageChangeInternal($event)"
+                >
+                  <option
+                    *ngFor="let option of itemsPerPageOptionsDepartmentPage"
+                    [value]="option"
+                  >
+                    {{ option }}
+                  </option>
+                </select>
+              </div>
+              <div class="select-show">
+                Showing Results {{ getStartIndexInternal() }} -
+                {{ getEndIndexInternal() }} of
+                {{ departmentsData.length }} entries.
+              </div>
+              <pagination-controls
+                (pageChange)="pageChangedInternal($event)"
+                [id]="'internal-pagination'"
+              ></pagination-controls>
+            </div>
+          </form>
+        </div>
+      </div>

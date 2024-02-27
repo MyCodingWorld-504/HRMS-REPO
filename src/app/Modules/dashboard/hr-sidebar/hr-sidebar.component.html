@@ -1,0 +1,35 @@
+<div class="side-navbar" [ngClass]="{ collapsed: isExpanded }">
+  <div class="logo">
+    <img
+      [src]="!isExpanded ? 'assets/Mainlogo.jpg' : 'assets/logo.png'"
+      alt="Logo"
+      [ngClass]="{
+        'collapsed-image': isExpanded,
+        'expanded-image': !isExpanded
+      }"
+    />
+  </div>
+  <ul>
+    <li *ngFor="let item of menuItems">
+      <a (click)="handleMenuItemClick(item)">
+        <fa-icon [icon]="item.icon" class="fas"> </fa-icon>
+
+        <span class="icon-label" *ngIf="!isExpanded" routerLinkActive="active">
+          {{ item.label }}
+        </span>
+        <fa-icon
+          class="fas submenu"
+          *ngIf="!isExpanded && item.submenu"
+          [icon]="item.expanded ? faCaretUp : faCaretDown"
+        ></fa-icon>
+      </a>
+      <ul *ngIf="item.submenu && !isExpanded && item.expanded" class="submenu-container">
+        <li *ngFor="let subItem of item.submenu">
+          <a routerLink="{{ subItem.route }}" routerLinkActive="active">{{
+            subItem.label
+          }}</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
