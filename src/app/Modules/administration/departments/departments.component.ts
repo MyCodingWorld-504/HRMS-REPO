@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { faArrowsRotate, faEye, faPen, faTrash, faX } from '@fortawesome/free-solid-svg-icons';
+import { faArrowsRotate, faEye, faPen, faPlus, faTrash, faX } from '@fortawesome/free-solid-svg-icons';
 import { BankDetailService } from '../service/bank-detail.service';
 import { ToastrService } from 'ngx-toastr';
 import { Subscription } from 'rxjs';
@@ -18,6 +18,7 @@ designationOptions: any;
     }
       faArrowsRotateIcon = faArrowsRotate;
       faEyeIcon = faEye;
+      faPlusIcon =faPlus;
       faTrashIcon = faTrash;
       faPenIcon = faPen;
       isTooltipVisible = false;
@@ -30,11 +31,11 @@ designationOptions: any;
       itemsPerPageOptionsDepartmentPage: number[] = [5, 10, 15, 25, 50 ];
       itemsPerPageDepartmentsPage: number = this.itemsPerPageOptionsDepartmentPage[0];;
       groupFormDepartment: FormGroup;
-      
-    
+
+
       private groupSubscription: Subscription | undefined;
-    
-    
+
+
       constructor(
         private groupService: GroupService,
         private formBuilder: FormBuilder
@@ -44,23 +45,23 @@ designationOptions: any;
           itemsPerPageInternal: [this.itemsPerPageDepartmentsPage],
           pageInternal: [this.departmentPage],
         });
-    
 
-    
+
+
       }
-    
-    
+
+
       ngOnInit(): void {
         this.fetchInternalData();
-       
+
       }
-    
+
       ngOnDestroy(): void {
         if (this.groupSubscription) {
           this.groupSubscription.unsubscribe();
         }
       }
-    
+
       fetchInternalData() {
         this.groupSubscription = this.groupService.getDepartmentsData().subscribe({
           next: (data: any) => {
@@ -72,19 +73,19 @@ designationOptions: any;
           },
         });
       }
-    
-    
+
+
       protected searchInternal() {
         const term = this.groupFormDepartment.get('searchTermInternal')?.value;
-    
+
         if (!term) {
           this.departmentsData = [...this.departments];
           return;
         }
-    
+
         this.departmentsData = this.departments.filter((group) => this.searchInInternal(group, term));
       }
-    
+
       private searchInInternal(group: any, term: string): boolean {
         for (const key in group) {
           if (group.hasOwnProperty(key)) {
@@ -105,22 +106,22 @@ designationOptions: any;
         this.itemsPerPageDepartmentsPage = parseInt(target.value);
         this.departmentPage = 1;
       }
-    
-    
+
+
       pageChangedInternal(event: number) {
         this.departmentPage = event;
       }
-    
-    
+
+
       getStartIndexInternal(): number {
         return (this.departmentPage - 1) * this.itemsPerPageDepartmentsPage + 1;
       }
-    
+
       getEndIndexInternal(): number {
         const endIndex = this.departmentPage * this.itemsPerPageDepartmentsPage;
         return endIndex > this.departmentsData.length ? this.departmentsData.length : endIndex;
       }
-    
+
       onRefreshInternal() {
         this.groupFormDepartment.get('searchTermInternal')?.setValue('');
         this.searchInternal();
@@ -134,7 +135,7 @@ designationOptions: any;
           tooltip.style.visibility = 'visible';
         }
       }
-    
+
       hideTooltip(event: MouseEvent): void {
         const target = event.currentTarget as HTMLElement;
         const tooltip = target.querySelector('.tooltip') as HTMLElement;
@@ -146,13 +147,13 @@ designationOptions: any;
       showTooltipIcon(tooltip: string, event: MouseEvent): void {
         this.currentTooltip = tooltip;
         this.isTooltipVisible = true;
-    
+
         const targetElement = event.currentTarget as HTMLElement;
         const boundingRect = targetElement.getBoundingClientRect();
         const tooltipElement = targetElement.querySelector(
           '.tooltip'
         ) as HTMLElement;
-    
+
         if (tooltipElement) {
           tooltipElement.style.top = `${
             boundingRect.top - tooltipElement.clientHeight
@@ -164,13 +165,13 @@ designationOptions: any;
           }px`;
         }
       }
-    
+
       hideTooltipIcon(): void {
         this.isTooltipVisible = false;
       }
       submitForm() {
         throw new Error('Method not implemented.');
       }
-    
+
 
 }

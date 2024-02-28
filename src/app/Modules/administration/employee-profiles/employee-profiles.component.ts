@@ -14,7 +14,7 @@ export class EmployeeProfilesComponent {
   faEyeIcon = faEye;
   faTrashIcon = faTrash;
   faPenIcon = faPen;
-  faplusIcon = faPlus
+  faPlusIcon =faPlus;
   faArrowsRotateIcon = faArrowsRotate;
   isEmployeeDetailsVisible = false;
 
@@ -25,7 +25,7 @@ export class EmployeeProfilesComponent {
   selectedEmployee: any;
   showAddDetailsForm: boolean = false;
   newEmployee: any = {};
- 
+
   employeeForm: any;
 
   constructor(private profileService: BankDetailService,
@@ -74,29 +74,29 @@ deleteEmployee() {
 closeEmpDetails(){
   this.showOverlay = false;
 }
-  
+
 toggleEditMode() {
   this.editMode = !this.editMode;
-} 
+}
 
 
 toggleAddDetailsForm() {
-  this.showAddDetailsForm = !this.showAddDetailsForm;    
+  this.showAddDetailsForm = !this.showAddDetailsForm;
 }
 
 addEmployee(){
 
   // this.profileService(this.empForm.value);
   // this.empForm.reset();
- 
+
 }
 
 reset(){
-  this.showAddDetailsForm = false;
+  this.empForm.reset();
 }
 
 openAddEmployeeOverlay() {
-  this.toggleAddDetailsForm(); 
+  this.toggleAddDetailsForm();
 }
 // closeAddEmployeeOverlay() {
 //   // Add logic to close the add employee overlay
@@ -105,7 +105,7 @@ openAddEmployeeOverlay() {
 
 
   onSubmit() {
-  
+
   }
 
   onRefresh() {

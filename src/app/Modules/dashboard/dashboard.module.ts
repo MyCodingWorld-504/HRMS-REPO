@@ -14,6 +14,7 @@ import { AuthService } from 'src/app/Core/services/auth.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HrUserListComponent } from './hr-user-list/hr-user-list.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { AdministrationModule } from '../administration/administration.module';
 
 library.add(fas);
 
@@ -31,7 +32,8 @@ library.add(fas);
     ReactiveFormsModule,
     FontAwesomeModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+
   ],
   providers:[AuthService]
 })

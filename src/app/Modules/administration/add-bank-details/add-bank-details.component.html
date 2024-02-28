@@ -1,0 +1,52 @@
+<!-- edit.component.html -->
+<div class="form-container mt-5">
+  <h2>Add Bank Details</h2>
+  <form (ngSubmit)="onSubmit()" #addForm="ngForm">
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label for="empName">Employee Name:</label>
+        <input type="text" id="empName" name="empName" [(ngModel)]="newEntry.Empname" required>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="bankName">Bank Name:</label>
+        <input type="text" id="bankName" name="bankName" [(ngModel)]="newEntry.bankname" required>
+      </div>
+     </div>
+     <div class="row">
+      <div class="form-group col-md-6">
+        <label for="accountNo">Account Number:</label>
+        <input type="text" id="accountNo" name="accountNo" [(ngModel)]="newEntry.accountNo" required>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="branch">Branch:</label>
+        <input type="text" id="branch" name="branch" [(ngModel)]="newEntry.branch" required>
+      </div>
+     </div>
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="ifsc">IFSC:</label>
+          <input type="text" id="ifsc" name="ifsc" [(ngModel)]="newEntry.ifsc" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="aadhar">Aadhar Card:</label>
+          <input type="text" id="aadhar" name="aadhar" [(ngModel)]="newEntry.aadhar" required>
+        </div>
+      </div>
+     <div class="row">
+      <div class="form-group col-md-6">
+        <label for="panno">Pan Number:</label>
+        <input type="text" id="panno" name="panno" [(ngModel)]="newEntry.panno" required>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" [(ngModel)]="newEntry.address" required>
+      </div>
+     </div>
+
+
+    <div class="button-container">
+      <button type="submit" class="btn btn-primary">Save</button>
+      <button type="button" class="btn btn-secondary" (click)="onCancel()">Cancel</button>
+    </div>
+  </form>
+</div>

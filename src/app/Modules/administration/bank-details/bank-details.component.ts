@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { faEye , faArrowsRotate, faPen, faTrash, faPlus} from '@fortawesome/free-solid-svg-icons';
 import { BankDetailService } from '../service/bank-detail.service';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -13,7 +15,7 @@ import { BankDetailService } from '../service/bank-detail.service';
 export class BankDetailsComponent implements OnInit, OnDestroy{
   faArrowsRotateIcon = faArrowsRotate;
   faEyeIcon = faEye;
-  faplusIcon = faPlus;
+  faPlusIcon =faPlus;
   faTrashIcon = faTrash;
   faPenIcon = faPen;
   isTooltipVisible = false;
@@ -32,7 +34,9 @@ export class BankDetailsComponent implements OnInit, OnDestroy{
 
   constructor(
     private bankService : BankDetailService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router : Router,
+    private toastr : ToastrService
   ) {
     this.groupForm = this.formBuilder.group({
       searchTerm: [''],
@@ -42,11 +46,7 @@ export class BankDetailsComponent implements OnInit, OnDestroy{
       this.groupForm.get('itemsPerPage')?.setValue(this.itemsPerPage);
     }, 0);
 
-    this.groupForm = this.formBuilder.group({
-      empName: ['', Validators.required],
-      bankName: ['', Validators.required],
-      // Add other form controls and validators as needed
-    });
+
   }
 
   ngOnInit(): void {
@@ -168,29 +168,21 @@ export class BankDetailsComponent implements OnInit, OnDestroy{
     throw new Error('Method not implemented.');
   }
 
+  onEdit(id : number) {
+    this.router.navigate(['dashboard', 'administration', 'edit-bank-details',id]);
 
-  toggleAddBankDetailsForm() {
-    this.showAddBankDetailsForm = true;
-    // Reset the form when toggling visibility
-    if (!this.showAddBankDetailsForm) {
-      this.groupForm.reset();
+      }
+    onAdd() {
+      this.router.navigate(['dashboard', 'administration', 'add-bank-details']);
     }
-  }
 
-  submitBankDetailsForm() {
-    if (this.groupForm.valid) {
-      // Form is valid, submit the data
-      console.log('Bank details submitted:', this.groupForm.value);
-      // Add logic to save the form data to your data source (e.g., database)
-      // Reset the form and close the overlay
-      this.toggleAddBankDetailsForm();
-    } else {
-      // Form is invalid, display error message or toast
-      console.log('Please fill all fields.');
+    onDelete(id: number) {
+      if (confirm('Are you sure you want to delete this entry?')) {
+        this.bankService.deleteEntryById(id).subscribe(() => {
+     this.toastr.warning('Record deleted successfully', 'Delete')
+          this.fetchGroups();
+        });
+      }
     }
-  }
 
-  cancelAddBankDetailsForm() {
-    this.showAddBankDetailsForm = false;
-  }
 }
