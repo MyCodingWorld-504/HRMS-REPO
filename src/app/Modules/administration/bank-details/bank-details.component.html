@@ -1,14 +1,11 @@
-<div class="container table-container">
+<div class="container">
   <h2>Bank Details</h2>
   <div class="d-flex justify-content-between">
     <div>
       <h4>Dashboard / Bank Details</h4>
     </div>
     <div>
-      <!-- <button class="btn btn-primary" (click)="toggleAddBankDetailsForm()">
-        <i class="fa-solid fa-plus"></i> Add Details
-      </button> -->
-      <a (click)="toggleAddBankDetailsForm()" class="button"><fa-icon [icon]="faplusIcon"></fa-icon> Add Details</a>
+      <a class="button" (click)="onAdd()" routerLink="/bank-details/edit" ><fa-icon [icon]="faPlusIcon"></fa-icon>Add</a>
     </div>
   </div>
   <div class="card mt-2">
@@ -30,8 +27,8 @@
           (input)="search()"
         />
       </div>
-      <table class="table ">
-        <thead >
+      <table class="table table-bordered">
+        <thead class="custom-table-header">
           <tr>
             <th>Sno</th>
             <th>Emp Name</th>
@@ -135,19 +132,23 @@
                 (mouseenter)="showTooltipIcon('Edit', $event)"
                 (mouseleave)="hideTooltipIcon()"
               >
-                <fa-icon [icon]="faPenIcon"></fa-icon>
+                <fa-icon [icon]="faPenIcon" (click)="onEdit(group.id)"></fa-icon>
                 <div
                   class="tooltip-icon"
                   *ngIf="isTooltipVisible && currentTooltip === 'Edit'"
+
                 >
                   Edit
                 </div>
+                <!-- <div>
+                  <button (click)="onEdit(group.id)" class="btn btn-info">edit</button>
+                </div> -->
               </a>
               <a
                 (mouseenter)="showTooltipIcon('Delete', $event)"
                 (mouseleave)="hideTooltipIcon()"
               >
-                <fa-icon [icon]="faTrashIcon"></fa-icon>
+                <fa-icon (click)="onDelete(group.id)" [icon]="faTrashIcon"></fa-icon>
                 <div
                   class="tooltip-icon"
                   *ngIf="isTooltipVisible && currentTooltip === 'Delete'"
@@ -188,50 +189,4 @@
 
 
 
-<div class="overlay" *ngIf="showAddBankDetailsForm">
-  <div class="overlay-content" >
-    <div class="overlay-heading">
-      <h2>Add Employee Details</h2>
-    </div>
-<form [formGroup]="groupForm" >
-  <div class="form-group">
-    <label for="empName">Employee Name:</label>
-    <input type="text" id="empName" formControlName="empName" placeholder="Employee Name">
-  </div>
-  <div class="form-group">
-    <label for="bankName">Bank Name:</label>
-    <input type="text" id="bankName" formControlName="bankName" placeholder="Bank Name">
-  </div>
-  <div class="form-group">
-    <label for="accountNo">Account Number:</label>
-    <input type="text" id="accountNo" formControlName="accountNo" placeholder="Account Number">
-  </div>
-  <div class="form-group">
-    <label for="branch">Branch:</label>
-    <input type="text" id="branch" formControlName="branch" placeholder="Branch">
-  </div>
-  <div class="form-group">
-    <label for="ifsc">IFSC Code:</label>
-    <input type="text" id="ifsc" formControlName="ifsc" placeholder="IFSC Code">
-  </div>
-  <div class="form-group">
-    <label for="aadhar">Aadhar Card Number:</label>
-    <input type="text" id="aadhar" formControlName="aadhar" placeholder="Aadhar Card Number">
-  </div>
-  <div class="form-group">
-    <label for="pan">PAN Number:</label>
-    <input type="text" id="pan" formControlName="pan" placeholder="PAN Number">
-  </div>
-  <div class="form-group">
-    <label for="address">Address:</label>
-    <textarea id="address" formControlName="address" placeholder="Address"></textarea>
-  </div>
-  <!-- Add other form fields as needed -->
-  
-  <div class="button-container">
-    <button type="submit" class="btn btn-primary" [disabled]="groupForm.invalid">Submit</button>
-    <button type="button" style="margin-left: 30px;" class="btn btn-secondary" (click)="cancelAddBankDetailsForm()">Cancel</button>
-  </div>
-</form>
-</div>
-</div>
+

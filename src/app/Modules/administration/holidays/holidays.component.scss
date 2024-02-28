@@ -9,7 +9,10 @@ $shadow-color: rgba(0, 0, 0, 0.1);
  max-width: -webkit-fill-available;
  position: absolute;
 }
-
+.custom-table-header {
+  background-color: #086594;
+  color: #ffffff;
+}
 
 .info-container {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -58,30 +61,6 @@ body {
   line-height: 1.6;
   color: $primary-color;
 }
-
-.tables {
-  width: 100%;
-  border-collapse: collapse;
-  box-shadow: 0 0 5px $shadow-color;
-  overflow: hidden;
-
-  th,
-  td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid $border-color;
-  }
-
-  th {
-    background-color: $background-color;
-  }
-
-  tbody tr:hover {
-    background-color: $hover-background-color;
-  }
-}
-
-
 
 .refresh {
   cursor: pointer;

@@ -65,32 +65,10 @@ body {
   color: $primary-color;
 }
 
-.tables {
-  width: 100%;
-  border-collapse: collapse;
-  box-shadow: 0 0 5px $shadow-color;
-  overflow: hidden;
-
-  th,
-  td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid $border-color;
-  }
-
-  th {
-    background-color: $background-color;
-  }
-
-  tbody tr:hover {
-    background-color: $hover-background-color;
-  }
+.custom-table-header {
+  background-color: #086594;
+  color: #ffffff;
 }
-
-.table-container {
-  margin-bottom: 20px;
-}
-
 .refresh {
   cursor: pointer;
   border-width: 1px 0px 1px 1px;

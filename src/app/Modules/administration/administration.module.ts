@@ -15,8 +15,12 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { DepartmentsComponent } from './departments/departments.component';
 import { EmployeeProfilesComponent } from './employee-profiles/employee-profiles.component';
 import { FormsModule } from '@angular/forms';
+import { AdministrationLayoutComponent } from './administration-layout/administration-layout.component';
+import { EditBankDetailsComponent } from './edit-bank-details/edit-bank-details.component';
+import { AddBankDetailsComponent } from './add-bank-details/add-bank-details.component';
 import { HolidaysComponent } from './holidays/holidays.component';
 import { ResignationComponent } from './resignation/resignation.component';
+
 
 
 library.add(fas);
@@ -27,6 +31,9 @@ library.add(fas);
     BankDetailsComponent,
     DepartmentsComponent,
     EmployeeProfilesComponent,
+    AdministrationLayoutComponent,
+    EditBankDetailsComponent,
+    AddBankDetailsComponent,
     HolidaysComponent,
     ResignationComponent
   ],

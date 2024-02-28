@@ -3,16 +3,16 @@
     <h2>Resignations</h2>
     <div class="d-flex justify-content-between">
       <div>
-        <h4>Dashboard</h4>
+        <h4>Dashboard/Resignation</h4>
       </div>
     </div>
   </div>
-  
+
 
     <div class="container-fluid">
       <div class="row">
         <div class="col mb-3 mt-2">
-        
+
           <div class="card mt-2">
             <form
               [formGroup]="groupFormInternal"
@@ -34,8 +34,8 @@
                   (input)="searchpublicholiday()"
                 />
               </div>
-              <table class="tables mt-3">
-                <thead>
+              <table class="table table-bordered mt-3">
+                <thead class="custom-table-header">
                   <tr>
                     <th>Emp ID</th>
                     <th>Employee Name</th>
