@@ -10,110 +10,106 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./employee-profiles.component.scss']
 })
 export class EmployeeProfilesComponent {
+submitForm() {
+throw new Error('Method not implemented.');
+}
   faXIcon = faX;
   faEyeIcon = faEye;
   faTrashIcon = faTrash;
   faPenIcon = faPen;
   faPlusIcon =faPlus;
   faArrowsRotateIcon = faArrowsRotate;
-  isEmployeeDetailsVisible = false;
-
-  employeeProfiles: any[] =[];
   empForm!: FormGroup ;
-  showOverlay = false;
-  editMode: boolean = false;
-  selectedEmployee: any;
-  showAddDetailsForm: boolean = false;
-  newEmployee: any = {};
-
-  employeeForm: any;
-
+  employeeProfiles : any[] =[];
+  employeeData : any[] =[];
+  searchTerm: string = '';
+  page: number = 1;
+  itemsPerPageOptions: number[] = [5, 10, 15, 25, 50, 100];
+  itemsPerPage: number = this.itemsPerPageOptions[0];
   constructor(private profileService: BankDetailService,
     private formBuilder: FormBuilder,
     private toastr: ToastrService) {
-      this.employeeForm = this.formBuilder.group({
-        empID: ['', Validators.required],
-        employeeName: ['', Validators.required],
-        department: ['', Validators.required],
-        designation: [''],
-        phoneNumber: [''],
-        email: ['', Validators.email],
-        workingLocation: [''],
-        workingClient: [''],
-        permanentAddress: [''],
-        bioData: ['']
+      this.empForm = this.formBuilder.group({
+        searchTerm: [''],
+        itemsPerPage: [this.itemsPerPage],
       });
+      setTimeout(() => {
+        this.empForm.get('itemsPerPage')?.setValue(this.itemsPerPage);
+      }, 0);
+
      }
 
   ngOnInit(): void {
     this.getEmployeeProfiles();
   }
 
-getEmployeeProfiles(): void {
-    this.profileService.getEmployeeProfiles()
-      .subscribe(profiles => this.employeeProfiles = profiles);
+  getEmployeeProfiles() {
+    this.profileService.getEmployeeProfiles().subscribe({
+      next: (data: any) => {
+        this.employeeProfiles = data;
+        this.employeeData = [...this.employeeProfiles];
+      },
+      error: (error) => {
+        console.log(error);
+      }
+    })
   }
 
-showEmployeeDetails(employee: any): void {
-    this.selectedEmployee = employee;
-    this.showOverlay = true;
-}
+  protected search() {
+    const term = this.empForm.get('searchTerm')?.value;
 
-deleteEmployee() {
-  if (confirm('Are you sure you want to delete this employee?')) {
-    // User confirmed deletion
-    this.selectedEmployee = null; // Reset selectedEmployee
-    this.showOverlay = false; // Hide overlay
-    console.log('Employee deleted');
-  } else {
-    // User canceled deletion
-    console.log('Deletion canceled');
+    if (!term) {
+      this.employeeData = [...this.employeeProfiles];
+      return;
+    }
+
+    this.employeeData = this.employeeProfiles.filter((group) => this.searchInGroup(group, term));
   }
-}
-
-closeEmpDetails(){
-  this.showOverlay = false;
-}
-
-toggleEditMode() {
-  this.editMode = !this.editMode;
-}
 
 
-toggleAddDetailsForm() {
-  this.showAddDetailsForm = !this.showAddDetailsForm;
-}
+  private searchInGroup(group: any, term: string): boolean {
+    for (const key in group) {
+      if (group.hasOwnProperty(key)) {
+        const value = group[key];
+        if (
+          value !== null &&
+          typeof value !== 'object' &&
+          String(value).toLowerCase().includes(term.toLowerCase())
+        ) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+  onItemsPerPageChange(event: Event) {
+    const target = event.target as HTMLSelectElement;
+    this.itemsPerPage = parseInt(target.value);
+    this.page = 1;
+  }
 
-addEmployee(){
+  pageChanged(event: number) {
+    this.page = event;
+  }
 
-  // this.profileService(this.empForm.value);
-  // this.empForm.reset();
+  getStartIndex(): number {
+    return (this.page - 1) * this.itemsPerPage + 1;
+  }
 
-}
-
-reset(){
-  this.empForm.reset();
-}
-
-openAddEmployeeOverlay() {
-  this.toggleAddDetailsForm();
-}
-// closeAddEmployeeOverlay() {
-//   // Add logic to close the add employee overlay
-//   this.showAddEmployeeOverlay = false;
-// }
-
-
-  onSubmit() {
-
+  getEndIndex(): number {
+    const endIndex = this.page * this.itemsPerPage;
+    return endIndex > this.employeeData.length
+      ? this.employeeData.length
+      : endIndex;
   }
 
   onRefresh() {
-    throw new Error('Method not implemented.');
+    this.empForm.get('searchTerm')?.setValue('');
+    this.search();
+    this.page = 1;
+
   }
- search() {
-    throw new Error('Method not implemented.');
-  }
+
 
 
 

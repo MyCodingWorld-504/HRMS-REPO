@@ -1,0 +1,125 @@
+
+  <div class="container mb-3">
+    <h2>Employee Rules & Permissions</h2>
+    <div class="d-flex justify-content-between">
+      <div>
+        <h4>Dashboard / Employee Rules & Permissions</h4>
+      </div>
+    </div>
+    <div class="card mt-2">
+      <form [formGroup]="myForm">
+        <div class="row mt-4">
+          <div class="col-md-2">
+            <div class="form-group row">
+              <div class="col-md-4 mt-2">
+                <label for="name">Group</label>
+              </div>
+              <div class="col-md-8">
+                <select
+                  class="form-control"
+                  id="name"
+                  formControlName="name"
+                  style="appearance: auto"
+                >
+                  <option value="" disabled selected>Select Group</option>
+                  <option *ngFor="let group of groups" [value]="group">
+                    {{ group }}
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group row">
+              <div class="col-md-4 mt-2">
+                <label for="description">Department</label>
+              </div>
+              <div class="col-md-8">
+                <select
+                  class="form-control"
+                  id="name"
+                  formControlName="name"
+                  style="appearance: auto"
+                >
+                  <option value="" disabled selected>Select Department</option>
+                  <option
+                    *ngFor="let department of departments"
+                    [value]="department"
+                  >
+                    {{ department }}
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="form-group row">
+              <div class="col-md-5 mt-2">
+                <label for="name">Employee Id</label>
+              </div>
+              <div class="col-md-7">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="id"
+                  placeholder="Employee Id"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group row">
+              <div class="col-md-5 mt-2">
+                <label for="description">Employee Name</label>
+              </div>
+              <div class="col-md-7">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Name"
+                  placeholder="Employee Name"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-1 mt-2">
+            <a (click)="onClick()" class="button">{{isVisible ? 'Hide' : 'Show'}}</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="card-custom mt-3" *ngIf="isVisible">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Sno</th>
+          <th>Group</th>
+          <th>Department</th>
+          <th>Employee Id</th>
+          <th>User Roles</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ item.group }}</td>
+          <td>{{ item.department }}</td>
+          <td>{{ item.employeeId }}</td>
+          <td>
+            <select class="form-control" [(ngModel)]="item.selectedEmployee" name="employeeName"  style="appearance: auto">
+              <option [ngValue]="null" disabled selected>Roles</option>
+              <option *ngFor="let employee of employees" [value]="employee.id">
+                {{ employee.name }}
+              </option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </div>
+

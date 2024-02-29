@@ -9,6 +9,7 @@ import { EditBankDetailsComponent } from './edit-bank-details/edit-bank-details.
 import { AddBankDetailsComponent } from './add-bank-details/add-bank-details.component';
 import { HolidaysComponent } from './holidays/holidays.component';
 import { ResignationComponent } from './resignation/resignation.component';
+import { EmployeeRolesComponent } from './employee-roles/employee-roles.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,7 @@ const routes: Routes = [
       { path: 'add-bank-details', component: AddBankDetailsComponent },
       { path: 'holydays', component: HolidaysComponent },
       { path: 'resignation', component: ResignationComponent },
+      { path: 'employeeRoles', component: EmployeeRolesComponent },
     ],
   },
 ];

@@ -5,6 +5,9 @@ import { faEye , faArrowsRotate, faPen, faTrash, faPlus} from '@fortawesome/free
 import { BankDetailService } from '../service/bank-detail.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { ExportToPdfService } from 'src/app/Core/services/export-to-pdf.service';
+import { ExportToExcelService } from 'src/app/Core/services/export-to-excel.service';
+import { ImportFromExcelService } from 'src/app/Core/services/import-from-excel.service';
 
 
 @Component({
@@ -36,7 +39,10 @@ export class BankDetailsComponent implements OnInit, OnDestroy{
     private bankService : BankDetailService,
     private formBuilder: FormBuilder,
     private router : Router,
-    private toastr : ToastrService
+    private toastr : ToastrService,
+    private exportPdfService : ExportToPdfService,
+    private excelService : ExportToExcelService,
+    private excelImportService : ImportFromExcelService
   ) {
     this.groupForm = this.formBuilder.group({
       searchTerm: [''],
@@ -184,5 +190,18 @@ export class BankDetailsComponent implements OnInit, OnDestroy{
         });
       }
     }
+
+
+    exportToPDF(): void {
+      const selectedColumns = ['Empname', 'bankname', 'branch','accountNo','branch','ifsc','panno','address',];
+      this.exportPdfService.exportTableToPDF( this.filteredGroups, selectedColumns);
+      this.toastr.success('PDF Exported Successfully', 'Success')
+    }
+    exportToExcel() {
+      const columns = ['Empname', 'bankname', 'branch','accountNo','branch','ifsc','panno','address',];
+      this.excelService.exportAsExcelFile(this.filteredGroups, 'Sky-HR_', columns);
+      this.toastr.success('EXCEl Exported Successfully', 'Success')
+    }
+
 
 }

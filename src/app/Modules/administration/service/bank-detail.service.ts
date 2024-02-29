@@ -19,7 +19,7 @@ private apiList='http://localhost:3000/list';
   }
 
   getEmployeeProfiles(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiEmp);
+    return this.http.get<any>(this.apiEmp);
   }
 
   getBankDetailsById(id: number): Observable<any> {

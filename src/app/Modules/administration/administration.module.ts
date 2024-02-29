@@ -20,6 +20,8 @@ import { EditBankDetailsComponent } from './edit-bank-details/edit-bank-details.
 import { AddBankDetailsComponent } from './add-bank-details/add-bank-details.component';
 import { HolidaysComponent } from './holidays/holidays.component';
 import { ResignationComponent } from './resignation/resignation.component';
+import { EmployeeRolesComponent } from './employee-roles/employee-roles.component';
+import { ExportToPdfService } from 'src/app/Core/services/export-to-pdf.service';
 
 
 
@@ -35,7 +37,8 @@ library.add(fas);
     EditBankDetailsComponent,
     AddBankDetailsComponent,
     HolidaysComponent,
-    ResignationComponent
+    ResignationComponent,
+    EmployeeRolesComponent
   ],
   imports: [
     CommonModule,
@@ -46,6 +49,6 @@ library.add(fas);
     FormsModule,
     NgxPaginationModule
   ],
-  providers:[GroupService,BankDetailService]
+  providers:[GroupService,BankDetailService,ExportToPdfService]
 })
 export class AdministrationModule { }
