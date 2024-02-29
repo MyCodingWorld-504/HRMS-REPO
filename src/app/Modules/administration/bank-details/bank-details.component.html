@@ -5,7 +5,12 @@
       <h4>Dashboard / Bank Details</h4>
     </div>
     <div>
+      <!-- <input type="file" (change)="onFileChange($event)" /> -->
+      <!-- <input type="file" (change)="onFileChange($event)" accept=".xlsx, .xls"> -->
+      <a (click)="exportToPDF()" class="button">Export to pdf</a>
+      <a (click)="exportToExcel()" class="button">Export to excel</a>
       <a class="button" (click)="onAdd()" routerLink="/bank-details/edit" ><fa-icon [icon]="faPlusIcon"></fa-icon>Add</a>
+
     </div>
   </div>
   <div class="card mt-2">

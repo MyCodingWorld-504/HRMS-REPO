@@ -86,32 +86,6 @@ body {
   color: $primary-color;
 }
 
-.tables {
-  width: 100%;
-  border-collapse: collapse;
-  box-shadow: 0 0 5px $shadow-color;
-  overflow: hidden;
-
-  th,
-  td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid $border-color;
-  }
-
-  th {
-    background-color: $background-color;
-  }
-
-  tbody tr:hover {
-    background-color: $hover-background-color;
-  }
-
-
-
-}
-
-
 
 .refresh {
   cursor: pointer;
@@ -246,7 +220,7 @@ a {
 
 .form-group {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Two columns */
+  grid-template-columns: repeat(3, 1fr); 
   grid-template-rows: repeat(3, auto);
   gap: 10px;
 }

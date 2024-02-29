@@ -18,10 +18,6 @@ $shadow-color: rgba(0, 0, 0, 0.1);
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-.items-per-page {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-}
-
 .card {
   border: 1px solid $border-color;
   border-radius: 8px;
@@ -32,10 +28,7 @@ $shadow-color: rgba(0, 0, 0, 0.1);
     padding: 15px;
   }
 }
-.select-show{
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  margin-top: 6px;
-}
+
 
 
 body,
@@ -143,20 +136,38 @@ body {
     display: block;
   }
 }
+
+.items-per-page {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+
+}
+.select-show{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-top: 6px;
+  font-size: 13px;
+}
+.font{
+  font-size: 13px;
+}
+table{
+  font-size: 13px;
+  word-wrap: normal;
+}
 ::ng-deep .ngx-pagination{
-  line-height: 30px !important;
+  line-height: 20px !important;
 
 }
 ::ng-deep .ngx-pagination .current {
 
   background: #086594 !important;
     border-radius: 4px !important;
-    padding-left: 13px !important;
-    padding-right: 13px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
 
 }
 ::ng-deep .ngx-pagination a, .ngx-pagination button {
    border: solid 1px #e4e4e4 !important;
    text-decoration: none !important;
 }
+
 
