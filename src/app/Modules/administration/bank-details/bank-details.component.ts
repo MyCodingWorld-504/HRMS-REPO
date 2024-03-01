@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ExportToPdfService } from 'src/app/Core/services/export-to-pdf.service';
 import { ExportToExcelService } from 'src/app/Core/services/export-to-excel.service';
-import { ImportFromExcelService } from 'src/app/Core/services/import-from-excel.service';
+
 
 
 @Component({
@@ -42,7 +42,7 @@ export class BankDetailsComponent implements OnInit, OnDestroy{
     private toastr : ToastrService,
     private exportPdfService : ExportToPdfService,
     private excelService : ExportToExcelService,
-    private excelImportService : ImportFromExcelService
+   
   ) {
     this.groupForm = this.formBuilder.group({
       searchTerm: [''],

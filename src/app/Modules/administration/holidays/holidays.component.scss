@@ -171,3 +171,65 @@ table{
 }
 
 
+.card span{
+  height: 150px !important;
+  width: 200px !important;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  overflow: hidden;
+}
+.card span::before{
+  content: "Public Holidays";
+  position: absolute;
+  width: 140%;
+  height: 40px;
+  background: #3db347;
+  display: flex;
+  transform: rotate(-30deg) translateY(-25px);
+  justify-content: center;
+  align-items: center;
+  top: 40px;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.card-optional span{
+  height: 150px !important;
+  width: 200px !important;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  align-items: center;
+  justify-content: center;
+  // background: red;
+  display: flex;
+  overflow: hidden;
+}
+.card-optional span::before{
+  content: "Optional Holidays";
+  position: absolute;
+  width: 140%;
+  height: 40px;
+  background: #d653bc;
+  display: flex;
+  transform: rotate(-30deg) translateY(-25px);
+  justify-content: center;
+  align-items: center;
+  top: 40px;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
