@@ -1,8 +1,6 @@
 // edit.component.scss
 .form-container {
   max-width: 1000px;
-  // position: absolute;
-  // right: 0%;
   margin: 0 auto;
   border: 1px solid black;
   padding: 20px;
@@ -43,3 +41,19 @@
     }
   }
 }
+
+.anim{
+  opacity: 1;
+  transform: translateY(20%);
+  animation: moveup 0.5s linear forwards;
+}
+@keyframes moveup{
+  100%{
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+
+
+

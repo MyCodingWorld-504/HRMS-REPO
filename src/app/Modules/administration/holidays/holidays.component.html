@@ -11,8 +11,8 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-6 mb-3 mt-2">
-          <h4>Public Holidays</h4>
           <div class="card mt-2">
+            <span></span>
             <form
               [formGroup]="groupFormInternal"
               (ngSubmit)="submitInternalForm()"
@@ -108,8 +108,8 @@
         </div>
 
         <div class="col-md-6 mb-3 mt-2">
-          <h4>Optional Holidays</h4>
-          <div class="card mt-2">
+          <div class="card card-optional mt-2">
+            <span></span>
             <form
               [formGroup]="groupFormExternal"
               (ngSubmit)="submitInternalForm()"

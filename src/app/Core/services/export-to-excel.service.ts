@@ -1,14 +1,10 @@
-import { ElementRef, Injectable, ViewChild } from '@angular/core';
+import { Injectable } from '@angular/core';
 import * as XLSX from 'xlsx';
-
 
 @Injectable({
   providedIn: 'root'
 })
 export class ExportToExcelService {
-
-  @ViewChild('content')
-  content!: ElementRef;
 
   constructor() { }
 
