@@ -36,7 +36,6 @@ faXIcon = faX;
     if (this.loginForm.valid) {
       this.authService.getByCode(this.loginForm.value.userName).subscribe((data) => {
           this.userData = data;
-          console.log(this.userData);
           if (this.userData.password === this.loginForm.value.password )
            {
             if (this.userData.isActive) {

@@ -4,10 +4,9 @@ $background-color: #f4f4f4;
 $hover-background-color: #f9f9f9;
 $shadow-color: rgba(0, 0, 0, 0.1);
 
-.container {
- border: 1px solid #ccc;
- max-width: -webkit-fill-available;
- position: absolute;
+.container-fluid {
+  margin: 20px auto;
+  font-size: smaller;
 }
 .custom-table-header {
   background-color: #086594;

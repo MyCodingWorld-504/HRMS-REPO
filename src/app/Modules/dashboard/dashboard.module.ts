@@ -15,6 +15,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HrUserListComponent } from './hr-user-list/hr-user-list.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AdministrationModule } from '../administration/administration.module';
+import { BankDetailService } from '../administration/service/bank-detail.service';
+
 
 library.add(fas);
 
@@ -35,6 +37,6 @@ library.add(fas);
     NgxPaginationModule,
 
   ],
-  providers:[AuthService]
+  providers:[AuthService,BankDetailService]
 })
 export class DashboardModule { }

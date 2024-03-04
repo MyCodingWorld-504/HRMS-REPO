@@ -1,0 +1,69 @@
+.card{
+padding: 10px;
+display: flex;
+justify-content: center;
+ align-items: center;
+ color: #fff;
+ border: 1px solid #fff;
+}
+.slide-right:hover {
+  transform: translateX(20px);
+  transition: transform 0.5s ease;
+}
+.slide-top:hover {
+  transform: translateY(-20px);
+  transition: transform 0.5s ease;
+}
+.slide-down:hover {
+  transform: translateY(20px);
+  transition: transform 0.5s ease;
+}
+.slide-left:hover {
+  transform: translateX(-20px);
+  transition: transform 0.5s ease;
+}
+
+.slide-out-down:hover {
+  transform: translateY(20px);
+  transition: transform 0.5s ease;
+}
+
+
+h2{
+  margin-top: 10px !important;
+font-family: cursive;
+}
+p{
+  font-family: cursive;
+}
+.card-emp{
+  background: rgb(131, 37, 125);
+}
+.card-roles{
+  background: rgb(33, 125, 125);
+}
+.card-grp{
+  background: rgb(45, 173, 104);
+}
+.card-dept{
+  background: rgb(66, 158, 47);
+}
+.card-bank{
+  background: rgb(186, 201, 49);
+}
+.card-holy{
+  background: rgb(211, 173, 50);
+}
+.card-res{
+  background: rgb(121, 39, 154);
+}
+
+.col-last{
+  transform: translateX(100%);
+}
+
+@media (max-width: 768px){
+  .col-last{
+    transform: translateX(0%);
+  }
+}

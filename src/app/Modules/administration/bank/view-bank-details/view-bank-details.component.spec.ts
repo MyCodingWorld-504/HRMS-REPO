@@ -1,0 +1,21 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { ViewBankDetailsComponent } from './view-bank-details.component';
+
+describe('ViewBankDetailsComponent', () => {
+  let component: ViewBankDetailsComponent;
+  let fixture: ComponentFixture<ViewBankDetailsComponent>;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [ViewBankDetailsComponent]
+    });
+    fixture = TestBed.createComponent(ViewBankDetailsComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

@@ -1,32 +1,43 @@
-<div class="container">
-  <div class="inner-container mt-3">
-    <div class="outer-card" id="outer-card">
-      <div *ngFor="let item of Data" class="inner-card">
-        <div class="card">
-          <img [src]="item.photoPath" alt="{{ item.name }}" />
-          <div class="card-content">
-            <p class="text-name">{{ item.name }}</p>
-            <p class="text-wish"><i class="fa-solid fa-gift m-lg-1"></i>Congratulations for completing {{ item.years }} years!</p>
+<div class="container-fluid">
+  <div class="row row-cols-1 row-cols-md-2 g-lg-2">
+    <div class="col">
+      <div class="container">
+        <div class="card d-flex justify-content-between" id="outer-card">
+          <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div *ngFor="let item of Data" class="inner-card">
+              <div class="card col">
+                <img [src]="item.photoPath" alt="{{ item.name }}" />
+                <div class="card-content">
+                  <p class="text-name">{{ item.name }}</p>
+                  <p class="text-wish">
+                    <i class="fa-solid fa-gift m-lg-1"></i>Congratulations for
+                    completing {{ item.years }} years!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-row mt-3">
+          <p class="text">Apply Leave</p>
+          <div class="card">
+            <a href="#">view</a>
+          </div>
+        </div>
+        <div class="card-row mt-4">
+          <p class="text">Leave Balance</p>
+          <div class="card">
+            <a>view</a>
           </div>
         </div>
       </div>
     </div>
-    <div class="card-row mt-3">
-      <p class="text">Apply Leave</p>
-      <div class="card-content-row">
-        <a href="#">view</a>
+    <div class="col">
+      <div class="container">
+        <div class="card">
+          <p>Notifications</p>
+        </div>
       </div>
-    </div>
-    <div class="card-row mt-4 ">
-      <p class="text">Leave Balance</p>
-      <div class="card-content-row">
-        <a href="#">view</a>
-      </div>
-    </div>
-  </div>
-  <div class="contain-second mb-3 mt-3">
-    <div class="card-contain-second">
-      <p>Notifications</p>
     </div>
   </div>
 </div>

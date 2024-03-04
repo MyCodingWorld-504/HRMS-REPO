@@ -12,8 +12,13 @@
   <ul>
     <li *ngFor="let item of menuItems">
       <a (click)="handleMenuItemClick(item)">
-        <fa-icon [icon]="item.icon" class="fas"> </fa-icon>
-
+        <fa-icon *ngIf="item.label === 'Attendence'" [icon]="['fas', 'clipboard-user']"></fa-icon>
+        <fa-icon *ngIf="item.label === 'Dashboard'" [icon]="['fas', 'gauge']"></fa-icon>
+        <fa-icon *ngIf="item.label === 'Administration'" [icon]="['fas', 'user-tie']"></fa-icon>
+        <fa-icon *ngIf="item.label === 'Payrol'" [icon]="['fas', 'money-bill']"></fa-icon>
+        <fa-icon *ngIf="item.label === 'Timesheet'" [icon]="['fas', 'clock']"></fa-icon>
+        <fa-icon *ngIf="item.label === 'Recruitment'" [icon]="['fas', 'search']"></fa-icon>
+        <fa-icon *ngIf="item.label === 'Leave'" [icon]="['fas', 'up-right-from-square']"></fa-icon>
         <span class="icon-label" *ngIf="!isExpanded" routerLinkActive="active">
           {{ item.label }}
         </span>
