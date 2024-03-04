@@ -20,6 +20,13 @@
             "outputPath": "dist/hr-ms",
             "index": "src/index.html",
             "main": "src/main.ts",
+            "allowedCommonJsDependencies": [
+              "canvg",
+              "core-js",
+              "raf",
+              "rgbcolor",
+              "jspdf-autotable"
+            ],
             "polyfills": [
               "zone.js"
             ],
@@ -105,5 +112,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
