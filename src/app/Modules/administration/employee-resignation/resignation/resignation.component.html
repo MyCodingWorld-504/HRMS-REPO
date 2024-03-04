@@ -1,0 +1,152 @@
+<div class="group-section mt-2 mb-3">
+  <h2>Resignations</h2>
+  <div class="d-flex justify-content-between">
+    <div>
+      <h4>Dashboard/Resignation</h4>
+    </div>
+
+    <div>
+      <a (click)="exportToPDF()" class="button">Export to pdf</a>
+      <a (click)="exportToExcel()" class="button">Export to excel</a>
+      <a class="button" (click)="onAdd()" routerLink="/add-resignation" ><fa-icon [icon]="faPlusIcon"></fa-icon>Add</a>
+    </div>
+  </div>
+</div>
+
+<div class="card mt-2">
+  <form [formGroup]="empForm" (ngSubmit)="submitForm()">
+    <div class="d-flex justify-content-end">
+      <div class="refresh">
+        <div class="icon-tooltip" data-title="Refresh">
+          <fa-icon
+            [icon]="faArrowsRotateIcon"
+            (click)="onRefresh()"
+          ></fa-icon>
+        </div>
+      </div>
+      <input
+      class="refresh"
+        type="text"
+        formControlName="searchTerm"
+        placeholder="Search..."
+        (input)="search()"
+      />
+    </div>
+    <table class="table table-bordered mt-3">
+      <thead class="custom-table-header">
+        <tr>
+          <th>Emp ID</th>
+          <th>Employee Name</th>
+          <th>ResignationSubmittedDate</th>
+          <th>lastWorkingDay</th>
+          <th>StatusOfResignation</th>
+          <th>ApprovedManager</th>
+          <th>Reason</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="
+                      let entry of resignationData
+                        | paginate
+                          : {
+                              id: 'internal-pagination',
+                              itemsPerPage: itemsPerPageResignationPage,
+                              currentPage: page
+                            }
+                    ">
+          <td>{{ entry.id }}</td>
+          <td class="tooltip-container" (mouseenter)="showTooltip($event)" (mouseleave)="hideTooltip($event)">
+            {{ entry.empName }}
+            <div class="tooltip">{{ entry.empName }}</div>
+          </td>
+          <td class="tooltip-container" (mouseenter)="showTooltip($event)" (mouseleave)="hideTooltip($event)">
+            {{ entry.resignationSubmittedDate }}
+            <div class="tooltip">{{ entry.resignationSubmittedDate }}</div>
+          </td>
+          <td class="tooltip-container" (mouseenter)="showTooltip($event)" (mouseleave)="hideTooltip($event)">
+            {{ entry.lastWorkingDay }}
+            <div class="tooltip">{{ entry.lastWorkingDay}}</div>
+          </td>
+          <td class="tooltip-container" (mouseenter)="showTooltip($event)" (mouseleave)="hideTooltip($event)">
+            {{ entry.statusOfResignation }}
+            <div class="tooltip">{{ entry.statusOfResignation}}</div>
+          </td>
+          <td class="tooltip-container" (mouseenter)="showTooltip($event)" (mouseleave)="hideTooltip($event)">
+            {{ entry.approvedManager }}
+            <div class="tooltip">{{ entry.approvedManager}}</div>
+          </td>
+          <td class="tooltip-container" (mouseenter)="showTooltip($event)" (mouseleave)="hideTooltip($event)">
+            {{ entry.reasonForResignation }}
+            <div class="tooltip">{{ entry.reasonForResignation}}</div>
+          </td>
+          <td class="tooltip-container-icons">
+            <div class="d-flex justify-content-between">
+            <a
+              (mouseenter)="showTooltipIcon('View', $event)"
+              (mouseleave)="hideTooltipIcon()"
+            >
+              <fa-icon [icon]="faEyeIcon" (click)="onView(entry.id)"></fa-icon>
+              <span
+                class="tooltip-icons"
+                *ngIf="isTooltipVisible && currentTooltip === 'View'"
+              >
+                View
+              </span>
+            </a>
+            <a
+              (mouseenter)="showTooltipIcon('Edit', $event)"
+              (mouseleave)="hideTooltipIcon()"
+            >
+              <fa-icon [icon]="faPenIcon" (click)="onEdit(entry.id)"></fa-icon>
+              <span
+                class="tooltip-icons"
+                *ngIf="isTooltipVisible && currentTooltip === 'Edit'"
+
+              >
+                Edit
+              </span>
+            </a>
+            <a
+              (mouseenter)="showTooltipIcon('Delete', $event)"
+              (mouseleave)="hideTooltipIcon()"
+        >
+              <fa-icon (click)="openDeleteConfirmation(entry.id)" [icon]="faTrashIcon"></fa-icon>
+              <span
+                class="tooltip-icons"
+                *ngIf="isTooltipVisible && currentTooltip === 'Delete'"
+              >
+                Delete
+              </span>
+            </a>
+          </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-between mt-3">
+      <div class="items-per-page">
+        <select class="form-select" [formGroup]="empForm" name="itemsPerPageInternal"
+          (change)="onItemsPerPageChangeResignation($event)">
+          <option *ngFor="let option of itemsPerPageOptionsResignationPage" [value]="option">
+            {{ option }}
+          </option>
+        </select>
+      </div>
+      <div class="select-show">
+        Showing Results {{ getStartIndexResignation() }} -
+        {{ getEndIndexResignation() }} of
+        {{ resignationData.length }} entries.
+      </div>
+      <pagination-controls (pageChange)="pageChangedResignation($event)"
+        [id]="'internal-pagination'"></pagination-controls>
+    </div>
+  </form>
+</div>
+
+
+<app-confirm-delete-popup
+  *ngIf="showDeleteConfirmation"
+  (confirmed)="onDeleteConfirmed(deleteConfirmationId)"
+  (cancelled)="onCancelDelete()"
+></app-confirm-delete-popup>

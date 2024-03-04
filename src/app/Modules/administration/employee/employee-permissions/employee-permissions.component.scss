@@ -1,0 +1,145 @@
+.container-fluid{
+  margin: 20px auto;
+}
+.card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+span {
+  cursor: pointer;
+  color: blue;
+}
+
+.card-custom
+{
+  border: none !important;;
+}
+.button {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  background-color: #086594;
+  width: 100%;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: darken(#086594, 10%);
+  }
+}
+.button-add {
+    color: white;
+    text-decoration: none;
+    background-color: #086594;
+    border: none;
+    padding: 7px 20px;
+    border-radius: 4px;
+
+  &:hover {
+    background-color: darken(#086594, 10%);
+  }
+}
+.button-text{
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+}
+.icon-role{
+  margin-right: 5px;
+}
+
+.Role-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 20px;
+  background-color: white;
+position: absolute;
+top: 30%;
+left: 35%;
+box-shadow: 0px 4px 6px -1px rgba(0,0,0,0.5);
+  form {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      box-sizing: border-box;
+    }
+  }
+}
+
+.roles-section{
+  margin-top: 10px;
+  max-height: 560px;
+ overflow-y: auto;
+ &::-webkit-scrollbar {
+   width: 10px;
+ }
+ &::-webkit-scrollbar-thumb {
+   background-color: #999;
+   border-radius: 10px;
+ }
+ &::-webkit-scrollbar-track {
+   background-color: #f1f1f1;
+ }
+ &::-webkit-scrollbar-thumb:hover {
+   background-color: #555;
+}
+
+}
+
+.button-update{
+  color: white;
+  text-decoration: none;
+  background-color: #086594;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+
+  &:hover {
+    background-color: darken(#086594, 10%);
+  }
+}
+
+.icons{
+  display: flex;
+  position: absolute;
+  right: 0;
+  margin: 0 10px 0 10px;
+}
+.fa-icons{
+  margin: 0 10px 0 10px !important;
+}

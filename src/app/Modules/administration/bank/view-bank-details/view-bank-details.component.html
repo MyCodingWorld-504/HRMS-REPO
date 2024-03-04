@@ -1,0 +1,51 @@
+<!-- edit.component.html -->
+<div class="container-fluid mt-5">
+    <h2>View Bank Details</h2>
+    <form (ngSubmit)="onSubmit()" #editForm="ngForm">
+     <div class="row">
+      <div class="form-group col-md-6">
+        <label for="empName">Employee Name:</label>
+        <input type="text" id="empName" name="empName" [(ngModel)]="editFormList.Empname" required  [disabled]="true">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="bankName">Bank Name:</label>
+        <input type="text" id="bankName" name="bankName" [(ngModel)]="editFormList.bankname" required  [disabled]="true">
+      </div>
+     </div>
+     <div class="row">
+      <div class="form-group col-md-6">
+        <label for="accountNo">Account Number:</label>
+        <input type="text" id="accountNo" name="accountNo" [(ngModel)]="editFormList.accountNo" required  [disabled]="true">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="branch">Branch:</label>
+        <input type="text" id="branch" name="branch" [(ngModel)]="editFormList.branch" required  [disabled]="true">
+      </div>
+     </div>
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="ifsc">IFSC:</label>
+          <input type="text" id="ifsc" name="ifsc" [(ngModel)]="editFormList.ifsc" required  [disabled]="true">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="aadhar">Aadhar Card:</label>
+          <input type="text" id="aadhar" name="aadhar" [(ngModel)]="editFormList.aadhar" required  [disabled]="true">
+        </div>
+      </div>
+     <div class="row">
+      <div class="form-group col-md-6">
+        <label for="panno">Pan Number:</label>
+        <input type="text" id="panno" name="panno" [(ngModel)]="editFormList.panno" required  [disabled]="true">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" [(ngModel)]="editFormList.address" required  [disabled]="true">
+      </div>
+     </div>
+  
+      <div class="button-container d-flex justify-content-center  ">
+        <button type="button" class="btn btn-secondary" (click)="onCancel()">Cancel</button>
+      </div>
+    </form>
+  </div>
+  

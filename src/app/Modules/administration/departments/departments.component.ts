@@ -38,7 +38,9 @@ designationOptions: any;
 
       constructor(
         private groupService: GroupService,
-        private formBuilder: FormBuilder
+        private formBuilder: FormBuilder,
+        private toastr : ToastrService,
+       
       ) {
         this.groupFormDepartment = this.formBuilder.group({
           searchTermInternal: [''],
@@ -52,7 +54,7 @@ designationOptions: any;
 
 
       ngOnInit(): void {
-        this.fetchInternalData();
+        this.fetchDepartmentData();
 
       }
 
@@ -62,7 +64,7 @@ designationOptions: any;
         }
       }
 
-      fetchInternalData() {
+      fetchDepartmentData() {
         this.groupSubscription = this.groupService.getDepartmentsData().subscribe({
           next: (data: any) => {
             this.departments = data;
@@ -75,7 +77,7 @@ designationOptions: any;
       }
 
 
-      protected searchInternal() {
+      protected searchDepartments() {
         const term = this.groupFormDepartment.get('searchTermInternal')?.value;
 
         if (!term) {
@@ -83,10 +85,10 @@ designationOptions: any;
           return;
         }
 
-        this.departmentsData = this.departments.filter((group) => this.searchInInternal(group, term));
+        this.departmentsData = this.departments.filter((group) => this.searchInDepartments(group, term));
       }
 
-      private searchInInternal(group: any, term: string): boolean {
+      private searchInDepartments(group: any, term: string): boolean {
         for (const key in group) {
           if (group.hasOwnProperty(key)) {
             const value = group[key];
@@ -101,30 +103,30 @@ designationOptions: any;
         }
         return false;
       }
-      onItemsPerPageChangeInternal(event: Event) {
+      onItemsPerPageChangeDepartments(event: Event) {
         const target = event.target as HTMLSelectElement;
         this.itemsPerPageDepartmentsPage = parseInt(target.value);
         this.departmentPage = 1;
       }
 
 
-      pageChangedInternal(event: number) {
+      pageChangedDepartments(event: number) {
         this.departmentPage = event;
       }
 
 
-      getStartIndexInternal(): number {
+      getStartIndexDepartment(): number {
         return (this.departmentPage - 1) * this.itemsPerPageDepartmentsPage + 1;
       }
 
-      getEndIndexInternal(): number {
+      getEndIndexDepartment(): number {
         const endIndex = this.departmentPage * this.itemsPerPageDepartmentsPage;
         return endIndex > this.departmentsData.length ? this.departmentsData.length : endIndex;
       }
 
-      onRefreshInternal() {
+      onRefreshDepartment() {
         this.groupFormDepartment.get('searchTermInternal')?.setValue('');
-        this.searchInternal();
+        this.searchDepartments();
       }
 
       showTooltip(event: MouseEvent): void {
@@ -172,6 +174,31 @@ designationOptions: any;
       submitForm() {
         throw new Error('Method not implemented.');
       }
+
+      showDeleteConfirmation = false;
+      deleteConfirmationId: number | null = null;
+  
+      openDeleteConfirmation(id: number) {
+        this.showDeleteConfirmation = true;
+        this.deleteConfirmationId = id;
+      }
+  
+      onDeleteConfirmed(id: number | null) {
+        if (id !== null) {
+          this.showDeleteConfirmation = false;
+  
+          this.groupService.deleteDepartments(id).subscribe(() => {
+            this.toastr.warning('Record deleted successfully', 'Delete');
+            this.fetchDepartmentData();
+          });
+        }
+      }
+  
+      onCancelDelete() {
+        this.showDeleteConfirmation = false;
+        this.deleteConfirmationId = null;
+      }
+  
 
 
 }

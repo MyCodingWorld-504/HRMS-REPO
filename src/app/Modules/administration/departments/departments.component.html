@@ -1,14 +1,14 @@
-<div class="container table-container">
+<div class="container-fluid">
   <h2>Departments</h2>
   <div class="d-flex justify-content-between">
     <div>
       <h4>Dashboard / Departments</h4>
     </div>
-    <div>
+    <!-- <div>
       <a class="button" routerLink="/bank-details/edit"
         ><fa-icon [icon]="faPlusIcon"></fa-icon>Add</a
       >
-    </div>
+    </div> -->
   </div>
 
   <div class="card mt-4">
@@ -18,7 +18,7 @@
           <div class="icon-tooltip" data-title="Refresh">
             <fa-icon
               [icon]="faArrowsRotateIcon"
-              (click)="onRefreshInternal()"
+              (click)="onRefreshDepartment()"
             ></fa-icon>
           </div>
         </div>
@@ -26,7 +26,7 @@
           type="text"
           formControlName="searchTermInternal"
           placeholder="Search..."
-          (input)="searchInternal()"
+          (input)="searchDepartments()"
         />
       </div>
       <table class="table table-bordered mt-3">
@@ -35,7 +35,8 @@
             <th>Sno</th>
             <th>Department</th>
             <th>Deaignations</th>
-            <th>Action</th>
+            <th>Description</th>
+            <!-- <th>Action</th> -->
           </tr>
         </thead>
         <tbody>
@@ -50,7 +51,7 @@
                     }
             "
           >
-            <td>{{ entry.sno }}</td>
+            <td>{{ entry.id }}</td>
             <td
               class="tooltip-container"
               (mouseenter)="showTooltip($event)"
@@ -69,7 +70,13 @@
                 </option>
               </select>
             </td>
-            <td><fa-icon [icon]="faEyeIcon" title="View"></fa-icon></td>
+            <td></td>
+            <!-- <td>
+              <div>
+              <fa-icon [icon]="faEyeIcon" title="View"></fa-icon>
+              <fa-icon (click)="openDeleteConfirmation(entry.id)" [icon]="faTrashIcon"></fa-icon>
+            </div>
+            </td> -->
           </tr>
         </tbody>
       </table>
@@ -79,7 +86,7 @@
             class="form-select"
             [formGroup]="groupFormDepartment"
             name="itemsPerPageInternal"
-            (change)="onItemsPerPageChangeInternal($event)"
+            (change)="onItemsPerPageChangeDepartments($event)"
           >
             <option
               *ngFor="let option of itemsPerPageOptionsDepartmentPage"
@@ -90,14 +97,20 @@
           </select>
         </div>
         <div class="select-show">
-          Showing Results {{ getStartIndexInternal() }} -
-          {{ getEndIndexInternal() }} of {{ departmentsData.length }} entries.
+          Showing Results {{ getStartIndexDepartment() }} -
+          {{ getEndIndexDepartment() }} of {{ departmentsData.length }} entries.
         </div>
         <pagination-controls
-          (pageChange)="pageChangedInternal($event)"
+          (pageChange)="pageChangedDepartments($event)"
           [id]="'internal-pagination'"
         ></pagination-controls>
       </div>
     </form>
   </div>
 </div>
+
+<app-confirm-delete-popup
+  *ngIf="showDeleteConfirmation"
+  (confirmed)="onDeleteConfirmed(deleteConfirmationId)"
+  (cancelled)="onCancelDelete()"
+></app-confirm-delete-popup>

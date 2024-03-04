@@ -1,0 +1,411 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      <a class="button" (click)="onRoleClicked()">
+        <span class="button-text d-flex justify-content-center">
+          <fa-icon class="icon-role" [icon]="faPlusIcon"></fa-icon>Roles</span
+        >
+      </a>
+      <div class="roles-section">
+        <div *ngFor="let role of roleData" class="card">
+          <div class="d-flex">
+            {{ role.name }}
+            <div class="icons">
+              <fa-icon
+                class="fa-icons"
+                [icon]="faPenIcon"
+                (click)="onEdit(role.id)"
+              ></fa-icon>
+              <fa-icon
+                class="fa-icons"
+                [icon]="faTrashIcon"
+                (click)="openDeleteConfirmation(role.id)"
+              ></fa-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <div class="d-flex justify-content-between mb-3">
+        <h4>Module Access</h4>
+        <a class="button-update">Update Permissions</a>
+      </div>
+      <div class="card">
+        <div *ngIf="!isAdministraion">
+          <span (click)="onAdministration()">
+            <fa-icon [icon]="faPlusIcon"></fa-icon> Administration</span
+          >
+        </div>
+        <div *ngIf="isAdministraion">
+          <span (click)="onAdministration()"
+            ><fa-icon [icon]="faMinusIcon"></fa-icon> Administration</span
+          >
+        </div>
+      </div>
+
+      <div class="card card-custom" *ngIf="isAdministraion">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">
+                <input
+                  type="checkbox"
+                  [(ngModel)]="headerCheckboxes.pageName"
+                  (click)="toggleAllPageNameCheckboxes()"
+                />
+                Page Name
+              </th>
+              <th scope="col">
+                <input
+                  type="checkbox"
+                  [(ngModel)]="headerCheckboxes.view"
+                  (change)="selectAll('view')"
+                  (change)="updatePageNameHeaderCheckbox()"
+                />
+                View
+              </th>
+              <th scope="col">
+                <input
+                  type="checkbox"
+                  [(ngModel)]="headerCheckboxes.edit"
+                  (change)="selectAll('edit')"
+                  (change)="updatePageNameHeaderCheckbox()"
+                />
+                Edit
+              </th>
+              <th scope="col">
+                <input
+                  type="checkbox"
+                  [(ngModel)]="headerCheckboxes.delete"
+                  (change)="selectAll('delete')"
+                  (change)="updatePageNameHeaderCheckbox()"
+                />
+                Delete
+              </th>
+            </tr>
+          </thead>
+          <tbody *ngIf="adminData">
+            <ng-container *ngFor="let item of adminData">
+              <tr *ngFor="let submenu of item.submenu">
+                <td (click)="selectAll('pageName')">
+                  {{ submenu.label }}
+                </td>
+                <td>
+                  <input
+                    type="checkbox"
+                    [(ngModel)]="submenu.view"
+                    (change)="updatePageNameHeaderCheckbox()"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="checkbox"
+                    [(ngModel)]="submenu.edit"
+                    (change)="updatePageNameHeaderCheckbox()"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="checkbox"
+                    [(ngModel)]="submenu.delete"
+                    (change)="updatePageNameHeaderCheckbox()"
+                  />
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <div *ngIf="!isAttendence">
+          <span (click)="onAttendence()"
+            ><fa-icon [icon]="faPlusIcon"></fa-icon> Attendence</span
+          >
+        </div>
+        <div *ngIf="isAttendence">
+          <span (click)="onAttendence()"
+            ><fa-icon [icon]="faMinusIcon"></fa-icon> Attendence</span
+          >
+        </div>
+      </div>
+
+      <div class="card card-custom" *ngIf="isAttendence">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">
+                <input
+                  type="checkbox"
+                  [(ngModel)]="headerCheckboxes.pageName"
+                  (click)="toggleAllPageNameCheckboxes()"
+                />
+                Page Name
+              </th>
+              <th scope="col">
+                <input
+                  type="checkbox"
+                  [(ngModel)]="headerCheckboxes.view"
+                  (change)="selectAll('view')"
+                  (change)="updatePageNameHeaderCheckbox()"
+                />
+                View
+              </th>
+              <th scope="col">
+                <input
+                  type="checkbox"
+                  [(ngModel)]="headerCheckboxes.edit"
+                  (change)="selectAll('edit')"
+                  (change)="updatePageNameHeaderCheckbox()"
+                />
+                Edit
+              </th>
+              <th scope="col">
+                <input
+                  type="checkbox"
+                  [(ngModel)]="headerCheckboxes.delete"
+                  (change)="selectAll('delete')"
+                  (change)="updatePageNameHeaderCheckbox()"
+                />
+                Delete
+              </th>
+            </tr>
+          </thead>
+
+          <tbody *ngIf="attendanceData">
+            <ng-container *ngFor="let item of attendanceData">
+              <tr *ngFor="let submenu of item.submenu">
+                <td (click)="selectAll('pageName')">
+                  {{ submenu.label }}
+                </td>
+                <td>
+                  <input
+                    type="checkbox"
+                    [(ngModel)]="submenu.view"
+                    (change)="updatePageNameHeaderCheckbox()"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="checkbox"
+                    [(ngModel)]="submenu.edit"
+                    (change)="updatePageNameHeaderCheckbox()"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="checkbox"
+                    [(ngModel)]="submenu.delete"
+                    (change)="updatePageNameHeaderCheckbox()"
+                  />
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <div *ngIf="!isPayroll">
+          <span (click)="onPayroll()"
+            ><fa-icon [icon]="faPlusIcon"></fa-icon> Payroll</span
+          >
+        </div>
+        <div *ngIf="isPayroll">
+          <span (click)="onPayroll()"
+            ><fa-icon [icon]="faMinusIcon"></fa-icon> Payroll</span
+          >
+        </div>
+      </div>
+
+      <div class="card card-custom" *ngIf="isPayroll">
+        <table>
+          <thead>
+            <tr></tr>
+            <tr>
+              <th scope="col">Page Name</th>
+              <th scope="col">View</th>
+              <th scope="col">Edit</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody *ngIf="payrollData">
+            <ng-container *ngFor="let item of payrollData">
+              <tr *ngFor="let submenu of item.submenu">
+                <td>{{ submenu.label }}</td>
+                <td>
+                  <input
+                    type="checkbox"
+                    id="view{{ i }}"
+                    name="view{{ i }}"
+                    [(ngModel)]="item.view"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="checkbox"
+                    id="edit{{ i }}"
+                    name="edit{{ i }}"
+                    [(ngModel)]="item.edit"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="checkbox"
+                    id="delete{{ i }}"
+                    name="delete{{ i }}"
+                    [(ngModel)]="item.delete"
+                  />
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <div *ngIf="!isTimesheet">
+          <span (click)="onTimesheet()"
+            ><fa-icon [icon]="faPlusIcon"></fa-icon> TimeSheet</span
+          >
+        </div>
+        <div *ngIf="isTimesheet">
+          <span (click)="onTimesheet()"
+            ><fa-icon [icon]="faMinusIcon"></fa-icon> TimeSheet</span
+          >
+        </div>
+      </div>
+
+      <div class="card card-custom" *ngIf="isTimesheet">
+        <table>
+          <thead>
+            <tr></tr>
+            <tr>
+              <th scope="col">Page Name</th>
+              <th scope="col">View</th>
+              <th scope="col">Edit</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody *ngIf="timesheetData">
+            <ng-container *ngFor="let item of timesheetData">
+              <tr *ngFor="let submenu of item.submenu">
+                <td>{{ submenu.label }}</td>
+                <td>
+                  <input
+                    type="checkbox"
+                    id="view{{ i }}"
+                    name="view{{ i }}"
+                    [(ngModel)]="item.view"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="checkbox"
+                    id="edit{{ i }}"
+                    name="edit{{ i }}"
+                    [(ngModel)]="item.edit"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="checkbox"
+                    id="delete{{ i }}"
+                    name="delete{{ i }}"
+                    [(ngModel)]="item.delete"
+                  />
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <div *ngIf="!isRecruitment">
+          <span (click)="onRecruitment()"
+            ><fa-icon [icon]="faPlusIcon"></fa-icon> Recruitment</span
+          >
+        </div>
+        <div *ngIf="isRecruitment">
+          <span (click)="onRecruitment()"
+            ><fa-icon [icon]="faMinusIcon"></fa-icon> Recruitment</span
+          >
+        </div>
+      </div>
+
+      <div class="card card-custom" *ngIf="isRecruitment">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Page Name</th>
+              <th scope="col">View</th>
+              <th scope="col">Edit</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody *ngIf="recruitmentData">
+            <ng-container *ngFor="let item of recruitmentData">
+              <tr *ngFor="let submenu of item.submenu">
+                <td>{{ submenu.label }}</td>
+                <td>
+                  <input
+                    type="checkbox"
+                    id="view{{ i }}"
+                    name="view{{ i }}"
+                    [(ngModel)]="item.view"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="checkbox"
+                    id="edit{{ i }}"
+                    name="edit{{ i }}"
+                    [(ngModel)]="item.edit"
+                  />
+                </td>
+                <td>
+                  <input
+                    type="checkbox"
+                    id="delete{{ i }}"
+                    name="delete{{ i }}"
+                    [(ngModel)]="item.delete"
+                  />
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="Role-container" *ngIf="isRoleClicked">
+  <form (ngSubmit)="onRoleSubmit()" #addForm="ngForm">
+    <div class="form-group">
+      <label for="Role">Add Role</label>
+      <!-- Add the name attribute to the input element -->
+      <input
+        type="text"
+        placeholder="Role Name"
+        [(ngModel)]="newRoleName"
+        name="roleName"
+      />
+    </div>
+    <div class="d-flex justify-content-around">
+      <button type="submit" class="button-add">Add</button>
+      <button type="button" class="btn btn-secondary" (click)="onRoleCancel()">
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>
+
+
+
+<app-confirm-delete-popup
+  *ngIf="showDeleteConfirmation"
+  (confirmed)="onDeleteConfirmed(deleteConfirmationId)"
+  (cancelled)="onCancelDelete()"
+></app-confirm-delete-popup>

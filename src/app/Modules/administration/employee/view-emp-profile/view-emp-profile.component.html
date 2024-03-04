@@ -1,0 +1,50 @@
+
+<div class="container-fluid mt-5">
+    <h2>View Employee Profiles</h2>
+    <form (ngSubmit)="onSubmit()" #editForm="ngForm">
+     <div class="row">
+      <div class="form-group col-md-6">
+        <label for="empName">Employee Name:</label>
+        <input type="text" id="empName" name="empName" [(ngModel)]="editFormList.employeeName" required  [disabled]="true">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="department">Department:</label>
+        <input type="text" id="department" name="department" [(ngModel)]="editFormList.department" required   [disabled]="true">
+      </div>
+     </div>
+     <div class="row">
+      <div class="form-group col-md-6">
+        <label for="designation">Designation:</label>
+        <input type="text" id="designation" name="designation" [(ngModel)]="editFormList.designation " required  [disabled]="true">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="phoneNumber">PhoneNumber:</label>
+        <input type="text" id="phoneNumber" name="phoneNumber" [(ngModel)]="editFormList.phoneNumber" required  [disabled]="true">
+      </div>
+     </div>
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="email">Email:</label>
+          <input type="text" id="email" name="email" [(ngModel)]="editFormList.email" required  [disabled]="true">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="workingLocation">WorkingLocation:</label>
+          <input type="text" id="workingLocation" name="workingLocation" [(ngModel)]="editFormList.workingLocation" required  [disabled]="true">
+        </div>
+      </div>
+     <div class="row">
+      <div class="form-group col-md-6">
+        <label for="workingClient">WorkingClient:</label>
+        <input type="text" id="workingClient" name="workingClient" [(ngModel)]="editFormList.workingClient" required  [disabled]="true">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="permanentAddress">PermanentAddress:</label>
+        <input type="text" id="permanentAddress" name="permanentAddress" [(ngModel)]="editFormList.permanentAddress" required  [disabled]="true">
+      </div>
+     </div>
+
+      <div class="button-container d-flex justify-content-center ">
+        <button type="button" class="btn btn-secondary" (click)="onCancel()">Close</button>
+      </div>
+    </form>
+  </div>

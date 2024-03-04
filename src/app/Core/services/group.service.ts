@@ -38,4 +38,33 @@ private pubHolidayApi='http://localhost:3000/publicHolidays';
   getResignedEmp(): Observable<any>{
     return this.http.get<any>(this.resignationApi);
   }
+
+  getDepartmentsById(id: number): Observable<any> {
+    return this.http.get<any>(`${this.depAPi}/${id}`);
+  }
+  updateDeaprtments(details: any): Observable<any> {
+    return this.http.put<any>(`${this.depAPi}/${details.id}`, details);
+  }
+  addNewDepartment(newEntry: any): Observable<any> {
+    return this.http.post<any>(this.depAPi, newEntry);
+  }
+  deleteDepartments(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.depAPi}/${id}`);
+
+}
+
+
+getResignationById(id: number): Observable<any> {
+  return this.http.get<any>(`${this.resignationApi}/${id}`);
+}
+updateResignation(details: any): Observable<any> {
+  return this.http.put<any>(`${this.resignationApi}/${details.id}`, details);
+}
+addNewResignation(newEntry: any): Observable<any> {
+  return this.http.post<any>(this.resignationApi, newEntry);
+}
+deleteResignation(id: number): Observable<any> {
+  return this.http.delete<any>(`${this.resignationApi}/${id}`);
+
+}
 }

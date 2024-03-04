@@ -1,0 +1,64 @@
+$border-color: #ccc;
+$background-color: #f4f4f4;
+$hover-background-color: #f9f9f9;
+$shadow-color: rgba(0, 0, 0, 0.1);
+$primary-color: #086594;
+$text-color: white;
+$link-color: white;
+
+.container-fluid {
+  margin: 20px auto;
+  font-size: smaller;
+}
+.card-main {
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px $shadow-color;
+  padding: 0px 20px 40px 20px;
+  &-body {
+    padding: 15px;
+  }
+}
+.card-custom{
+padding: 20px;
+  margin: 10px;
+height: auto;
+&.h5{
+  padding: 20px;
+}
+}
+.card-title{
+margin: 20px 0 40px 0;
+}
+.card-custom-show{
+  margin: 10px;
+}
+body {
+  font-family: "Arial", sans-serif;
+  font-size: 5px;
+  line-height: 1.6;
+  color: $primary-color;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.form-group input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-left:0;
+}
+.button {
+  color: $link-color;
+  text-decoration: none;
+  background-color: $primary-color;
+  border: none;
+  padding: 9px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
