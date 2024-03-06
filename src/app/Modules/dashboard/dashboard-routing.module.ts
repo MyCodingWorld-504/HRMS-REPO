@@ -19,6 +19,11 @@ const routes: Routes = [
         loadChildren: () => import('../administration/administration.module').then((m)=>m.AdministrationModule)
       },
       {
+        path:'payroll',
+        loadChildren: () => import('../payroll/payroll.module').then((m)=>m.PayrollModule),
+    
+      },
+      {
         path: 'hr-sidebar',
         component: HrSidebarComponent,
 
