@@ -1,0 +1,53 @@
+<button
+  class="button mb-3 mt-2"
+  type="button"
+  data-bs-toggle="offcanvas"
+  data-bs-target="#offcanvasRight"
+  aria-controls="offcanvasRight"
+>
+  Customize
+</button>
+<button (click)="exportSelectedColumns()" class="button">Export</button>
+<div
+  class="offcanvas offcanvas-end"
+  tabindex="-1"
+  id="offcanvasRight"
+  aria-labelledby="offcanvasRightLabel"
+>
+  <div class="offcanvas-header">
+    <h5 id="offcanvasRightLabel">Select Your Labels</h5>
+    <button
+      type="button"
+      class="btn-close text-reset"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul>
+      <li *ngFor="let menuItem of menuItems">
+        <label>
+          <input type="checkbox" [(ngModel)]="menuItem.checked"/>
+          {{ menuItem.label }}
+        </label>
+      </li>
+    </ul>
+  </div>
+  <button class="btn btn-warning d-flex justify-content-center mt-3" (click)="generateTable()" data-bs-dismiss="offcanvas">
+    Generate Table
+  </button>
+</div>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th *ngFor="let column of selectedMenuItems">{{ column.label }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of tableData">
+      <td *ngFor="let column of selectedMenuItems">{{ item[column.label] }}</td>
+    </tr>
+  </tbody>
+</table>
+
