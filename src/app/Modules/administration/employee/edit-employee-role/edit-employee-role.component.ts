@@ -28,6 +28,7 @@ export class EditEmployeeRoleComponent implements OnInit {
   loadDetails(id: number) {
     this.roleService.getEmployeeRolesById(id).subscribe(data => {
       this.editFormList = data;
+      console.log(this.editFormList, "editFormList");
     });
   }
 
