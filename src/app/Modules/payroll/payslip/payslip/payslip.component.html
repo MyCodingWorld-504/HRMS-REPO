@@ -18,9 +18,10 @@
     <h5 id="offcanvasRightLabel">Select Your Labels</h5>
     <button
       type="button"
-      class="btn-close text-reset"
+      class="btn-close close text-reset"
       data-bs-dismiss="offcanvas"
       aria-label="Close"
+      style="color: red;"
     ></button>
   </div>
   <div class="offcanvas-body">
@@ -28,7 +29,7 @@
       <li *ngFor="let menuItem of menuItems">
         <label>
           <input type="checkbox" [(ngModel)]="menuItem.checked"/>
-          {{ menuItem.label }}
+          {{ menuItem.customHeader }}
         </label>
       </li>
     </ul>
@@ -41,7 +42,7 @@
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
-      <th *ngFor="let column of selectedMenuItems">{{ column.label }}</th>
+      <th *ngFor="let column of selectedMenuItems">{{ column.customHeader || column.label }}</th>
     </tr>
   </thead>
   <tbody>

@@ -5,10 +5,14 @@ import { PayrollRoutingModule } from './payroll-routing.module';
 import { PayslipComponent } from './payslip/payslip/payslip.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PayrollDashboardComponent } from './payroll-dashboard/payroll-dashboard.component';
+import { GeneratePayslipComponent } from './generate-payslip/generate-payslip.component';
 
 @NgModule({
   declarations: [
-    PayslipComponent
+    PayslipComponent,
+    PayrollDashboardComponent,
+    GeneratePayslipComponent
   ],
   imports: [
     CommonModule,
