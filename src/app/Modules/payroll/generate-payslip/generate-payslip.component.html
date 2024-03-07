@@ -1,0 +1,102 @@
+<div>
+  <label for="monthSelect">Select Month:</label>
+  <select id="monthSelect">
+    <option value="January">January</option>
+    <option value="February">February</option>
+    <option value="March">March</option>
+    <option value="April">April</option>
+    <option value="May">May</option>
+    <option value="June">June</option>
+    <option value="July">July</option>
+    <option value="August">August</option>
+    <option value="September">September</option>
+    <option value="October">October</option>
+    <option value="November">November</option>
+    <option value="December">December</option>
+  </select>
+
+  <label for="yearSelect">Select Year:</label>
+  <select id="yearSelect">
+    <option value="2022">2024</option>
+    <option value="2023">2023</option>
+    <option value="2020">2022</option>
+    <option value="2020">2021</option>
+    <option value="2020">2020</option>
+    <option value="2019">2019</option>
+    <option value="2018">2018</option>
+    <option value="2017">2017</option>
+    <option value="2016">2016</option>
+  </select>
+
+  <label for="employeeId">Employee ID:</label>
+  <input type="text" [(ngModel)]="employeeId" placeholder="Enter Employee ID" />
+
+  <button (click)="getEmployeeDetails()">Show Payslip</button>
+</div>
+
+<ng-template [ngIf]="showPayslip">
+<div class="payslip-form-container">
+  <div class="payslip">
+    <div class="header">
+      <h5><img src="assets/Mainlogo.jpg" /></h5>
+      <p>
+        MSPC Services Private Limited #401, Level 5, Lakshmi Sai Damam, Patrika
+        Nagar, Hitech City
+      </p>
+      <p>
+        Hyderabad 500081, Telangana INDIA (L) 04067172345 www.spc-services.net
+      </p>
+    </div>
+
+    <div *ngFor="let item of employeeDetails">
+      <p>Entity: {{ item.Entity }}</p>
+      <p>Employee ID : {{ item["EmployeeID"] }}</p>
+      <p>Employee Name: {{ item["Employee Name"] }}</p>
+      <p>Designation:{{ item.Designation }}</p>
+      <p>Department:{{ item.Department }}</p>
+      <p>DOJ:{{ item.DOJ }}</p>
+    </div>
+
+    <div class="earnings">
+      <table>
+        <tr>
+          <th>Earnings</th>
+          <th>Amount</th>
+          <th>Deductions</th>
+          <th>Amount</th>
+        </tr>
+        <tr>
+          <td>Basic Pay</td>
+          <td></td>
+          <td>Provident Fund</td>
+          <td></td>
+        </tr>
+        <!-- Add more earnings and deductions here -->
+      </table>
+    </div>
+
+    <div class="totals">
+      <p>Total Earnings:</p>
+      <p>Total Deductions:</p>
+      <p>Net Pay:</p>
+    </div>
+
+    <div class="signature">
+      <p>Employer Signature: ______________________</p>
+      <p>Employee Signature: _______________________</p>
+    </div>
+  </div>
+<div>
+
+  <button class="btn btn-warning" (click)="onClose()">close</button>
+</div>
+</div>
+</ng-template>
+<!-- <input type="text" [(ngModel)]="employeeId" placeholder="Enter Employee ID">
+<button (click)="getEmployeeDetails()">Search</button>
+
+<div  *ngFor="let item of employeeDetails">
+
+  <p>Employee Name: {{ item['Employee Name'] }}</p>
+  <p>Designation: {{ item.Designation }}</p>
+</div> -->

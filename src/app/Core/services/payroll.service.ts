@@ -20,5 +20,7 @@ private apiPayslip="http://localhost:3000/payRoll";
   getPayslipLablesId(id: number): Observable<any> {
     return this.http.get<any>(`${this.apiPayslipLables}/${id}`);
   }
-
+  getEmployeeDetailsById(employeeId: string): Observable<any> {
+    return this.http.get(`${this.apiPayslip}?EmployeeID=${employeeId}`);
+  }
 }
