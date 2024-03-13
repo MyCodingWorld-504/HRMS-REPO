@@ -37,7 +37,31 @@ houseProperties =[{label: 'Interest paid on Housing Loan  (If Joint Property % o
 {label :'Home loan intrest provisional certificate'},
 {label :'If house property is let out'},
 {label :'Total Amount'},
+] 
+
+investmentsUnderSection =[{label: 'Life Insurance premiums Paid (Self / Spouse / Children)'},
+{label :'Contribution To PPF (Self / Spouse / Minor Children)'},
+{label :'Mutual Funds (Self)'},
+{label :'Equity Linked Savings Scheme(ELSS)  (Self)'},
+{label :'Equity Linked Savings Scheme(ELSS)  (Self)'},
+{label :'Interest accrued on National Saving Certificate'},
+{label :'Tuition Fees : college/ school in India : maximum of two children for full time education in FY 2020-2021'},
+{label :'Bank / Post Office Deposit (Tax saving FDs For 5 Years or more ) (Self)'},
+{label :'Principal Amount Of Housing Loan Re-payable in 2021-2022'},
+{label :'Stamp-Duty, Registration Fee Incurred For purchase of House Property'},
+{label :'Subscription To Pension Fund (Self)'},
+{label :'Sukanya Samriddi Scheme (Only for girl child)'},
+{label :'Others (Pl specify)'},
+{label :'Total Amount'},
 ]
+
+investmentsQualifyingForDeduction =[
+{section: '80D' },{section: '80D' },{section: '80E' },
+{label :'Subscription To Mediclaim Policy For Self, Spouse, Dependent Children --> 25,000'},
+{label :'Subscription To Mediclaim Policy For Parents (Rs.5000/- more for Sr.Citizens)	-->  25,000'},
+{label :'Repayment Interest on Education Loan taken For Higher Education for Self, Spouse or Children (Provide Educational Loan Provisional Cerficate with principle & Interest breakup)	-->    Full Int. paid in F.Y'},
+]		
+
 entry = { modeOfPayment: "" };
 showAllRows: boolean = false;
 

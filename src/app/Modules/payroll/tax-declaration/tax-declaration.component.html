@@ -36,7 +36,7 @@
     </table>
   </div>
 
-  <h4>HOUSE RENT ALLOWANCE :</h4>
+  <h4>HOUSE RENT ALLOWANCE </h4>
 
   <div class="table-container">
     <div class="row">
@@ -242,9 +242,82 @@
         </tr>
       </ng-container>
     </table>
+    <br />
+    <ul class="notes">
+      <li>
+        Enclose Certificate issued by the respective Bank for the payment of Loan Instalments during the period 1st April 2021 to 31st March 2022 showing the Principal and Interest components separately.						
+
+      </li>
+    </ul>
+
+   </div>
+
+
+  <h4>INVESTMENTS U/S 80C, 80CCC, 80CCD capped at Rs 1,50,000/-</h4>
+
+  <div class="table-container">
+    <table>
+      <tr>
+        <th colspan="2">INVESTMENTS U/S 80C, 80CCC, 80CCD capped at Rs 1,50,000/-</th>
+        <th>Amount</th>
+      </tr>
+      <ng-container *ngFor="let item of investmentsUnderSection">
+        <tr>
+          <td class="text-label" colspan="2">{{ item.label }}</td>
+          <td><input type="text" /></td>
+        </tr>
+      </ng-container>
+    </table>
+  </div>
+
+  
+  <h4>OTHER PERMITTED DEDUCTIONS</h4>
+
+<div class="table-container">
+  <table>
+    <tr>
+      <th>Sections</th>
+      <th colspan="2">Investments Qualifying for Deduction</th>
+      <th>Amount</th>
+    </tr>
+    <ng-container *ngFor="let item of investmentsQualifyingForDeduction">
+      <tr>
+        <td class="text-label">{{ item.section }}</td>
+        <td class="text-label">{{ item.label }}</td>
+        <td *ngIf="item.label"><input type="number" /></td>
+      </tr>
+    </ng-container>
+  </table>
+</div>
+
+<div class="table-container">
+  <h4>VERIFICATION</h4>
+  <ul class="notes">
+    <li>
+    I certify that the payments listed above will be made by me out of my income chargeable to Income-tax during the financial year. I also authorise the company to recover tax (TDS) as applicable in case proof of payment is not provided by the date specified.							
+    </li>
+  </ul>
+
+  <br>
+
+  <div>
+    <span class="mandatory">*</span>
+    <label>Date:</label>
+    <input type="date" />
+  </div>
+  <div>
+    <span class="mandatory">*</span>
+    <label>Place:</label>
+    <input type="text" />
   </div>
 </div>
+</div>
+
 <div class="d-flex justify-content-center">
   <button (click)="generatePDF()" class="toggle-button">Download as PDF</button>
+</div>
+
+<div class="d-flex justify-content-center">
+  <button  class="toggle-button">Save Details</button>
 </div>
 
