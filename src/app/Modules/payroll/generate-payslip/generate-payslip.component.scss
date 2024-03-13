@@ -1,66 +1,189 @@
-div {
-  margin-bottom: 20px;
-  margin-top:50px;
+.container-box {
+  width: 80%;
+  margin: 50px auto 0;
+  padding: 20px;
+  border: 1px solid#086594;
+  border-radius: 8px;
 }
 
-label {
-  display: inline-block;
-  margin-bottom: 5px;
-  margin-right: 20px;
-  margin-left:20px;
+.container {
+  font-family: Arial, sans-serif;
 }
 
-select {
-  width: 150px;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.select, .input {
+  padding: 10px;
+  margin-right: 25px;
+  border-radius: 6px;
+  border: 1px solid#086594;
+  font-size: 16px;
 }
 
 option {
   padding: 5px;
 }
 
-.payslip-form-container {
-  width: 100%;
+.employee-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.column label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.column span {
+  margin-bottom: 4px;
+}
+
+.column2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.column2 label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.column2 span {
+  margin-bottom: 5px;
+  margin-right: 20px;
+  margin-left: 30px;
+}
+
+.bold {
+  font-weight: bold; 
+}
+
+.payslip-Number {
   display: flex;
   justify-content: center;
-}
-
-.payslip-form {
-  width: 80%;
-  max-width: 400px;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-  text-align: center;
-}
-
-.form-group {
+  align-items: center;
   margin-bottom: 20px;
 }
 
-label {
-  display: block;
-  font-weight: bold;
-}
-
-input[type="text"] {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.payslip-Number label {
+  font-weight: normal;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 img {
-  width: 250px;
-  height: 60px;
-  box-shadow: 0 0 10px rgba(14, 223, 241, 0.5);
-
+  width: 450px;
+  height: 150px;
+  margin-top: 10px;
 }
 
+.payslip-form-container {
+  font-family: Arial, sans-serif;
+  width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
+.header {
+  text-align: center;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin-bottom: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.header h5 {
+  margin-top: 0;
+}
+
+.header p {
+  margin-bottom: 5px;
+}
+
+.totals {
+  display: flex;
+  justify-content: space-between;
+}
+
+.totals p {
+  flex: 1;
+  margin-right: 20px;
+  font-weight: bold;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.signature {
+  margin-top: 40px;
+  justify-content: center;
+  margin-left: 190px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid #ccc;
+  
+}
+
+table th,
+table td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #f2f2f2;
+}
+
+table th {
+  background-color: #f2f2f2;
+}
+
+table, table td, table th {
+  border-color:#ccc; /* Change this to the desired color */
+}
+
+.divider {
+  border-top: 1px solid #050505;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 10px;
+  margin-left: 20px;
+  background-color:#086594;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color:#086594;
+}
+
+.notes ul {
+  list-style-type: disc; /* Use disc bullets */
+  padding-left: 20px; /* Add some left padding */
+}
+
+.notes li {
+  margin-bottom: 5px; /* Add some bottom margin between list items */
+}

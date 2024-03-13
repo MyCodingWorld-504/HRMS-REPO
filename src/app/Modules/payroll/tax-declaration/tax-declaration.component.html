@@ -1,0 +1,250 @@
+<div id="contentToPrint">
+  <h2>Investment Declaration Form for the Year 2023-2024</h2>
+  <div class="table-container">
+    <table>
+      <tr>
+        <td>Name:</td>
+        <td><input type="text" [(ngModel)]="name" /></td>
+        <td>Employee ID:</td>
+        <td><input type="text" [(ngModel)]="employeeId" /></td>
+      </tr>
+      <tr>
+        <td>PAN:</td>
+        <td><input type="text" [(ngModel)]="pan" /></td>
+        <td>Contact Number:</td>
+        <td><input type="number" [(ngModel)]="number" /></td>
+      </tr>
+      <tr>
+        <td>Email ID:</td>
+        <td colspan="3"><input type="email" [(ngModel)]="email" /></td>
+      </tr>
+      <tr>
+        <td colspan="4">Name of the Spouse, Children, Dependents (Parents):</td>
+      </tr>
+      <tr>
+        <td>Spouse:</td>
+        <td><input type="text" [(ngModel)]="spouseName" /></td>
+        <td>Children:</td>
+        <td><input type="text" [(ngModel)]="childrenNames" /></td>
+      </tr>
+      <tr>
+        <td>Dependents (Parents):</td>
+        <td colspan="3">
+          <input type="text" [(ngModel)]="dependentParents" />
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <h4>HOUSE RENT ALLOWANCE :</h4>
+
+  <div class="table-container">
+    <div class="row">
+      <div class="col-md-8">
+        <table>
+          <thead>
+            <tr>
+              <th class="border-td">Sl No.</th>
+              <th class="border-td">Month</th>
+              <th class="border-td">Rent per month</th>
+              <th class="border-td">
+                <select [(ngModel)]="selectedModeOfPayment">
+                  <option value="">Mode of Payment</option>
+                  <option *ngFor="let mode of modeOfPayments" [value]="mode">
+                    {{ mode }}
+                  </option>
+                </select>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let entry of rentEntries; let i = index">
+              <tr *ngIf="i < 4 || showAllRows">
+                <td class="border-td">
+                  <input type="text" [(ngModel)]="entry.slNo" disabled />
+                </td>
+                <td class="border-td">
+                  <input type="text" [(ngModel)]="entry.month" disabled />
+                </td>
+                <td class="border-td">
+                  <input type="text" [(ngModel)]="entry.rent" />
+                </td>
+                <td class="border-td">
+                  <input
+                    type="text"
+                    [ngModel]="selectedModeOfPayment"
+                    (ngModelChange)="updateModeOfPayment($event)"
+                  />
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+        <button class="toggle-button" (click)="toggleShowAllRows()">
+          {{ showAllRows ? "Show Less" : "Show More" }}
+        </button>
+      </div>
+      <div class="col-md-4">
+        <div>
+          <h5>Landlord Name and Address</h5>
+        </div>
+        <div>
+          <label>Landlord Name:</label>
+          <input type="text" [(ngModel)]="singleEntry.landlordName" />
+        </div>
+        <div>
+          <label>Landlord Address:</label>
+          <input type="text" [(ngModel)]="singleEntry.landlordAddress" />
+        </div>
+        <div>
+          <span class="mandatory">*</span>
+          <label>PAN Card:</label>
+          <input type="text" [(ngModel)]="singleEntry.panCard" />
+        </div>
+        <div>
+          <span class="mandatory">*</span>
+          <label>Attached Document Type:</label>
+          <input
+            type="file"
+            (change)="onFileSelected($event)"
+            accept=".pdf, .jpg, .jpeg, .png"
+          />
+        </div>
+        <div>
+          <span class="mandatory">*</span>
+          <label>Rental Agreement:</label>
+          <input
+            type="file"
+            (change)="onFileSelected($event)"
+            accept=".pdf, .jpg, .jpeg, .png"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-container">
+    <h4>NOTE</h4>
+    <ul class="notes">
+      <li>
+        If any change of rented premises during the year, mention both the
+        landlord's details.
+      </li>
+      <li>Mode of Payment: Specify Cash / Cheque / Online Transfer.</li>
+      <li>
+        Submission of PAN Copy (attested by Landlord) and Declaration of
+        Landlord with this form, in the given format is mandatory if the rent is
+        above Rs.8,333/- per month or Rs.1,00,000/- per annum.
+      </li>
+      <li>
+        HRA exemption would be limited to Rs.8333/- pm though higher amount is
+        claimed, if Landlord PAN & Declaration not submitted with this form.
+      </li>
+    </ul>
+  </div>
+
+  <h4>LEAVE TRAVEL CONCESSIONS OR ASSISTANCE</h4>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Have you claimed last year?</th>
+          <td>
+            <label>
+              <input
+                type="radio"
+                name="lastYearClaimedValue"
+                value="yes"
+                [(ngModel)]="lastYearClaimedValue"
+              />
+              Yes
+            </label>
+            <span style="margin-right: 10px"></span>
+            <label>
+              <input
+                type="radio"
+                name="lastYearClaimedValue"
+                value="no"
+                [(ngModel)]="lastYearClaimedValue"
+              />
+              No
+            </label>
+          </td>
+          <th>Planning to claim this year?</th>
+          <td>
+            <label>
+              <input
+                type="radio"
+                name="lastYearClaimed"
+                value="yes"
+                [(ngModel)]="lastYearClaimed"
+              />
+              Yes
+            </label>
+            <span style="margin-right: 10px"></span>
+            <label>
+              <input
+                type="radio"
+                name="lastYearClaimed"
+                value="no"
+                [(ngModel)]="lastYearClaimed"
+              />
+              No
+            </label>
+          </td>
+        </tr>
+      </thead>
+    </table>
+    <br />
+    <ul class="notes">
+      <li>
+        If LTA bills are not produced to the satisfaction of the Company, then
+        Company will deduct applicable tax
+      </li>
+    </ul>
+  </div>
+
+  <h4>LOSS/INCOME FROM HOUSE PROPERTY</h4>
+
+  <div class="table-container">
+    <table>
+      <tr>
+        <th colspan="2">Investments Qualifying for Deduction</th>
+        <th>Self Occupied/Letout</th>
+        <th>Amount</th>
+      </tr>
+      <ng-container *ngFor="let item of houseProperties">
+        <tr
+          *ngIf="
+            item.label !== 'If house property is let out' &&
+            item.label !== 'Total Amount'
+          "
+        >
+          <td class="text-label" colspan="2">{{ item.label }}</td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+        </tr>
+        <tr *ngIf="item.label === 'If house property is let out'">
+          <td class="text-label" colspan="2">{{ item.label }}</td>
+          <td>
+            <span class="spacer">Rent received per year:</span><br />
+            <span class="space">Municipal tax for the year:</span><br />
+          </td>
+
+          <td>
+            <input type="text" class="mb-1" placeholder="Enter rent" /><br />
+            <input type="text" placeholder="Enter municipal tax" />
+          </td>
+        </tr>
+        <tr *ngIf="item.label === 'Total Amount'">
+          <td colspan="3">{{ item.label }}</td>
+          <td><input type="number" /></td>
+        </tr>
+      </ng-container>
+    </table>
+  </div>
+</div>
+<div class="d-flex justify-content-center">
+  <button (click)="generatePDF()" class="toggle-button">Download as PDF</button>
+</div>
+

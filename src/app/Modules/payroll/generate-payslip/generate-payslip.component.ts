@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { PayrollService } from 'src/app/Core/services/payroll.service';
+import { ExportToPdfService } from 'src/app/Core/services/export-to-pdf.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-generate-payslip',
@@ -24,17 +26,31 @@ export class GeneratePayslipComponent   {
   showPayslip: boolean = false;
   employeeDetails: any;
   employeeId : any;
-constructor(private payrollService : PayrollService){}
+  
+  @ViewChild('payslipForm', { static: false })
+  payslipForm!: ElementRef;
 
-  onClose(): void{
-    this.showPayslip = false;
+constructor(private payrollService : PayrollService,
+ private exportPDF:ExportToPdfService,
+ private toastr: ToastrService,){
+
   }
+
+  // onClose(): void{
+  //   this.showPayslip = false;
+  // }
   getEmployeeDetails(): void {
-    this.showPayslip = true;
+    // this.showPayslip = true; 
+    this.showPayslip = !this.showPayslip;
     this.payrollService.getEmployeeDetailsById(this.employeeId)
       .subscribe((data: any) => {
         this.employeeDetails = data;
       });
+  }
+
+  exportToPDF(): void {
+    const elementToPrint = this.payslipForm.nativeElement;
+    this.exportPDF.exportFormToPDF(elementToPrint, 'payslip.pdf');
   }
 
 }

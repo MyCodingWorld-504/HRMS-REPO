@@ -18,4 +18,8 @@ onClickPayForm() {
   this.router.navigate(['dashboard', 'payroll','payslipForm']);
 }
 
+onClickTaxForm(){
+  this.router.navigate(['dashboard', 'payroll','tax-declaration']);
+}
+
 }
