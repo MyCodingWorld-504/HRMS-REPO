@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
+import html2canvas from 'html2canvas';
+import jspdf from 'jspdf';
 @Injectable({
   providedIn: 'root',
 })
@@ -94,4 +96,18 @@ const tableStartY = logoHeight + 2;
   private padTo2Digits(num: number): string {
     return num.toString().padStart(2, '0');
   }
+
+  exportFormToPDF(elementToPrint: HTMLElement, fileName: string): void {
+    html2canvas(elementToPrint, { backgroundColor: null }).then((canvas) => {
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jspdf('p', 'mm', 'a4');
+      const imgWidth = 210;
+      const imgHeight = canvas.height * imgWidth / canvas.width;
+      pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+      pdf.save(fileName);
+    });
+  }
+  
+  
+  
 }

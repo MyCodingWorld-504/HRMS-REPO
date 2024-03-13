@@ -1,42 +1,48 @@
-<div>
-  <label for="monthSelect">Select Month:</label>
-  <select id="monthSelect">
-    <option value="January">January</option>
-    <option value="February">February</option>
-    <option value="March">March</option>
-    <option value="April">April</option>
-    <option value="May">May</option>
-    <option value="June">June</option>
-    <option value="July">July</option>
-    <option value="August">August</option>
-    <option value="September">September</option>
-    <option value="October">October</option>
-    <option value="November">November</option>
-    <option value="December">December</option>
-  </select>
 
-  <label for="yearSelect">Select Year:</label>
-  <select id="yearSelect">
-    <option value="2022">2024</option>
-    <option value="2023">2023</option>
-    <option value="2020">2022</option>
-    <option value="2020">2021</option>
-    <option value="2020">2020</option>
-    <option value="2019">2019</option>
-    <option value="2018">2018</option>
-    <option value="2017">2017</option>
-    <option value="2016">2016</option>
-  </select>
 
-  <label for="employeeId">Employee ID:</label>
-  <input type="text" [(ngModel)]="employeeId" placeholder="Enter Employee ID" />
 
-  <button (click)="getEmployeeDetails()">Show Payslip</button>
+<div class="container-box">
+  <div class="container">
+    <label class="label" for="monthSelect">Select Month:</label>
+    <select class="select" id="monthSelect">
+      <option value="January">January</option>
+      <option value="February">February</option>
+      <option value="March">March</option>
+      <option value="April">April</option>
+      <option value="May">May</option>
+      <option value="June">June</option>
+      <option value="July">July</option>
+      <option value="August">August</option>
+      <option value="September">September</option>
+      <option value="October">October</option>
+      <option value="November">November</option>
+      <option value="December">December</option>
+    </select>
+
+    <label class="label" for="yearSelect">Select Year:</label>
+    <select class="select" id="yearSelect">
+      <option value="2022">2024</option>
+      <option value="2023">2023</option>
+      <option value="2022">2022</option>
+      <option value="2021">2021</option>
+      <option value="2020">2020</option>
+      <option value="2019">2019</option>
+      <option value="2018">2018</option>
+      <option value="2017">2017</option>
+      <option value="2016">2016</option>
+    </select>
+
+    <label class="label" for="employeeId">Employee ID:</label>
+    <input class="input" type="text" [(ngModel)]="employeeId" placeholder="Enter Employee ID" />
+
+    <button (click)="getEmployeeDetails()" class="button">Show Payslip</button>
+    <button (click)="exportToPDF()" class="button">Export to PDF</button>
+  </div>
 </div>
 
+
 <ng-template [ngIf]="showPayslip">
-<div class="payslip-form-container">
-  <div class="payslip">
+<div class="payslip-form-container" #payslipForm>
     <div class="header">
       <h5><img src="assets/Mainlogo.jpg" /></h5>
       <p>
@@ -48,48 +54,185 @@
       </p>
     </div>
 
-    <div *ngFor="let item of employeeDetails">
-      <p>Entity: {{ item.Entity }}</p>
-      <p>Employee ID : {{ item["EmployeeID"] }}</p>
-      <p>Employee Name: {{ item["Employee Name"] }}</p>
-      <p>Designation:{{ item.Designation }}</p>
-      <p>Department:{{ item.Department }}</p>
-      <p>DOJ:{{ item.DOJ }}</p>
-    </div>
+    <hr class="divider">
 
-    <div class="earnings">
-      <table>
+    <div *ngFor="let item of employeeDetails">
+
+     <div class="payslip-Number">
+      <label>PAYSLIP NUMBER : {{item["Pay Slip Number"]}}</label>
+     </div>
+
+      <div class="employee-details">
+        <div class="column">
+          <label>Entity:</label>
+          <label>Employee ID:</label>
+          <label>Employee Name:</label>
+          <label>Designation:</label>
+          <label>Department:</label>
+          <label>DOJ:</label>
+          <label>PAN Card:</label>
+        </div>
+        <div class="column">
+          <span>{{ item.Entity }}</span>
+          <span>{{ item["EmployeeID"] }}</span>
+          <span>{{ item["Employee Name"] }}</span>
+          <span>{{ item.Designation }}</span>
+          <span>{{ item.Dep }}</span>
+          <span>{{ item.DOJ }}</span>
+          <span>{{ item["PAN Card"] }}</span>
+        </div>
+        <div class="column2">
+          <label>Bank Name:</label>
+          <label>Account Number:</label>
+          <label>UAN:</label>
+          <label>ESI:</label>
+          <label>Days in Month:</label>
+          <label>Days Present:</label>
+          <label>Days Absent:</label>
+        </div>
+        <div class="column2">
+          <span>{{ item["Bank Name"] }}</span>
+          <span>{{ item["Bank Account Number"] }}</span>
+          <span>{{ item.UAN }}</span>
+          <span>{{ item.ESI }}</span>
+          <span>{{item["No of Days in Month"]}}</span>
+          <span>{{ item["No. of Days Present"] }}</span>
+          <span>{{ item["No. Of. Absents"] }}</span>
+        </div>
+      </div>
+    <div class="payslip-tables-container">
+      <table class="payslip-table" *ngIf="item.Dep === 'IT' || item.Dep === 'HR'" >
         <tr>
+          <th>Allowances</th>
+          <th>Actuals</th>
           <th>Earnings</th>
-          <th>Amount</th>
           <th>Deductions</th>
           <th>Amount</th>
         </tr>
         <tr>
-          <td>Basic Pay</td>
-          <td></td>
-          <td>Provident Fund</td>
-          <td></td>
+          <td class="bold">BASIC</td>
+          <td>{{ item["Ear. Basic"] }}</td>
+          <td>{{ item["Ear. Basic"] }}</td>
+          <td class="bold">P.T.</td>
+          <td>{{ item["Tax Deduction"] }}</td>
         </tr>
-        <!-- Add more earnings and deductions here -->
+        <tr>
+          <td class="bold">HRA</td>
+          <td>{{ item["Ear. HRA"] }}</td>
+          <td>{{ item["Ear. HRA"] }}</td>
+          <td class="bold">T.D.S</td>
+          <td>{{ item["Tax Deduction"] }}</td>
+        </tr>
+        <tr>
+          <td class="bold" class="bold" >Conv Allowance</td>
+          <td>{{ item["Housing Allowance"] }}</td>
+          <td>{{ item["Housing Allowance"] }}</td>
+          <td class="bold">ESI</td>
+          <td>{{ item["ESI"] }}</td>
+        </tr>
+        <tr >
+          <td class="bold" class="bold">Special Allowance</td>
+          <td>{{ item["Special Allowance"] }}</td>
+          <td>{{ item["Special Allowance"] }}</td>
+          <td class="bold">Insurance</td>
+          <td>{{ item["Insurance Deduction"] }}</td>
+        </tr>
+        <tr>
+          <td class="bold" class="bold">Medical Reimbursement</td>
+          <td>{{ item["Medical Allowance"] }}</td>
+          <td>{{ item["Medical Allowance"] }}</td>
+          <td class="bold">P.F</td>
+          <td>{{ item["PF"] }}</td>
+        </tr>
+        <tr>
+          <td ></td>
+          <td ></td>
+          <td ></td>
+          <td class="bold">Others</td>
+          <td>{{ item["Other Deductions"] }}</td>
+        </tr>
+        <tr>
+          <td class="bold">Gross Amount</td>
+          <td>{{ item["Gross Salary"] }}</td>
+          <td>{{ item["Gross Salary"] }}</td>
+          <td class="bold">Total</td>
+          <td>{{ item["Total Deductions"] }}</td>
+        </tr>
+      </table>
+
+      <table class="payslip-table"  *ngIf="item.Dep !== 'IT' && item.Dep !== 'HR'">
+        <tr>
+          <th>Allowances</th>
+          <th>Actuals</th>
+          <th>Earnings</th>
+          <th>Deductions</th>
+          <th>Amount</th>
+        </tr>
+        <tr>
+          <td class="bold">BASIC</td>
+          <td>{{ item["Ear. Basic"] }}</td>
+          <td>{{ item["Ear. Basic"] }}</td>
+          <td class="bold">P.T.</td>
+          <td>{{ item["Tax Deduction"] }}</td>
+        </tr>
+        <tr>
+          <td class="bold">HRA</td>
+          <td>{{ item["Ear. HRA"] }}</td>
+          <td>{{ item["Ear. HRA"] }}</td>
+          <td class="bold">T.D.S</td>
+          <td>{{ item["Tax Deduction"] }}</td>
+        </tr>
+        <tr >
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="bold">ESI</td>
+          <td>{{ item["ESI"] }}</td>
+        </tr>
+        <tr  >
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="bold">Insurance</td>
+          <td>{{ item["Insurance Deduction"] }}</td>
+        </tr>
+        <tr  >
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="bold">P.F</td>
+          <td>{{ item["PF"] }}</td>
+        </tr>
+        <tr>
+          <td class="bold">Insentives</td>
+          <td>{{ item["Overtime Hours"] * item["Overtime Rate"] }}</td>
+          <td>{{ item["Overtime Hours"] * item["Overtime Rate"] }}</td>
+          <td class="bold">Others</td>
+          <td>{{ item["Other Deductions"] }}</td>
+        </tr>
+        <tr>
+          <td class="bold">Gross Amount</td>
+          <td>{{ item["Gross Salary"] }}</td>
+          <td>{{ item["Gross Salary"] }}</td>
+          <td class="bold">Total</td>
+          <td>{{ item["Total Deductions"] }}</td>
+        </tr>
       </table>
     </div>
 
+    <br><br>
+
     <div class="totals">
-      <p>Total Earnings:</p>
-      <p>Total Deductions:</p>
-      <p>Net Pay:</p>
+      <p>Total Earnings:{{item["Total Earnings"]}}</p>
+      <p>Total Deductions:{{item["Total Deductions"]}}</p>
+      <p>Net Pay:{{item["Net Salary"]}}</p>
     </div>
+    
 
     <div class="signature">
-      <p>Employer Signature: ______________________</p>
-      <p>Employee Signature: _______________________</p>
+      <p> (This is a computer generated pay slip hence does not require signature)</p>
     </div>
   </div>
-<div>
-
-  <button class="btn btn-warning" (click)="onClose()">close</button>
-</div>
 </div>
 </ng-template>
 <!-- <input type="text" [(ngModel)]="employeeId" placeholder="Enter Employee ID">

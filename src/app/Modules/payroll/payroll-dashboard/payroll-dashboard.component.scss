@@ -4,7 +4,7 @@
   
   .half-card {
     flex: 1;
-    padding: 10px;
+    padding: 20px;
   }
   
   .card {
@@ -12,7 +12,7 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    height: 600px;
+    height: 300px;
   }
   
   .card-header {
@@ -25,5 +25,7 @@
   .card-body {
     padding: 10px;
     color: #086594;
+    font-weight: lighter;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
   

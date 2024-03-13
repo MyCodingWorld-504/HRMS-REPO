@@ -72,7 +72,10 @@ menuItems: MenuItem[] = [
       icon: faMoneyBill,
       submenu: [
         { label: 'Payroll', route: 'payroll' },
-        { label: 'Payslip', route: 'payroll' },
+        { label: 'Payslip', route: 'payroll/payslipForm' },
+        { label: 'Tax Declarations', route: 'payroll/tax-declaration'},
+        { label: 'Statutory Compliances', route: '' },
+        { label: 'Payroll Report', route: '' }, 
       ],
     },
     {

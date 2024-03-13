@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class BankDetailService {
 
-  private apiUrl = 'http://localhost:3001/bank';
+  private apiUrl = 'http://localhost:3000/bank';
   private apiEmp='http://localhost:3000/profiles';
   private apiList='http://localhost:3000/list';
   private apiRoles='http://localhost:3000/Roles';
