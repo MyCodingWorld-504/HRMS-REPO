@@ -16,5 +16,36 @@ export interface Bank {
   aadhar: string;
   pan: string;
   address: string;
-  // Add other form fields as needed
+
+}
+
+export interface ShiftOption {
+  name: string;
+  color: string;
+  time: string;
+}
+
+export interface LeaveOptions{
+  id: string,
+  label: string,
+  checked: boolean,
+  customHeader: string;
+}
+
+export interface Shift
+{
+  id: any;
+  shift: string;
+  time: string;
+  date: string;
+  leaveApplied: boolean;
+
+}
+
+export interface PublicHoliday {
+  sno: number;
+  holidayName: string;
+  date: string;
+  day: string;
+  id: string;
 }

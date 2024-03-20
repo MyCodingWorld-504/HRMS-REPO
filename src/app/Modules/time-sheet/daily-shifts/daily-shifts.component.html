@@ -1,0 +1,61 @@
+<div class="container-fluid">
+    <h2>Daily Shift Details</h2>
+    <div class="d-flex justify-content-between">
+      <div>
+        <h4></h4>
+      </div>
+      <div>
+        <a (click)="exportToPDF()" class="button">Export to PDF</a>
+        <a (click)="exportToExcel()" class="button">Export to Excel</a>
+        <a class="button" (click)="onAdd()" routerLink="/attendance/edit">
+          <fa-icon [icon]="faPlusIcon"></fa-icon>Add
+        </a>
+      </div>
+    </div>
+
+<div class="container-fluid">
+    <div class="card mt-2">
+      <table class="table table-bordered">
+        <thead class="custom-table-header">
+          <tr>
+            <th>S.No</th>
+            <th>Emp ID</th>
+            <th>Emp Name</th>
+            <th>Department</th>
+            <th>Category</th>
+            <th>Date</th>
+            <th>Shift</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let entry of dailyShiftDetails">
+            <td>{{ entry['S.No'] }}</td>
+            <td>{{ entry['Emp ID'] }}</td>
+            <td>{{ entry['Emp Name'] }}</td>
+            <td>{{ entry['Department'] }}</td>
+            <td>{{ entry['Category'] }}</td>
+            <td>{{ entry['Date'] }}</td>
+            <td>{{ entry['Shift'] }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="d-flex justify-content-between mt-3">
+        <div class="items-per-page">
+            <select class="form-select" name="itemsPerPage" (change)="onItemsPerPageChange($event)">
+              <option *ngFor="let option of itemsPerPageOptions" [value]="option">
+                {{ option }}
+              </option>
+            </select>
+          </div>
+          <div class="select-show">
+            Showing Results {{ getStartIndex() }} - {{ getEndIndex() }} of {{ filteredGroups.length }} entries.
+          </div>
+          <div class="pagination-container">
+            <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  
+  

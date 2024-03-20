@@ -60,43 +60,30 @@ menuItems: MenuItem[] = [
       ],
     },
     {
-      label: 'Attendence',
-      icon: faClipboardUser,
-      submenu: [
-        { label: 'Contact', route: 'administration/view' },
-        { label: 'Service', route: 'administration/edit' },
-      ],
-    },
-    {
       label: 'Payrol',
       icon: faMoneyBill,
       submenu: [
         { label: 'Payroll', route: 'payroll' },
         { label: 'Payslip', route: 'payroll/payslipForm' },
         { label: 'Tax Declarations', route: 'payroll/tax-declaration'},
+        { label: 'Schedule', route: 'payroll/schedule' },
         { label: 'Statutory Compliances', route: '' },
-        { label: 'Payroll Report', route: '' }, 
+        { label: 'Payroll Report', route: '' },
       ],
     },
     {
-      label: 'Timesheet',
+      label: 'Attendance Sheet',
       icon: faClock,
       submenu: [
-        { label: 'Contact', route: '/contact' },
-        { label: 'Service', route: '/service' },
+        { label: 'Scheduler-Dashboard', route: 'timesheet/Scheduler-Dashboard' },
+        { label: 'Daily Shift Details', route: 'timesheet/daily-shifts' },
+        { label: 'Leave Management', route: 'timesheet/leaveManagement' },
+        { label: 'Timesheet', route: 'timesheet/attendance-sheet' }
       ],
     },
     {
       label: 'Recruitment',
       icon: faSearchengin,
-      submenu: [
-        { label: 'Contact', route: '/contact' },
-        { label: 'Service', route: '/service' },
-      ],
-    },
-    {
-      label: 'Leave',
-      icon: faUpRightFromSquare,
       submenu: [
         { label: 'Contact', route: '/contact' },
         { label: 'Service', route: '/service' },
@@ -127,6 +114,10 @@ menuItems: MenuItem[] = [
     }
     else if(item.label === 'Payrol'){
       this.router.navigate(['dashboard','payroll', 'payrollDashboard']);
+      this.toggleSubMenu(item);
+    }
+    else if(item.label === 'Attendance Sheet'){
+      this.router.navigate(['dashboard','timesheet', 'timesheetDashboard']);
       this.toggleSubMenu(item);
     }
     else {

@@ -1,42 +1,54 @@
-<div class="container">
-    <div class="half-card">
-      <h5 (click)="onClickPayslip()">
-        <div class="card">
-          <div class="card-header">
-            Payslip
-          </div>
-          <div class="card-body">
-           <p>Custom Your Payroll items</p>
-           <p>Simplify Your Payroll To One Click</p>
-          </div>
+<div class="container-fluid mt-5 mb-3">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="slide-right" (click)="onClickPayslip()">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Payslip</h5>   
+          <p>Customize Your Payroll items</p>
+          <p>Simplify Your Payroll To One Click</p>
         </div>
-      </h5>
+      </div>
     </div>
-    <div class="half-card">
-      <h5 (click)="onClickPayForm()">
-        <div class="card">
-          <div class="card-header">
-            Generate Payroll
-          </div>
-          <div class="card-body">
-           <p> Run Your Payroll With Single Click Automate </p>
-           <p> Your Payroll in Minutes </p>
-          </div>
+    <div class="slide-right" (click)="onClickPayForm()">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Generate Payroll</h5>
+          <p>Run Your Payroll With Single Click Automate</p>
+          <p>Your Payroll in Minutes</p>
         </div>
-    </h5>
+      </div>
     </div>
-    <div class="half-card">
-      <h5 (click)="onClickTaxForm()">
-        <div class="card">
-          <div class="card-header">
-            Tax Declaration
-          </div>
-          <div class="card-body">
-           <p></p>
-           <p> Your Tax Declaration in Minutes </p>
-          </div>
+    <div class="slide-down" (click)="onClickTaxForm()">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Tax Declaration</h5>
+          <p>Your Tax Declaration in Minutes</p>
         </div>
-    </h5>
+      </div>
+    </div>
+    <div class="slide-top" (click)="onClickTaxForm()">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Schedule</h5>
+          <p>Your Tax Declaration in Minutes</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-left" (click)="onClickTaxForm()">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Statutory Compliances</h5>
+          <p>Your Tax Declaration in Minutes</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-left" (click)="onClickTaxForm()">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Payroll Report</h5>
+          <p>Your Tax Declaration in Minutes</p>
+        </div>
+      </div>
     </div>
   </div>
-  
+</div>
