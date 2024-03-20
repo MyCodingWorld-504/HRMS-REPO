@@ -5,11 +5,13 @@ import { PayrollDashboardComponent } from './payroll-dashboard/payroll-dashboard
 import { GeneratePayslipComponent } from './generate-payslip/generate-payslip.component';
 import { TaxDeclarationComponent } from './tax-declaration/tax-declaration.component';
 
+
 const routes: Routes = [
   {path:'payrollDashboard',component:PayrollDashboardComponent},
   {path:'payslipForm',component:GeneratePayslipComponent},
   {path:'',component:PayslipComponent},
-  {path:'tax-declaration',component:TaxDeclarationComponent}
+  {path:'tax-declaration',component:TaxDeclarationComponent},
+
 ];
 
 @NgModule({

@@ -3,8 +3,6 @@
     <div class="toggle-button m-lg-2" (click)="onToggleSidebarClick()">
     <fa-icon [icon]="faBars"></fa-icon>
     </div>
-    <a class="navbar-brand"
-      >Welcome <fa-icon [icon]="faHandsPraying"></fa-icon></a>
       <a class="user" *ngIf="isMenuVisible" routerLink="hr-user-list">Users</a>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ms-auto">
@@ -22,7 +20,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li><a class="dropdown-item" href="#">Change Password</a></li>
+            <li><a class="dropdown-item" href="#">Change Password</a></li> 
             <li><a class="dropdown-item" (click)="onLogout()">Logout</a></li>
           </ul>
         </li>

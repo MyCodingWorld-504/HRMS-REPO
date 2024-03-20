@@ -1,0 +1,154 @@
+<div class="container-fluid">
+  <div class="half-card">
+    <div class="d-flex justify-content-between mt-1">
+      <h4 class="card card-title">{{ currentDate | date : "MMMM y" }}</h4>
+      <div class="d-flex">
+        <button
+          class="m-lg-1 btn-custom btn-previous-month"
+          (click)="showShiftForm = !showShiftForm"
+        >
+          Add Shift
+        </button>
+        <button
+          class="m-lg-1 btn-custom btn-previous-month"
+          (click)="previousMonth()"
+        >
+          Previous Month
+        </button>
+        <button class="m-lg-1 btn-custom btn-next-month" (click)="nextMonth()">
+          Next Month
+        </button>
+      </div>
+    </div>
+    <div class="header">
+      <div class="day-name" *ngFor="let day of getDaysOfWeek(); let i = index">
+        {{ day }}
+      </div>
+    </div>
+    <div class="calendar">
+      <div
+        class="day"
+        *ngFor="let day of daysInMonth"
+        [ngClass]="getShiftClass(day)"
+      >
+        <fa-icon
+          [icon]="faPenIcon"
+          class="edit-icon"
+         *ngIf="!isWeekend(day) && !isHoliday(day) && getShiftClass(day)"
+          (click)="editShift(day); $event.stopPropagation()" 
+        ></fa-icon>
+        <fa-icon
+          [icon]="faTrashIcon"
+          class="trash-icon"
+          *ngIf="!isWeekend(day) && !isHoliday(day) && getShiftClass(day)"
+          (click)="deleteShift(day); $event.stopPropagation()"
+        ></fa-icon>
+        <div [ngClass]="{ weekend: day.getDay() === 0}">
+          {{ day.getDate() }}
+        </div>
+        <div *ngIf="isHoliday(day)">
+          {{ getHolidayName(day) }}
+        </div>
+        <div *ngFor="let shift of shifts">
+          <div
+            *ngIf="
+              !isWeekend(day) && shift.date === day.toISOString().split('T')[0]
+            "
+          >
+            {{ shift.shift }}
+            <br />
+            {{ shift.time }}
+          </div>
+        </div>
+        <div *ngIf="isWeekend(day) && !isHoliday(day)" class="weekend-text">Weekend</div>
+      </div>
+    </div>
+    <div class="shift-options mt-3">
+      <div *ngFor="let option of shiftOptions" class="shift-option">
+        <div class="circle" [style.backgroundColor]="option.color"></div>
+        <div>
+          <div class="shift-name">{{ option.name }}</div>
+          <div class="shift-time">{{ option.time }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay" *ngIf="showShiftForm">
+    <div class="add-shift-form oncanvas-bottom" *ngIf="showShiftForm">
+      <h2>Add Shift</h2>
+      <div>
+        <label for="shiftName">Shift Name:</label>
+        <select id="shiftName" [(ngModel)]="selectedShift">
+          <option *ngFor="let option of shiftOptions" [ngValue]="option">
+            {{ option.name }}
+          </option>
+        </select>
+      </div>
+      <div>
+        <label for="shiftDate">Date:</label>
+        <input type="date" id="shiftDate" [(ngModel)]="selectedDate" />
+      </div>
+      <button
+        class="button-btn mt-5"
+        (click)="addShift(selectedShift.name, selectedShift.time, selectedDate)"
+      >
+        Add Shift
+      </button>
+      <div>
+        <button class="button-btn" (click)="closeShiftForm()">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" *ngIf="editingShift">
+  <div class="add-shift-form oncanvas-bottom">
+    <h2>Edit Shift</h2>
+    <div>
+      <label for="editShiftName">Shift Name:</label>
+      <select id="editShiftName" [(ngModel)]="selectedShift">
+        <option *ngFor="let option of shiftOptions" [ngValue]="option">
+          {{ option.name }}
+        </option>
+      </select>
+    </div>
+    <div>
+      <label for="editShiftDate">Date:</label>
+      <input
+        type="date"
+        id="editShiftDate"
+        [(ngModel)]="selectedDate"
+        readonly
+      />
+    </div>
+    <div>
+      <label for="editShiftTime">Time:</label>
+      <input
+        type="text"
+        id="editShiftTime"
+        [(ngModel)]="selectedShift.time"
+        readonly
+      />
+    </div>
+    <button
+      class="button-btn"
+      (click)="
+        updateShift(selectedShift.name, selectedShift.time, selectedDate)
+      "
+    >
+      Update Shift
+    </button>
+    <div>
+      <button class="button-btn" (click)="closeShiftForm()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" *ngIf="showDeleteConfirm">
+  <app-delete-confirmation
+    [shift]="shiftToDelete"
+    (confirm)="performDelete()"
+    (cancel)="cancelDelete()"
+  ></app-delete-confirmation>
+</div>

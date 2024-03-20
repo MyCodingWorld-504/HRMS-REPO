@@ -24,6 +24,11 @@ const routes: Routes = [
     
       },
       {
+        path:'timesheet',
+        loadChildren: () => import('../time-sheet/time-sheet.module').then((m)=>m.TimeSheetModule),
+    
+      },
+      {
         path: 'hr-sidebar',
         component: HrSidebarComponent,
 

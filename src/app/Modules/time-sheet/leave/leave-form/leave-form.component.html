@@ -1,0 +1,30 @@
+<form (ngSubmit)="submitForm()" #leaveForm="ngForm">
+    <div>
+      <label for="type">Type of Leave:</label>
+      <select id="type" name="type" [(ngModel)]="leaveRequest.type" required>
+        <option value="annual">Annual Leave</option>
+        <option value="annual">Casual Leave</option>
+        <option value="sick">Sick Leave</option>
+        <option value="unpaid">Paid Leave</option>
+        <option value="unpaid">Unpaid Leave</option>
+        <option value="unpaid">Travel Leave</option>
+        <option value="other">Maternity Leave</option>
+        <option value="other">Maternity Leave</option>
+        <option value="other">Other Leave</option>
+      </select>
+    </div>
+    <div>
+      <label for="startDate">Start Date:</label>
+      <input type="date" id="startDate" name="startDate" [(ngModel)]="leaveRequest.startDate" required>
+    </div>
+    <div>
+      <label for="endDate">End Date:</label>
+      <input type="date" id="endDate" name="endDate" [(ngModel)]="leaveRequest.endDate" required>
+    </div>
+    <div>
+      <label for="reason">Reason for Leave:</label>
+      <textarea id="reason" name="reason" [(ngModel)]="leaveRequest.reason" required></textarea>
+    </div>
+    <button type="submit" [disabled]="leaveForm.invalid">Submit</button>
+  </form>
+  

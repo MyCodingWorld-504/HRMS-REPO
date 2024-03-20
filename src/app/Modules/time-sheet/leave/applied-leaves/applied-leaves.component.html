@@ -1,0 +1,68 @@
+
+<div class="container-fluid">
+    <div class="row mt-3">
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Rejected Leaves</h5>
+            <p class="card-text">Number of rejected leaves</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Approved Leaves</h5>
+            <p class="card-text">Number of approved leaves</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Total Leaves</h5>
+            <p class="card-text">Total number of leaves</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">New Leave Applications</h5>
+            <p class="card-text">Number of new leave applications</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+<div class="container-fluid">
+    <h2>Leave Requests</h2>
+    <table class="table table-bordered mt-3">
+      <thead class="custom-table-header">
+        <tr>
+          <th>Employee Name</th>
+          <th>Leave Type</th>
+          <th>Posting Date</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let request of pagedLeaveRequests">
+          <td>{{ request.employeeName }}</td>
+          <td>{{ request.leaveType }}</td>
+          <td>{{ request.postingDate }}</td>
+          <td>{{ request.status }}</td>
+          <td>
+            <button class="button" (click)="approve(request)">Approve</button>
+            <button class="button" (click)="reject(request)">Reject</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="onPageChange($event)" class="pagination"></pagination-controls>
+  </div>
+  

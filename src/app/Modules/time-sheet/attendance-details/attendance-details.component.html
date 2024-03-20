@@ -1,0 +1,79 @@
+<div>
+    <h2>Attendance Details</h2>
+    <div class="d-flex justify-content-between" style="margin-bottom: 20px;">
+      <div>
+        <h4></h4>
+      </div>
+      <div>
+        <a (click)="exportToPDF()" class="button">Export to PDF</a>
+        <a (click)="exportToExcel()" class="button">Export to Excel</a>
+        <a class="button" (click)="onAdd()" routerLink="/attendance/edit">
+          <fa-icon [icon]="faPlusIcon"></fa-icon>Add
+        </a>
+      </div>
+    </div>
+    <div>
+        <table class="table table-bordered">
+            <thead class="custom-table-header">
+              <tr>
+                <th>S.No</th>
+                <th>Vendor / Client</th>
+                <th>Emp ID</th>
+                <th>Emp Name</th>
+                <th>Department</th>
+                <th>D.O.J</th>
+                <th>Category</th>
+                <th *ngFor="let day of shiftsArray">Day {{ day.number }}</th>
+                <th>DAYS PRESENT</th>
+                <th>WO</th>
+                <th>HO</th>
+                <th>Absent (LOP)</th>
+                <th>DAYS PAYABLE</th>
+                <th>OT HR'S</th>
+                <th>Bus</th>
+                <th>Remarks</th>
+                <th>TD</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let entry of attendanceDetails">
+                <td>{{ entry['S.No'] }}</td>
+                <td>{{ entry['Vendor / Client'] }}</td>
+                <td>{{ entry['Emp ID'] }}</td>
+                <td>{{ entry['Emp Name'] }}</td>
+                <td>{{ entry['Department'] }}</td>
+                <td>{{ entry['D.O.J'] }}</td>
+                <td>{{ entry['Category'] }}</td>
+                <ng-container *ngFor="let day of shiftsArray">
+                  <td>{{ entry.Shifts[day.number] }}</td>
+                </ng-container>
+                <td>{{ entry['DAYS PRESENT'] }}</td>
+                <td>{{ entry['WO'] }}</td>
+                <td>{{ entry['HO'] }}</td>
+                <td>{{ entry['Absent (LOP)'] }}</td>
+                <td>{{ entry['DAYS PAYABLE'] }}</td>
+                <td>{{ entry['OT HR\'S'] }}</td>
+                <td>{{ entry['Bus'] }}</td>
+                <td>{{ entry['Remarks'] }}</td> 
+                <td>31</td>
+              </tr>
+            </tbody>
+          </table>
+      <div class="d-flex justify-content-between mt-3">
+        <div class="items-per-page">
+          <select class="form-select" name="itemsPerPage" (change)="onItemsPerPageChange($event)">
+            <option *ngFor="let option of itemsPerPageOptions" [value]="option">
+              {{ option }}
+            </option>
+          </select>
+        </div>
+        <div class="select-show">
+          Showing Results {{ getStartIndex() }} - {{ getEndIndex() }} of {{ filteredGroups.length }} entries.
+        </div>
+        <div class="pagination-container">
+          <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+        </div>
+      </div>
+    </div>
+  </div>
+  

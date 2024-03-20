@@ -1,0 +1,255 @@
+.container-fluid {
+  margin: 0 auto;
+  justify-content: flex-start;
+}
+
+.half-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #086594;
+  border:none;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  color: #086594;
+}
+
+.day-name {
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.day {
+  position: relative;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  .edit-icon {
+    position: absolute;
+    top: 5px;
+    right: 25px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &:hover .edit-icon {
+    opacity: 1;
+  }
+  .trash-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &:hover .trash-icon {
+    opacity: 1;
+  }
+}
+
+.day div {
+  text-align: center;
+}
+
+
+.shift-options {
+  display: flex;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  margin-right: 20px;
+}
+
+.shift-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-right: 20px;
+}
+
+.circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.shift-name {
+  font-weight: bold;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #555;
+  cursor: pointer;
+}
+
+.oncanvas-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 20px;
+  border-top: 1px solid #cccccc;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+}
+
+.oncanvas-bottom h2 {
+  margin-top: 0;
+}
+
+.oncanvas-bottom label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.oncanvas-bottom input[type="date"],
+.oncanvas-bottom select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+}
+
+.oncanvas-bottom button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #086594;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.oncanvas-bottom button:hover {
+  background-color: #086594;
+}
+
+
+.btn-custom {
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-previous-month {
+  background-color:#086594;
+  color: #fff;
+}
+
+.btn-next-month {
+  background-color:#086594;
+  color: #fff;
+}
+
+
+.btn-custom:hover {
+  opacity: 0.8;
+}
+
+.day-shift {
+  background-color: #c1f8fa;
+}
+
+.late-shift {
+  background-color: #cfc0ef;
+}
+
+.night-shift {
+  background-color: #c6def2;
+}
+
+.afternoon-shift {
+  background-color: #fae1cf;
+}
+
+.leave-applied {
+  background-color: yellow;
+}
+
+
+.holiday {
+  background-color: rgb(207, 110, 191);
+  color: #fff;
+  font-weight: 900;
+  font-style: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.button-btn{
+  margin-bottom: 20px;
+  margin-top:20px;
+  background-color:#086594;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.add-shift-form {
+  width: 500px;
+  height: 460px;
+  position: fixed;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px #3a3b3b;
+  z-index: 1001;
+}
+

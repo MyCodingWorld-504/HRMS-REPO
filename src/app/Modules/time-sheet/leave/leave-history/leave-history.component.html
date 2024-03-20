@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <h2>Leave History</h2>
+    <table class="table table-bordered mt-3">
+      <thead class="custom-table-header">
+        <tr>
+          <th>Sno</th>
+          <th>Leave Type</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Reason For Leave</th>
+          <th>Admin Action</th>
+          <th>Admin Review</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let leave of pagedLeaveHistory">
+          <td>{{ leave.sno }}</td>
+          <td>{{ leave.leaveType }}</td>
+          <td>{{ leave.startDate }}</td>
+          <td>{{ leave.endDate }}</td>
+          <td>{{ leave.reason }}</td>
+          <td>{{ leave.adminAction }}</td>
+          <td>{{ leave.adminReview }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)=" pageChangedDepartments($event)" class="pagination"></pagination-controls>
+  </div>
+  

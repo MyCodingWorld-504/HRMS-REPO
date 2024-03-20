@@ -9,18 +9,22 @@ import { PayrollDashboardComponent } from './payroll-dashboard/payroll-dashboard
 import { GeneratePayslipComponent } from './generate-payslip/generate-payslip.component';
 import { TaxDeclarationComponent } from './tax-declaration/tax-declaration.component';
 
+
 @NgModule({
   declarations: [
     PayslipComponent,
     PayrollDashboardComponent,
     GeneratePayslipComponent,
-    TaxDeclarationComponent
+    TaxDeclarationComponent,
+   
   ],
   imports: [
     CommonModule,
     PayrollRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
+
   ]
 })
 export class PayrollModule { }
