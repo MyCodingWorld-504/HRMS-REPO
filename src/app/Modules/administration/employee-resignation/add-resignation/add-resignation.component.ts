@@ -24,5 +24,10 @@ export class AddResignationComponent {
   onCancel() {
     this.router.navigate(['dashboard', 'administration', 'resignation']);
   }
-
+  OnRouteDashboard(){
+    this.router.navigate(['dashboard', 'administration', 'admin-dashboard']);
+  }
+  OnRouteEmployee(){
+    this.router.navigate(['dashboard', 'administration', 'resignation']);
+  }
 }

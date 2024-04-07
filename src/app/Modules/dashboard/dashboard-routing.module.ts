@@ -29,6 +29,11 @@ const routes: Routes = [
     
       },
       {
+        path:'recuirtment',
+        loadChildren: () => import('../recuirtment/recuirtment.module').then((m)=>m.RecuirtmentModule),
+  
+      },
+      {
         path: 'hr-sidebar',
         component: HrSidebarComponent,
 

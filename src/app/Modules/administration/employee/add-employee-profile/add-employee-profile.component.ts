@@ -24,5 +24,10 @@ export class AddEmployeeProfileComponent {
   onCancel() {
     this.router.navigate(['dashboard', 'administration', 'emp-profiles']);
   }
-
+  OnRouteDashboard(){
+    this.router.navigate(['dashboard', 'administration', 'admin-dashboard']);
+  }
+  OnRouteEmployee(){
+    this.router.navigate(['dashboard', 'administration', 'emp-profiles']);
+  }
 }

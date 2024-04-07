@@ -1,8 +1,8 @@
 <div class="container-fluid">
-  <h2>Employee Profiles</h2>
+  <h5>Employee Profiles</h5>
   <div class="d-flex justify-content-between">
     <div>
-      <h4 class="heading">Dashboard/Employee profiles</h4>
+      <a class="ribbon" (click)="OnRouteDashboard()">Dashboard</a><a class="ribbon-1">Employee profiles</a>
     </div>
     <div>
       <a (click)="exportToPDF()" class="button">Export to pdf</a>
@@ -14,10 +14,10 @@
   </div>
   <div class="card mt-2">
     <form [formGroup]="empForm" (ngSubmit)="submitForm()">
-      <div class="d-flex justify-content-end">
+      <div class="d-flex justify-content-end mt-2">
         <div class="refresh">
           <div class="icon-tooltip" data-title="Refresh">
-            <fa-icon
+            <fa-icon class="icon-refresh"
               [icon]="faArrowsRotateIcon"
               (click)="onRefresh()"
             ></fa-icon>
@@ -31,7 +31,7 @@
           (input)="search()"
         />
       </div>
-      <table class="table table-bordered mt-3">
+      <table class="table table-bordered mt-2">
         <thead class="custom-table-header">
           <tr>
             <th>EmpID</th>
@@ -69,84 +69,84 @@
               {{ employee.employeeName }}
 
               <div class="tooltip">{{ employee.employeeName }}</div>
-            
+
             </td>
             <td
-            
+
             class="tooltip-container"
             (mouseenter)="showTooltip($event)"
             (mouseleave)="hideTooltip($event)"  >
-            
+
           {{ employee.department }}
-        
+
           <div class="tooltip">{{ employee.department }}</div>
         </td>
             <td
-                       
+
             class="tooltip-container"
             (mouseenter)="showTooltip($event)"
             (mouseleave)="hideTooltip($event)"  >
-            
+
             {{ employee.designation }}
-          
+
             <div class="tooltip">{{ employee.designation }}</div>
-          
+
           </td>
             <td
-            
+
             class="tooltip-container"
             (mouseenter)="showTooltip($event)"
             (mouseleave)="hideTooltip($event)"  >
-              
+
             {{ employee.phoneNumber }}
-          
+
             <div class="tooltip">{{ employee.phoneNumber }}</div>
-          
+
           </td>
             <td
-            
+
             class="tooltip-container"
             (mouseenter)="showTooltip($event)"
             (mouseleave)="hideTooltip($event)"  >
-    
+
             {{ employee.email }}
-          
+
             <div class="tooltip">{{ employee.email }}</div>
 
           </td>
             <td
-            
+
             class="tooltip-container"
             (mouseenter)="showTooltip($event)"
             (mouseleave)="hideTooltip($event)"  >
-            
-            
+
+
             {{ employee.workingLocation }}
-          
+
             <div class="tooltip">{{ employee.workingLocation }}</div>
-          
+
           </td>
             <td
-            
+
             class="tooltip-container"
             (mouseenter)="showTooltip($event)"
             (mouseleave)="hideTooltip($event)"  >
-            
+
             {{ employee.workingClient }}
-          
+
             <div class="tooltip">{{ employee.workingClient }}</div>
-          
+
           </td>
             <td
-            
+
             class="tooltip-container"
             (mouseenter)="showTooltip($event)"
             (mouseleave)="hideTooltip($event)"  >
-            
+
             {{ employee.permanentAddress }}
-          
+
             <div class="tooltip">{{ employee.permanentAddress }}</div>
-            
+
           </td>
             <td>{{ employee.bioData }}</td>
             <td class="tooltip-container-icons">
@@ -155,7 +155,7 @@
                   (mouseenter)="showTooltipIcon('View', $event)"
                   (mouseleave)="hideTooltipIcon()"
                 >
-                  <fa-icon
+                  <fa-icon class="icon-fa"
                     [icon]="faEyeIcon"
                     (click)="onView(employee.id)"
                   ></fa-icon>
@@ -170,7 +170,7 @@
                   (mouseenter)="showTooltipIcon('Edit', $event)"
                   (mouseleave)="hideTooltipIcon()"
                 >
-                  <fa-icon
+                  <fa-icon class="icon-fa"
                     [icon]="faPenIcon"
                     (click)="onEdit(employee.id)"
                   ></fa-icon>
@@ -185,7 +185,7 @@
                   (mouseenter)="showTooltipIcon('Delete', $event)"
                   (mouseleave)="hideTooltipIcon()"
                 >
-                  <fa-icon
+                  <fa-icon class="icon-fa"
                     (click)="openDeleteConfirmation(employee.id)"
                     [icon]="faTrashIcon"
                   ></fa-icon>

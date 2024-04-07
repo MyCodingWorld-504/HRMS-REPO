@@ -1,6 +1,13 @@
-
-<div class="container-fluid mt-5">
-    <h2>View Employee Profiles</h2>
+<div class="container-fluid anim no-scrollbar">
+  <h5>View Employee Details</h5>
+  <div class="d-flex justify-content-between">
+    <div class="mb-2">
+      <a class="ribbon" (click)="OnRouteDashboard()">Dashboard</a
+      ><a class="ribbon-1" (click)="OnRouteEmployee()">Employee profiles</a>
+      <a class="ribbon-2">View Employee profiles</a>
+    </div>
+  </div>
+  <div class="card mt-2">
     <form (ngSubmit)="onSubmit()" #editForm="ngForm">
      <div class="row">
       <div class="form-group col-md-6">
@@ -43,8 +50,9 @@
       </div>
      </div>
 
-     <div class="vstack gap-2 col-md-5 mx-auto">
-      <button type="button" class="btn btn-outline-secondary" (click)="onCancel()">Cancel</button>
+     <div class="vstack gap-2 col-md-5 mx-auto mt-2">
+      <button type="button" class="button-cancel" (click)="onCancel()">Cancel</button>
     </div>
     </form>
+    </div>
   </div>

@@ -1,4 +1,12 @@
 <div class="container-fluid">
+  <div class="d-flex justify-content-between">
+    <div>
+      <a class="ribbon" (click)="OnRouteDashboard()">Dashboard</a
+      ><a (click)="OnRoutePermissions()" class="ribbon-1">Employee Roles</a
+      ><a class="ribbon-2">Employee Premissions</a>
+    </div>
+  </div>
+
   <div class="row">
     <div class="col-md-4">
       <a class="button" (click)="onRoleClicked()">
@@ -29,12 +37,12 @@
 
     <div class="col-md-8">
       <div class="d-flex justify-content-between mb-3">
-        <h4>Module Access</h4>
+        <h5>Module Access</h5>
         <a class="button-update">Update Permissions</a>
       </div>
       <div class="card">
         <div *ngIf="!isAdministraion">
-          <span (click)="onAdministration()">
+          <span (click)="onAdministration()" [ngClass]="spanColorClass">
             <fa-icon [icon]="faPlusIcon"></fa-icon> Administration</span
           >
         </div>
@@ -121,7 +129,7 @@
 
       <div class="card">
         <div *ngIf="!isAttendence">
-          <span (click)="onAttendence()"
+          <span (click)="onAttendence()" [ngClass]="spanColorClass"
             ><fa-icon [icon]="faPlusIcon"></fa-icon> Attendence</span
           >
         </div>
@@ -208,7 +216,7 @@
       </div>
       <div class="card">
         <div *ngIf="!isPayroll">
-          <span (click)="onPayroll()"
+          <span (click)="onPayroll()" [ngClass]="spanColorClass"
             ><fa-icon [icon]="faPlusIcon"></fa-icon> Payroll</span
           >
         </div>
@@ -265,7 +273,7 @@
       </div>
       <div class="card">
         <div *ngIf="!isTimesheet">
-          <span (click)="onTimesheet()"
+          <span (click)="onTimesheet()" [ngClass]="spanColorClass"
             ><fa-icon [icon]="faPlusIcon"></fa-icon> TimeSheet</span
           >
         </div>
@@ -323,7 +331,7 @@
 
       <div class="card">
         <div *ngIf="!isRecruitment">
-          <span (click)="onRecruitment()"
+          <span (click)="onRecruitment()" [ngClass]="spanColorClass"
             ><fa-icon [icon]="faPlusIcon"></fa-icon> Recruitment</span
           >
         </div>
@@ -401,8 +409,6 @@
     </div>
   </form>
 </div>
-
-
 
 <app-confirm-delete-popup
   *ngIf="showDeleteConfirmation"

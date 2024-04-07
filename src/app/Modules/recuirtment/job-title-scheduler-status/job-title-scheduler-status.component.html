@@ -1,0 +1,287 @@
+
+<div class="container-fluid">
+    <h4 class="heading">Details About Job Title & Schedule Status</h4>
+    <br>
+    <div>
+      <a class="ribbon" (click)="OnRouteDashboard()">Dashboard</a><a class="ribbon-1">Job Title & Schedule Status</a>
+    </div>
+    <br>
+    <div class="d-flex justify-content-between">
+      <div class="select">
+     <select class="select" (change)="onSelectChange($event)"
+     >
+        <option>Job Title</option>
+        <option>Schedule Status</option>
+     </select>
+      </div>
+      <div class="button">
+        <a class="button" (click)="onAdd()" routerLink="/add-emp-details"
+          ><fa-icon [icon]="faPlusIcon"></fa-icon>Add</a
+        >
+      </div>
+    </div>
+    <div *ngIf="selectedOption === 'Job Title'">
+    <div class="card mt-2">
+      <form [formGroup]="empForm" (ngSubmit)="submitForm()">
+        <div class="d-flex justify-content-end">
+          <div class="refresh">
+            <div class="icon-tooltip" data-title="Refresh">
+              <fa-icon
+                [icon]="faArrowsRotateIcon"
+                (click)="onRefresh()"
+              ></fa-icon>
+            </div>
+          </div>
+          <input
+            class="refresh"
+            type="text"
+            formControlName="searchTerm"
+            placeholder="Search..."
+            (input)="search()"
+          />
+        </div>
+        <table class="table table-bordered mt-3">
+          <thead class="custom-table-header">
+            <tr>
+              <th>Sno</th>
+              <th>Job Title</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="
+                let jobs of jobsData
+                  | paginate : { itemsPerPage: itemsPerPage, currentPage: page }
+              "
+            >
+              <td
+                class="tooltip-container"
+                (mouseenter)="showTooltip($event)"
+                (mouseleave)="hideTooltip($event)"
+              >
+                {{ jobs.id }}
+                <div class="tooltip">{{ jobs.id }}</div>
+              </td>
+              <td
+                class="tooltip-container"
+                (mouseenter)="showTooltip($event)"
+                (mouseleave)="hideTooltip($event)"  >
+                {{ jobs.jobsName }}
+  
+                <div class="tooltip">{{ jobs.jobsName }}</div>
+              
+              </td>
+      
+              <td class="tooltip-container-icons">
+                <div class="d-flex justify-content-between">
+                  <a
+                    (mouseenter)="showTooltipIcon('View', $event)"
+                    (mouseleave)="hideTooltipIcon()"
+                  >
+                    <fa-icon
+                      [icon]="faEyeIcon"
+                      (click)="onView(jobs.id)"
+                    ></fa-icon>
+                    <span
+                      class="tooltip-icons"
+                      *ngIf="isTooltipVisible && currentTooltip === 'View'"
+                    >
+                      View
+                    </span>
+                  </a>
+                  <a
+                    (mouseenter)="showTooltipIcon('Edit', $event)"
+                    (mouseleave)="hideTooltipIcon()"
+                  >
+                    <fa-icon
+                      [icon]="faPenIcon"
+                      (click)="onEdit(jobs.id)"
+                    ></fa-icon>
+                    <span
+                      class="tooltip-icons"
+                      *ngIf="isTooltipVisible && currentTooltip === 'Edit'"
+                    >
+                      Edit
+                    </span>
+                  </a>
+                  <a
+                    (mouseenter)="showTooltipIcon('Delete', $event)"
+                    (mouseleave)="hideTooltipIcon()"
+                  >
+                    <fa-icon
+                      (click)="openDeleteConfirmation(jobs.id)"
+                      [icon]="faTrashIcon"
+                    ></fa-icon>
+                    <span
+                      class="tooltip-icons"
+                      *ngIf="isTooltipVisible && currentTooltip === 'Delete'"
+                    >
+                      Delete
+                    </span>
+                  </a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="d-flex justify-content-between mt-3">
+          <div class="items-per-page">
+            <select
+              class="form-select"
+              [formGroup]="empForm"
+              name="itemsPerPage"
+              (change)="onItemsPerPageChange($event)"
+            >
+              <option *ngFor="let option of itemsPerPageOptions" [value]="option">
+                {{ option }}
+              </option>
+            </select>
+          </div>
+          <div class="select-show">
+            Showing Results {{ getStartIndex() }} - {{ getEndIndex() }} of
+            {{ jobsData.length }} entries.
+          </div>
+          <div class="pagination-container">
+            <pagination-controls
+              (pageChange)="pageChanged($event)"
+            ></pagination-controls>
+          </div>
+        </div>
+      </form>
+    </div>
+</div>
+
+<div *ngIf="selectedOption === 'Schedule Status'">
+    <div class="card mt-2">
+        <form (ngSubmit)="submitForm()">
+          <div class="d-flex justify-content-end">
+            <div class="refresh">
+              <div class="icon-tooltip" data-title="Refresh">
+                <fa-icon
+                  [icon]="faArrowsRotateIcon"
+                  (click)="onRefresh()"
+                ></fa-icon>
+              </div>
+            </div>
+            <input
+              class="refresh"
+              type="text"
+              formControlName="searchTerm"
+              placeholder="Search..."
+              (input)="search()"
+            />
+          </div>
+          <table class="table table-bordered mt-3">
+            <thead class="custom-table-header">
+              <tr>
+                <th>Sno</th>
+                <th>Status Name</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                *ngFor="
+                  let jobs of jobsData
+                    | paginate : { itemsPerPage: itemsPerPage, currentPage: page }
+                "
+              >
+                <td
+                  class="tooltip-container"
+                  (mouseenter)="showTooltip($event)"
+                  (mouseleave)="hideTooltip($event)"
+                >
+                  {{ jobs.id }}
+                  <div class="tooltip">{{ jobs.id }}</div>
+                </td>
+                <td
+                  class="tooltip-container"
+                  (mouseenter)="showTooltip($event)"
+                  (mouseleave)="hideTooltip($event)"  >
+                  {{ jobs.jobsName }}
+    
+                  <div class="tooltip">{{ jobs.jobsName }}</div>
+                
+                </td>
+        
+                <td class="tooltip-container-icons">
+                  <div class="d-flex justify-content-between">
+                    <a
+                      (mouseenter)="showTooltipIcon('View', $event)"
+                      (mouseleave)="hideTooltipIcon()"
+                    >
+                      <fa-icon
+                        [icon]="faEyeIcon"
+                        (click)="onView(jobs.id)"
+                      ></fa-icon>
+                      <span
+                        class="tooltip-icons"
+                        *ngIf="isTooltipVisible && currentTooltip === 'View'"
+                      >
+                        View
+                      </span>
+                    </a>
+                    <a
+                      (mouseenter)="showTooltipIcon('Edit', $event)"
+                      (mouseleave)="hideTooltipIcon()"
+                    >
+                      <fa-icon
+                        [icon]="faPenIcon"
+                        (click)="onEdit(jobs.id)"
+                      ></fa-icon>
+                      <span
+                        class="tooltip-icons"
+                        *ngIf="isTooltipVisible && currentTooltip === 'Edit'"
+                      >
+                        Edit
+                      </span>
+                    </a>
+                    <a
+                      (mouseenter)="showTooltipIcon('Delete', $event)"
+                      (mouseleave)="hideTooltipIcon()"
+                    >
+                      <fa-icon
+                        (click)="openDeleteConfirmation(jobs.id)"
+                        [icon]="faTrashIcon"
+                      ></fa-icon>
+                      <span
+                        class="tooltip-icons"
+                        *ngIf="isTooltipVisible && currentTooltip === 'Delete'"
+                      >
+                        Delete
+                      </span>
+                    </a>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="d-flex justify-content-between mt-3">
+            <div class="items-per-page">
+              <select
+                class="form-select"
+                [formGroup]="empForm"
+                name="itemsPerPage"
+                (change)="onItemsPerPageChange($event)"
+              >
+                <option *ngFor="let option of itemsPerPageOptions" [value]="option">
+                  {{ option }}
+                </option>
+              </select>
+            </div>
+            <div class="select-show">
+              Showing Results {{ getStartIndex() }} - {{ getEndIndex() }} of
+              {{ jobsData.length }} entries.
+            </div>
+            <div class="pagination-container">
+              <pagination-controls
+                (pageChange)="pageChanged($event)"
+              ></pagination-controls>
+            </div>
+          </div>
+        </form>
+      </div>
+  </div>
+  
+

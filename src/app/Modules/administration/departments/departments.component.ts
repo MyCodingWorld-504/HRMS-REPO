@@ -5,6 +5,7 @@ import { BankDetailService } from '../service/bank-detail.service';
 import { ToastrService } from 'ngx-toastr';
 import { Subscription } from 'rxjs';
 import { GroupService } from 'src/app/Core/services/group.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-departments',
@@ -40,7 +41,8 @@ designationOptions: any;
         private groupService: GroupService,
         private formBuilder: FormBuilder,
         private toastr : ToastrService,
-       
+        private router : Router
+
       ) {
         this.groupFormDepartment = this.formBuilder.group({
           searchTermInternal: [''],
@@ -177,28 +179,30 @@ designationOptions: any;
 
       showDeleteConfirmation = false;
       deleteConfirmationId: number | null = null;
-  
+
       openDeleteConfirmation(id: number) {
         this.showDeleteConfirmation = true;
         this.deleteConfirmationId = id;
       }
-  
+
       onDeleteConfirmed(id: number | null) {
         if (id !== null) {
           this.showDeleteConfirmation = false;
-  
+
           this.groupService.deleteDepartments(id).subscribe(() => {
             this.toastr.warning('Record deleted successfully', 'Delete');
             this.fetchDepartmentData();
           });
         }
       }
-  
+
       onCancelDelete() {
         this.showDeleteConfirmation = false;
         this.deleteConfirmationId = null;
       }
-  
+      OnRouteDashboard(){
+        this.router.navigate(['dashboard', 'administration', 'admin-dashboard']);
+      }
 
 
 }

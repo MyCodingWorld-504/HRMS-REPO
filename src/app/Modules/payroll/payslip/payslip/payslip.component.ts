@@ -277,6 +277,10 @@ public exportSelectedColumns() {
   const excelFileName = 'payslip_export';
   this.exportToExcelService.exportAsExcelFile(filteredData, excelFileName, selectedColumns);
 }
+
+OnRouteDashboard(){
+  this.router.navigate(['dashboard', 'payroll', 'payrollDashboard']);
+}
 }
 
 

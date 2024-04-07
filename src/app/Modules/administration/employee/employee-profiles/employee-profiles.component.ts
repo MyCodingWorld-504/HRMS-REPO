@@ -225,7 +225,9 @@ export class EmployeeProfilesComponent {
     this.toastr.success('EXCEl Exported Successfully', 'Success')
   }
 
-
+  OnRouteDashboard(){
+    this.router.navigate(['dashboard', 'administration', 'admin-dashboard']);
+  }
 }
 
 

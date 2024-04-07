@@ -3,7 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/Core/services/auth.service';
-import { faX } from '@fortawesome/free-solid-svg-icons';
+import { faEye, faEyeSlash, faLock, faUser, faX } from '@fortawesome/free-solid-svg-icons';
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-register',
@@ -11,36 +12,43 @@ import { faX } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
-  registerForm!: FormGroup;
+
+  public signUpForm!: FormGroup;
+   type: string = 'password';
+  isText: boolean = false;
+  eyeIcon:string = "fa-eye-slash"
+  faLockIcon = faLock;
+faUserIcon = faUser;
+faEyeIcon = faEye;
+faEyeSlashIcon = faEyeSlash;
   faXIcon = faX;
-  constructor( private authService : AuthService,private formBuilder: FormBuilder,
-    private toastr : ToastrService,private router: Router
-   ) {}
-  ngOnInit(): void {
+  constructor(private fb : FormBuilder, private authService: AuthService, private router: Router,
+    private toast : NgToastService) { }
 
-    this.registerForm = this.formBuilder.group({
-      // id : this.formBuilder.control("",Validators.compose([Validators.required,Validators.minLength(5)])),
-      name : this.formBuilder.control('',Validators.compose([Validators.required])),
-      password: this.formBuilder.control('', Validators.compose([Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')])),
-      email: this.formBuilder.control('', Validators.compose([Validators.required, Validators.email])),
-      gender: this.formBuilder.control(''),
-      role: this.formBuilder.control(''),
-      //  isactive: this.formBuilder.control(false)
-
-    });
-
+  ngOnInit() {
+    this.signUpForm = this.fb.group({
+      firstName:['', Validators.required],
+      lastName:['', Validators.required],
+      userName:['', Validators.required],
+      email:['', Validators.required],
+      password:['', Validators.required]
+    })
   }
-
-  proceedregister() {
-    if (this.registerForm.valid) {
-      this.authService.RegisterUser(this.registerForm.value).subscribe(result => {
-        this.toastr.success('Please contact admin for enable access.','Registered successfully')
+  onSubmit() {
+    if (this.signUpForm.valid) {
+      this.authService.RegisterUser(this.signUpForm.value).subscribe(result => {
+        this.toast.success({detail:"SUCCESS", summary:"User registration Success"})
         this.router.navigate(['login'])
       });
     } else {
-      this.toastr.warning('Please enter valid data.')
+      this.toast.warning({detail:"ERROR", summary:"Please enter valid data"})
     }
   }
+  hideShowPass(){
+    this.isText = !this.isText;
+  }
 
-
+  onClose(){
+    this.router.navigate(['/navbar']);
+  }
 }

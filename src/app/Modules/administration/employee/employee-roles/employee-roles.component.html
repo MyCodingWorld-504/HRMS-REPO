@@ -1,89 +1,82 @@
-
-  <div class="container-fluid mb-3">
-    <h2>Employee Roles & Permissions</h2>
-    <div class="d-flex justify-content-between">
-      <div>
-        <h4>Dashboard / Employee Roles & Permissions</h4>
-      </div>
+<div class="container-fluid">
+  <h5>Employee Roles & Permissions</h5>
+  <div class="d-flex justify-content-between">
+    <div>
+      <a class="ribbon" (click)="OnRouteDashboard()">Dashboard</a
+      ><a class="ribbon-1">Employee Roles</a>
     </div>
-    <div class="card card-main mt-2">
-        <div class="row row-cols-1 row-cols-md-5 g-4 mt-4">
-          <div class="col">
-            <div class="form-group row row-cols-1 row-cols-md-2 g-4">
-              <div class="col d-flex justify-content-center">
-                <label for="name">Group&nbsp; :</label>
-              </div>
-              <div class="col">
-                <select
-                  class="form-control"
-                  id="name"
-                  style="appearance: auto"
-                >
-                  <option value="" disabled selected>Select Group</option>
-                  <option *ngFor="let group of groups" [value]="group">
-                    {{ group }}
-                  </option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="form-group row row-cols-1 row-cols-md-2 g-4">
-              <div class="col d-flex justify-content-center">
-                <label for="description">Department&nbsp; :</label>
-              </div>
-              <div class="col">
-                <select
-                  class="form-control"
-                  id="name"
-                  style="appearance: auto"
-                >
-                  <option value="" disabled selected>Select Department</option>
-                  <option
-                    *ngFor="let department of departments"
-                    [value]="department"
-                  >
-                    {{ department }}
-                  </option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="form-group row row-cols-1 row-cols-md-2 g-4">
-              <div class="col d-flex justify-content-center">
-                <label for="name">Employee Id&nbsp; :</label>
-              </div>
-              <div class="col">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="id"
-                  placeholder="Employee Id"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="form-group row row-cols-1 row-cols-md-2 g-4">
-              <div class="col d-flex justify-content-center">
-                <label for="description">Employee Name&nbsp;   :</label>
-              </div>
-              <div class="col">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="Name"
-                  placeholder="Employee Name"
-                />
-              </div>
-            </div>
-          </div>
+  </div>
+  <div class="card card-main mt-2">
+    <div class="row row-cols-1 row-cols-md-5 g-4 mt-4">
+      <div class="col">
+        <div class="form-group row row-cols-1 row-cols-md-2 g-4">
           <div class="col d-flex justify-content-center">
-            <a (click)="onClick()" class="button">{{isVisible ? 'Hide' : 'Show'}}</a>
+            <label for="name">Group&nbsp; :</label>
+          </div>
+          <div class="col">
+            <select class="form-control" id="name" style="appearance: auto">
+              <option value="" disabled selected>Select Group</option>
+              <option *ngFor="let group of groups" [value]="group">
+                {{ group }}
+              </option>
+            </select>
           </div>
         </div>
+      </div>
+      <div class="col">
+        <div class="form-group row row-cols-1 row-cols-md-2 g-4">
+          <div class="col d-flex justify-content-center">
+            <label for="description">Department&nbsp; :</label>
+          </div>
+          <div class="col">
+            <select class="form-control" id="name" style="appearance: auto">
+              <option value="" disabled selected>Select Department</option>
+              <option
+                *ngFor="let department of departments"
+                [value]="department"
+              >
+                {{ department }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="form-group row row-cols-1 row-cols-md-2 g-4">
+          <div class="col d-flex justify-content-center">
+            <label for="name">Employee Id&nbsp; :</label>
+          </div>
+          <div class="col">
+            <input
+              type="text"
+              class="form-control"
+              id="id"
+              placeholder="Employee Id"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group row row-cols-1 row-cols-md-2 g-4">
+          <div class="col d-flex justify-content-center">
+            <label for="description">Employee Name&nbsp; :</label>
+          </div>
+          <div class="col">
+            <input
+              type="text"
+              class="form-control"
+              id="Name"
+              placeholder="Employee Name"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="col d-flex justify-content-center">
+        <a (click)="onClick()" class="button">{{
+          isVisible ? "Hide" : "Show"
+        }}</a>
+      </div>
     </div>
   </div>
 
@@ -105,7 +98,12 @@
           <td>{{ item.department }}</td>
           <td>{{ item.employeeId }}</td>
           <td>
-            <select class="form-control" [(ngModel)]="item.selectedEmployee" name="employeeName"  style="appearance: auto">
+            <select
+              class="form-control"
+              [(ngModel)]="item.selectedEmployee"
+              name="employeeName"
+              style="appearance: auto"
+            >
               <option [ngValue]="null" disabled selected>Roles</option>
               <option *ngFor="let employee of employees" [value]="employee.id">
                 {{ employee.name }}
@@ -117,13 +115,14 @@
     </table>
   </div>
 
-
-  <div class="card text-center  card-custom-show justify-content-center mx-auto my-5" style="width: 38rem;">
-    <div class="card-header">
-      Roles & Permissions
-    </div>
+  <div
+    class="card text-center card-custom-show justify-content-center mx-auto my-5"
+    style="width: 38rem"
+  >
+    <div class="card-header">Roles & Permissions</div>
     <div class="card-body">
-      <h5 class="card-title ">This page leads to perimission page</h5>
+      <h5 class="card-title">This page leads to perimission page</h5>
       <a (click)="onClickUpdate()" class="button button-last">Go Update</a>
     </div>
   </div>
+</div>

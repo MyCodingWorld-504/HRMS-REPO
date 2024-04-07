@@ -1,4 +1,4 @@
-$primary-color: #086594;
+$primary-color: #7492c2;
 // $primary-color: hsl(55, 28%, 16%);
 $info-background: white;
 // $info-border: white;
@@ -6,14 +6,10 @@ $info-box-shadow: 0px 0px 10px 0px rgb(193, 236, 255) inset;
 $info-border: #a7d4f4;
 
 .side-navbar {
-  width: 250px;
+  width: 200px;
   height: -webkit-fill-available;
-  // background-color: hsl(55, 28%, 16%);
   color: white;
-  //position: fixed;
   background-color: $primary-color;
-  // border: 1px solid $info-border;
-  // box-shadow: $info-box-shadow;
   top: 0;
   left: 0;
   overflow-x: hidden;
@@ -23,7 +19,7 @@ $info-border: #a7d4f4;
   scrollbar-width: none;
 
   &.collapsed {
-    width: 70px;
+    width: 55px;
   }
 
   .main-content {
@@ -31,7 +27,7 @@ $info-border: #a7d4f4;
   }
 
   &.collapsed .main-content {
-    margin-left: 70px;
+    margin-left: 55px;
   }
 
   ul {
@@ -48,7 +44,7 @@ $info-border: #a7d4f4;
     color: white;
     display: block;
     padding: 10px;
-
+    font-size: 13px;
     &:hover {
       background-color: $primary-color;
     }
@@ -56,12 +52,10 @@ $info-border: #a7d4f4;
 
   .logo {
     text-align: center;
-    top: -20px;
+    top: -10px;
     position: relative;
     background-color: $primary-color;
-    padding: 18px 10px 18px 10px;
-    // border: 1px solid $info-border;
-    // box-shadow: $info-box-shadow;
+    padding: 0px 10px px 10px;
     img {
       max-width: 100%;
       height: 43px;
@@ -69,6 +63,11 @@ $info-border: #a7d4f4;
 
       &.expanded-image {
         max-width: 100%;
+        height: 45px;
+        position: relative;
+      }
+      &.collapsed-image{
+        max-width: 88%;
         height: 45px;
         position: relative;
       }
@@ -83,11 +82,9 @@ $info-border: #a7d4f4;
     padding: 10px;
     transition: transform 0.3s ease, border-radius 0.3s ease;
     border-bottom: 1px solid  #a7d4f4;
-    // border: 1px solid $info-border;
-    // box-shadow: $info-box-shadow;
 
     &:hover {
-      background-color: #bc986a;
+      background-color: #EA738D;
     }
 
     i {
@@ -155,6 +152,7 @@ $info-border: #a7d4f4;
   }
   .icon-label {
     margin-left: 20px;
+    font-size: 13px;
   }
 }
 
@@ -162,7 +160,7 @@ $info-border: #a7d4f4;
    max-height: 180px;
   overflow-y: auto;
   &::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
   }
   &::-webkit-scrollbar-thumb {
     background-color: #999;
@@ -172,8 +170,11 @@ $info-border: #a7d4f4;
     background-color: #f1f1f1;
   }
   &::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
+    background-color: #EA738D;
 }
 
 }
 
+.icon-fa{
+  font-size: 13px;
+}

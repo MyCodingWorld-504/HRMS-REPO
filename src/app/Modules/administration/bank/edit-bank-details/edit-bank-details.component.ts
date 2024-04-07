@@ -40,4 +40,11 @@ export class EditBankDetailsComponent {
   onCancel() {
     this.router.navigate(['dashboard', 'administration', 'bank-details']);
   }
+  
+  OnRouteDashboard(){
+    this.router.navigate(['dashboard', 'administration', 'admin-dashboard']);
+  }
+  OnRouteEmployee(){
+    this.router.navigate(['dashboard', 'administration', 'bank-details']);
+  }
 }

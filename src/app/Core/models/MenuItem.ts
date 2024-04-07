@@ -49,3 +49,15 @@ export interface PublicHoliday {
   day: string;
   id: string;
 }
+
+export interface Label {
+  name: string;
+  selected: boolean;
+}
+
+export interface Candidate {
+  fullNameCertificate: string;
+  phoneNo: string;
+  email: string;
+  
+}

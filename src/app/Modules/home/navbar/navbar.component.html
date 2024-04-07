@@ -1,9 +1,12 @@
 <div class="contain">
   <nav class="navbar navbar-expand-lg bg-transparent">
     <div class="container-fluid">
-      <a class="logo" routerLink="/layout"
+      <!-- <a class="logo" routerLink="/layout"
         >Sky<a style="font-size: x-small">n</a>hr</a
-      >
+      > -->
+      <div class="logo">
+        <img src="assets/logo-new.jpg" alt="">
+      </div>
       <button
         class="navbar-toggler"
         type="button"
@@ -39,15 +42,20 @@
       </div>
     </div>
   </nav>
-  <div class="content col-md-6" id="content">
-    <h1 class="anim">Welcome to Sky HR <br />Simplifying</h1>
-    <!-- <small>Welcome to Sky<a style="font-size: xx-small;">n</a>HR</small>
-    <h1>Welcome to Sky<a style="font-size:small;">n</a>HR<br /> <h4 style="margin-left:550px;">Simplifying</h4></h1> -->
-    <button type="button-tour" class="button anim">Take a tour</button>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="content" id="content">
+          <h1 class="anim">Welcome to Sky HR <br />Simplifying</h1>
+          <button type="button-tour" class="button anim">Take a tour</button>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <img src="/assets/images/emp.jpg" class="feature-img anim" />
+      </div>
+    </div>
   </div>
-  <div class="col-md-6">
-    <img src="/assets/images/emp.jpg" class="feature-img anim" />
-  </div>
+
   <div class="sidebar">
     <img src="/assets/images/menu.png" class="menu" />
     <div class="social-links">
@@ -60,9 +68,12 @@
       <img src="/assets/images/share.png" />
     </div>
   </div>
-  <div id="cursor"></div>
 </div>
 
-<div class="mt-5">
-  <router-outlet></router-outlet>
-</div>
+<!-- <div class="mt-5">
+
+</div> -->
+<!-- <router-outlet></router-outlet> -->
+<app-company-blog></app-company-blog>
+<app-industries-blog></app-industries-blog>
+<app-interactive-demo></app-interactive-demo>

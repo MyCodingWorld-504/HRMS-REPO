@@ -1,8 +1,8 @@
-<div class="container table-container">
+<div class="container-fluid">
   <div class="d-flex justify-content-between">
     <div>
-      <h2>User List</h2>
-      <h4>Dashboard / Users</h4>
+      <h5>User List</h5>
+      <h5>Dashboard / Users</h5>
     </div>
   </div>
   <div class="card mt-2">
@@ -23,7 +23,7 @@
           (input)="search()"
         />
       </div>
-      <table class="table table-bordered mt-3">
+      <table class="table table-bordered mt-3 ">
         <thead class="custom-table-header">
           <tr>
             <!-- <th>Id</th> -->
@@ -145,17 +145,20 @@
       </table>
       <div class="d-flex justify-content-between mt-3">
         <div class="items-per-page">
-          <select class="form-select" [formGroup]="groupForm" name="itemsPerPage" (change)="onItemsPerPageChange($event)">
+          <select
+            class="form-select"
+            [formGroup]="groupForm"
+            name="itemsPerPage"
+            (change)="onItemsPerPageChange($event)"
+          >
             <option *ngFor="let option of itemsPerPageOptions" [value]="option">
               {{ option }}
             </option>
           </select>
-
         </div>
         <div class="select-show">
-
-            Showing Results {{ getStartIndex() }} - {{ getEndIndex() }} of {{ filteredGroups.length }} entries.
-
+          Showing Results {{ getStartIndex() }} - {{ getEndIndex() }} of
+          {{ filteredGroups.length }} entries.
         </div>
         <div class="pagination-container">
           <pagination-controls

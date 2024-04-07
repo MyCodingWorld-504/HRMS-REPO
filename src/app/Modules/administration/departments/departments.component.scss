@@ -5,10 +5,78 @@ $hover-background-color: #f9f9f9;
 $shadow-color: rgba(0, 0, 0, 0.1);
 
 .container-fluid {
-  margin: 20px auto;
   font-size: smaller;
 }
+.ribbon-1 {
+  position: relative;
+  padding: 6px 30px;
+  margin-left: 23px;
+  background-color: #7492c2;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  &:hover {
+         background: darken(#EA738D, 10%);
+       }
+}
 
+.ribbon-1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -20px;
+  border-width: 16px 0 16px 20px;
+  border-color: transparent transparent transparent #7492c2;
+  border-style: solid;
+
+}
+.ribbon-1:hover::before {
+  border-color:transparent transparent transparent darken(#EA738D, 10%);
+}
+.ribbon-1::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 117px;
+  border-width: 16px 0 16px 20px;
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
+}
+
+.ribbon {
+  position: relative;
+  padding: 6px 30px;
+  background-color: #7492c2;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  &:hover {
+         background: darken(#EA738D, 10%);
+       }
+}
+
+.ribbon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -20px;
+  border-width: 16px 0 16px 20px;
+  border-color: transparent transparent transparent #7492c2;
+  border-style: solid;
+
+}
+.ribbon:hover::before {
+  border-color:transparent transparent transparent darken(#EA738D, 10%);
+}
+.ribbon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 104px;
+  border-width: 16px 0 16px 20px;
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
+}
 
 .info-container {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -19,21 +87,17 @@ $shadow-color: rgba(0, 0, 0, 0.1);
 }
 
 .card {
-  border: 1px solid $border-color;
+  border: 1px solid #ccc;
   border-radius: 8px;
-  box-shadow: 0 4px 8px $shadow-color;
-  padding: 0px 20px 20px 20px;
-
-
-  &-body {
-    padding: 15px;
-  }
+  padding:0 20px 0 20px;
 }
 .select-show{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  margin-top: 6px;
+  font-size: 12px;
 }
-
+.form-select{
+  font-size: 13px;
+}
 
 body,
 h1,
@@ -60,15 +124,14 @@ body {
 }
 
 .custom-table-header {
-  background-color: #086594;
+  background-color: #7492c2;
   color: #ffffff;
 }
 .refresh {
-  cursor: pointer;
-  border-width: 1px 0px 1px 1px;
-  border-style: solid;
-  border-color: #333;
-  padding: 8px 16px 5px 16px;
+  border: 1px solid #ccc;
+  padding: 5px 12px;
+  color: #000000;
+  font-size: 12px;
 }
 .button {
   color: white;
@@ -89,6 +152,15 @@ body {
     background-color: darken($primary-color, 10%);
   }
 }
+.table{
+  font-size: 12px;
+}
+.icon-refresh{
+  color: #EA738D;
+  &:hover {
+    color: darken(#EA738D, 15%);
+  }
+}
 .icon-tooltip {
   position: relative;
   display: inline-block;
@@ -97,14 +169,14 @@ body {
   &:hover::before {
     content: attr(data-title);
     position: absolute;
-    top: -20%;
+    top: -30%;
     right: 100%;
     transform: translateX(-50%);
     padding: 0.5em;
-    background-color: $primary-color;
+    background-color: #333;
     color: #fff;
     border-radius: 5px;
-    opacity: 0;
+    opacity: 1;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
   }
@@ -118,62 +190,52 @@ body {
 .tooltip-container {
   position: relative;
   cursor: pointer;
-
-  .tooltip {
-    display: none;
-    position: absolute;
-    white-space: nowrap;
-    width: auto;
-    top: 15%;
-    left: 40%;
-    transform: translateX(-50%);
-    padding: 0.5em;
-    background-color: $primary-color;
-    color: #fff;
-    border-radius: 5px;
-  }
-
-  &:hover .tooltip {
-    display: block;
-  }
 }
+
+.tooltip {
+  display: none;
+  position: absolute;
+  top: -86%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background-color: #333;
+  color: #fff;
+  padding: 0.5em;
+  border-radius: 5px;
+}
+
+.tooltip-container:hover .tooltip {
+  display: block;
+}
+
 .tooltip-container-icon {
   position: relative;
-
-  a {
-    margin-right: 10px;
-    position: relative;
-    display: inline-block;
-
-    .tooltip-icon {
-      position: absolute;
-      top: -160%;
-      left: 150%;
-      transform: translateX(-50%);
-      background-color: #333;
-      color: #fff;
-      padding: 5px;
-      border-radius: 3px;
-      display: none;
-    }
-  }
-
-  &:hover a .tooltip-icon {
-    display: block;
-  }
 }
-::ng-deep .ngx-pagination{
-  line-height: 30px !important;
 
+
+
+::ng-deep .ngx-pagination{
+  line-height: 21px !important;
+font-size: 12px !important;
+}
+::ng-deep .ngx-pagination :hover{
+  border-radius: 4px !important;
+  background: darken($color: #7492c2, $amount: 10%)!important;
+  color: #f5f2f2;
 }
 ::ng-deep .ngx-pagination .current {
 
-  background: #086594 !important;
+  background: #7492c2 !important;
     border-radius: 4px !important;
-    padding-left: 13px !important;
-    padding-right: 13px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
 
 }
+::ng-deep .ngx-pagination .current:hover {
+  background: darken($color: #7492c2, $amount: 10%)!important;
+}
+
 ::ng-deep .ngx-pagination a, .ngx-pagination button {
    border: solid 1px #e4e4e4 !important;
    text-decoration: none !important;
@@ -183,7 +245,7 @@ body {
 }
 
 .icon{
- 
+
   margin-right: 10px;
 
 

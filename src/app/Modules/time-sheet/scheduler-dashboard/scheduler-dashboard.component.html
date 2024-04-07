@@ -1,3 +1,9 @@
+<div>
+  <a class="ribbon" (click)="OnRouteDashboard()">Dashboard</a><a class="ribbon-1">Scheduler Dashboard</a>
+</div>
+
+
+
 <div class="container-fluid">
   <div class="half-card">
     <div class="d-flex justify-content-between mt-1">
@@ -35,7 +41,7 @@
           [icon]="faPenIcon"
           class="edit-icon"
          *ngIf="!isWeekend(day) && !isHoliday(day) && getShiftClass(day)"
-          (click)="editShift(day); $event.stopPropagation()" 
+          (click)="editShift(day); $event.stopPropagation()"
         ></fa-icon>
         <fa-icon
           [icon]="faTrashIcon"
@@ -76,7 +82,7 @@
 
   <div class="overlay" *ngIf="showShiftForm">
     <div class="add-shift-form oncanvas-bottom" *ngIf="showShiftForm">
-      <h2>Add Shift</h2>
+      <h5 class="d-flex justify-content-center">Add Shift</h5>
       <div>
         <label for="shiftName">Shift Name:</label>
         <select id="shiftName" [(ngModel)]="selectedShift">
@@ -96,15 +102,15 @@
         Add Shift
       </button>
       <div>
-        <button class="button-btn" (click)="closeShiftForm()">Cancel</button>
+        <button class="button-cancel" (click)="closeShiftForm()">Cancel</button>
       </div>
     </div>
   </div>
 </div>
 
 <div class="overlay" *ngIf="editingShift">
-  <div class="add-shift-form oncanvas-bottom">
-    <h2>Edit Shift</h2>
+  <div class="edit-shift-form oncanvas-bottom">
+    <h5 class="d-flex justify-content-center">Edit Shift</h5>
     <div>
       <label for="editShiftName">Shift Name:</label>
       <select id="editShiftName" [(ngModel)]="selectedShift">
@@ -140,7 +146,7 @@
       Update Shift
     </button>
     <div>
-      <button class="button-btn" (click)="closeShiftForm()">Cancel</button>
+      <button class="button-cancel" (click)="closeShiftForm()">Cancel</button>
     </div>
   </div>
 </div>

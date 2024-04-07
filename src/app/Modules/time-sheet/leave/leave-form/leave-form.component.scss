@@ -11,8 +11,9 @@ form{
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px #086594;
+    box-shadow: 0 4px 8px #7492c2;
     z-index: 1001;
+    margin-top: 30px;
   }
   
   div {
@@ -57,4 +58,113 @@ form{
     color: red;
     font-size: 12px;
   }
+
+  
+.ribbon-1 {
+  position: relative;
+  padding: 6px 30px;
+  margin-bottom: 20px;
+  margin-left: 23px;
+  background-color: #7492c2;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  &:hover {
+         background: darken(#EA738D, 10%);
+       }
+}
+
+.ribbon-1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -20px;
+  border-width: 16px 0 20px 20px;
+  border-color: transparent transparent transparent #7492c2;
+  border-style: solid;
+
+}
+.ribbon-1:hover::before {
+  border-color:transparent transparent transparent darken(#EA738D, 10%);
+}
+.ribbon-1::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 179px;
+  border-width: 16px 0 20px 20px;
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
+}
+
+.ribbon {
+  position: relative;
+  padding: 6px 30px;
+  background-color: #7492c2;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  &:hover {
+         background: darken(#EA738D, 10%);
+       }
+}
+
+.ribbon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -20px;
+  border-width: 16px 0 20px 20px;
+  border-color: transparent transparent transparent #7492c2;
+  border-style: solid;
+
+}
+.ribbon:hover::before {
+  border-color:transparent transparent transparent darken(#EA738D, 10%);
+}
+.ribbon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 118px;
+  border-width: 16px 0 20px 20px;
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
+}
+
+.ribbon-2 {
+  position: relative;
+  padding: 6px 30px;
+  margin-left: 23px;
+  background-color: #7492c2;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  &:hover {
+         background: darken(#EA738D, 10%);
+       }
+}
+
+.ribbon-2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -20px;
+  border-width: 16px 0 20px 20px;
+  border-color: transparent transparent transparent #7492c2;
+  border-style: solid;
+
+}
+.ribbon-2:hover::before {
+  border-color:transparent transparent transparent darken(#EA738D, 10%);
+}
+.ribbon-2::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 121px;
+  border-width: 16px 0 20px 20px;
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
+}
   

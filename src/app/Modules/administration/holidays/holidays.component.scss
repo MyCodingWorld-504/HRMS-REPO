@@ -5,12 +5,142 @@ $hover-background-color: #f9f9f9;
 $shadow-color: rgba(0, 0, 0, 0.1);
 
 .container-fluid {
-  margin: 20px auto;
   font-size: smaller;
 }
+
+
+.ribbon-1 {
+  position: relative;
+  padding: 6px 30px;
+  margin-left: 23px;
+  background-color: #7492c2;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  &:hover {
+         background: darken(#EA738D, 10%);
+       }
+}
+
+.ribbon-1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -20px;
+  border-width: 16px 0 16px 20px;
+  border-color: transparent transparent transparent #7492c2;
+  border-style: solid;
+
+}
+.ribbon-1:hover::before {
+  border-color:transparent transparent transparent darken(#EA738D, 10%);
+}
+.ribbon-1::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 91px;
+  border-width: 16px 0 16px 20px;
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
+}
+
+.ribbon {
+  position: relative;
+  padding: 6px 30px;
+  background-color: #7492c2;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  &:hover {
+         background: darken(#EA738D, 10%);
+       }
+}
+
+.ribbon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -20px;
+  border-width: 16px 0 16px 20px;
+  border-color: transparent transparent transparent #7492c2;
+  border-style: solid;
+
+}
+.ribbon:hover::before {
+  border-color:transparent transparent transparent darken(#EA738D, 10%);
+}
+.ribbon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 105px;
+  border-width: 16px 0 16px 20px;
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
+}
+    .button
+
+    .info-container {
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
+    .items-per-page {
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
+    .select-show{
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      margin-top: 6px;
+      font-size: 10px;
+    }
+    .form-select{
+      font-size: 13px;
+    }
+    ::ng-deep .ngx-pagination{
+      line-height: 21px !important;
+font-size: 12px !important;
+    }
+    ::ng-deep .ngx-pagination .current {
+
+      background: #7492c2 !important;
+        border-radius: 4px !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+
+    }
+    ::ng-deep .ngx-pagination a, .ngx-pagination button {
+       border: solid 1px #e4e4e4 !important;
+       text-decoration: none !important;
+    }
+
+
+
+
+
 .custom-table-header {
-  background-color: #086594;
+  background-color: #7492c2;
   color: #ffffff;
+}
+.icon-refresh{
+  color: #EA738D;
+  &:hover {
+    color: darken(#EA738D, 15%);
+  }
+}
+.refresh {
+  border: 1px solid #ccc;
+  padding: 5px 12px;
+  color: #000000;
+  font-size: 12px;
+}
+    .icon-fa{
+      color: #EA738D;
+      &:hover {
+        color: darken(#EA738D, 15%);
+      }
+    }
+
+.table{
+  font-size: 12px;
 }
 
 .info-container {
@@ -134,39 +264,6 @@ body {
   &:hover a .tooltip-icon {
     display: block;
   }
-}
-
-.items-per-page {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-
-}
-.select-show{
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  margin-top: 6px;
-  font-size: 13px;
-}
-.font{
-  font-size: 13px;
-}
-table{
-  font-size: 13px;
-  word-wrap: normal;
-}
-::ng-deep .ngx-pagination{
-  line-height: 20px !important;
-
-}
-::ng-deep .ngx-pagination .current {
-
-  background: #086594 !important;
-    border-radius: 4px !important;
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-
-}
-::ng-deep .ngx-pagination a, .ngx-pagination button {
-   border: solid 1px #e4e4e4 !important;
-   text-decoration: none !important;
 }
 
 

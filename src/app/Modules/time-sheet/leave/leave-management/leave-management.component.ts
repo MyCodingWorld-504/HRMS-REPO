@@ -20,4 +20,8 @@ export class LeaveManagementComponent {
   onClickAppliedLeaveHistory() {
     this.router.navigate(['dashboard', 'timesheet','applied-leave']);
   }
+
+  OnRouteDashboard(){
+    this.router.navigate(['dashboard', 'timesheet', 'timesheetDashboard']);
+  }
 }

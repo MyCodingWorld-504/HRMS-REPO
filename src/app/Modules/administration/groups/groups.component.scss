@@ -5,18 +5,113 @@ $hover-background-color: #f9f9f9;
 $shadow-color: rgba(0, 0, 0, 0.1);
 
 .container-fluid {
-  margin: 20px auto;
   font-size: smaller;
 }
 
 
-.info-container {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+.ribbon-1 {
+  position: relative;
+  padding: 6px 30px;
+  margin-left: 23px;
+  background-color: #7492c2;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  &:hover {
+         background: darken(#EA738D, 10%);
+       }
 }
 
-.items-per-page {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+.ribbon-1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -20px;
+  border-width: 16px 0 16px 20px;
+  border-color: transparent transparent transparent #7492c2;
+  border-style: solid;
+
 }
+.ribbon-1:hover::before {
+  border-color:transparent transparent transparent darken(#EA738D, 10%);
+}
+.ribbon-1::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 83px;
+  border-width: 16px 0 16px 20px;
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
+}
+
+.ribbon {
+  position: relative;
+  padding: 6px 30px;
+  background-color: #7492c2;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  &:hover {
+         background: darken(#EA738D, 10%);
+       }
+}
+
+.ribbon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -20px;
+  border-width: 16px 0 16px 20px;
+  border-color: transparent transparent transparent #7492c2;
+  border-style: solid;
+
+}
+.ribbon:hover::before {
+  border-color:transparent transparent transparent darken(#EA738D, 10%);
+}
+.ribbon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 105px;
+  border-width: 16px 0 16px 20px;
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
+}
+    .button
+
+    .info-container {
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
+    .items-per-page {
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
+    .select-show{
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      margin-top: 6px;
+      font-size: 12px;
+    }
+    .form-select{
+      font-size: 13px;
+    }
+    ::ng-deep .ngx-pagination{
+      line-height: 21px !important;
+font-size: 12px !important;
+    }
+    ::ng-deep .ngx-pagination .current {
+
+      background: #7492c2 !important;
+        border-radius: 4px !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+
+    }
+    ::ng-deep .ngx-pagination a, .ngx-pagination button {
+       border: solid 1px #e4e4e4 !important;
+       text-decoration: none !important;
+    }
+
 
 .card {
   border: 1px solid $border-color;
@@ -45,7 +140,7 @@ $shadow-color: rgba(0, 0, 0, 0.1);
   position: absolute;
   width: 130%;
   height: 40px;
-  background: #086594;
+  background: #7492c2;
   display: flex;
   transform: rotate(-30deg) translateY(-30px);
   justify-content: center;
@@ -55,7 +150,7 @@ $shadow-color: rgba(0, 0, 0, 0.1);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-size: 12px;
+  font-size: 10px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 .select-show{
@@ -78,7 +173,7 @@ $shadow-color: rgba(0, 0, 0, 0.1);
   position: absolute;
   width: 130%;
   height: 40px;
-  background: #086594;
+  background: #7492c2;
   display: flex;
   transform: rotate(-30deg) translateY(-30px);
   justify-content: center;
@@ -88,7 +183,7 @@ $shadow-color: rgba(0, 0, 0, 0.1);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-size: 12px;
+  font-size: 10px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -107,26 +202,42 @@ dl,
 dd {
   margin: 0;
   padding: 0;
+  top:0;
+}
+
+.table{
+  font-size: 12px;
 }
 
 body {
   font-family: "Arial", sans-serif;
-  font-size: 16px;
+  font-size: 10px;
   line-height: 1.6;
   color: $primary-color;
 }
 
 .custom-table-header {
-  background-color: #086594;
+  background-color: #7492c2;
   color: #ffffff;
 }
-.refresh {
-  cursor: pointer;
-  border-width: 1px 0px 1px 1px;
-  border-style: solid;
-  border-color: #333;
-  padding: 8px 16px 5px 16px;
+.icon-refresh{
+  color: #EA738D;
+  &:hover {
+    color: darken(#EA738D, 15%);
+  }
 }
+.refresh {
+  border: 1px solid #ccc;
+  padding: 5px 12px;
+  color: #000000;
+  font-size: 12px;
+}
+    .icon-fa{
+      color: #EA738D;
+      &:hover {
+        color: darken(#EA738D, 15%);
+      }
+    }
 
 .icon-tooltip {
   position: relative;
@@ -201,20 +312,5 @@ body {
     display: block;
   }
 }
-::ng-deep .ngx-pagination{
-  line-height: 30px !important;
 
-}
-::ng-deep .ngx-pagination .current {
-
-  background: #086594 !important;
-    border-radius: 4px !important;
-    padding-left: 13px !important;
-    padding-right: 13px !important;
-
-}
-::ng-deep .ngx-pagination a, .ngx-pagination button {
-   border: solid 1px #e4e4e4 !important;
-   text-decoration: none !important;
-}
 

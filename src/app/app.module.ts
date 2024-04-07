@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
+import { NgToastModule } from 'ng-angular-popup';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,
     }),
-
+    NgToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]

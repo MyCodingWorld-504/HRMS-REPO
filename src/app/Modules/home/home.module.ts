@@ -16,6 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { CompanyBlogComponent } from './company-blog/company-blog.component';
 import { IndustriesBlogComponent } from './industries-blog/industries-blog.component';
+import { InteractiveDemoComponent } from './interactive-demo/interactive-demo.component';
 
 
 
@@ -30,7 +31,8 @@ library.add(fas);
     NavbarComponent,
     ForgotpasswordComponent,
     CompanyBlogComponent,
-    IndustriesBlogComponent
+    IndustriesBlogComponent,
+    InteractiveDemoComponent
   ],
   imports: [
     CommonModule,

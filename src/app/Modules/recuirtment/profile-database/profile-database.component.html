@@ -1,0 +1,673 @@
+
+<div>
+  <a class="ribbon" (click)="OnRouteDashboard()">Dashboard</a><a class="ribbon-1">Profile Database</a>
+</div>
+
+<div class="container-fluid">
+  <div *ngIf="showOverlay" class="overlay">
+    <div class="overlay-content">
+      <h5>Add Candidate</h5>
+      <div class="form-columns">
+        <div class="form-column col-2">
+          <div class="form-group">
+            <label>Full Name<span class="required">*</span></label>
+            <input type="text" [(ngModel)]="newCandidate['Full Name']" name="fullName" required />
+          </div>
+          <div class="form-group">
+            <label>Phone No<span class="required">*</span></label>
+            <input type="text" [(ngModel)]="newCandidate['Phone No']" name="phoneNo" required />
+          </div>
+          <div class="form-group">
+            <label>Email ID<span class="required">*</span></label>
+            <input type="email" [(ngModel)]="newCandidate['Email ID']" name="email" required />
+          </div>
+          <div class="form-group">
+            <label>Alternative Phone No</label>
+            <input type="text" [(ngModel)]="newCandidate['Alternative Phone No']" name="altPhoneNo" />
+          </div>
+          <div class="form-group">
+            <label>Alternative Email ID</label>
+            <input type="email" [(ngModel)]="newCandidate['Alternative Email ID']" name="altEmail" />
+          </div>
+        </div>
+        <div class="form-column col-2">
+          <div class="form-group">
+            <label>Technologies<span class="required">*</span></label>
+            <input type="text" [(ngModel)]="newCandidate.Technologies" name="technologies" required />
+          </div>
+          <div class="form-group">
+            <label>Sub Skills<span class="required">*</span></label>
+            <input type="text" [(ngModel)]="newCandidate['Sub Skills']" name="subSkills" required />
+          </div>
+          <div class="form-group">
+            <label>Pan No</label>
+            <input type="text" [(ngModel)]="newCandidate['Pan No']" name="panNo" />
+          </div>
+          <div class="form-group">
+            <label>Aadhar No</label>
+            <input type="text" [(ngModel)]="newCandidate['Aadhar No']" name="aadharNo" />
+          </div>
+          <div class="form-group">
+            <label>Passport No</label>
+            <input type="text" [(ngModel)]="newCandidate['Passport No']" name="passportNo" />
+          </div>
+        </div>
+        <div class="form-column col-2">
+          <div class="form-group">
+            <label>PF No</label>
+            <input type="text" [(ngModel)]="newCandidate['PF No']" name="pfNo" />
+          </div>
+          <div class="form-group">
+            <label>Current CTC<span class="required">*</span></label>
+            <input type="text" [(ngModel)]="newCandidate['Current CTC']" name="currentCTC" required />
+          </div>
+          <div class="form-group">
+            <label>Expected CTC<span class="required">*</span></label>
+            <input type="text" [(ngModel)]="newCandidate['Expected CTC']" name="expectedCTC" required />
+          </div>
+          <div class="form-group">
+            <label>No of Years Experience<span class="required">*</span></label>
+            <input type="text" [(ngModel)]="newCandidate['No of Years Experience']" name="yearsExperience" required />
+          </div>
+          <div class="form-group">
+            <label>Relevant Experience<span class="required">*</span></label>
+            <input type="text" [(ngModel)]="newCandidate['Relavant Experience']" name="relevantExperience" required />
+          </div>
+        </div>
+        <div class="form-column col-2">
+          <div class="form-group">
+            <label>Notice Period<span class="required">*</span></label>
+            <input type="text" [(ngModel)]="newCandidate['Notice Period']" name="noticePeriod" required />
+          </div>
+          <div class="form-group">
+            <label>Date of Birth</label>
+            <input type="text" [(ngModel)]="newCandidate['Date of Birth']" name="dateOfBirth" />
+          </div>
+          <div class="form-group">
+            <label>Willing to Relocate<span class="required">*</span></label>
+            <select [(ngModel)]="newCandidate['Willing to Relocate']" name="willingToRelocate" required>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Current Location<span class="required">*</span></label>
+            <input type="text" [(ngModel)]="newCandidate['Current Location']" name="currentLocation" required />
+          </div>
+          <div class="form-group">
+            <label>Working Location<span class="required">*</span></label>
+            <input type="text" [(ngModel)]="newCandidate['Working Location']" name="workingLocation" required />
+          </div>
+        </div>
+        <div class="form-column col-2">
+          <div class="form-group">
+            <label>Current Designation</label>
+            <input type="text" [(ngModel)]="newCandidate['Current Designation']" name="currentDesignation" />
+          </div>
+          <div class="form-group">
+            <label>Current Organization<span class="required">*</span></label>
+            <input type="text" [(ngModel)]="newCandidate['Current Organization']" name="currentOrganization" required />
+          </div>
+          <div class="form-group">
+            <label>Previous Organization</label>
+            <input type="text" [(ngModel)]="newCandidate['Previous Organization']" name="previousOrganization" />
+          </div>
+          <div class="form-group">
+            <label>Highest Degree<span class="required">*</span></label>
+            <input type="text" [(ngModel)]="newCandidate['Highest Degree']" name="highestDegree" required />
+          </div>
+          <div class="form-group">
+            <label>Year of Passed Out</label>
+            <input type="text" [(ngModel)]="newCandidate['Year of Passed Out']" name="passedOutYear" />
+          </div>
+        </div>
+        <div class="form-column col-2">
+          <div class="form-group">
+            <label>University/College</label>
+            <input type="text" [(ngModel)]="newCandidate['University/College']" name="universityCollege" />
+          </div>
+          <div class="form-group">
+            <label>University/College Percentage</label>
+            <input type="text" [(ngModel)]="newCandidate['University Percentage']" name="universityCollegePercentage" />
+          </div>
+          <div class="form-group">
+            <label>Reason of Change<span class="required">*</span></label>
+            <input type="text" [(ngModel)]="newCandidate['Reason of Change']" name="reasonOfChange" required />
+          </div>
+          <div class="form-group">
+            <label>Profile Attachment</label>
+            <input type="file" [(ngModel)]="newCandidate['Profile Attachment']" name="profileAttachment" />
+          </div>
+          <div class="form-group">
+            <label>Todays Date<span class="required">*</span></label>
+            <input type="date" [(ngModel)]="newCandidate['Submitted Date']" name="reasonOfChange" required />
+          </div>
+        </div>
+      </div>
+      <button (click)="submitForm()">Submit</button>
+      <button (click)="closeOverlay()">Close</button>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <!--
+  <div>
+    <input type="checkbox" name="name" [(ngModel)]="exportForm.value.name" />
+    Name
+    <input type="checkbox" name="email" [(ngModel)]="exportForm.value.email" />
+    Email
+
+    <button (click)="exportToExcel()">Export to Excel</button>
+  </div>
+
+
+
+  <div class="date-filter-container">
+    <label for="fromDate">From Date:</label>
+    <input type="date" id="fromDate" [(ngModel)]="fromDate" />
+    <label for="toDate">To Date:</label>
+    <input type="date" id="toDate" [(ngModel)]="toDate" />
+    <button (click)="showCandidates()">Show</button>
+  </div>
+
+  <div class="container-fluid">
+    <div>
+      <h5 class="heading">Our Candidates</h5>
+    </div>
+    <div class="d-flex justify-content-between">
+      <div class="card">
+        <form [formGroup]="Form" (ngSubmit)="submitForm()">
+          <div class="d-flex justify-content-end">
+            <div class="refresh">
+              <div class="icon-tooltip" data-title="Refresh">
+                <fa-icon
+                  [icon]="faArrowsRotateIcon"
+                  (click)="onRefresh()"
+                ></fa-icon>
+              </div>
+            </div>
+            <input
+              class="refresh"
+              type="text"
+              formControlName="searchTerm"
+              placeholder="Search..."
+              (input)="search()"
+            />
+          </div>
+          <table class="table table-bordered mt-3">
+            <thead class="custom-table-header">
+              <tr>
+                <th>Sno</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Technologies</th>
+                <th>Experienced</th>
+                <th>Location</th>
+                <th>CTC</th>
+                <th>Notice</th>
+                <th>Organization</th>
+                <th>Education</th>
+                <th>Reason for charge</th>
+                <th>Expected CTC</th>
+                <th>Relevant Experience</th>
+                <th>Concept</th>
+                <th>Submitted Date</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let candidate of filteredCandidates; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ candidate.Name }}</td>
+                <td>{{ candidate["Email ID"] }}</td>
+                <td>{{ candidate["Phn No"] }}</td>
+                <td>{{ candidate.Technologies.join(", ") }}</td>
+                <td>{{ candidate.Experienced }}</td>
+                <td>{{ candidate.Location }}</td>
+                <td>{{ candidate.CTC }}</td>
+                <td>{{ candidate.Notice }}</td>
+                <td>{{ candidate.Organization }}</td>
+                <td>{{ candidate.Education }}</td>
+                <td>{{ candidate["Reason for charge"] }}</td>
+                <td>{{ candidate["Expected CTC"] }}</td>
+                <td>{{ candidate["Relevant Experience"] }}</td>
+                <td>{{ candidate.Concept }}</td>
+                <td>{{ candidate["Submitted Date"] }}</td>
+                <td class="tooltip-container-icons">
+                  <div class="d-flex justify-content-between">
+                    <a
+                      (mouseenter)="showTooltipIcon('View', $event)"
+                      (mouseleave)="hideTooltipIcon()"
+                    >
+                      <fa-icon
+                        [icon]="faEyeIcon"
+                        (click)="onView(candidate.id)"
+                      ></fa-icon>
+                      <span
+                        class="tooltip-icons"
+                        *ngIf="isTooltipVisible && currentTooltip === 'View'"
+                      >
+                        View
+                      </span>
+                    </a>
+                    <a
+                      (mouseenter)="showTooltipIcon('Edit', $event)"
+                      (mouseleave)="hideTooltipIcon()"
+                    >
+                      <fa-icon
+                        [icon]="faPenIcon"
+                        (click)="onEdit(candidate.id)"
+                      ></fa-icon>
+                      <span
+                        class="tooltip-icons"
+                        *ngIf="isTooltipVisible && currentTooltip === 'Edit'"
+                      >
+                        Edit
+                      </span>
+                    </a>
+                    <a
+                      (mouseenter)="showTooltipIcon('Delete', $event)"
+                      (mouseleave)="hideTooltipIcon()"
+                    >
+                      <fa-icon
+                        (click)="openDeleteConfirmation(candidate.id)"
+                        [icon]="faTrashIcon"
+                      ></fa-icon>
+                      <span
+                        class="tooltip-icons"
+                        *ngIf="isTooltipVisible && currentTooltip === 'Delete'"
+                      >
+                        Delete
+                      </span>
+                    </a>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="d-flex justify-content-between mt-3">
+            <div class="items-per-page">
+              <select
+                class="form-select"
+                [formGroup]="Form"
+                name="itemsPerPage"
+                (change)="onItemsPerPageChange($event)"
+              >
+                <option
+                  *ngFor="let option of itemsPerPageOptions"
+                  [value]="option"
+                >
+                  {{ option }}
+                </option>
+              </select>
+            </div>
+            <div class="select-show">
+              Showing Results {{ getStartIndex() }} - {{ getEndIndex() }} of
+              {{ candidateData.length }} entries.
+            </div>
+            <div class="pagination-container">
+              <pagination-controls
+                (pageChange)="pageChanged($event)"
+              ></pagination-controls>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div> -->
+<div class="container-fluid">
+  <div class="date-filter-container">
+    <label for="fromDate">From Date:</label>
+    <input type="date" id="fromDate" [(ngModel)]="fromDate" />
+    <label for="toDate">To Date:</label>
+    <input type="date" id="toDate" [(ngModel)]="toDate" />
+    <button (click)="showCandidates()">Show</button>
+    <button (click)="openOverlay()">Add Candidate</button>
+    <button (click)="toggleControls()">Custom Excel</button>
+  </div>
+
+
+
+  <div class="overlay-c" *ngIf="showControls">
+    <div class="overlay-content-c">
+      <div class="h4">
+      <h4>Select Your Labels</h4>
+    </div>
+    <div class="overlay-c-lablel">
+      <label *ngFor="let header of headers">
+        <input
+          type="checkbox" class="overlay-checkbox"
+          [checked]="selectedHeaders[header]"
+          (change)="toggleCheckbox(header)"
+        />
+        {{ header }}
+      </label>
+    </div>
+      <button class="overlay-c-btn"  (click)="exportData()">Export to Excel</button>
+      <button class="overlay-c-btn" (click)="closeExcel()">Close</button>
+    </div>
+  </div>
+  
+
+
+
+
+
+    <div class="card mt-2">
+      <form [formGroup]="profileForm" (ngSubmit)="submitForm()">
+        <div class="d-flex justify-content-end mt-2">
+          <div class="refresh">
+            <div class="icon-tooltip" data-title="Refresh">
+              <fa-icon
+                class="icon-refresh"
+                [icon]="faArrowsRotateIcon"
+                (click)="onRefresh()"
+              ></fa-icon>
+            </div>
+            </div>
+            <input
+            class="refresh"
+            type="text"
+            formControlName="searchTerm"
+            placeholder="Search..."
+            (input)="search()"
+          />
+        
+          </div>
+          <table class="table table-bordered mt-3">
+            <thead class="custom-table-header">
+              <tr>
+                <th>Schedule</th>
+                <ng-container *ngFor="let header of headers">
+                  <th *ngIf="selectedHeaders[header]">{{ header }}</th>
+                </ng-container>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let row of filteredData">
+                <td ><fa-icon class="icon-fa"
+                [icon]="faHandshake"
+               (click)="openScheduleOverlay(row.id)"
+              ></fa-icon></td>
+                <td *ngFor="let header of headers">
+                  {{ row[header] }}
+                </td>
+                <td class="tooltip-container-icons">
+                  <div class="d-flex justify-content-between">
+                    <a
+                      (mouseenter)="showTooltipIcon('View', $event)"
+                      (mouseleave)="hideTooltipIcon()"
+                    >
+                      <fa-icon
+                        [icon]="faEyeIcon" class="icon-fa"
+                        (click)="onView(candidate.id)"
+                      ></fa-icon>
+                      <span
+                        class="tooltip-icons"
+                        *ngIf="isTooltipVisible && currentTooltip === 'View'"
+                      >
+                        View
+                      </span>
+                    </a>
+                    <a
+                      (mouseenter)="showTooltipIcon('Edit', $event)"
+                      (mouseleave)="hideTooltipIcon()"
+                    >
+                      <fa-icon
+                        [icon]="faPenIcon" class="icon-fa"
+                        (click)="onEdit(candidate.id)"
+                      ></fa-icon>
+                      <span
+                        class="tooltip-icons"
+                        *ngIf="isTooltipVisible && currentTooltip === 'Edit'"
+                      >
+                        Edit
+                      </span>
+                    </a>
+                    <a
+                      (mouseenter)="showTooltipIcon('Delete', $event)"
+                      (mouseleave)="hideTooltipIcon()"
+                    >
+                      <fa-icon class="icon-fa"
+                        (click)="openDeleteConfirmation(candidate.id)"
+                        [icon]="faTrashIcon"
+                      ></fa-icon>
+                      <span
+                        class="tooltip-icons"
+                        *ngIf="isTooltipVisible && currentTooltip === 'Delete'"
+                      >
+                        Delete
+                      </span>
+                    </a>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="d-flex justify-content-between mt-3">
+            <div class="items-per-page">
+              <select
+                class="form-select"
+                [formGroup]="profileForm"
+                name="itemsPerPage"
+                (change)="onItemsPerPageChange($event)"
+              >
+                <option
+                  *ngFor="let option of itemsPerPageOptions"
+                  [value]="option"
+                >
+                  {{ option }}
+                </option>
+              </select>
+            </div>
+            <div class="select-show">
+              Showing Results {{ getStartIndex() }} - {{ getEndIndex() }} of
+              {{ candidateData.length }} entries.
+            </div>
+            <div class="pagination-container">
+              <pagination-controls
+                (pageChange)="pageChanged($event)"
+              ></pagination-controls>
+            </div>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="showScheduleOverlay" class="schedule-overlay">
+  <div class="schedule-overlay-content">
+    <h5>Schedule Candidate</h5>
+    <form (ngSubmit)="addCandidate()">
+      <div class="form-columns">
+        <div class="form-column col-2">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" class="form-control" name="fullName" [(ngModel)]="newScheduleCandidate['Full Name']">
+          </div>
+          <div class="form-group">
+            <label>Email ID</label>
+            <input type="email" class="form-control" name="email" [(ngModel)]="newScheduleCandidate['Email ID']">
+          </div>
+          <div class="form-group">
+            <label>Phone No</label>
+            <input type="text" class="form-control" [(ngModel)]="newScheduleCandidate['Phone No']" name="phoneNo">
+          </div>
+          <div class="form-group">
+            <label>Alternative Phone No</label>
+            <input type="text" class="form-control" [(ngModel)]="newScheduleCandidate['Alternative Phone No']" name="altPhoneNo">
+          </div>
+          <div class="form-group">
+            <label>Alternative Email ID</label>
+            <input type="text" class="form-control" [(ngModel)]="newScheduleCandidate['Alternative Email ID']" name="altEmail">
+          </div>
+        </div>
+        <div class="form-column col-2">
+          <div class="form-group">
+            <label>Technologies</label>
+            <input type="text" class="form-control" name="technologies" [(ngModel)]="newScheduleCandidate['Technologies']">
+          </div>
+          <div class="form-group">
+            <label>Sub Skills</label>
+            <input type="text" class="form-control" name="subSkills" [(ngModel)]="newScheduleCandidate['Sub Skills']">
+          </div>
+          <div class="form-group">
+            <label>Pan No</label>
+            <input type="text" class="form-control" name="panNo" [(ngModel)]="newScheduleCandidate['Pan No']">
+          </div>
+          <div class="form-group">
+            <label>Aadhar No</label>
+            <input type="text" class="form-control" name="aadharNo" [(ngModel)]="newScheduleCandidate['Aadhar No']">
+          </div>
+          <div class="form-group">
+            <label>Passport No</label>
+            <input type="text" class="form-control" name="passportNo" [(ngModel)]="newScheduleCandidate['Passport No']">
+          </div>
+        </div>
+        <div class="form-column col-2">
+          <div class="form-group">
+            <label>PF No</label>
+            <input type="text" class="form-control" name="pfNo" [(ngModel)]="newScheduleCandidate['PF No']">
+          </div>
+          <div class="form-group">
+            <label>Current CTC</label>
+            <input type="text" class="form-control" name="currentCTC" [(ngModel)]="newScheduleCandidate['Current CTC']">
+          </div>
+          <div class="form-group">
+            <label>Expected CTC</label>
+            <input type="text" class="form-control" name="expectedCTC" [(ngModel)]="newScheduleCandidate['Expected CTC']">
+          </div>
+          <div class="form-group">
+            <label>No of Years Experience</label>
+            <input type="text" class="form-control" name="yearsExperience" [(ngModel)]="newScheduleCandidate['No of Years Experience']">
+          </div>
+          <div class="form-group">
+            <label>Relavant Experience</label>
+            <input type="text" class="form-control" name="relevantExperience" [(ngModel)]="newScheduleCandidate['Relavant Experience']">
+          </div>
+        </div>
+        <div class="form-column col-2">
+          <div class="form-group">
+            <label>Notice Period</label>
+            <input type="text" class="form-control" name="noticePeriod" [(ngModel)]="newScheduleCandidate['Notice Period']">
+          </div>
+          <div class="form-group">
+            <label>Date of Birth</label>
+            <input type="text" class="form-control" name="dateOfBirth" [(ngModel)]="newScheduleCandidate['Date of Birth']">
+          </div>
+          <div class="form-group">
+            <label>Willing to Relocate</label>
+            <select class="form-control" name="willingToRelocate" [(ngModel)]="newScheduleCandidate['Willing to Relocate']">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Current Location</label>
+            <input type="text" class="form-control" name="currentLocation" [(ngModel)]="newScheduleCandidate['Current Location']">
+          </div>
+          <div class="form-group">
+            <label>Working Location</label>
+            <input type="text" class="form-control" name="workingLocation" [(ngModel)]="newScheduleCandidate['Working Location']">
+          </div>
+        </div>
+        <div class="form-column col-2">
+          <div class="form-group">
+            <label>Current Designation</label>
+            <input type="text" class="form-control" name="currentDesignation" [(ngModel)]="newScheduleCandidate['Current Designation']">
+          </div>
+          <div class="form-group">
+            <label>Current Organization</label>
+            <input type="text" class="form-control" name="currentOrganization" [(ngModel)]="newScheduleCandidate['Current Organization']">
+          </div>
+          <div class="form-group">
+            <label>Previous Organization</label>
+            <input type="text" class="form-control" name="previousOrganization" [(ngModel)]="newScheduleCandidate['Previous Organization']">
+          </div>
+          <div class="form-group">
+            <label>Highest Degree</label>
+            <input type="text" class="form-control" name="highestDegree" [(ngModel)]="newScheduleCandidate['Highest Degree']">
+          </div>
+          <div class="form-group">
+            <label>Year of Passed Out</label>
+            <input type="text" class="form-control" name="passedOutYear" [(ngModel)]="newScheduleCandidate['Year of Passed Out']">
+          </div>
+        </div>
+        <div class="form-column col-2">
+          <div class="form-group">
+            <label>University/College</label>
+            <input type="text" class="form-control" name="universityCollege" [(ngModel)]="newScheduleCandidate['University/College']">
+          </div>
+          <div class="form-group">
+            <label>University/College Percentage</label>
+            <input type="text" class="form-control" name="universityCollegePercentage" [(ngModel)]="newScheduleCandidate['University/College Percentage']">
+          </div>
+          <div class="form-group">
+            <label>Reason of Change</label>
+            <input type="text" class="form-control" name="reasonOfChange" [(ngModel)]="newScheduleCandidate['Reason of Change']">
+          </div>
+          <div class="form-group">
+            <label>Submitted Date</label>
+            <input type="date" class="form-control" name="submittedDate" [(ngModel)]="newScheduleCandidate['Submitted Date']">
+          </div>
+          <div class="form-group">
+            <label>Profile Attachment</label>
+            <input type="file" class="form-control" name="profileAttachment" [(ngModel)]="newScheduleCandidate['Profile Attachment']">
+          </div>
+        </div>
+        <div class="form-column col-2">
+          <div class="form-group">
+            <label>Date</label>
+            <input type="date" class="form-control" name="date" [(ngModel)]="newScheduleCandidate['Date']" >
+          </div>
+          <div class="form-group">
+            <label>Day</label>
+            <input type="text" class="form-control" name="day" [(ngModel)]="newScheduleCandidate['Day']">
+          </div>
+          <div class="form-group">
+            <label>Time</label>
+            <input type="time" class="form-control" name="time" [(ngModel)]="newScheduleCandidate['Time']">
+          </div>
+          <div class="form-group">
+            <label>Mode of Interview</label>
+            <input type="text" class="form-control" name="modeOfInterview" [(ngModel)]="newScheduleCandidate['Mode of Interview']">
+          </div>
+        </div>
+        <div class="form-column col-2">
+          <div class="form-group">
+            <label>Recruiter Name</label>
+            <input type="text" class="form-control" name="recruiterName" [(ngModel)]="newScheduleCandidate['Recruiter Name']">
+          </div>
+          <div class="form-group">
+            <label>Client Name</label>
+            <input type="text" class="form-control" name="clientName"  [(ngModel)]="newScheduleCandidate['Client Name']">
+          </div>
+          <div class="form-group">
+            <label>Remarks</label>
+            <input type="text" class="form-control" name="remarks"  [(ngModel)]="newScheduleCandidate['Remarks']">
+          </div>
+          <div class="form-group">
+            <label>Action</label>
+            <input type="text" class="form-control" name="action" [(ngModel)]="newScheduleCandidate['Action']">
+          </div>          
+        </div>
+      </div>
+      <div class="button-container">
+        <button class="schedule-button" type="submit">Schedule</button>
+        <button class="schedule-button" type="button" (click)="closeScheduleOverlay()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>

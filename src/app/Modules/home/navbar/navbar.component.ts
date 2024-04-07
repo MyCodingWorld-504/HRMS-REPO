@@ -12,7 +12,7 @@ export class NavbarComponent  implements AfterViewInit{
   faUserTie = faUserTie;
   faArrowRight = faArrowRight;
   cursor: HTMLElement | null = null;
-constructor(private sharedService : SharedService){}
+constructor(private sharedService : SharedService, private router : Router){}
 
 
 onMouseEnter() {
@@ -46,6 +46,9 @@ onMouseMove(event: MouseEvent) {
   }
 }
 
+// onLoginClick(){
+// this.router.navigate(['/login']);
+// }
 }
 
 

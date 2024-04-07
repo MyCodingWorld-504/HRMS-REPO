@@ -227,5 +227,7 @@ export class BankDetailsComponent implements OnInit, OnDestroy{
       this.toastr.success('EXCEl Exported Successfully', 'Success')
     }
 
-
+    OnRouteDashboard(){
+      this.router.navigate(['dashboard', 'administration', 'admin-dashboard']);
+    }
 }

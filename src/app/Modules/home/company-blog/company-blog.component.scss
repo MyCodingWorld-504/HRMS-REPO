@@ -20,7 +20,7 @@
 .card-small {
   background-color:  white;
   transition: background-color 0.3s ease, transform 0.7s ease;
-  padding: 10px ;
+  padding: 6px ;
   border-radius: 10px;
   margin: 0 25px  25px 0;
   color: #454242;
@@ -42,6 +42,10 @@
   transform: scale(1.1);
   color: whitesmoke;
 }
-h5 {
+p{
+  font-size: smaller;
+}
+.card-title{
+  font-size: smaller;
   font-weight: bold;
 }

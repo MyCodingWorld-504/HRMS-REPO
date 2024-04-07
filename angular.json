@@ -25,7 +25,8 @@
               "core-js",
               "raf",
               "rgbcolor",
-              "jspdf-autotable"
+              "jspdf-autotable",
+              "html2canvas"
             ],
             "polyfills": [
               "zone.js"
@@ -37,8 +38,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.scss",
               "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": [
@@ -112,8 +113,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": false
   }
 }

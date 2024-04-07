@@ -85,8 +85,12 @@ menuItems: MenuItem[] = [
       label: 'Recruitment',
       icon: faSearchengin,
       submenu: [
-        { label: 'Contact', route: '/contact' },
-        { label: 'Service', route: '/service' },
+        { label: 'Our Clients', route: 'recuirtment/clients' },
+        { label: 'Job Titles / Scheduler Status', route: 'recuirtment/job-titles-scheduler-status' },
+        { label: 'Profile Database', route: 'recuirtment/profile-database' },
+        { label: 'Open Positions', route: 'recuirtment/open-position' },
+        { label: 'Schedulers', route: 'recuirtment/scheduler-status' },
+        { label: 'Reports', route: '/service' },
       ],
     },
   ];
@@ -118,6 +122,10 @@ menuItems: MenuItem[] = [
     }
     else if(item.label === 'Attendance Sheet'){
       this.router.navigate(['dashboard','timesheet', 'timesheetDashboard']);
+      this.toggleSubMenu(item);
+    }
+    else if(item.label === 'Recruitment'){
+      this.router.navigate(['dashboard','recuirtment', 'recuirtment-dashboard']);
       this.toggleSubMenu(item);
     }
     else {

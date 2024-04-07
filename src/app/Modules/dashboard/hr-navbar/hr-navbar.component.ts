@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/Core/services/auth.service';
 import { faBars, faHandsPraying,faUserCircle} from '@fortawesome/free-solid-svg-icons';
 import { ToastrService } from 'ngx-toastr';
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-hr-navbar',
@@ -18,7 +19,8 @@ export class HrNavbarComponent implements DoCheck {
     isCollapsed!: boolean;
 
     constructor(private readonly router :Router, private readonly authService :AuthService,
-      private toastr :ToastrService){}
+      private toastr :ToastrService,
+      private toast : NgToastService){}
     @Output() toggleSidebar = new EventEmitter<void>();
     ngDoCheck(): void {
       let currentroute = this.router.url;
@@ -34,8 +36,8 @@ export class HrNavbarComponent implements DoCheck {
     }
     onLogout() : void{
       this.authService.logout();
-      this.toastr.success('logged out successfully', 'Logout');
-      this.router.navigate(['layout']);
+       this.toast.info({detail:"Logout",summary:'logged out successfully', position: 'topRight', duration: 3000});
+
     }
   }
 

@@ -33,20 +33,17 @@ color: #fff;
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background-color: rgb(241, 239, 239);
 }
-.logo {
-  color: #4ba4e9;
-  cursor: pointer;
-   font-size: 16px;
-  font-style: bold;
-  margin: 10px 0 0;
-  font-size: x-large;
-  padding: 10px 25px;
-  background: transparent;
-  border: 2px solid #3183ef;
-  border-radius: 20px 0px;
-  outline: none;
-  text-decoration: none;
 
+.logo {
+  text-align: center;
+ top: 0;
+  position: absolute;
+
+  padding: 0px 10px px 10px;
+  img {
+   width: 100px;
+
+  }
 }
 .navbar-nav{
   position: absolute;
@@ -58,14 +55,16 @@ color: #fff;
   margin: 10px;
   padding: 10px 25px;
   background: transparent;
-  border: 2px solid #4e8bed;
+  border: 2px solid #7492c2;
   border-radius: 20px;
+  font-size: 11px;
   outline: none;
   text-decoration: none;
 }
 .button:hover {
-  background-color: #3983ec;
+  background-color: #EA738D;
   color: #ffffff;
+  border:none;
 }
 .button-tour {
   color: #0a0d10;
@@ -73,18 +72,20 @@ color: #fff;
   margin: 10px;
   padding: 10px 25px;
   background: transparent;
-  border: 2px solid #4e8bed;
+  border: 2px solid #7492c2;
   border-radius: 20px;
   outline: none;
   text-decoration: none;
   animation-delay: 1s;
 }
 .button-tour:hover {
-  background-color: #3983ec;
+  background-color: #EA738D;
+  border: 2px solid darken($color: #EA738D, $amount: 10%);
   color: #ffffff;
+  // border:none;
 }
 .content {
-  color: #4083ee;
+  color:#7492c2;
   position: absolute;
   top: 50%;
   left: 8%;
@@ -99,7 +100,7 @@ h1 {
 .sidebar {
   width: 50px;
   height: 100%;
-  background: linear-gradient(#33ace9, #fdfdfd);
+  background: linear-gradient(#7492c2, #fdfdfd);
   position: absolute;
   right: 0;
   top: 0;
@@ -132,8 +133,14 @@ h1 {
   bottom: 30px;
 }
 
+@media (max-width: 1378px) {
+  h1 {
+    font-size: 60px;
+    line-height: 70px;
+  }
+}
 
-@media (max-width: 1024px) {
+@media (max-width: 1040px) {
   h1 {
     font-size: 60px;
     line-height: 70px;
@@ -171,45 +178,100 @@ position: unset;
   }
   .feature-img{
     width: 300px;
-   // height: 100px;
+    // height: 100px;
   }
 }
-@media(max-width:768px){
+@media(max-width:1182px){
   h1 {
 
     font-size: 50px;
     line-height: 60px;
   }
 }
-@media (max-width: 640px) {
+@media (max-width: 1094px) {
   h1 {
     font-size: 40px;
     line-height: 40px;
   }
 }
-@media (max-width: 475px) {
+@media (max-width: 994px) {
   h1 {
     font-size: 30px;
     line-height: 40px;
   }
 
 }
-// @media(max-width: 375){
-//   h1 {
-//     font-size: 10px;
-//     line-height: 10px;
-//   }
-//   .button {
-// position: absolute;
-//     cursor: pointer;
-//     margin: 0;
-//     padding: 5px 15px;
-// display: inline-block;
-//     width: auto;
-// justify-content: right;
-//   }
-// }
+@media(max-width: 902){
+  h1 {
+    font-size: 10px;
+    line-height: 10px;
+  }
+  .button {
+position: absolute;
+    cursor: pointer;
+    margin: 0;
+    padding: 5px 15px;
+display: inline-block;
+    width: auto;
+justify-content: right;
+  }
+}
+@media (max-width: 894px) {
 
+  .feature-img{
+  width: 400px !important;
+
+  }
+}
+@media (max-width: 719px) {
+
+  .feature-img{
+  width: 350px !important;
+
+  }
+}
+@media (max-width: 661px) {
+
+  .feature-img{
+  width: 320px !important;
+
+  }
+}
+@media (max-width: 630px) {
+
+  .feature-img{
+  width: 300px !important;
+
+  }
+}
+@media (max-width: 615px) {
+  h1 {
+    font-size: 50px !important;
+    line-height: 60px !important;
+  }
+  .feature-img{
+    display: none !important;
+
+    }
+}
+@media (max-width: 488px) {
+  h1 {
+    font-size: 40px !important;
+    line-height: 60px !important;
+  }
+}
+@media (max-width: 400px) {
+  h1 {
+    font-size: 35px !important;
+    line-height: 60px !important;
+  }
+}
+@media (max-width: 350px) {
+  h1 {
+    font-size: 30px !important;
+    line-height: 60px !important;
+  }
+}
 #cursor {
   // position: absolute;
   // width: 40px;
@@ -224,7 +286,7 @@ position: unset;
 
 
 .feature-img{
-  width: 560px;
+  width: 440px;
   position: absolute;
   padding: 10px;
   right: 0%;

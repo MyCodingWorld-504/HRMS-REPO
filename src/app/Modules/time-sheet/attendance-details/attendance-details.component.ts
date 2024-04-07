@@ -220,6 +220,10 @@ export class AttendanceDetailsComponent {
   onAdd() {
     throw new Error('Method not implemented.');
     }
+
+    OnRouteDashboard(){
+      this.router.navigate(['dashboard', 'timesheet', 'timesheetDashboard']);
+    }
   
 
 }
