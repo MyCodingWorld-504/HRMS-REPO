@@ -1,0 +1,232 @@
+
+<div class="container-fluid">
+    <div class="d-flex justify-content-between">
+      <div>
+        <h4 class="heading">Our Clients</h4>
+      </div>
+      <div>
+        <a class="button" (click)="onAdd()" routerLink="/add-emp-details"
+          ><fa-icon [icon]="faPlusIcon"></fa-icon>Add</a
+        >
+      </div>
+    </div>
+
+    <div>
+      <a class="ribbon" (click)="OnRouteDashboard()">Dashboard</a><a class="ribbon-1">Our Clients</a>
+    </div>
+
+
+    <div class="card mt-2">
+      <form [formGroup]="empForm" (ngSubmit)="submitForm()">
+        <div class="d-flex justify-content-end">
+          <div class="refresh">
+            <div class="icon-tooltip" data-title="Refresh">
+              <fa-icon
+                [icon]="faArrowsRotateIcon"
+                (click)="onRefresh()"
+              ></fa-icon>
+            </div>
+          </div>
+          <input
+            class="refresh"
+            type="text"
+            formControlName="searchTerm"
+            placeholder="Search..."
+            (input)="search()"
+          />
+        </div>
+        <table class="table table-bordered mt-3">
+          <thead class="custom-table-header">
+            <tr>
+              <th>Sno</th>
+              <th>Client Name</th>
+              <th>Contact Person</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="
+                let employee of clientsData
+                  | paginate : { itemsPerPage: itemsPerPage, currentPage: page }
+              "
+            >
+              <td
+                class="tooltip-container"
+                (mouseenter)="showTooltip($event)"
+                (mouseleave)="hideTooltip($event)"
+              >
+                {{ employee.id }}
+                <div class="tooltip">{{ employee.id }}</div>
+              </td>
+              <td
+                class="tooltip-container"
+                (mouseenter)="showTooltip($event)"
+                (mouseleave)="hideTooltip($event)"  >
+                {{ employee.employeeName }}
+  
+                <div class="tooltip">{{ employee.employeeName }}</div>
+              
+              </td>
+              <td
+              
+              class="tooltip-container"
+              (mouseenter)="showTooltip($event)"
+              (mouseleave)="hideTooltip($event)"  >
+              
+            {{ employee.department }}
+          
+            <div class="tooltip">{{ employee.department }}</div>
+          </td>
+              <td
+                         
+              class="tooltip-container"
+              (mouseenter)="showTooltip($event)"
+              (mouseleave)="hideTooltip($event)"  >
+              
+              {{ employee.designation }}
+            
+              <div class="tooltip">{{ employee.designation }}</div>
+            
+            </td>
+              <td
+              
+              class="tooltip-container"
+              (mouseenter)="showTooltip($event)"
+              (mouseleave)="hideTooltip($event)"  >
+                
+              {{ employee.phoneNumber }}
+            
+              <div class="tooltip">{{ employee.phoneNumber }}</div>
+            
+            </td>
+              <td
+              
+              class="tooltip-container"
+              (mouseenter)="showTooltip($event)"
+              (mouseleave)="hideTooltip($event)"  >
+      
+              {{ employee.email }}
+            
+              <div class="tooltip">{{ employee.email }}</div>
+  
+            </td>
+              <td
+              
+              class="tooltip-container"
+              (mouseenter)="showTooltip($event)"
+              (mouseleave)="hideTooltip($event)"  >
+              
+              
+              {{ employee.workingLocation }}
+            
+              <div class="tooltip">{{ employee.workingLocation }}</div>
+            
+            </td>
+              <td
+              
+              class="tooltip-container"
+              (mouseenter)="showTooltip($event)"
+              (mouseleave)="hideTooltip($event)"  >
+              
+              {{ employee.workingClient }}
+            
+              <div class="tooltip">{{ employee.workingClient }}</div>
+            
+            </td>
+              <td
+              
+              class="tooltip-container"
+              (mouseenter)="showTooltip($event)"
+              (mouseleave)="hideTooltip($event)"  >
+              
+              {{ employee.permanentAddress }}
+            
+              <div class="tooltip">{{ employee.permanentAddress }}</div>
+              
+            </td>
+              <td>{{ employee.bioData }}</td>
+              <td class="tooltip-container-icons">
+                <div class="d-flex justify-content-between">
+                  <a
+                    (mouseenter)="showTooltipIcon('View', $event)"
+                    (mouseleave)="hideTooltipIcon()"
+                  >
+                    <fa-icon
+                      [icon]="faEyeIcon"
+                      (click)="onView(employee.id)"
+                    ></fa-icon>
+                    <span
+                      class="tooltip-icons"
+                      *ngIf="isTooltipVisible && currentTooltip === 'View'"
+                    >
+                      View
+                    </span>
+                  </a>
+                  <a
+                    (mouseenter)="showTooltipIcon('Edit', $event)"
+                    (mouseleave)="hideTooltipIcon()"
+                  >
+                    <fa-icon
+                      [icon]="faPenIcon"
+                      (click)="onEdit(employee.id)"
+                    ></fa-icon>
+                    <span
+                      class="tooltip-icons"
+                      *ngIf="isTooltipVisible && currentTooltip === 'Edit'"
+                    >
+                      Edit
+                    </span>
+                  </a>
+                  <a
+                    (mouseenter)="showTooltipIcon('Delete', $event)"
+                    (mouseleave)="hideTooltipIcon()"
+                  >
+                    <fa-icon
+                      (click)="openDeleteConfirmation(employee.id)"
+                      [icon]="faTrashIcon"
+                    ></fa-icon>
+                    <span
+                      class="tooltip-icons"
+                      *ngIf="isTooltipVisible && currentTooltip === 'Delete'"
+                    >
+                      Delete
+                    </span>
+                  </a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="d-flex justify-content-between mt-3">
+          <div class="items-per-page">
+            <select
+              class="form-select"
+              [formGroup]="empForm"
+              name="itemsPerPage"
+              (change)="onItemsPerPageChange($event)"
+            >
+              <option *ngFor="let option of itemsPerPageOptions" [value]="option">
+                {{ option }}
+              </option>
+            </select>
+          </div>
+          <div class="select-show">
+            Showing Results {{ getStartIndex() }} - {{ getEndIndex() }} of
+            {{ clientsData.length }} entries.
+          </div>
+          <div class="pagination-container">
+            <pagination-controls
+              (pageChange)="pageChanged($event)"
+            ></pagination-controls>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  

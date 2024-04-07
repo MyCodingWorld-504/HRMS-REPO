@@ -1,6 +1,121 @@
-.container-fluid{
-  margin: 20px auto;
+
+.container-fluid {
+  //margin: 20px auto;
+  font-size: smaller;
 }
+
+
+.ribbon-1 {
+  position: relative;
+  padding: 6px 30px;
+  margin-left: 23px;
+  background-color: #7492c2;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  &:hover {
+         background: darken(#EA738D, 10%);
+       }
+}
+
+.ribbon-1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -20px;
+  border-width: 16px 0 16px 20px;
+  border-color: transparent transparent transparent #7492c2;
+  border-style: solid;
+
+}
+.ribbon-1:hover::before {
+  border-color:transparent transparent transparent darken(#EA738D, 10%);
+}
+.ribbon-1::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 133px;
+  border-width: 16px 0 16px 20px;
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
+}
+
+.ribbon-2 {
+  position: relative;
+  padding: 6px 30px;
+  margin-left: 23px;
+  background-color: #7492c2;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  &:hover {
+         background: darken(#EA738D, 10%);
+       }
+}
+
+.ribbon-2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -20px;
+  border-width: 16px 0 16px 20px;
+  border-color: transparent transparent transparent #7492c2;
+  border-style: solid;
+
+}
+.ribbon-2:hover::before {
+  border-color:transparent transparent transparent darken(#EA738D, 10%);
+}
+.ribbon-2::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 171px;
+  border-width: 16px 0 16px 20px;
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
+}
+
+.ribbon {
+  position: relative;
+  padding: 6px 30px;
+  background-color: #7492c2;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  &:hover {
+         background: darken(#EA738D, 10%);
+       }
+}
+
+.ribbon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -20px;
+  border-width: 16px 0 16px 20px;
+  border-color: transparent transparent transparent #7492c2;
+  border-style: solid;
+
+}
+.ribbon:hover::before {
+  border-color:transparent transparent transparent darken(#EA738D, 10%);
+}
+.ribbon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 104px;
+  border-width: 16px 0 16px 20px;
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
+}
+
 .card {
   border: 1px solid #ccc;
   padding: 10px;
@@ -21,7 +136,7 @@ th, td {
 
 span {
   cursor: pointer;
-  color: blue;
+  color: darken($color: #7492c2, $amount: 10%);
 }
 
 .card-custom
@@ -32,26 +147,26 @@ span {
   display: inline-block;
   color: white;
   text-decoration: none;
-  background-color: #086594;
+  background-color: #EA738D;
   width: 100%;
   border: none;
   padding: 10px 20px;
   border-radius: 4px;
 
   &:hover {
-    background-color: darken(#086594, 10%);
+    background-color: darken(#EA738D, 10%);
   }
 }
 .button-add {
     color: white;
     text-decoration: none;
-    background-color: #086594;
+    background-color: #EA738D;
     border: none;
     padding: 7px 20px;
     border-radius: 4px;
 
   &:hover {
-    background-color: darken(#086594, 10%);
+    background-color: darken(#EA738D, 10%);
   }
 }
 .button-text{
@@ -61,6 +176,13 @@ span {
 }
 .icon-role{
   margin-right: 5px;
+}
+.blue-color {
+  color: #7492c2;
+}
+
+.pink-color {
+  color: #ea738d;
 }
 
 .Role-container {
@@ -124,13 +246,13 @@ box-shadow: 0px 4px 6px -1px rgba(0,0,0,0.5);
 .button-update{
   color: white;
   text-decoration: none;
-  background-color: #086594;
+  background-color: #EA738D;
   border: none;
   padding: 10px 20px;
   border-radius: 10px;
 
   &:hover {
-    background-color: darken(#086594, 10%);
+    background-color: darken(#EA738D, 10%);
   }
 }
 
@@ -142,4 +264,8 @@ box-shadow: 0px 4px 6px -1px rgba(0,0,0,0.5);
 }
 .fa-icons{
   margin: 0 10px 0 10px !important;
+  color: #EA738D;
+  &:hover {
+    color: darken(#EA738D, 15%);
+  }
 }

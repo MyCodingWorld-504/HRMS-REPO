@@ -1,22 +1,16 @@
 <div class="container-fluid">
-  <h2>Departments</h2>
-  <div class="d-flex justify-content-between">
-    <div>
-      <h4>Dashboard / Departments</h4>
+    <h5>Departments</h5>
+    <div class="d-flex justify-content-between">
+      <div>
+        <a class="ribbon" (click)="OnRouteDashboard()">Dashboard</a><a class="ribbon-1">Departments</a>
+      </div>
     </div>
-    <!-- <div>
-      <a class="button" routerLink="/bank-details/edit"
-        ><fa-icon [icon]="faPlusIcon"></fa-icon>Add</a
-      >
-    </div> -->
-  </div>
-
-  <div class="card mt-4">
+  <div class="card mt-2">
     <form [formGroup]="groupFormDepartment" (ngSubmit)="submitInternalForm()">
-      <div class="d-flex justify-content-end mt-3">
+      <div class="d-flex justify-content-end mt-2">
         <div class="refresh">
           <div class="icon-tooltip" data-title="Refresh">
-            <fa-icon
+            <fa-icon class="icon-refresh"
               [icon]="faArrowsRotateIcon"
               (click)="onRefreshDepartment()"
             ></fa-icon>
@@ -29,7 +23,7 @@
           (input)="searchDepartments()"
         />
       </div>
-      <table class="table table-bordered mt-3">
+      <table class="table table-bordered mt-2">
         <thead class="custom-table-header">
           <tr>
             <th>Sno</th>

@@ -3,12 +3,12 @@
     <div class="d-flex justify-content-end">
       <fa-icon (click)="cancelDelete()" class="close-icon" [icon]="faCross"></fa-icon>
     </div>
-    <fa-icon class="fa-4x icon" [icon]="faExclamation"></fa-icon>
+    <fa-icon class="fa-3x icon" [icon]="faExclamation"></fa-icon>
     <div>
-      <h2>Delete Record!</h2>
+      <h4>Delete Record!</h4>
       <p>Are you sure you want to delete this entry?</p>
     </div>
-    <div class="d-flex justify-content-evenly mt-5">
+    <div class="d-flex justify-content-evenly mt-3">
       <button class="btn btn-secondary" (click)="cancelDelete()">Cancel</button>
       <button class="btn btn-danger" (click)="confirmDelete()">Delete</button>
     </div>

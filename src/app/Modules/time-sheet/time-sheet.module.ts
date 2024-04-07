@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { TimeSheetRoutingModule } from './time-sheet-routing.module';
 import { SchedulerDashboardComponent } from './scheduler-dashboard/scheduler-dashboard.component';
@@ -37,6 +38,7 @@ library.add(fas);
     FormsModule,
     TimeSheetRoutingModule,
     NgxPaginationModule,
+    ReactiveFormsModule,
     FontAwesomeModule
   ]
 })

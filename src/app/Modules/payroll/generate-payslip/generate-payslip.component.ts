@@ -3,6 +3,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 import { PayrollService } from 'src/app/Core/services/payroll.service';
 import { ExportToPdfService } from 'src/app/Core/services/export-to-pdf.service';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-generate-payslip',
@@ -32,7 +33,8 @@ export class GeneratePayslipComponent   {
 
 constructor(private payrollService : PayrollService,
  private exportPDF:ExportToPdfService,
- private toastr: ToastrService,){
+ private toastr: ToastrService,
+ private router : Router){
 
   }
 
@@ -51,6 +53,10 @@ constructor(private payrollService : PayrollService,
   exportToPDF(): void {
     const elementToPrint = this.payslipForm.nativeElement;
     this.exportPDF.exportFormToPDF(elementToPrint, 'payslip.pdf');
+  }
+
+  OnRouteDashboard(){
+    this.router.navigate(['dashboard', 'payroll', 'payrollDashboard']);
   }
 
 }

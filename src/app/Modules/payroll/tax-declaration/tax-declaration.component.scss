@@ -8,7 +8,7 @@ h2,h4{
   width: 80%;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px #086594;
+  box-shadow: 0 2px 4px #7492c2;
 }
 
 table {
@@ -57,7 +57,7 @@ input[type="email"] {
 }
 
 .toggle-button {
-  background-color: #086594;
+  background-color:#EA738D;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -69,7 +69,7 @@ input[type="email"] {
 
 }
 .toggle-button:hover {
-  background-color: #086594
+  background-color: darken(#EA738D, 10%);
 }
 
 .text-label {
@@ -84,4 +84,77 @@ font-style: normal;
 .space {
   position: relative;
   top: 10px;
+}
+
+
+
+.ribbon-1 {
+  position: relative;
+  padding: 6px 30px;
+  margin-left: 23px;
+  background-color: #7492c2;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  &:hover {
+         background: darken(#EA738D, 10%);
+       }
+}
+
+.ribbon-1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -20px;
+  border-width: 16px 0 20px 20px;
+  border-color: transparent transparent transparent #7492c2;
+  border-style: solid;
+
+}
+.ribbon-1:hover::before {
+  border-color:transparent transparent transparent darken(#EA738D, 10%);
+}
+.ribbon-1::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 147px;
+  border-width: 16px 0 20px 20px;
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
+}
+
+.ribbon {
+  position: relative;
+  padding: 6px 30px;
+  background-color: #7492c2;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  &:hover {
+         background: darken(#EA738D, 10%);
+       }
+}
+
+.ribbon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -20px;
+  border-width: 16px 0 20px 20px;
+  border-color: transparent transparent transparent #7492c2;
+  border-style: solid;
+
+}
+.ribbon:hover::before {
+  border-color:transparent transparent transparent darken(#EA738D, 10%);
+}
+.ribbon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 118px;
+  border-width: 16px 0 20px 20px;
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
 }

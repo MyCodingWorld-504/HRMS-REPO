@@ -24,477 +24,3753 @@
       "email": "chrajendra77@gmail.com",
       "gender": "female",
       "role": "developer"
-        }
-  ],
-
-
-  "profiles" :[
-    {
-      "empID":"1",
-      "employeeName":"Rasi",
-      "department":"IT",
-      "designation":"developer",
-      "phoneNumber":"6658932258",
-      "email":"rasi25@gmail.com",
-      "workingLocation":"HYDERABAD",
-      "workingClient":"CHENNAI",
-      "permanentAddress":"22-LLI,HDGD STREET,999",
-      "bioData":"...."
     },
     {
-      "empID":"2",
-      "employeeName":"Rasi",
-      "department":"IT",
-      "designation":"developer",
-      "phoneNumber":"6658932258",
-      "email":"rasi25@gmail.com",
-      "workingLocation":"HYDERABAD",
-      "workingClient":"CHENNAI",
-      "permanentAddress":"22-LLI,HDGD STREET,999",
-      "bioData":"...."
+      "id": "f19c",
+      "firstName": "Rajendra prasad",
+      "lastName": "chappidi",
+      "userName": "Admin",
+      "email": "chrajendra77@gmail.com",
+      "password": "Welcome@123"
     },
     {
-      "empID":"3",
-      "employeeName":"Rasi",
-      "department":"IT",
-      "designation":"developer",
-      "phoneNumber":"6658932258",
-      "email":"rasi25@gmail.com",
-      "workingLocation":"HYDERABAD",
-      "workingClient":"CHENNAI",
-      "permanentAddress":"22-LLI,HDGD STREET,999",
-      "bioData":"...."
+      "id": "6ffa",
+      "firstName": "s",
+      "lastName": "s",
+      "userName": "Admin",
+      "email": "1000068339@hexaware.com",
+      "password": "Welcome@123"
     },
     {
-      "empID":"4",
-      "employeeName":"Rasi",
-      "department":"IT",
-      "designation":"developer",
-      "phoneNumber":"6658932258",
-      "email":"rasi25@gmail.com",
-      "workingLocation":"HYDERABAD",
-      "workingClient":"CHENNAI",
-      "permanentAddress":"22-LLI,HDGD STREET,999",
-      "bioData":"...."
+      "id": "ce4b",
+      "firstName": "Rajendra prasad",
+      "lastName": "chappidi",
+      "userName": "Admin",
+      "email": "chrajendra77@gmail.com",
+      "password": "Welcome@123"
     }
   ],
-
- "internalData"  : [
-    { "sno": 1, "groupName": "Part-time" },
-    { "sno": 2, "groupName":" Full-time" },
-    { "sno": 3, "groupName":" Consultant/Freelancing"}
-  ],
-  "externalData"  : [
-    { "sno": 1, "groupName": "Part-time" },
-    { "sno": 2, "groupName":" Full-time" },
-    { "sno": 3, "groupName":" Consultant/Freelancing"}
-  ],
-
-  "deoartments" :[
+  "profiles": [
     {
-      "sno":"1",
+      "employeeName": "maven",
+      "department": "IT",
+      "designation": "developer",
+      "phoneNumber": "6658932258",
+      "email": "maven@gmail.com",
+      "workingLocation": "madgascar",
+      "workingClient": "CHENNAI",
+      "permanentAddress": "22-LLI,HDGD STREET,999",
+      "bioData": "....",
+      "id": "e2b4"
+    },
+    {
+      "employeeName": "roty",
+      "department": "IT",
+      "designation": "developer",
+      "phoneNumber": "6658932258",
+      "email": "roty@gmail.com",
+      "workingLocation": "newyork",
+      "workingClient": "CHENNAI",
+      "permanentAddress": "22-LLI,HDGD STREET,999",
+      "bioData": "....",
+      "id": "1e3f"
+    },
+    {
+      "employeeName": "brain",
+      "department": "IT",
+      "designation": "developer",
+      "phoneNumber": "6658932258",
+      "email": "brain@gmail.com",
+      "workingLocation": "newyork",
+      "workingClient": "CHENNAI",
+      "permanentAddress": "22-LLI,HDGD STREET,999",
+      "bioData": "....",
+      "id": "1e3f"
+    },
+    {
+      "employeeName": "loly",
+      "department": "IT",
+      "designation": "developer",
+      "phoneNumber": "6658932258",
+      "email": "loly@gmail.com",
+      "workingLocation": "newyork",
+      "workingClient": "CHENNAI",
+      "permanentAddress": "22-LLI,HDGD STREET,999",
+      "bioData": "....",
+      "id": "1e3f"
+    }
+  ],
+  "internalData": [
+    {
+      "sno": 1,
+      "groupName": "Part-time",
+      "id": "2831"
+    },
+    {
+      "sno": 2,
+      "groupName": " Full-time",
+      "id": "3674"
+    },
+    {
+      "sno": 3,
+      "groupName": " Consultant/Freelancing",
+      "id": "7026"
+    }
+  ],
+  "externalData": [
+    {
+      "sno": 1,
+      "groupName": "Part-time",
+      "id": "a100"
+    },
+    {
+      "sno": 2,
+      "groupName": " Full-time",
+      "id": "65d8"
+    },
+    {
+      "sno": 3,
+      "groupName": " Consultant/Freelancing",
+      "id": "4e58"
+    }
+  ],
+  "deoartments": [
+    {
+      "sno": "1",
       "departmentName": "Department 3",
-      "designationOptions": ["Junior Engineer", "Senior Engineer"],
-      "selectedDesignation": ""
+      "designationOptions": [
+        "Junior Engineer",
+        "Senior Engineer"
+      ],
+      "selectedDesignation": "",
+      "id": "f2c5"
     },
     {
-      "sno":"2",
+      "sno": "2",
       "departmentName": "Department 4",
-      "designationOptions": ["Manager", "Assistant Manager", "Supervisor"],
-      "selectedDesignation": ""
+      "designationOptions": [
+        "Manager",
+        "Assistant Manager",
+        "Supervisor"
+      ],
+      "selectedDesignation": "",
+      "id": "94bf"
     },
     {
-      "sno":"3",
+      "sno": "3",
       "departmentName": "Department 5",
-      "designationOptions": ["Analyst", "Developer", "Tester", "Architect", "Administrator"],
-      "selectedDesignation": ""
+      "designationOptions": [
+        "Analyst",
+        "Developer",
+        "Tester",
+        "Architect",
+        "Administrator"
+      ],
+      "selectedDesignation": "",
+      "id": "e12d"
     },
     {
-      "sno":"4",
+      "sno": "4",
       "departmentName": "Department 6",
-      "designationOptions": ["Coordinator", "Specialist", "Consultant"],
-      "selectedDesignation": ""
+      "designationOptions": [
+        "Coordinator",
+        "Specialist",
+        "Consultant"
+      ],
+      "selectedDesignation": "",
+      "id": "3e6b"
     },
     {
-      "sno":"5",
+      "sno": "5",
       "departmentName": "Department 7",
-      "designationOptions": ["Researcher", "Scientist"],
-      "selectedDesignation": ""
+      "designationOptions": [
+        "Researcher",
+        "Scientist"
+      ],
+      "selectedDesignation": "",
+      "id": "cc62"
     },
     {
-      "sno":"6",
+      "sno": "6",
       "departmentName": "Department 8",
-      "designationOptions": ["Intern", "Trainee", "Associate", "Expert"],
-      "selectedDesignation": ""
+      "designationOptions": [
+        "Intern",
+        "Trainee",
+        "Associate",
+        "Expert"
+      ],
+      "selectedDesignation": "",
+      "id": "ccfc"
     },
     {
-      "sno":"7",
+      "sno": "7",
       "departmentName": "Department 9",
-      "designationOptions": ["Project Manager", "Team Leader", "Director"],
-      "selectedDesignation": ""
+      "designationOptions": [
+        "Project Manager",
+        "Team Leader",
+        "Director"
+      ],
+      "selectedDesignation": "",
+      "id": "0545"
     },
     {
-      "sno":"8",
+      "sno": "8",
       "departmentName": "Department 10",
-      "designationOptions": ["Technician", "Engineer", "Specialist", "Administrator"],
-      "selectedDesignation": ""
+      "designationOptions": [
+        "Technician",
+        "Engineer",
+        "Specialist",
+        "Administrator"
+      ],
+      "selectedDesignation": "",
+      "id": "f1a4"
     }
   ],
-
-  
-  "publicHolidays":[
+  "list": [
     {
-      "sno": 1,
-      "holiday_name": "Republic Day",
-      "date": "2024-01-26",
-      "day": "Friday"
+      "id": "1",
+      "name": "Amilia",
+      "city": "hyd",
+      "phone": "9932376238"
     },
     {
-      "sno": 2,
-      "holiday_name": "Holi",
-      "date": "2024-03-25",
-      "day": "Monday"
+      "id": "2",
+      "name": "mango",
+      "city": "elephant",
+      "phone": "000000000000"
     },
     {
-      "sno": 3,
-      "holiday_name": "Good Friday",
-      "date": "2024-03-29",
-      "day": "Friday"
+      "id": "3",
+      "name": "lexus",
+      "city": "europe",
+      "phone": "9732376238"
     },
     {
-      "sno": 4,
-      "holiday_name": "Id-ul-Fitr",
-      "date": "2024-04-11",
-      "day": "Thursday"
+      "id": "d80c",
+      "name": "rajendra ",
+      "city": "banigandlapadu",
+      "phone": "07032684425"
     },
     {
-      "sno": 5,
-      "holiday_name": "Ram Navami",
-      "date": "2024-04-17",
-      "day": "Wednesday"
-    },
-    {
-      "sno": 6,
-      "holiday_name": "Mahavir Jayanti",
-      "date": "2024-04-21",
-      "day": "Sunday"
-    },
-    {
-      "sno": 7,
-      "holiday_name": "Buddha Purnima",
-      "date": "2024-05-23",
-      "day": "Thursday"
-    },
-    {
-      "sno": 8,
-      "holiday_name": "Id-ul-Zuha (Bakrid)",
-      "date": "2024-06-17",
-      "day": "Monday"
-    },
-    {
-      "sno": 9,
-      "holiday_name": "Muharram",
-      "date": "2024-07-17",
-      "day": "Wednesday"
-    },
-    {
-      "sno": 10,
-      "holiday_name": "Independence Day",
-      "date": "2024-08-15",
-      "day": "Thursday"
-    },
-    {
-      "sno": 11,
-      "holiday_name": "Janmashtami",
-      "date": "2024-08-26",
-      "day": "Monday"
-    },
-    {
-      "sno": 12,
-      "holiday_name": "Milad-un-Nabi (Birthday of Prophet Muhammad)",
-      "date": "2024-09-16",
-      "day": "Monday"
-    },
-    {
-      "sno": 13,
-      "holiday_name": "Mahatma Gandhi’s Birthday",
-      "date": "2024-10-02",
-      "day": "Wednesday"
-    },
-    {
-      "sno": 14,
-      "holiday_name": "Dussehra",
-      "date": "2024-10-12",
-      "day": "Saturday"
-    },
-    {
-      "sno": 15,
-      "holiday_name": "Diwali",
-      "date": "2024-10-31",
-      "day": "Thursday"
-    },
-    {
-      "sno": 16,
-      "holiday_name": "Guru Nanak’s Birthday",
-      "date": "2024-11-15",
-      "day": "Friday"
-    },
-    {
-      "sno": 17,
-      "holiday_name": "Christmas Day",
-      "date": "2024-12-25",
-      "day": "Wednesday"
+      "id": "5cc7",
+      "Empname": "ravot",
+      "bankname": "sbi",
+      "accountNo": "773299823732",
+      "branch": "hyderabed",
+      "ifsc": "sbin08384",
+      "aadhar": "772362386222",
+      "panno": "Ytth99280",
+      "address": "telangana"
     }
   ],
-
-  "optionalHolidays" :[
+  "optionalHolidays": [
     {
       "sno": 1,
-      "holiday_name": "New Year’s Day",
+      "holidayName": "New Year’s Day",
       "date": "2024-01-01",
-      "day": "Monday"
+      "day": "Monday",
+      "id": "eed0"
     },
     {
       "sno": 2,
-      "holiday_name": "Lohri",
+      "holidayName": "Lohri",
       "date": "2024-01-13",
-      "day": "Saturday"
+      "day": "Saturday",
+      "id": "d54d"
     },
     {
       "sno": 3,
-      "holiday_name": "Makar Sankranti",
+      "holidayName": "Makar Sankranti",
       "date": "2024-01-14",
-      "day": "Sunday"
+      "day": "Sunday",
+      "id": "ff81"
     },
     {
       "sno": 4,
-      "holiday_name": "Pongal/Magha Bihu",
+      "holidayName": "Pongal/Magha Bihu",
       "date": "2024-01-15",
-      "day": "Monday"
+      "day": "Monday",
+      "id": "5b9f"
     },
     {
       "sno": 5,
-      "holiday_name": "Guru Gobind Singh’s Birthday",
+      "holidayName": "Guru Gobind Singh’s Birthday",
       "date": "2024-01-17",
-      "day": "Wednesday"
+      "day": "Wednesday",
+      "id": "d0b0"
     },
     {
       "sno": 6,
-      "holiday_name": "Hazrat Ali’s Birthday",
+      "holidayName": "Hazrat Ali’s Birthday",
       "date": "2024-01-25",
-      "day": "Thursday"
+      "day": "Thursday",
+      "id": "0abd"
     },
     {
       "sno": 7,
-      "holiday_name": "Basant Panchami",
+      "holidayName": "Basant Panchami",
       "date": "2024-02-14",
-      "day": "Wednesday"
+      "day": "Wednesday",
+      "id": "a351"
     },
     {
       "sno": 8,
-      "holiday_name": "Shivaji Jayanti",
+      "holidayName": "Shivaji Jayanti",
       "date": "2024-02-19",
-      "day": "Monday"
+      "day": "Monday",
+      "id": "08c8"
     },
     {
       "sno": 9,
-      "holiday_name": "Guru Ravidas’ Birthday",
+      "holidayName": "Guru Ravidas’ Birthday",
       "date": "2024-02-24",
-      "day": "Saturday"
+      "day": "Saturday",
+      "id": "b86c"
     },
     {
       "sno": 10,
-      "holiday_name": "Swami Dayananda Saraswati Jayanti",
+      "holidayName": "Swami Dayananda Saraswati Jayanti",
       "date": "2024-03-06",
-      "day": "Wednesday"
+      "day": "Wednesday",
+      "id": "76e4"
     },
     {
       "sno": 11,
-      "holiday_name": "Maha Shivratri",
+      "holidayName": "Maha Shivratri",
       "date": "2024-03-08",
-      "day": "Friday"
+      "day": "Friday",
+      "id": "4b9c"
     },
     {
       "sno": 12,
-      "holiday_name": "Holika Dahan",
+      "holidayName": "Holika Dahan",
       "date": "2024-03-24",
-      "day": "Sunday"
+      "day": "Sunday",
+      "id": "96ff"
     },
     {
       "sno": 13,
-      "holiday_name": "Easter Sunday",
+      "holidayName": "Easter Sunday",
       "date": "2024-03-31",
-      "day": "Sunday"
+      "day": "Sunday",
+      "id": "65d8"
     },
     {
       "sno": 14,
-      "holiday_name": "Jamat-Ul-Vida",
+      "holidayName": "Jamat-Ul-Vida",
       "date": "2024-04-05",
-      "day": "Friday"
+      "day": "Friday",
+      "id": "c402"
     },
     {
       "sno": 15,
-      "holiday_name": "Chaitra Sukladi/Gudi Padava/Ugadi/Cheti Chand",
+      "holidayName": "Chaitra Sukladi/Gudi Padava/Ugadi/Cheti Chand",
       "date": "2024-04-09",
-      "day": "Tuesday"
+      "day": "Tuesday",
+      "id": "3425"
     },
     {
       "sno": 16,
-      "holiday_name": "Vaisakhi",
+      "holidayName": "Vaisakhi",
       "date": "2024-04-13",
-      "day": "Saturday"
+      "day": "Saturday",
+      "id": "9cb0"
     },
     {
       "sno": 17,
-      "holiday_name": "Meshadi (Tamil Nadu’s New Year’s Day)/ Vaisakhadi (Bengal) / Bahag Bihu (Assam)",
+      "holidayName": "Meshadi (Tamil Nadu’s New Year’s Day)/ Vaisakhadi (Bengal) / Bahag Bihu (Assam)",
       "date": "2024-04-14",
-      "day": "Sunday"
+      "day": "Sunday",
+      "id": "a6c8"
     },
     {
       "sno": 18,
-      "holiday_name": "Guru Rabindranath’s Birthday",
+      "holidayName": "Guru Rabindranath’s Birthday",
       "date": "2024-05-08",
-      "day": "Wednesday"
+      "day": "Wednesday",
+      "id": "0132"
     },
     {
       "sno": 19,
-      "holiday_name": "Rath Yatra",
+      "holidayName": "Rath Yatra",
       "date": "2024-07-07",
-      "day": "Monday"
+      "day": "Monday",
+      "id": "d5eb"
     },
     {
       "sno": 20,
-      "holiday_name": "Raksha Bandhan",
+      "holidayName": "Raksha Bandhan",
       "date": "2024-08-19",
-      "day": "Monday"
+      "day": "Monday",
+      "id": "e78a"
     },
     {
       "sno": 21,
-      "holiday_name": "Ganesh Chaturthi / Vinayaka Chaturthi",
+      "holidayName": "Ganesh Chaturthi / Vinayaka Chaturthi",
       "date": "2024-09-07",
-      "day": "Saturday"
+      "day": "Saturday",
+      "id": "c026"
     },
     {
       "sno": 22,
-      "holiday_name": "Onam or Thiru Onam Day",
+      "holidayName": "Onam or Thiru Onam Day",
       "date": "2024-09-15",
-      "day": "Sunday"
+      "day": "Sunday",
+      "id": "820d"
     },
     {
       "sno": 23,
-      "holiday_name": "Dussehra (Maha Saptami)",
+      "holidayName": "Dussehra (Maha Saptami)",
       "date": "2024-10-10",
-      "day": "Thursday"
+      "day": "Thursday",
+      "id": "b893"
     },
     {
       "sno": 24,
-      "holiday_name": "Dussehra (Maha Ashtami) / Dussehra (Maha Navmi)",
+      "holidayName": "Dussehra (Maha Ashtami) / Dussehra (Maha Navmi)",
       "date": "2024-10-11",
-      "day": "Friday"
+      "day": "Friday",
+      "id": "ef1e"
     },
     {
       "sno": 25,
-      "holiday_name": "Karaka Chaturthi (Karva Chouth)",
+      "holidayName": "Karaka Chaturthi (Karva Chouth)",
       "date": "2024-10-20",
-      "day": "Sunday"
+      "day": "Sunday",
+      "id": "a34f"
     },
     {
       "sno": 26,
-      "holiday_name": "Govardhan Puja",
+      "holidayName": "Govardhan Puja",
       "date": "2024-11-02",
-      "day": "Saturday"
+      "day": "Saturday",
+      "id": "88b4"
     },
     {
       "sno": 27,
-      "holiday_name": "Bhai Duj",
+      "holidayName": "Bhai Duj",
       "date": "2024-11-03",
-      "day": "Sunday"
+      "day": "Sunday",
+      "id": "f734"
     },
     {
       "sno": 28,
-      "holiday_name": "Chhat Puja (Pratihar Sashthi or Surya Sashthi)",
+      "holidayName": "Chhat Puja (Pratihar Sashthi or Surya Sashthi)",
       "date": "2024-11-07",
-      "day": "Thursday"
+      "day": "Thursday",
+      "id": "f06f"
     },
     {
       "sno": 29,
-      "holiday_name": "Guru Teg Bahadur’s Martyrdom Day",
+      "holidayName": "Guru Teg Bahadur’s Martyrdom Day",
       "date": "2024-11-24",
-      "day": "Sunday"
+      "day": "Sunday",
+      "id": "9428"
     },
     {
       "sno": 30,
-      "holiday_name": "Christmas Eve",
+      "holidayName": "Christmas Eve",
       "date": "2024-12-24",
-      "day": "Tuesday"
+      "day": "Tuesday",
+      "id": "b52e"
     }
-
   ],
-
-  "resignedEmployees":[
+  "publicHolidays": [
     {
-      "empID": "001",
+      "sno": 1,
+      "holidayName": "Republic Day",
+      "date": "2024-01-26",
+      "day": "Friday",
+      "id": "139a"
+    },
+    {
+      "sno": 2,
+      "holidayName": "Holi",
+      "date": "2024-03-25",
+      "day": "Monday",
+      "id": "26a2"
+    },
+    {
+      "sno": 3,
+      "holidayName": "Good Friday",
+      "date": "2024-03-29",
+      "day": "Friday",
+      "id": "1869"
+    },
+    {
+      "sno": 4,
+      "holidayName": "Id-ul-Fitr",
+      "date": "2024-04-11",
+      "day": "Thursday",
+      "id": "0fe8"
+    },
+    {
+      "sno": 5,
+      "holidayName": "Ram Navami",
+      "date": "2024-04-17",
+      "day": "Wednesday",
+      "id": "4600"
+    },
+    {
+      "sno": 6,
+      "holidayName": "Mahavir Jayanti",
+      "date": "2024-04-21",
+      "day": "Sunday",
+      "id": "019e"
+    },
+    {
+      "sno": 7,
+      "holidayName": "Buddha Purnima",
+      "date": "2024-05-23",
+      "day": "Thursday",
+      "id": "f1c6"
+    },
+    {
+      "sno": 8,
+      "holidayName": "Id-ul-Zuha (Bakrid)",
+      "date": "2024-06-17",
+      "day": "Monday",
+      "id": "2f1c"
+    },
+    {
+      "sno": 9,
+      "holidayName": "Muharram",
+      "date": "2024-07-17",
+      "day": "Wednesday",
+      "id": "b8f2"
+    },
+    {
+      "sno": 10,
+      "holidayName": "Independence Day",
+      "date": "2024-08-15",
+      "day": "Thursday",
+      "id": "fa34"
+    },
+    {
+      "sno": 11,
+      "holidayName": "Janmashtami",
+      "date": "2024-08-26",
+      "day": "Monday",
+      "id": "cf19"
+    },
+    {
+      "sno": 12,
+      "holidayName": "Milad-un-Nabi (Birthday of Prophet Muhammad)",
+      "date": "2024-09-16",
+      "day": "Monday",
+      "id": "0b35"
+    },
+    {
+      "sno": 13,
+      "holidayName": "Mahatma Gandhi’s Birthday",
+      "date": "2024-10-02",
+      "day": "Wednesday",
+      "id": "763a"
+    },
+    {
+      "sno": 14,
+      "holidayName": "Dussehra",
+      "date": "2024-10-12",
+      "day": "Saturday",
+      "id": "d21f"
+    },
+    {
+      "sno": 15,
+      "holidayName": "Diwali",
+      "date": "2024-10-31",
+      "day": "Thursday",
+      "id": "9fff"
+    },
+    {
+      "sno": 16,
+      "holidayName": "Guru Nanak’s Birthday",
+      "date": "2024-11-15",
+      "day": "Friday",
+      "id": "1900"
+    },
+    {
+      "sno": 17,
+      "holidayName": "Christmas Day",
+      "date": "2024-12-25",
+      "day": "Wednesday",
+      "id": "c838"
+    }
+  ],
+  "resignedEmployees": [
+    {
       "empName": "John Doe",
       "resignationSubmittedDate": "2024-01-15",
       "lastWorkingDay": "2024-01-31",
       "statusOfResignation": "Pending",
       "approvedManager": "",
-      "reasonForResignation": "Personal reasons"
+      "reasonForResignation": "Personal reasons",
+      "id": "78b9"
     },
     {
-      "empID": "002",
       "empName": "Jane Smith",
       "resignationSubmittedDate": "2024-02-28",
       "lastWorkingDay": "2024-03-15",
       "statusOfResignation": "Approved",
       "approvedManager": "Manager A",
-      "reasonForResignation": "Relocation"
+      "reasonForResignation": "Relocation",
+      "id": "70a1"
     },
     {
-      "empID": "003",
       "empName": "Alice Johnson",
       "resignationSubmittedDate": "2024-04-10",
       "lastWorkingDay": "2024-04-30",
       "statusOfResignation": "Rejected",
       "approvedManager": "Manager B",
-      "reasonForResignation": "Career change"
+      "reasonForResignation": "Career change",
+      "id": "c86c"
     },
     {
-      "empID": "004",
       "empName": "Michael Brown",
       "resignationSubmittedDate": "2024-05-20",
       "lastWorkingDay": "2024-06-05",
       "statusOfResignation": "Pending",
       "approvedManager": "",
-      "reasonForResignation": "Better opportunity"
+      "reasonForResignation": "Better opportunity",
+      "id": "253d"
     },
     {
-      "empID": "005",
       "empName": "Emily Wilson",
       "resignationSubmittedDate": "2024-07-15",
       "lastWorkingDay": "2024-07-31",
       "statusOfResignation": "Approved",
       "approvedManager": "Manager C",
-      "reasonForResignation": "Family reasons"
+      "reasonForResignation": "Family reasons",
+      "id": "d4d3"
     },
     {
-      "empID": "006",
-      "empName": "David Clark",
-      "resignationSubmittedDate": "2024-08-10",
-      "lastWorkingDay": "2024-08-31",
-      "statusOfResignation": "Pending",
-      "approvedManager": "",
-      "reasonForResignation": "Job dissatisfaction"
-    },
-    {
-      "empID": "007",
       "empName": "Sarah Martinez",
       "resignationSubmittedDate": "2024-09-25",
       "lastWorkingDay": "2024-10-10",
       "statusOfResignation": "Approved",
       "approvedManager": "Manager D",
-      "reasonForResignation": "Health issues"
+      "reasonForResignation": "Health issues",
+      "id": "9a3c"
+    }
+  ],
+  "Roles": [
+    {
+      "id": "001",
+      "name": "Manager A"
+    },
+    {
+      "id": "85cc",
+      "name": "role"
+    },
+    {
+      "id": "c725",
+      "name": "admin"
+    },
+    {
+      "id": "7d69",
+      "name": "Developer"
+    },
+    {
+      "id": "c42d",
+      "name": "Developer"
+    },
+    {
+      "id": "31ac",
+      "name": "Developere"
+    },
+    {
+      "id": "c6da",
+      "name": "Developere442"
+    },
+    {
+      "id": "c921",
+      "name": "Developer19199"
+    },
+    {
+      "id": "b6ef",
+      "name": "staff"
+    },
+    {
+      "id": "fcdd",
+      "name": "hhh"
+    }
+  ],
+  "menu": [
+    {
+      "label": "Dashboard",
+      "route": "dashboard",
+      "id": "b042"
+    },
+    {
+      "label": "Administration",
+      "submenu": [
+        {
+          "label": "Employee Profiles",
+          "route": "administration/emp-profiles"
+        },
+        {
+          "label": "Groups",
+          "route": "administration/groups"
+        },
+        {
+          "label": "Departments",
+          "route": "administration/departments"
+        },
+        {
+          "label": "Bank Details",
+          "route": "administration/bank-details"
+        },
+        {
+          "label": "Resignation",
+          "route": "administration/resignation"
+        },
+        {
+          "label": "Holidays",
+          "route": "administration/holydays"
+        },
+        {
+          "label": "EmployeeRoles & Permissions",
+          "route": "administration/employee-roles"
+        }
+      ],
+      "id": "3302"
+    },
+    {
+      "label": "Attendence",
+      "submenu": [
+        {
+          "label": "Contact",
+          "route": "administration/view"
+        },
+        {
+          "label": "Service",
+          "route": "administration/edit"
+        }
+      ],
+      "id": "9912"
+    },
+    {
+      "label": "Payrol",
+      "submenu": [
+        {
+          "label": "Payslip",
+          "route": "payroll"
+        },
+        {
+          "label": "Service",
+          "route": "/service"
+        }
+      ],
+      "id": "44d9"
+    },
+    {
+      "label": "Timesheet",
+      "submenu": [
+        {
+          "label": "Contact",
+          "route": "/contact"
+        },
+        {
+          "label": "Service",
+          "route": "/service"
+        }
+      ],
+      "id": "255f"
+    },
+    {
+      "label": "Recruitment",
+      "submenu": [
+        {
+          "label": "Contact",
+          "route": "/contact"
+        },
+        {
+          "label": "Service",
+          "route": "/service"
+        }
+      ],
+      "id": "9efd"
+    },
+    {
+      "label": "Leave",
+      "submenu": [
+        {
+          "label": "Contact",
+          "route": "/contact"
+        },
+        {
+          "label": "Service",
+          "route": "/service"
+        }
+      ],
+      "id": "5f6e"
+    }
+  ],
+  "payRoll": [
+    {
+      "id": "1",
+      "EmployeeID": "101",
+      "Employee Name": "B Naga Umamaheswari",
+      "Entity": "MSPC",
+      "Bank Account Number": "6348307726",
+      "Bank Name": "Kotak Mahindra Bank",
+      "Branch Name": "",
+      "UAN": "101981709487",
+      "PAN Card": "EDYPB1072A",
+      "Client": "Internal",
+      "DOJ": "2-Sep-20",
+      "Designation": "Sr. Business Analyst",
+      "Dep": "HR",
+      "Reporting Manager": "Swathi",
+      "Location": "Hyderabad",
+      "CTC": "90000.00",
+      "No of Days in Month": "31",
+      "No. of Days Present": "31",
+      "No. Of. Absents": "0",
+      "Ear. Grs Salary": "88050",
+      "Ear. Basic": "35220",
+      "Ear. HRA": "14088",
+      "Basic Salary": "88050.00",
+      "Housing Allowance": "14088.00",
+      "Transport Allowance": "1600",
+      "Medical Allowance": "1250",
+      "Loan amount": "",
+      "Child Education Allowance": "",
+      "Special Allowance": "35892",
+      "Reimbursement amount": "",
+      "Overtime Hours": "",
+      "Overtime Rate": "",
+      "Gross Salary": "88050",
+      "Tax Deduction": "1000",
+      "Insurance Deduction": "0",
+      "Other Deductions": "200",
+      "Net Salary": "84900",
+      "Total Deductions": "3150",
+      "Gratuity": "",
+      "ESI": "42",
+      "PF": "1950",
+      "Total Earnings": "88050",
+      "Issue Date": "",
+      "Pay Slip Number": ""
+    },
+    {
+      "id": "2",
+      "EmployeeID": "102",
+      "Employee Name": "John Doe",
+      "Entity": "XYZ Corp",
+      "Bank Account Number": "1234567890",
+      "Bank Name": "ABC Bank",
+      "Branch Name": "Main Branch",
+      "UAN": "9876543210",
+      "PAN Card": "ABC123XYZ",
+      "Client": "External",
+      "DOJ": "5-Jan-21",
+      "Designation": "Software Engineer",
+      "Dep": "IT",
+      "Reporting Manager": "Jane Smith",
+      "Location": "Bangalore",
+      "CTC": "100000.00",
+      "No of Days in Month": "31",
+      "No. of Days Present": "30",
+      "No. Of. Absents": "1",
+      "Ear. Grs Salary": "100000",
+      "Ear. Basic": "50000",
+      "Ear. HRA": "15000",
+      "Basic Salary": "50000.00",
+      "Housing Allowance": "15000.00",
+      "Transport Allowance": "5000",
+      "Medical Allowance": "2000",
+      "Loan amount": "",
+      "Child Education Allowance": "",
+      "Special Allowance": "20000",
+      "Reimbursement amount": "",
+      "Overtime Hours": "10",
+      "Overtime Rate": "100",
+      "Gross Salary": "105000",
+      "Tax Deduction": "1500",
+      "Insurance Deduction": "500",
+      "Other Deductions": "100",
+      "Net Salary": "102400",
+      "Total Deductions": "2100",
+      "Gratuity": "",
+      "ESI": "38",
+      "PF": "2000",
+      "Total Earnings": "105000",
+      "Issue Date": "28-Feb-24",
+      "Pay Slip Number": "PS-2024-02-102"
+    },
+    {
+      "id": "3",
+      "EmployeeID": "103",
+      "Employee Name": "Jane Smith",
+      "Entity": "ABC Company",
+      "Bank Account Number": "9876543210",
+      "Bank Name": "XYZ Bank",
+      "Branch Name": "Downtown Branch",
+      "UAN": "1234567890",
+      "PAN Card": "XYZ456ABC",
+      "Client": "Internal",
+      "DOJ": "10-Feb-23",
+      "Designation": "Marketing Manager",
+      "Dep": "Marketing",
+      "Reporting Manager": "John Doe",
+      "Location": "New York",
+      "CTC": "110000.00",
+      "No of Days in Month": "28",
+      "No. of Days Present": "25",
+      "No. Of. Absents": "3",
+      "Ear. Grs Salary": "110000",
+      "Ear. Basic": "60000",
+      "Ear. HRA": "20000",
+      "Basic Salary": "60000.00",
+      "Housing Allowance": "20000.00",
+      "Transport Allowance": "5000",
+      "Medical Allowance": "3000",
+      "Loan amount": "",
+      "Child Education Allowance": "",
+      "Special Allowance": "22000",
+      "Reimbursement amount": "",
+      "Overtime Hours": "5",
+      "Overtime Rate": "120",
+      "Gross Salary": "110000",
+      "Tax Deduction": "1800",
+      "Insurance Deduction": "600",
+      "Other Deductions": "150",
+      "Net Salary": "105450",
+      "Total Deductions": "2550",
+      "Gratuity": "",
+      "ESI": "40",
+      "PF": "2200",
+      "Total Earnings": "110000",
+      "Issue Date": "28-Feb-24",
+      "Pay Slip Number": "PS-2024-02-103"
+    },
+    {
+      "id": "4",
+      "EmployeeID": "104",
+      "Employee Name": "Rajendra",
+      "Entity": "ABC Company",
+      "Bank Account Number": "9876543210",
+      "Bank Name": "XYZ Bank",
+      "Branch Name": "Downtown Branch",
+      "UAN": "1234567890",
+      "PAN Card": "XYZ456ABC",
+      "Client": "Internal",
+      "DOJ": "10-Feb-23",
+      "Designation": "Marketing Manager",
+      "Dep": "Marketing",
+      "Reporting Manager": "John Doe",
+      "Location": "New York",
+      "CTC": "110000.00",
+      "No of Days in Month": "28",
+      "No. of Days Present": "25",
+      "No. Of. Absents": "3",
+      "Ear. Grs Salary": "110000",
+      "Ear. Basic": "60000",
+      "Ear. HRA": "20000",
+      "Basic Salary": "60000.00",
+      "Housing Allowance": "20000.00",
+      "Transport Allowance": "5000",
+      "Medical Allowance": "3000",
+      "Loan amount": "",
+      "Child Education Allowance": "",
+      "Special Allowance": "22000",
+      "Reimbursement amount": "",
+      "Overtime Hours": "5",
+      "Overtime Rate": "120",
+      "Gross Salary": "110000",
+      "Tax Deduction": "1800",
+      "Insurance Deduction": "600",
+      "Other Deductions": "150",
+      "Net Salary": "105450",
+      "Total Deductions": "2550",
+      "Gratuity": "",
+      "ESI": "40",
+      "PF": "2200",
+      "Total Earnings": "110000",
+      "Issue Date": "28-Feb-24",
+      "Pay Slip Number": "PS-2024-02-103"
+    }
+  ],
+  "bank": [
+    {
+      "id": "7",
+      "Empname": "Turner",
+      "bankname": "HDFC Bank",
+      "accountNo": "5656565656",
+      "branch": "Midtown Branch",
+      "ifsc": "FGHI5656565",
+      "panno": "KLMNO4567F",
+      "address": "606, GHI Street, Suburbia"
+    },
+    {
+      "id": "12",
+      "Empname": "Ethan Taylor",
+      "bankname": "XYZ Bank",
+      "accountNo": "1212121212",
+      "branch": "Eastside Branch",
+      "ifsc": "XYZE1212121",
+      "panno": "LMNOP5678Q",
+      "address": "222, East Street, Eastville"
+    },
+    {
+      "id": "14",
+      "Empname": "Noah Davis",
+      "bankname": "LMN Bank",
+      "accountNo": "1414141414",
+      "branch": "Northgate Branch",
+      "ifsc": "LMNG1414141",
+      "panno": "QRSTUV2345B",
+      "address": "444, North Street, Northville"
+    },
+    {
+      "id": "15",
+      "Empname": "Olivia White",
+      "bankname": "JKL Bank",
+      "accountNo": "1515151515",
+      "branch": "Southpoint Branch",
+      "ifsc": "JKLS1515151",
+      "panno": "WXYZA5678T",
+      "address": "555, South Street, Southville"
+    },
+    {
+      "id": "16",
+      "Empname": "Liam Turner",
+      "bankname": "MNO Bank",
+      "accountNo": "1616161616",
+      "branch": "Downtown Branch",
+      "ifsc": "MNOD1616161",
+      "panno": "BCDEF2345C",
+      "address": "666, Downtown Street, Downtownville"
+    },
+    {
+      "id": "17",
+      "Empname": "Sophia Harris",
+      "bankname": "RST Bank",
+      "accountNo": "1717171717",
+      "branch": "Uptown Branch",
+      "ifsc": "RSTU1717171",
+      "panno": "GHIJK3456D",
+      "address": "777, Uptown Street, Uptownville"
+    },
+    {
+      "id": "18",
+      "Empname": "Logan Thompson",
+      "bankname": "UVW Bank",
+      "accountNo": "1818181818",
+      "branch": "Midtown Branch",
+      "ifsc": "UVWX1818181",
+      "panno": "JKLMN4567E",
+      "address": "888, Midtown Street, Midtownville"
+    },
+    {
+      "id": "19",
+      "Empname": "Mia Turner",
+      "bankname": "FGH Bank",
+      "accountNo": "1919191919",
+      "branch": "Riverside Branch",
+      "ifsc": "FGHR1919191",
+      "panno": "OPQRS5678F",
+      "address": "999, Riverside Street, Riversideville"
+    },
+    {
+      "id": "20",
+      "Empname": "Lucas Brown",
+      "bankname": "IJK Bank",
+      "accountNo": "2020202020",
+      "branch": "Seaside Branch",
+      "ifsc": "IJKS2020202",
+      "panno": "TUVWX6789G",
+      "address": "1010, Seaside Street, Seasideville"
+    },
+    {
+      "id": "21",
+      "Empname": "Aiden Garcia",
+      "bankname": "ABC Bank",
+      "accountNo": "2121212121",
+      "branch": "Hilltop Branch",
+      "ifsc": "ABCH2121212",
+      "panno": "UVWXY7890D",
+      "address": "1212, Hill Street, Hilltop"
+    },
+    {
+      "id": "22",
+      "Empname": "Chloe Wilson",
+      "bankname": "XYZ Bank",
+      "accountNo": "2222222222",
+      "branch": "Valley Branch",
+      "ifsc": "XYZV2222222",
+      "panno": "EFGHI1234A",
+      "address": "1313, Valley Street, Valleyville"
+    },
+    {
+      "id": "23",
+      "Empname": "Elijah Taylor",
+      "bankname": "PQR Bank",
+      "accountNo": "2323232323",
+      "branch": "Ridge Branch",
+      "ifsc": "PQRR2323232",
+      "panno": "LMNOP5678Q",
+      "address": "1414, Ridge Street, Ridgeville"
+    },
+    {
+      "id": "24",
+      "Empname": "Avery Turner",
+      "bankname": "LMN Bank",
+      "accountNo": "2424242424",
+      "branch": "Brookside Branch",
+      "ifsc": "LMNB2424242",
+      "panno": "FGHIJ5678K",
+      "address": "1515, Brook Street, Brooksville"
+    },
+    {
+      "id": "25",
+      "Empname": "Jackson Brown",
+      "bankname": "JKL Bank",
+      "accountNo": "2525252525",
+      "branch": "Harbor Branch",
+      "ifsc": "JKLH2525252",
+      "panno": "WXYZA5678T",
+      "address": "1616, Harbor Street, Harborville"
+    },
+    {
+      "id": "26",
+      "Empname": "Ella Davis",
+      "bankname": "MNO Bank",
+      "accountNo": "2626262626",
+      "branch": "Meadow Branch",
+      "ifsc": "MNOM2626262",
+      "panno": "BCDEF2345C",
+      "address": "1717, Meadow Street, Meadowville"
+    },
+    {
+      "id": "27",
+      "Empname": "Grayson Harris",
+      "bankname": "RST Bank",
+      "accountNo": "2727272727",
+      "branch": "Parkside Branch",
+      "ifsc": "RSTP2727272",
+      "panno": "GHIJK3456D",
+      "address": "1818, Park Street, Parksville"
+    },
+    {
+      "id": "28",
+      "Empname": "Scarlett Thompson",
+      "bankname": "UVW Bank",
+      "accountNo": "2828282828",
+      "branch": "Lakeside Branch",
+      "ifsc": "UVWL2828282",
+      "panno": "JKLMN4567E",
+      "address": "1919, Lakeside Street, Lakesideville"
+    },
+    {
+      "id": "29",
+      "Empname": "Lincoln Turner",
+      "bankname": "FGH Bank",
+      "accountNo": "2929292929",
+      "branch": "Countryside Branch",
+      "ifsc": "FGHC2929292",
+      "panno": "OPQRS5678F",
+      "address": "2020, Countryside Street, Countrysideville"
+    },
+    {
+      "id": "30",
+      "Empname": "Zoey Martinez",
+      "bankname": "IJK Bank",
+      "accountNo": "3030303030",
+      "branch": "Haven Branch",
+      "ifsc": "IJKH3030303",
+      "panno": "TUVWX6789G",
+      "address": "2121, Haven Street, Havenville"
+    },
+    {
+      "id": "31",
+      "Empname": "Carter White",
+      "bankname": "ABC Bank",
+      "accountNo": "3131313131",
+      "branch": "Sunset Branch",
+      "ifsc": "ABCS3131313",
+      "panno": "UVWXY7890D",
+      "address": "2222, Sunset Street, Sunsetville"
+    },
+    {
+      "id": "32",
+      "Empname": "Hazel Turner",
+      "bankname": "XYZ Bank",
+      "accountNo": "3232323232",
+      "branch": "Moonlight Branch",
+      "ifsc": "XYZM3232323",
+      "panno": "EFGHI1234A",
+      "address": "2323, Moonlight Street, Moonlightville"
+    },
+    {
+      "id": "33",
+      "Empname": "Leo Taylor",
+      "bankname": "PQR Bank",
+      "accountNo": "3333333333",
+      "branch": "Starlight Branch",
+      "ifsc": "PQRS3333333",
+      "panno": "LMNOP5678Q",
+      "address": "2424, Starlight Street, Starlightville"
+    },
+    {
+      "id": "34",
+      "Empname": "Lily Martinez",
+      "bankname": "LMN Bank",
+      "accountNo": "3434343434",
+      "branch": "Rainbow Branch",
+      "ifsc": "LMNR3434343",
+      "panno": "FGHIJ5678K",
+      "address": "2525, Rainbow Street, Rainbowville"
+    },
+    {
+      "id": "35",
+      "Empname": "Sebastian Davis",
+      "bankname": "JKL Bank",
+      "accountNo": "3535353535",
+      "branch": "Thunder Branch",
+      "ifsc": "JKLT3535353",
+      "panno": "WXYZA5678T",
+      "address": "2626, Thunder Street, Thunderville"
+    },
+    {
+      "id": "36",
+      "Empname": "Aria Harris",
+      "bankname": "MNO Bank",
+      "accountNo": "3636363636",
+      "branch": "Rainforest Branch",
+      "ifsc": "MNOR3636363",
+      "panno": "BCDEF2345C",
+      "address": "2727, Rainforest Street, Rainforestville"
+    },
+    {
+      "id": "37",
+      "Empname": "Mason Brown",
+      "bankname": "RST Bank",
+      "accountNo": "3737373737",
+      "branch": "Mountain Branch",
+      "ifsc": "RSTM3737373",
+      "panno": "GHIJK3456D",
+      "address": "2828, Mountain Street, Mountainville"
+    },
+    {
+      "id": "38",
+      "Empname": "Aurora Thompson",
+      "bankname": "UVW Bank",
+      "accountNo": "3838383838",
+      "branch": "Ocean Branch",
+      "ifsc": "UVWO3838383",
+      "panno": "JKLMN4567E",
+      "address": "2929, Ocean Street, Oceanville"
+    },
+    {
+      "id": "39",
+      "Empname": "Zane Turner",
+      "bankname": "FGH Bank",
+      "accountNo": "3939393939",
+      "branch": "Forest Branch",
+      "ifsc": "FGHF3939393",
+      "panno": "OPQRS5678F",
+      "address": "3030, Forest Street, Forestville"
+    },
+    {
+      "id": "40",
+      "Empname": "Nova Martinez",
+      "bankname": "IJK Bank",
+      "accountNo": "4040404040",
+      "branch": "Mystic Branch",
+      "ifsc": "IJKM4040404",
+      "panno": "TUVWX6789G",
+      "address": "3131, Mystic Street, Mysticville"
+    },
+    {
+      "Empname": "Logan Davis",
+      "bankname": "ABC Bank",
+      "accountNo": "4141414141",
+      "branch": "Golden Branch",
+      "ifsc": "ABCG4141414",
+      "panno": "UVWXY7890D",
+      "address": "3333, Golden Street, Goldenville",
+      "id": "e9ca"
+    },
+    {
+      "Empname": "Paisley Turner",
+      "bankname": "XYZ Bank",
+      "accountNo": "4242424242",
+      "branch": "Silver Branch",
+      "ifsc": "XYZS4242424",
+      "panno": "EFGHI1234A",
+      "address": "3434, Silver Street, Silverville",
+      "id": "18bf"
+    },
+    {
+      "Empname": "Caleb Taylor",
+      "bankname": "PQR Bank",
+      "accountNo": "4343434343",
+      "branch": "Ruby Branch",
+      "ifsc": "PQRR4343434",
+      "panno": "LMNOP5678Q",
+      "address": "3535, Ruby Street, Rubyville",
+      "id": "9567"
+    },
+    {
+      "Empname": "Zara Harris",
+      "bankname": "LMN Bank",
+      "accountNo": "4444444444",
+      "branch": "Emerald Branch",
+      "ifsc": "LMNE4444444",
+      "panno": "FGHIJ5678K",
+      "address": "3636, Emerald Street, Emeraldville",
+      "id": "19f2"
+    },
+    {
+      "Empname": "Ezra Brown",
+      "bankname": "JKL Bank",
+      "accountNo": "4545454545",
+      "branch": "Sapphire Branch",
+      "ifsc": "JKLS4545454",
+      "panno": "WXYZA5678T",
+      "address": "3737, Sapphire Street, Sapphireville",
+      "id": "e619"
+    },
+    {
+      "Empname": "Aubrey Martinez",
+      "bankname": "MNO Bank",
+      "accountNo": "4646464646",
+      "branch": "Diamond Branch",
+      "ifsc": "MNOD4646464",
+      "panno": "BCDEF2345C",
+      "address": "3838, Diamond Street, Diamondville",
+      "id": "fe9c"
+    },
+    {
+      "Empname": "Silas Thompson",
+      "bankname": "RST Bank",
+      "accountNo": "4747474747",
+      "branch": "Topaz Branch",
+      "ifsc": "RSTT4747474",
+      "panno": "GHIJK3456D",
+      "address": "3939, Topaz Street, Topazville",
+      "id": "d201"
+    },
+    {
+      "Empname": "Ivy Turner",
+      "bankname": "UVW Bank",
+      "accountNo": "4848484848",
+      "branch": "Amber Branch",
+      "ifsc": "UVWA4848484",
+      "panno": "JKLMN4567E",
+      "address": "4040, Amber Street, Amberville",
+      "id": "4a5a"
+    },
+    {
+      "Empname": "Axel Harris",
+      "bankname": "FGH Bank",
+      "accountNo": "4949494949",
+      "branch": "Crystal Branch",
+      "ifsc": "FGHC4949494",
+      "panno": "OPQRS5678F",
+      "address": "4141, Crystal Street, Crystalville",
+      "id": "56ef"
+    },
+    {
+      "Empname": "Luna Martinez",
+      "bankname": "IJK Bank",
+      "accountNo": "5050505050",
+      "branch": "Pearl Branch",
+      "ifsc": "IJKP5050505",
+      "panno": "TUVWX6789G",
+      "address": "4242, Pearl Street, Pearlville",
+      "id": "3df5"
+    },
+    {
+      "Empname": "Oscar Turner",
+      "bankname": "ABC Bank",
+      "accountNo": "5151515151",
+      "branch": "Platinum Branch",
+      "ifsc": "ABCP5151515",
+      "panno": "UVWXY7890D",
+      "address": "4343, Platinum Street, Platinumville",
+      "id": "00bb"
+    },
+    {
+      "Empname": "Ayla Davis",
+      "bankname": "XYZ Bank",
+      "accountNo": "5252525252",
+      "branch": "Goldmine Branch",
+      "ifsc": "XYZG5252525",
+      "panno": "EFGHI1234A",
+      "address": "4444, Goldmine Street, Goldmineville",
+      "id": "df3b"
+    },
+    {
+      "Empname": "Maxwell Taylor",
+      "bankname": "PQR Bank",
+      "accountNo": "5353535353",
+      "branch": "Silverado Branch",
+      "ifsc": "PQRS5353535",
+      "panno": "LMNOP5678Q",
+      "address": "4545, Silverado Street, Silveradoville",
+      "id": "b3be"
+    },
+    {
+      "Empname": "Isla Harris",
+      "bankname": "LMN Bank",
+      "accountNo": "5454545454",
+      "branch": "Bronze Branch",
+      "ifsc": "LMNB5454545",
+      "panno": "FGHIJ5678K",
+      "address": "4646, Bronze Street, Bronzeville",
+      "id": "5460"
+    },
+    {
+      "Empname": "Asher Brown",
+      "bankname": "JKL Bank",
+      "accountNo": "5555555555",
+      "branch": "Copper Branch",
+      "ifsc": "JKLC5555555",
+      "panno": "WXYZA5678T",
+      "address": "4747, Copper Street, Copperville",
+      "id": "b2d9"
+    },
+    {
+      "Empname": "Nina Martinez",
+      "bankname": "MNO Bank",
+      "accountNo": "5656565656",
+      "branch": "Titanium Branch",
+      "ifsc": "MNOT5656565",
+      "panno": "BCDEF2345C",
+      "address": "4848, Titanium Street, Titaniumville",
+      "id": "f6ea"
+    },
+    {
+      "Empname": "Arlo Thompson",
+      "bankname": "RST Bank",
+      "accountNo": "5757575757",
+      "branch": "Nickel Branch",
+      "ifsc": "RSTN5757575",
+      "panno": "GHIJK3456D",
+      "address": "4949, Nickel Street, Nickelville",
+      "id": "93c1"
+    },
+    {
+      "Empname": "Elara Turner",
+      "bankname": "UVW Bank",
+      "accountNo": "5858585858",
+      "branch": "Zinc Branch",
+      "ifsc": "UVWZ5858585",
+      "panno": "JKLMN4567E",
+      "address": "5050, Zinc Street, Zincville",
+      "id": "ae5d"
+    },
+    {
+      "Empname": "Rhys Harris",
+      "bankname": "FGH Bank",
+      "accountNo": "5959595959",
+      "branch": "Iron Branch",
+      "ifsc": "FGHI5959595",
+      "panno": "OPQRS5678F",
+      "address": "5151, Iron Street, Ironville",
+      "id": "7c42"
+    },
+    {
+      "Empname": "Amara Martinez",
+      "bankname": "IJK Bank",
+      "accountNo": "6060606060",
+      "branch": "Steel Branch",
+      "ifsc": "IJKS6060606",
+      "panno": "TUVWX6789G",
+      "address": "5252, Steel Street, Steelville",
+      "id": "2da1"
+    },
+    {
+      "Empname": "Elijah Turner",
+      "bankname": "ABC Bank",
+      "accountNo": "6161616161",
+      "branch": "Silverstone Branch",
+      "ifsc": "ABCS6161616",
+      "panno": "UVWXY7890D",
+      "address": "5454, Silverstone Street, Silverstoneville",
+      "id": "9c68"
+    },
+    {
+      "Empname": "Eva Davis",
+      "bankname": "XYZ Bank",
+      "accountNo": "6262626262",
+      "branch": "Bronzewood Branch",
+      "ifsc": "XYZB6262626",
+      "panno": "EFGHI1234A",
+      "address": "5555, Bronzewood Street, Bronzewoodville",
+      "id": "9172"
+    },
+    {
+      "Empname": "Lucas Taylor",
+      "bankname": "PQR Bank",
+      "accountNo": "6363636363",
+      "branch": "Goldrush Branch",
+      "ifsc": "PQRG6363636",
+      "panno": "LMNOP5678Q",
+      "address": "5656, Goldrush Street, Goldrushville",
+      "id": "1e0d"
+    },
+    {
+      "Empname": "Aria Harris",
+      "bankname": "LMN Bank",
+      "accountNo": "6464646464",
+      "branch": "Silverspring Branch",
+      "ifsc": "LMNS6464646",
+      "panno": "FGHIJ5678K",
+      "address": "5757, Silverspring Street, Silverspringville",
+      "id": "2d7d"
+    },
+    {
+      "Empname": "Leo Brown",
+      "bankname": "JKL Bank",
+      "accountNo": "6565656565",
+      "branch": "Copperfield Branch",
+      "ifsc": "JKLC6565656",
+      "panno": "WXYZA5678T",
+      "address": "5858, Copperfield Street, Copperfieldville",
+      "id": "eba6"
+    },
+    {
+      "Empname": "Aurora Martinez",
+      "bankname": "MNO Bank",
+      "accountNo": "6666666666",
+      "branch": "Zincwood Branch",
+      "ifsc": "MNOZ6666666",
+      "panno": "BCDEF2345C",
+      "address": "5959, Zincwood Street, Zincwoodville",
+      "id": "bd14"
+    },
+    {
+      "Empname": "Milo Thompson",
+      "bankname": "RST Bank",
+      "accountNo": "6767676767",
+      "branch": "Titaniumville Branch",
+      "ifsc": "RSTT6767676",
+      "panno": "GHIJK3456D",
+      "address": "6060, Titaniumville Street, Titaniumville",
+      "id": "c733"
+    },
+    {
+      "Empname": "Athena Turner",
+      "bankname": "UVW Bank",
+      "accountNo": "6868686868",
+      "branch": "Nickelwood Branch",
+      "ifsc": "UVWN6868686",
+      "panno": "JKLMN4567E",
+      "address": "6161, Nickelwood Street, Nickelwoodville",
+      "id": "c151"
+    },
+    {
+      "Empname": "Mateo Harris",
+      "bankname": "FGH Bank",
+      "accountNo": "6969696969",
+      "branch": "Ironwood Branch",
+      "ifsc": "FGHI6969696",
+      "panno": "OPQRS5678F",
+      "address": "6262, Ironwood Street, Ironwoodville",
+      "id": "61ab"
+    },
+    {
+      "Empname": "Aria Martinez",
+      "bankname": "IJK Bank",
+      "accountNo": "7070707070",
+      "branch": "Steelwood Branch",
+      "ifsc": "IJKS7070707",
+      "panno": "TUVWX6789G",
+      "address": "6363, Steelwood Street, Steelwoodville",
+      "id": "6ef9"
+    },
+    {
+      "Empname": "Oliver Turner",
+      "bankname": "ABC Bank",
+      "accountNo": "7171717171",
+      "branch": "Silverpeak Branch",
+      "ifsc": "ABCS7171717",
+      "panno": "UVWXY7890D",
+      "address": "6464, Silverpeak Street, Silverpeakville",
+      "id": "9b71"
+    },
+    {
+      "Empname": "Lily Davis",
+      "bankname": "XYZ Bank",
+      "accountNo": "7272727272",
+      "branch": "Bronzefield Branch",
+      "ifsc": "XYZB7272727",
+      "panno": "EFGHI1234A",
+      "address": "6565, Bronzefield Street, Bronzefieldville",
+      "id": "453f"
+    },
+    {
+      "Empname": "Henry Taylor",
+      "bankname": "PQR Bank",
+      "accountNo": "7373737373",
+      "branch": "Goldfield Branch",
+      "ifsc": "PQRG7373737",
+      "panno": "LMNOP5678Q",
+      "address": "6666, Goldfield Street, Goldfieldville",
+      "id": "ee90"
+    },
+    {
+      "Empname": "Zoe Harris",
+      "bankname": "LMN Bank",
+      "accountNo": "7474747474",
+      "branch": "Silverwood Branch",
+      "ifsc": "LMNS7474747",
+      "panno": "FGHIJ5678K",
+      "address": "6767, Silverwood Street, Silverwoodville",
+      "id": "9d48"
+    },
+    {
+      "Empname": "Sebastian Brown",
+      "bankname": "JKL Bank",
+      "accountNo": "7575757575",
+      "branch": "Copperpeak Branch",
+      "ifsc": "JKLC7575757",
+      "panno": "WXYZA5678T",
+      "address": "6868, Copperpeak Street, Copperpeakville",
+      "id": "43f7"
+    },
+    {
+      "Empname": "Eliana Martinez",
+      "bankname": "MNO Bank",
+      "accountNo": "7676767676",
+      "branch": "Zincpeak Branch",
+      "ifsc": "MNOZ7676767",
+      "panno": "BCDEF2345C",
+      "address": "6969, Zincpeak Street, Zincpeakville",
+      "id": "7c81"
+    },
+    {
+      "Empname": "Jackson Thompson",
+      "bankname": "RST Bank",
+      "accountNo": "7777777777",
+      "branch": "Titaniumpeak Branch",
+      "ifsc": "RSTT7777777",
+      "panno": "GHIJK3456D",
+      "address": "7070, Titaniumpeak Street, Titaniumpeakville",
+      "id": "130e"
+    },
+    {
+      "Empname": "Nova Turner",
+      "bankname": "UVW Bank",
+      "accountNo": "7878787878",
+      "branch": "Nickelpeak Branch",
+      "ifsc": "UVWN7878787",
+      "panno": "JKLMN4567E",
+      "address": "7171, Nickelpeak Street, Nickelpeakville",
+      "id": "971c"
+    },
+    {
+      "Empname": "Carter Harris",
+      "bankname": "FGH Bank",
+      "accountNo": "7979797979",
+      "branch": "Ironpeak Branch",
+      "ifsc": "FGHI7979797",
+      "panno": "OPQRS5678F",
+      "address": "7272, Ironpeak Street, Ironpeakville",
+      "id": "ae04"
+    },
+    {
+      "Empname": "Aurora Martinez",
+      "bankname": "IJK Bank",
+      "accountNo": "8080808080",
+      "branch": "Steelpeak Branch",
+      "ifsc": "IJKS8080808",
+      "panno": "TUVWX6789G",
+      "address": "7373, Steelpeak Street, Steelpeakville",
+      "id": "93b6"
+    },
+    {
+      "Empname": "Ethan Turner",
+      "bankname": "OPQ Bank",
+      "accountNo": "8181818181",
+      "branch": "Goldridge Branch",
+      "ifsc": "OPQG8181818",
+      "panno": "WXYZA1234U",
+      "address": "7474, Goldridge Street, Goldridgeville",
+      "id": "1009"
+    },
+    {
+      "Empname": "Mia Davis",
+      "bankname": "RST Bank",
+      "accountNo": "8282828282",
+      "branch": "Silverdale Branch",
+      "ifsc": "RSTS8282828",
+      "panno": "BCDEF5678V",
+      "address": "7676, Silverdale Street, Silverdaleville",
+      "id": "2a7b"
+    },
+    {
+      "Empname": "Caleb Taylor",
+      "bankname": "UVW Bank",
+      "accountNo": "8383838383",
+      "branch": "Copperridge Branch",
+      "ifsc": "UVWC8383838",
+      "panno": "GHIJK9012W",
+      "address": "7878, Copperridge Street, Copperridgeville",
+      "id": "57c1"
+    },
+    {
+      "Empname": "Sophia Harris",
+      "bankname": "XYZ Bank",
+      "accountNo": "8484848484",
+      "branch": "Zincedale Branch",
+      "ifsc": "XYZZ8484848",
+      "panno": "LMNOP2345X",
+      "address": "8080, Zincedale Street, Zincedaleville",
+      "id": "3cd2"
+    },
+    {
+      "Empname": "Oliver Brown",
+      "bankname": "IJK Bank",
+      "accountNo": "8585858585",
+      "branch": "Nickeldale Branch",
+      "ifsc": "IJKD8585858",
+      "panno": "QRSTU5678Y",
+      "address": "8282, Nickeldale Street, Nickeldaleville",
+      "id": "bdd7"
+    },
+    {
+      "Empname": "Aria Martinez",
+      "bankname": "ABC Bank",
+      "accountNo": "8686868686",
+      "branch": "Ironridge Branch",
+      "ifsc": "ABCI8686868",
+      "panno": "VWXYZ1234Z",
+      "address": "8484, Ironridge Street, Ironridgeville",
+      "id": "f96d"
+    },
+    {
+      "Empname": "Leo Turner",
+      "bankname": "JKL Bank",
+      "accountNo": "8787878787",
+      "branch": "Steelridge Branch",
+      "ifsc": "JKLS8787878",
+      "panno": "ABCD5678E",
+      "address": "8686, Steelridge Street, Steelridgeville",
+      "id": "f89d"
+    },
+    {
+      "Empname": "Aurora Davis",
+      "bankname": "PQR Bank",
+      "accountNo": "8888888888",
+      "branch": "Titaniumdale Branch",
+      "ifsc": "PQRT8888888",
+      "panno": "EFGH9012F",
+      "address": "8888, Titaniumdale Street, Titaniumdale",
+      "id": "fb33"
+    },
+    {
+      "Empname": "Elijah Taylor",
+      "bankname": "MNO Bank",
+      "accountNo": "8989898989",
+      "branch": "Copperdale Branch",
+      "ifsc": "MNOC8989898",
+      "panno": "IJKLM3456G",
+      "address": "9090, Copperdale Street, Copperdaleville",
+      "id": "7174"
+    },
+    {
+      "Empname": "Mila Harris",
+      "bankname": "LMN Bank",
+      "accountNo": "9090909090",
+      "branch": "Silverridge Branch",
+      "ifsc": "LMNS9090909",
+      "panno": "NOPQR6789H",
+      "address": "9292, Silverridge Street, Silverridgeville",
+      "id": "5092"
+    },
+    {
+      "Empname": "Lucas Martinez",
+      "bankname": "RST Bank",
+      "accountNo": "9191919191",
+      "branch": "Bronzedale Branch",
+      "ifsc": "RSTM9191919",
+      "panno": "STUVW1234I",
+      "address": "9494, Bronzedale Street, Bronzedaleville",
+      "id": "240b"
+    },
+    {
+      "Empname": "Aria Brown",
+      "bankname": "UVW Bank",
+      "accountNo": "9292929292",
+      "branch": "Zincridge Branch",
+      "ifsc": "UVWZ9292929",
+      "panno": "WXYZA5678J",
+      "address": "9696, Zincridge Street, Zincridgeville",
+      "id": "a8c8"
+    },
+    {
+      "Empname": "Liam Turner",
+      "bankname": "IJK Bank",
+      "accountNo": "9393939393",
+      "branch": "Nickelridge Branch",
+      "ifsc": "IJKL9393939",
+      "panno": "BCDEF9012K",
+      "address": "9898, Nickelridge Street, Nickelridgeville",
+      "id": "e43e"
+    },
+    {
+      "Empname": "Zara Davis",
+      "bankname": "ABC Bank",
+      "accountNo": "9494949494",
+      "branch": "Ironpeak Branch",
+      "ifsc": "ABCI9494949",
+      "panno": "VWXYZ1234L",
+      "address": "9999, Ironpeak Street, Ironpeakville",
+      "id": "963a"
+    },
+    {
+      "Empname": "Noah Taylor",
+      "bankname": "JKL Bank",
+      "accountNo": "9595959595",
+      "branch": "Steelpeak Branch",
+      "ifsc": "JKLN9595959",
+      "panno": "ABCD5678M",
+      "address": "1010, Steelpeak Street, Steelpeakville",
+      "id": "456a"
+    },
+    {
+      "Empname": "Emma Harris",
+      "bankname": "PQR Bank",
+      "accountNo": "9696969696",
+      "branch": "Titaniumridge Branch",
+      "ifsc": "PQRE9696969",
+      "panno": "EFGH9012N",
+      "address": "1030, Titaniumridge Street, Titaniumridge",
+      "id": "6af8"
+    },
+    {
+      "Empname": "Carter Brown",
+      "bankname": "MNO Bank",
+      "accountNo": "9797979797",
+      "branch": "Copperpeak Branch",
+      "ifsc": "MNOC9797979",
+      "panno": "IJKLM3456O",
+      "address": "1050, Copperpeak Street, Copperpeakville",
+      "id": "e61c"
+    },
+    {
+      "Empname": "Aria Turner",
+      "bankname": "LMN Bank",
+      "accountNo": "9898989898",
+      "branch": "Silverpeak Branch",
+      "ifsc": "LMNS9898989",
+      "panno": "NOPQR6789P",
+      "address": "1070, Silverpeak Street, Silverpeakville",
+      "id": "3514"
+    },
+    {
+      "Empname": "Ethan Martinez",
+      "bankname": "RST Bank",
+      "accountNo": "9999999999",
+      "branch": "Bronzeridge Branch",
+      "ifsc": "RSTS9999999",
+      "panno": "STUVW1234Q",
+      "address": "1090, Bronzeridge Street, Bronzeridgeville",
+      "id": "1510"
+    },
+    {
+      "id": "836f",
+      "Empname": "jaya simha",
+      "accountNo": "773299823732",
+      "ifsc": "sbin08384",
+      "panno": "Ytth99280",
+      "bankname": "hdfc",
+      "branch": "hyderabed",
+      "aadhar": "772362386222",
+      "address": "manglore"
+    },
+    {
+      "id": "85a4"
+    }
+  ],
+  "shifts": [
+    {
+      "date": "2024-02-01",
+      "shift": "Day Shift",
+      "time": "07:00-19:00",
+      "id": "d03d",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-02-02",
+      "shift": "Night Shift",
+      "time": "19:00-07:00",
+      "id": "52c1",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-02-03",
+      "shift": "Late Shift",
+      "time": "14:00-23:00",
+      "id": "996a",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-02-04",
+      "shift": "Afternoon",
+      "time": "12:00-18:00",
+      "id": "3087",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-02-05",
+      "shift": "Day Shift",
+      "time": "07:00-19:00",
+      "id": "543c",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-02-06",
+      "shift": "Night Shift",
+      "time": "19:00-07:00",
+      "id": "e09b",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-02-07",
+      "shift": "Late Shift",
+      "time": "14:00-23:00",
+      "id": "808b",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-02-08",
+      "shift": "Afternoon",
+      "time": "12:00-18:00",
+      "id": "2b4b",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-02-09",
+      "shift": "Day Shift",
+      "time": "07:00-19:00",
+      "id": "f401",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-02-10",
+      "shift": "Night Shift",
+      "time": "19:00-07:00",
+      "id": "5879",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-02-11",
+      "shift": "Late Shift",
+      "time": "14:00-23:00",
+      "id": "e63c",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-02-12",
+      "shift": "Afternoon",
+      "time": "12:00-18:00",
+      "id": "4dc0",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-02-13",
+      "shift": "Day Shift",
+      "time": "07:00-19:00",
+      "id": "3466",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-02-14",
+      "shift": "Night Shift",
+      "time": "19:00-07:00",
+      "id": "3358",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-02-15",
+      "shift": "Late Shift",
+      "time": "14:00-23:00",
+      "id": "8d3b",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-02-16",
+      "shift": "Afternoon",
+      "time": "12:00-18:00",
+      "id": "52e9",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-02-17",
+      "shift": "Day Shift",
+      "time": "07:00-19:00",
+      "id": "03cc",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-02-18",
+      "shift": "Night Shift",
+      "time": "19:00-07:00",
+      "id": "b928",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-02-19",
+      "shift": "Late Shift",
+      "time": "14:00-23:00",
+      "id": "c17d",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-02-20",
+      "shift": "Afternoon",
+      "time": "12:00-18:00",
+      "id": "bc0f",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-02-21",
+      "shift": "Day Shift",
+      "time": "07:00-19:00",
+      "id": "138a",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-02-22",
+      "shift": "Night Shift",
+      "time": "19:00-07:00",
+      "id": "370e",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-02-23",
+      "shift": "Late Shift",
+      "time": "14:00-23:00",
+      "id": "6c3c",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-02-24",
+      "shift": "Afternoon",
+      "time": "12:00-18:00",
+      "id": "7ebb",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-02-25",
+      "shift": "Day Shift",
+      "time": "07:00-19:00",
+      "id": "c793",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-02-26",
+      "shift": "Night Shift",
+      "time": "19:00-07:00",
+      "id": "1df0",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-02-27",
+      "shift": "Late Shift",
+      "time": "14:00-23:00",
+      "id": "5ca1",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-02-28",
+      "shift": "Afternoon",
+      "time": "12:00-18:00",
+      "id": "e83d",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-02-29",
+      "shift": "Afternoon",
+      "time": "12:00-18:00",
+      "id": "1deb",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-03-01",
+      "shift": "Day Shift",
+      "time": "07:00-19:00",
+      "id": "11ba",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-03-02",
+      "shift": "Night Shift",
+      "time": "19:00-07:00",
+      "id": "a6b6",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-03-03",
+      "shift": "Late Shift",
+      "time": "14:00-23:00",
+      "id": "a867",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-03-04",
+      "shift": "Afternoon",
+      "time": "12:00-18:00",
+      "id": "d843",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-03-05",
+      "shift": "Day Shift",
+      "time": "07:00-19:00",
+      "id": "ec20",
+      "leaveApplied": false
+    },
+    {
+      "shift": "Afternoon",
+      "time": "12:00 - 18:00",
+      "date": "2024-03-06",
+      "id": "46e8"
+    },
+    {
+      "date": "2024-03-07",
+      "shift": "Late Shift",
+      "time": "14:00-23:00",
+      "id": "3717",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-03-08",
+      "shift": "Afternoon",
+      "time": "12:00-18:00",
+      "id": "e10f",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-03-09",
+      "shift": "Day Shift",
+      "time": "07:00-19:00",
+      "id": "b7b7",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-03-10",
+      "shift": "Night Shift",
+      "time": "19:00-07:00",
+      "id": "e038",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-03-12",
+      "shift": "Afternoon",
+      "time": "12:00-18:00",
+      "id": "3beb",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-03-14",
+      "shift": "Night Shift",
+      "time": "19:00-07:00",
+      "id": "85e3",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-03-16",
+      "shift": "Afternoon",
+      "time": "12:00-18:00",
+      "id": "8c96",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-03-17",
+      "shift": "Day Shift",
+      "time": "07:00-19:00",
+      "id": "c3de",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-03-18",
+      "shift": "Night Shift",
+      "time": "19:00-07:00",
+      "id": "0172",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-03-19",
+      "shift": "Late Shift",
+      "time": "14:00-23:00",
+      "id": "cb23",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-03-20",
+      "shift": "Afternoon",
+      "time": "12:00-18:00",
+      "id": "f238",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-03-21",
+      "shift": "Day Shift",
+      "time": "07:00-19:00",
+      "id": "7dfc",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-03-22",
+      "shift": "Night Shift",
+      "time": "19:00-07:00",
+      "id": "cde3",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-03-23",
+      "shift": "Late Shift",
+      "time": "14:00-23:00",
+      "id": "e1dc",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-03-24",
+      "shift": "Afternoon",
+      "time": "12:00-18:00",
+      "id": "0b52",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-03-26",
+      "shift": "Night Shift",
+      "time": "19:00-07:00",
+      "id": "a7ad",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-03-27",
+      "shift": "Late Shift",
+      "time": "14:00-23:00",
+      "id": "5e1d",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-03-28",
+      "shift": "Afternoon",
+      "time": "12:00-18:00",
+      "id": "c58b",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-03-30",
+      "shift": "Night Shift",
+      "time": "19:00-07:00",
+      "id": "17b6",
+      "leaveApplied": false
+    },
+    {
+      "date": "2024-03-31",
+      "shift": "Late Shift",
+      "time": "14:00-23:00",
+      "id": "d1f9",
+      "leaveApplied": false
+    },
+    {
+      "id": "a008",
+      "shift": "Late Shift",
+      "time": "14:00 - 23:00",
+      "date": "2024-03-13",
+      "leaveApplied": false
+    },
+    {
+      "id": "f9af",
+      "shift": "Afternoon",
+      "time": "12:00 - 18:00"
+    },
+    {
+      "id": "f4de",
+      "shift": "Afternoon",
+      "time": "12:00 - 18:00",
+      "date": "2024-03-15"
+    },
+    {
+      "id": "6329",
+      "shift": "Night Shift",
+      "time": "19:00 - 07:00",
+      "date": "2024-04-01"
+    },
+    {
+      "id": "b54e",
+      "shift": "Day Shift",
+      "time": "07:00 - 19:00",
+      "date": "2024-03-11"
+    },
+    {
+      "id": "a7e1",
+      "shift": "Afternoon",
+      "time": "12:00 - 18:00",
+      "date": "2024-04-18"
+    }
+  ],
+  "leaveOptions": [
+    {
+      "id": "1",
+      "label": "Leave",
+      "checked": false,
+      "customHeader": "Leave"
+    },
+    {
+      "id": "2",
+      "label": "Sick Leave",
+      "checked": false,
+      "customHeader": "Sick Leave"
+    },
+    {
+      "id": "3",
+      "label": "Maternity Leave",
+      "checked": false,
+      "customHeader": "Maternity Leave"
+    },
+    {
+      "id": "4",
+      "label": "Paternity Leave",
+      "checked": false,
+      "customHeader": "Paternity Leave"
+    },
+    {
+      "id": "5",
+      "label": "Casual Leave",
+      "checked": false,
+      "customHeader": "Casual Leave"
+    },
+    {
+      "id": "6",
+      "label": "Maternity Leave",
+      "checked": false,
+      "customHeader": "Maternity Leave"
+    },
+    {
+      "id": "bf0e",
+      "label": "Sick Leave",
+      "date": "2024-03-06"
+    },
+    {
+      "id": "835a",
+      "label": "Sick Leave",
+      "date": "2024-03-06"
+    },
+    {
+      "id": "2316",
+      "label": "Sick Leave",
+      "date": "2024-03-06"
+    },
+    {
+      "id": "efcc",
+      "label": "Sick Leave",
+      "date": "2024-03-06"
+    },
+    {
+      "id": "ab7f",
+      "label": "Sick Leave",
+      "date": "2024-03-06"
+    },
+    {
+      "id": "819a",
+      "label": "Sick Leave",
+      "date": "2024-03-06"
+    },
+    {
+      "id": "377e",
+      "label": "Sick Leave",
+      "date": "2024-03-06"
+    },
+    {
+      "id": "b582",
+      "label": 4,
+      "date": "2024-03-06"
+    },
+    {
+      "id": "c347",
+      "label": 5,
+      "date": "2024-03-11"
+    },
+    {
+      "id": "d23e",
+      "label": 5,
+      "date": "2024-04-09"
+    },
+    {
+      "id": "c84f",
+      "label": 3,
+      "date": "2024-02-02"
+    },
+    {
+      "id": "1e8e",
+      "label": 3,
+      "date": "2024-03-14"
+    }
+  ],
+  "attendance": [
+    {
+      "S.No": 1,
+      "Vendor / Client": "",
+      "Emp ID": "SPC1120",
+      "Emp Name": "GARREPELLI ABHILASH",
+      "Department": "Production",
+      "D.O.J": "19-07-2023",
+      "Category": "GET-Trainee",
+      "Shifts": {
+        "1": "PP",
+        "2": "PP",
+        "3": "PP",
+        "4": "PP",
+        "5": "PP",
+        "6": "PP",
+        "7": "AA",
+        "8": "AA",
+        "9": "AA",
+        "10": "AA",
+        "11": "AA",
+        "12": "AA",
+        "13": "AA",
+        "14": "AA",
+        "15": "AA",
+        "16": "AA",
+        "17": "AA",
+        "18": "AA",
+        "19": "AA",
+        "20": "AA",
+        "21": "AA",
+        "22": "AA",
+        "23": "AA",
+        "24": "AA",
+        "25": "AA",
+        "26": "AA",
+        "27": "AA",
+        "28": "AA",
+        "29": "AA",
+        "30": "AA",
+        "31": "AA"
+      },
+      "DAYS PRESENT": 5,
+      "WO": "-",
+      "HO": "-",
+      "Absent (LOP)": 26,
+      "DAYS PAYABLE": 5,
+      "OT HR'S": "-",
+      "Bus": "-",
+      "Remarks": "",
+      "id": "a322"
+    },
+    {
+      "S.No": 2,
+      "Vendor / Client": "",
+      "Emp ID": "SPC1121",
+      "Emp Name": "PUTTA SADASHIVA",
+      "Department": "Production",
+      "D.O.J": "19-07-2023",
+      "Category": "GET-Trainee",
+      "Shifts": {
+        "1": "PP",
+        "2": "PP",
+        "3": "PP",
+        "4": "PP",
+        "5": "PP",
+        "6": "PP",
+        "7": "WO",
+        "8": "PP",
+        "9": "PP",
+        "10": "PP",
+        "11": "AA",
+        "12": "AA",
+        "13": "AA",
+        "14": "AA",
+        "15": "AA",
+        "16": "AA",
+        "17": "AA",
+        "18": "AA",
+        "19": "AA",
+        "20": "AA",
+        "21": "AA",
+        "22": "AA",
+        "23": "AA",
+        "24": "AA",
+        "25": "AA",
+        "26": "AA",
+        "27": "AA",
+        "28": "AA",
+        "29": "AA",
+        "30": "AA",
+        "31": "AA"
+      },
+      "DAYS PRESENT": 9,
+      "WO": 1,
+      "HO": "-",
+      "Absent (LOP)": 21,
+      "DAYS PAYABLE": 10,
+      "OT HR'S": 4.5,
+      "Bus": 200,
+      "Remarks": "",
+      "id": "b60d"
+    },
+    {
+      "S.No": 3,
+      "Vendor / Client": "",
+      "Emp ID": "SPC1123",
+      "Emp Name": "BATTULA GANESH",
+      "Department": "Production",
+      "D.O.J": "19-07-2023",
+      "Category": "GET-Trainee",
+      "Shifts": {
+        "1": "AA",
+        "2": "PP",
+        "3": "PP",
+        "4": "PP",
+        "5": "PP",
+        "6": "PP",
+        "7": "WO",
+        "8": "PP",
+        "9": "PP",
+        "10": "PP",
+        "11": "PP",
+        "12": "PP",
+        "13": "PP",
+        "14": "WO",
+        "15": "HO",
+        "16": "AA",
+        "17": "PP",
+        "18": "PP",
+        "19": "PP",
+        "20": "PP",
+        "21": "WO",
+        "22": "PP",
+        "23": "PP",
+        "24": "PP",
+        "25": "PP",
+        "26": "PP",
+        "27": "PP",
+        "28": "PP",
+        "29": "HO",
+        "30": "PP",
+        "31": "PP"
+      },
+      "DAYS PRESENT": 22,
+      "WO": 4,
+      "HO": 2,
+      "Absent (LOP)": 3,
+      "DAYS PAYABLE": 28,
+      "OT HR'S": 8,
+      "Bus": 200,
+      "Remarks": "",
+      "id": "dfb5"
+    },
+    {
+      "S.No": 4,
+      "Vendor / Client": "",
+      "Emp ID": "SPC1124",
+      "Emp Name": "SUMEET KUMAR SINGH",
+      "Department": "Production",
+      "D.O.J": "19-07-2023",
+      "Category": "GET-Trainee",
+      "Shifts": {
+        "1": "PP",
+        "2": "PP",
+        "3": "PP",
+        "4": "PP",
+        "5": "PP",
+        "6": "PP",
+        "7": "WO",
+        "8": "PP",
+        "9": "PP",
+        "10": "PP",
+        "11": "PP",
+        "12": "PP",
+        "13": "PP",
+        "14": "WO",
+        "15": "HO",
+        "16": "PP",
+        "17": "PP",
+        "18": "PP",
+        "19": "PP",
+        "20": "PP",
+        "21": "WO",
+        "22": "PP",
+        "23": "PP",
+        "24": "PP",
+        "25": "PP",
+        "26": "PP",
+        "27": "PP",
+        "28": "PP",
+        "29": "HO",
+        "30": "PP",
+        "31": "PP"
+      },
+      "DAYS PRESENT": 25,
+      "WO": 4,
+      "HO": 2,
+      "Absent (LOP)": 0,
+      "DAYS PAYABLE": 31,
+      "OT HR'S": 8,
+      "Bus": 200,
+      "Remarks": "",
+      "id": "74d0"
+    },
+    {
+      "S.No": 5,
+      "Vendor / Client": "",
+      "Emp ID": "SPC1126",
+      "Emp Name": "IPPALAPALLI SANDEEP",
+      "Department": "Production",
+      "D.O.J": "03-08-2023",
+      "Category": "GET-Trainee",
+      "Shifts": {
+        "1": "PP",
+        "2": "PP",
+        "3": "PP",
+        "4": "PP",
+        "5": "PP",
+        "6": "PP",
+        "7": "WO",
+        "8": "PP",
+        "9": "PP",
+        "10": "PP",
+        "11": "PP",
+        "12": "PP",
+        "13": "PP",
+        "14": "WO",
+        "15": "HO",
+        "16": "PP",
+        "17": "PP",
+        "18": "PP",
+        "19": "PP",
+        "20": "PP",
+        "21": "WO",
+        "22": "PP",
+        "23": "PP",
+        "24": "PP",
+        "25": "PP",
+        "26": "PP",
+        "27": "PP",
+        "28": "PP",
+        "29": "HO",
+        "30": "PP",
+        "31": "PP"
+      },
+      "DAYS PRESENT": 25,
+      "WO": 4,
+      "HO": 2,
+      "Absent (LOP)": 0,
+      "DAYS PAYABLE": 31,
+      "OT HR'S": 29,
+      "Bus": 200,
+      "Remarks": "",
+      "id": "7c4f"
+    },
+    {
+      "S.No": 6,
+      "Vendor / Client": "",
+      "Emp ID": "SPC1128",
+      "Emp Name": "VEERARAPU PAVAN KUMAR",
+      "Department": "Production",
+      "D.O.J": "03-08-2023",
+      "Category": "GET-Trainee",
+      "Shifts": {
+        "1": "PP",
+        "2": "PP",
+        "3": "PP",
+        "4": "PP",
+        "5": "PP",
+        "6": "PP",
+        "7": "WO",
+        "8": "PP",
+        "9": "PP",
+        "10": "PP",
+        "11": "PP",
+        "12": "PP",
+        "13": "PP",
+        "14": "WO",
+        "15": "HO",
+        "16": "AA",
+        "17": "AA",
+        "18": "AA",
+        "19": "AA",
+        "20": "AA",
+        "21": "PP",
+        "22": "WO",
+        "23": "PP",
+        "24": "PP",
+        "25": "PP",
+        "26": "PP",
+        "27": "HO",
+        "28": "WO",
+        "29": "PP",
+        "30": "PP",
+        "31": "PP"
+      },
+      "DAYS PRESENT": " 20.0",
+      "WO": "4",
+      "HO": "2",
+      "Absent (LOP)": " 5.0",
+      "DAYS PAYABLE": "26.0",
+      "OT HR'S": "11.0",
+      "Bus": "200",
+      "Remarks": "",
+      "id": "fb46"
+    }
+  ],
+  "candidates": [
+    {
+      "Full Name": "John Doe",
+      "Phone No": "+919876543210",
+      "Email ID": "john.doe@example.com",
+      "Alternative Phone No": "+919012345678",
+      "Alternative Email ID": "john.doe.alt@example.com",
+      "Technologies": "Java, Spring Boot, Hibernate",
+      "Sub Skills": "Backend Development",
+      "Pan No": "ABCDE1234F",
+      "Aadhar No": "1234 5678 9012",
+      "Passport No": "P1234567",
+      "PF No": "PF12345",
+      "Current CTC": "₹10,00,000",
+      "Expected CTC": "₹12,00,000",
+      "No of Years Experience": "6 years",
+      "Relavant Experience": "5 years",
+      "Notice Period": "3 months",
+      "Date of Birth": "1985-05-15",
+      "Willing to Relocate": "Yes",
+      "Current Location": "Bangalore",
+      "Working Location": "Bangalore",
+      "Current Designation": "Senior Java Developer",
+      "Current Organization": "Innovate Tech",
+      "Previous Organization": "Mobile Innovations",
+      "Highest Degree": "Bachelor's in Computer Applications",
+      "Year of Passed Out": "2013",
+      "University/College": "University of Innovate Tech",
+      "University Percentage": "78%",
+      "Reason of Change": "Java Developer position",
+      "Submitted Date": "2024-04-01",
+      "Profile Attachment": "",
+      "id": "5165"
+    },
+    {
+      "Full Name": "Padmaja Raju",
+      "Phone No": "+919876543210",
+      "Email ID": "padmaja.raju@example.com",
+      "Alternative Phone No": "+919012345678",
+      "Alternative Email ID": "padmaja.raju.alt@example.com",
+      "Technologies": "React, Node.js, MongoDB",
+      "Sub Skills": "Full-stack Development",
+      "Pan No": "ABCDE1234F",
+      "Aadhar No": "1234 5678 9012",
+      "Passport No": "P1234567",
+      "PF No": "PF12345",
+      "Current CTC": "₹7,50,000",
+      "Expected CTC": "₹8,50,000",
+      "No of Years Experience": "4 years",
+      "Relavant Experience": "3 years",
+      "Notice Period": "1 month",
+      "Date of Birth": "1991-07-18",
+      "Willing to Relocate": "Yes",
+      "Current Location": "Hyderabad",
+      "Working Location": "Hyderabad",
+      "Current Designation": "Full-stack Developer",
+      "Current Organization": "Tech Solutions Ltd.",
+      "Previous Organization": "ABC Corp",
+      "Highest Degree": "Bachelor's in Computer Science",
+      "Year of Passed Out": "2015",
+      "University/College": "University of Tech Solutions Ltd.",
+      "University Percentage": "82%",
+      "Reason of Change": "Full-stack Developer position",
+      "Submitted Date": "2024-04-01",
+      "Profile Attachment": "",
+      "id": "1bcc"
+    },
+    {
+      "Full Name": "Sai Kumar",
+      "Phone No": "+919012345678",
+      "Email ID": "sai.kumar@example.com",
+      "Alternative Phone No": "+919876543210",
+      "Alternative Email ID": "sai.kumar.alt@example.com",
+      "Technologies": "Angular, JavaScript, Firebase",
+      "Sub Skills": "Single-page Application Development",
+      "Pan No": "ABCDE1234F",
+      "Aadhar No": "1234 5678 9012",
+      "Passport No": "P1234567",
+      "PF No": "PF12345",
+      "Current CTC": "₹6,00,000",
+      "Expected CTC": "₹7,00,000",
+      "No of Years Experience": "3 years",
+      "Relavant Experience": "2 years",
+      "Notice Period": "1 month",
+      "Date of Birth": "1993-03-05",
+      "Willing to Relocate": "Yes",
+      "Current Location": "Chennai",
+      "Working Location": "Chennai",
+      "Current Designation": "Frontend Developer",
+      "Current Organization": "TechExperts Inc.",
+      "Previous Organization": "Tech Solutions Ltd.",
+      "Highest Degree": "Bachelor's in Information Technology",
+      "Year of Passed Out": "2016",
+      "University/College": "University of TechExperts Inc.",
+      "University Percentage": "75%",
+      "Reason of Change": "Frontend Developer position",
+      "Submitted Date": "2024-04-12",
+      "Profile Attachment": "",
+      "id": "c691"
+    },
+    {
+      "Full Name": "Jyothi Reddy",
+      "Phone No": "+919876543210",
+      "Email ID": "jyothi.reddy@example.com",
+      "Alternative Phone No": "+919012345678",
+      "Alternative Email ID": "jyothi.reddy.alt@example.com",
+      "Technologies": "PHP, Laravel, MySQL",
+      "Sub Skills": "Server-side Scripting",
+      "Pan No": "ABCDE1234F",
+      "Aadhar No": "1234 5678 9012",
+      "Passport No": "P1234567",
+      "PF No": "PF12345",
+      "Current CTC": "₹7,00,000",
+      "Expected CTC": "₹8,00,000",
+      "No of Years Experience": "4 years",
+      "Relavant Experience": "3 years",
+      "Notice Period": "2 months",
+      "Date of Birth": "1992-12-30",
+      "Willing to Relocate": "Yes",
+      "Current Location": "Kolkata",
+      "Working Location": "Kolkata",
+      "Current Designation": "Backend Developer",
+      "Current Organization": "Web Solutions Pvt. Ltd.",
+      "Previous Organization": "Tech Innovators",
+      "Highest Degree": "Bachelor's in Computer Engineering",
+      "Year of Passed Out": "2014",
+      "University/College": "University of Web Solutions Pvt. Ltd.",
+      "University Percentage": "80%",
+      "Reason of Change": "Backend Developer position",
+      "Submitted Date": "2024-04-02",
+      "Profile Attachment": "",
+      "id": "9a3b"
+    },
+    {
+      "Full Name": "Venkat Sharma",
+      "Phone No": "+919012345678",
+      "Email ID": "venkat.sharma@example.com",
+      "Alternative Phone No": "+919876543210",
+      "Alternative Email ID": "venkat.sharma.alt@example.com",
+      "Technologies": "Swift, iOS, Core Data",
+      "Sub Skills": "Mobile App Development",
+      "Pan No": "ABCDE1234F",
+      "Aadhar No": "1234 5678 9012",
+      "Passport No": "P1234567",
+      "PF No": "PF12345",
+      "Current CTC": "₹8,50,000",
+      "Expected CTC": "₹9,50,000",
+      "No of Years Experience": "4 years",
+      "Relavant Experience": "3 years",
+      "Notice Period": "2 months",
+      "Date of Birth": "1990-08-20",
+      "Willing to Relocate": "Yes",
+      "Current Location": "Jaipur",
+      "Working Location": "Jaipur",
+      "Current Designation": "iOS Developer",
+      "Current Organization": "Mobile Innovations",
+      "Previous Organization": "Tech Solutions Pvt. Ltd.",
+      "Highest Degree": "Bachelor's in Computer Science",
+      "Year of Passed Out": "2012",
+      "University/College": "University of Mobile Innovations",
+      "University Percentage": "85%",
+      "Reason of Change": "iOS Developer position",
+      "Submitted Date": "2024-04-03",
+      "Profile Attachment": "",
+      "id": "680e"
+    },
+    {
+      "Full Name": "Aarti Patel",
+      "Phone No": "+919012345678",
+      "Email ID": "aarti.patel@example.com",
+      "Alternative Phone No": "+919876543210",
+      "Alternative Email ID": "aarti.patel.alt@example.com",
+      "Technologies": "Python, Django, Flask",
+      "Sub Skills": "Web Development",
+      "Pan No": "ABCDE1234F",
+      "Aadhar No": "1234 5678 9012",
+      "Passport No": "P1234567",
+      "PF No": "PF12345",
+      "Current CTC": "₹6,50,000",
+      "Expected CTC": "₹7,50,000",
+      "No of Years Experience": "3 years",
+      "Relavant Experience": "2 years",
+      "Notice Period": "1 month",
+      "Date of Birth": "1993-10-12",
+      "Willing to Relocate": "Yes",
+      "Current Location": "Mumbai",
+      "Working Location": "Mumbai",
+      "Current Designation": "Python Developer",
+      "Current Organization": "CodeCrafters Inc.",
+      "Previous Organization": "Tech Experts Pvt. Ltd.",
+      "Highest Degree": "Bachelor's in Information Technology",
+      "Year of Passed Out": "2017",
+      "University/College": "University of CodeCrafters Inc.",
+      "University Percentage": "80%",
+      "Reason of Change": "Python Developer position",
+      "Submitted Date": "2024-04-04",
+      "Profile Attachment": "",
+      "id": "68e9"
+    },
+    {
+      "Full Name": "Suresh Kumar",
+      "Phone No": "+919876543210",
+      "Email ID": "suresh.kumar@example.com",
+      "Alternative Phone No": "+919012345678",
+      "Alternative Email ID": "suresh.kumar.alt@example.com",
+      "Technologies": "C#, .NET, SQL Server",
+      "Sub Skills": "Desktop Application Development",
+      "Pan No": "ABCDE1234F",
+      "Aadhar No": "1234 5678 9012",
+      "Passport No": "P1234567",
+      "PF No": "PF12345",
+      "Current CTC": "₹9,00,000",
+      "Expected CTC": "₹10,00,000",
+      "No of Years Experience": "5 years",
+      "Relavant Experience": "4 years",
+      "Notice Period": "2 months",
+      "Date of Birth": "1988-03-25",
+      "Willing to Relocate": "Yes",
+      "Current Location": "Delhi",
+      "Working Location": "Delhi",
+      "Current Designation": "Software Engineer",
+      "Current Organization": "Tech Solutions Ltd.",
+      "Previous Organization": "ABC Corp",
+      "Highest Degree": "Bachelor's in Computer Engineering",
+      "Year of Passed Out": "2011",
+      "University/College": "University of Tech Solutions Ltd.",
+      "University Percentage": "75%",
+      "Reason of Change": "Software Engineer position",
+      "Submitted Date": "2024-04-05",
+      "Profile Attachment": "",
+      "id": "78b6"
+    },
+    {
+      "Full Name": "Priya Sharma",
+      "Phone No": "+919012345678",
+      "Email ID": "priya.sharma@example.com",
+      "Alternative Phone No": "+919876543210",
+      "Alternative Email ID": "priya.sharma.alt@example.com",
+      "Technologies": "HTML, CSS, JavaScript",
+      "Sub Skills": "Frontend Development",
+      "Pan No": "ABCDE1234F",
+      "Aadhar No": "1234 5678 9012",
+      "Passport No": "P1234567",
+      "PF No": "PF12345",
+      "Current CTC": "₹5,00,000",
+      "Expected CTC": "₹6,00,000",
+      "No of Years Experience": "2 years",
+      "Relavant Experience": "1 year",
+      "Notice Period": "1 month",
+      "Date of Birth": "1995-09-08",
+      "Willing to Relocate": "Yes",
+      "Current Location": "Pune",
+      "Working Location": "Pune",
+      "Current Designation": "Frontend Developer",
+      "Current Organization": "WebSolutions Inc.",
+      "Previous Organization": "TechHive Pvt. Ltd.",
+      "Highest Degree": "Bachelor's in Computer Science",
+      "Year of Passed Out": "2019",
+      "University/College": "University of WebSolutions Inc.",
+      "University Percentage": "85%",
+      "Reason of Change": "Frontend Developer position",
+      "Submitted Date": "2024-04-06",
+      "Profile Attachment": "",
+      "id": "4142"
+    },
+    {
+      "id": "5e2c",
+      "Full Name": "Sisira Anagani",
+      "Phone No": "08688237357",
+      "Email ID": "sisira.anagani19@gmail.com",
+      "Alternative Phone No": "08688237357",
+      "Alternative Email ID": "sisira.anagani19@gmail.com",
+      "Current Organization": "N/A",
+      "Previous Organization": "N/A",
+      "Technologies": "Angular,Asp.net",
+      "Sub Skills": "html , bootstrap , scss",
+      "Pan No": "NYPPS3811B",
+      "Aadhar No": "205900244622",
+      "Passport No": "54287876hhh2",
+      "PF No": "sw376787",
+      "Current CTC": "4.5",
+      "Expected CTC": "8",
+      "No of Years Experience": "3",
+      "Relavant Experience": "3",
+      "Notice Period": "6 months",
+      "Date of Birth": "19/11/1999",
+      "Willing to Relocate": "Yes",
+      "Current Location": "hyderabad",
+      "Working Location": "chennaai",
+      "Current Designation": "assosiate software developer",
+      "Highest Degree": "b-tech",
+      "Year of Passed Out": "2021",
+      "University/College": "mallareddy engineering college",
+      "University Percentage": "80%",
+      "Reason of Change": "location problem",
+      "Submitted Date": "2024-04-01",
+      "Profile Attachment": "C:\\fakepath\\doc2.resume.pdf"
+    }
+  ],
+  "positions": [
+    {
+      "Sno": 1,
+      "Client Name": "InnovateHub",
+      "Open Pos Id": "POS123",
+      "SPOC": "Niharika Reddy",
+      "Pos Start Date": "2024-03-22",
+      "Pos End Date": "2024-06-22",
+      "Technologies": "Angular, React",
+      "Skills": "JavaScript, HTML, CSS",
+      "No of Vacancies": 3,
+      "Status": "Open",
+      "Profiles": [
+        "Profile 1",
+        "Profile 2",
+        "Profile 3"
+      ],
+      "Action": "Edit",
+      "id": "7481"
+    },
+    {
+      "Sno": 2,
+      "Client Name": "TechNest",
+      "Open Pos Id": "POS456",
+      "SPOC": "Sai Kumar",
+      "Pos Start Date": "2024-04-01",
+      "Pos End Date": "2024-07-01",
+      "Technologies": "Node.js, MongoDB",
+      "Skills": "Node.js, Express.js, MongoDB",
+      "No of Vacancies": 2,
+      "Status": "Closed",
+      "Profiles": [
+        "Profile 4",
+        "Profile 5"
+      ],
+      "Action": "Delete",
+      "id": "4a75"
+    },
+    {
+      "Sno": 3,
+      "Client Name": "NextGen Innovations",
+      "Open Pos Id": "POS789",
+      "SPOC": "Deepthi Raju",
+      "Pos Start Date": "2024-05-10",
+      "Pos End Date": "2024-08-10",
+      "Technologies": "Python, Django",
+      "Skills": "Python, Django, SQL",
+      "No of Vacancies": 1,
+      "Status": "Open",
+      "Profiles": [
+        "Profile 6"
+      ],
+      "Action": "Edit",
+      "id": "8ab3"
+    },
+    {
+      "Sno": 4,
+      "Client Name": "SmartTech Solutions",
+      "Open Pos Id": "POS987",
+      "SPOC": "Naveen Reddy",
+      "Pos Start Date": "2024-06-15",
+      "Pos End Date": "2024-09-15",
+      "Technologies": "Java, Spring Boot",
+      "Skills": "Java, Spring Boot, Hibernate",
+      "No of Vacancies": 2,
+      "Status": "Open",
+      "Profiles": [
+        "Profile 7",
+        "Profile 8"
+      ],
+      "Action": "Edit",
+      "id": "6b1f"
+    },
+    {
+      "Sno": 5,
+      "Client Name": "InnoSoft Solutions",
+      "Open Pos Id": "POS654",
+      "SPOC": "Srinivas Rao",
+      "Pos Start Date": "2024-07-20",
+      "Pos End Date": "2024-10-20",
+      "Technologies": "React Native, Firebase",
+      "Skills": "React Native, Firebase, JavaScript",
+      "No of Vacancies": 1,
+      "Status": "Open",
+      "Profiles": [
+        "Profile 9"
+      ],
+      "Action": "Edit",
+      "id": "c25e"
+    },
+    {
+      "Sno": 6,
+      "Client Name": "DataMinds Technologies",
+      "Open Pos Id": "POS321",
+      "SPOC": "Lakshmi Priya",
+      "Pos Start Date": "2024-08-05",
+      "Pos End Date": "2024-11-05",
+      "Technologies": "Big Data, Hadoop",
+      "Skills": "Big Data, Hadoop, Spark",
+      "No of Vacancies": 2,
+      "Status": "Open",
+      "Profiles": [
+        "Profile 10",
+        "Profile 11"
+      ],
+      "Action": "Edit",
+      "id": "654b"
+    },
+    {
+      "Sno": 7,
+      "Client Name": "CloudWave Innovations",
+      "Open Pos Id": "POS852",
+      "SPOC": "Raghavendra Reddy",
+      "Pos Start Date": "2024-09-01",
+      "Pos End Date": "2024-12-01",
+      "Technologies": "AWS, Azure",
+      "Skills": "AWS, Azure, DevOps",
+      "No of Vacancies": 3,
+      "Status": "Open",
+      "Profiles": [
+        "Profile 12",
+        "Profile 13",
+        "Profile 14"
+      ],
+      "Action": "Edit",
+      "id": "821f"
+    },
+    {
+      "Sno": 8,
+      "Client Name": "TechVibes Solutions",
+      "Open Pos Id": "POS147",
+      "SPOC": "Sreeja Reddy",
+      "Pos Start Date": "2024-10-10",
+      "Pos End Date": "2025-01-10",
+      "Technologies": "AngularJS, Node.js",
+      "Skills": "AngularJS, Node.js, MongoDB",
+      "No of Vacancies": 2,
+      "Status": "Open",
+      "Profiles": [
+        "Profile 15",
+        "Profile 16"
+      ],
+      "Action": "Edit",
+      "id": "9dce"
+    },
+    {
+      "Sno": 9,
+      "Client Name": "BrightIdeas Technologies",
+      "Open Pos Id": "POS369",
+      "SPOC": "Ananya Gupta",
+      "Pos Start Date": "2024-11-15",
+      "Pos End Date": "2025-02-15",
+      "Technologies": "React, Redux",
+      "Skills": "React, Redux, JavaScript",
+      "No of Vacancies": 1,
+      "Status": "Open",
+      "Profiles": [
+        "Profile 17"
+      ],
+      "Action": "Edit",
+      "id": "e868"
+    },
+    {
+      "Sno": 10,
+      "Client Name": "TechTrends Innovations",
+      "Open Pos Id": "POS963",
+      "SPOC": "Venkatesh Naidu",
+      "Pos Start Date": "2024-12-01",
+      "Pos End Date": "2025-03-01",
+      "Technologies": "Python, Flask",
+      "Skills": "Python, Flask, MySQL",
+      "No of Vacancies": 2,
+      "Status": "Open",
+      "Profiles": [
+        "Profile 18",
+        "Profile 19"
+      ],
+      "Action": "Edit",
+      "id": "8c2a"
+    }
+  ],
+  "candidatesStatus": [
+    {
+      "Full Name": "Sisira Anagani",
+      "Phone No": "08688237357",
+      "Email ID": "sisira.anagani19@gmail.com",
+      "Alternative Phone No": "08688237357",
+      "Alternative Email ID": "sisira.anagani19@gmail.com",
+      "Technologies": "Angular, Asp.net",
+      "Sub Skills": "html, bootstrap, scss",
+      "Pan No": "NYPPS3811B",
+      "Aadhar No": "205900244622",
+      "Passport No": "54287876hhh2",
+      "PF No": "sw376787",
+      "Current CTC": "4.5",
+      "Expected CTC": "8",
+      "No of Years Experience": "3",
+      "Relavant Experience": "3",
+      "Notice Period": "6 months",
+      "Date of Birth": "19/11/1999",
+      "Willing to Relocate": "Yes",
+      "Current Location": "Hyderabad",
+      "Working Location": "Chennai",
+      "Current Designation": "Associate Software Developer",
+      "Current Organization": "N/A",
+      "Previous Organization": "N/A",
+      "Highest Degree": "B-Tech",
+      "Year of Passed Out": "2021",
+      "University/College": "Mallareddy Engineering College",
+      "University Percentage": "80%",
+      "Reason of Change": "Location problem",
+      "Submitted Date": "2024-04-01",
+      "Profile Attachment": "C:\\fakepath\\doc2.resume.pdf",
+      "Level of Interview": "Enter level of interview",
+      "Date": "dd-mm-yyyy",
+      "Day": "Monday",
+      "Time": "--:--",
+      "Mode of Interview": "In-Person",
+      "Status": {
+        "options": [
+          "Submitted",
+          "Profile Selected",
+          "Screen Rejected",
+          "Feedback Pending (FB Pending)",
+          "Level 1 (L1) Scheduled",
+          "Level 1 (L1) Shortlisted",
+          "Level 1 (L1) Rejected",
+          "Level 1 (L1) Feedback Pending",
+          "Level 1 (L1) No-Show",
+          "Level 2 (L2) Scheduled",
+          "Level 2 (L2) Shortlisted",
+          "Level 2 (L2) Rejected",
+          "Level 2 (L2) Feedback Pending",
+          "Level 2 (L2) No-Show",
+          "HR Scheduled",
+          "HR Shortlisted",
+          "Offered",
+          "Accepted",
+          "Declined",
+          "No-Show",
+          "Joined",
+          "On Progress"
+        ],
+        "selected": "Available"
+      },
+      "Recruiter Name": "",
+      "Client Name": "",
+      "Remarks": "",
+      "id": "7800"
+    },
+    {
+      "Full Name": "Ravi Kumar",
+      "Phone No": "09876543210",
+      "Email ID": "ravi.kumar@example.com",
+      "Alternative Phone No": "09876543211",
+      "Alternative Email ID": "ravi.kumar.alt@example.com",
+      "Technologies": "Java, Spring Boot",
+      "Sub Skills": "RESTful API, Hibernate",
+      "Pan No": "ABC1234P",
+      "Aadhar No": "123456789012",
+      "Passport No": "AB1234567",
+      "PF No": "PF12345",
+      "Current CTC": "6.5",
+      "Expected CTC": "10",
+      "No of Years Experience": "5",
+      "Relavant Experience": "4",
+      "Notice Period": "3 months",
+      "Date of Birth": "15/08/1990",
+      "Willing to Relocate": "Yes",
+      "Current Location": "Bangalore",
+      "Working Location": "Pune",
+      "Current Designation": "Senior Java Developer",
+      "Current Organization": "Tech Solutions Pvt. Ltd.",
+      "Previous Organization": "Tech World Inc.",
+      "Highest Degree": "Masters in Computer Science",
+      "Year of Passed Out": "2015",
+      "University/College": "XYZ University",
+      "University Percentage": "85%",
+      "Reason of Change": "Career growth",
+      "Submitted Date": "2024-04-02",
+      "Profile Attachment": "C:\\fakepath\\ravi_resume.pdf",
+      "Level of Interview": "Technical Round 1",
+      "Date": "dd-mm-yyyy",
+      "Day": "Tuesday",
+      "Time": "10:00 AM",
+      "Mode of Interview": "Virtual",
+      "Status": {
+        "options": [
+          "Submitted",
+          "Profile Selected",
+          "Screen Rejected",
+          "Feedback Pending (FB Pending)",
+          "Level 1 (L1) Scheduled",
+          "Level 1 (L1) Shortlisted",
+          "Level 1 (L1) Rejected",
+          "Level 1 (L1) Feedback Pending",
+          "Level 1 (L1) No-Show",
+          "Level 2 (L2) Scheduled",
+          "Level 2 (L2) Shortlisted",
+          "Level 2 (L2) Rejected",
+          "Level 2 (L2) Feedback Pending",
+          "Level 2 (L2) No-Show",
+          "HR Scheduled",
+          "HR Shortlisted",
+          "Offered",
+          "Accepted",
+          "Declined",
+          "No-Show",
+          "Joined",
+          "On Progress"
+        ],
+        "selected": "Available"
+      },
+      "Recruiter Name": "",
+      "Client Name": "",
+      "Remarks": "",
+      "id": "84a4"
+    },
+    {
+      "Full Name": "Priya Sharma",
+      "Phone No": "0123456789",
+      "Email ID": "priya.sharma@example.com",
+      "Alternative Phone No": "0123456789",
+      "Alternative Email ID": "priya.sharma.alt@example.com",
+      "Technologies": "React, Node.js",
+      "Sub Skills": "Redux, Express.js",
+      "Pan No": "XYZ9876Q",
+      "Aadhar No": "987654321012",
+      "Passport No": "XY9876543",
+      "PF No": "PF67890",
+      "Current CTC": "7",
+      "Expected CTC": "9",
+      "No of Years Experience": "4",
+      "Relavant Experience": "3",
+      "Notice Period": "2 months",
+      "Date of Birth": "25/04/1995",
+      "Willing to Relocate": "Yes",
+      "Current Location": "Mumbai",
+      "Working Location": "Bangalore",
+      "Current Designation": "Full Stack Developer",
+      "Current Organization": "Tech Solutions Pvt. Ltd.",
+      "Previous Organization": "Startech Inc.",
+      "Highest Degree": "Bachelor's in Computer Science",
+      "Year of Passed Out": "2017",
+      "University/College": "ABC University",
+      "University Percentage": "75%",
+      "Reason of Change": "Better opportunities",
+      "Submitted Date": "2024-04-03",
+      "Profile Attachment": "C:\\fakepath\\priya_resume.pdf",
+      "Level of Interview": "Technical Round 2",
+      "Date": "dd-mm-yyyy",
+      "Day": "Wednesday",
+      "Time": "11:30 AM",
+      "Mode of Interview": "In-Person",
+      "Status": {
+        "options": [
+          "Submitted",
+          "Profile Selected",
+          "Screen Rejected",
+          "Feedback Pending (FB Pending)",
+          "Level 1 (L1) Scheduled",
+          "Level 1 (L1) Shortlisted",
+          "Level 1 (L1) Rejected",
+          "Level 1 (L1) Feedback Pending",
+          "Level 1 (L1) No-Show",
+          "Level 2 (L2) Scheduled",
+          "Level 2 (L2) Shortlisted",
+          "Level 2 (L2) Rejected",
+          "Level 2 (L2) Feedback Pending",
+          "Level 2 (L2) No-Show",
+          "HR Scheduled",
+          "HR Shortlisted",
+          "Offered",
+          "Accepted",
+          "Declined",
+          "No-Show",
+          "Joined",
+          "On Progress"
+        ],
+        "selected": "Available"
+      },
+      "Recruiter Name": "",
+      "Client Name": "",
+      "Remarks": "",
+      "id": "ce4a"
+    },
+    {
+      "Full Name": "Amit Singh",
+      "Phone No": "9876543210",
+      "Email ID": "amit.singh@example.com",
+      "Alternative Phone No": "9876543211",
+      "Alternative Email ID": "amit.singh.alt@example.com",
+      "Technologies": "Python, Django",
+      "Sub Skills": "Flask, SQLAlchemy",
+      "Pan No": "PQR5678R",
+      "Aadhar No": "543210987654",
+      "Passport No": "PQ1234567",
+      "PF No": "PF54321",
+      "Current CTC": "8",
+      "Expected CTC": "12",
+      "No of Years Experience": "6",
+      "Relavant Experience": "5",
+      "Notice Period": "1 month",
+      "Date of Birth": "10/10/1990",
+      "Willing to Relocate": "No",
+      "Current Location": "Delhi",
+      "Working Location": "Delhi",
+      "Current Designation": "Python Developer",
+      "Current Organization": "Tech Innovations Pvt. Ltd.",
+      "Previous Organization": "InnoSoft Solutions",
+      "Highest Degree": "Master of Science in Information Technology",
+      "Year of Passed Out": "2014",
+      "University/College": "DEF University",
+      "University Percentage": "78%",
+      "Reason of Change": "Career advancement",
+      "Submitted Date": "2024-04-04",
+      "Profile Attachment": "C:\\fakepath\\amit_resume.pdf",
+      "Level of Interview": "HR Round",
+      "Date": "dd-mm-yyyy",
+      "Day": "Thursday",
+      "Time": "09:00 AM",
+      "Mode of Interview": "Virtual",
+      "Status": {
+        "options": [
+          "Submitted",
+          "Profile Selected",
+          "Screen Rejected",
+          "Feedback Pending (FB Pending)",
+          "Level 1 (L1) Scheduled",
+          "Level 1 (L1) Shortlisted",
+          "Level 1 (L1) Rejected",
+          "Level 1 (L1) Feedback Pending",
+          "Level 1 (L1) No-Show",
+          "Level 2 (L2) Scheduled",
+          "Level 2 (L2) Shortlisted",
+          "Level 2 (L2) Rejected",
+          "Level 2 (L2) Feedback Pending",
+          "Level 2 (L2) No-Show",
+          "HR Scheduled",
+          "HR Shortlisted",
+          "Offered",
+          "Accepted",
+          "Declined",
+          "No-Show",
+          "Joined",
+          "On Progress"
+        ],
+        "selected": "Available"
+      },
+      "Recruiter Name": "",
+      "Client Name": "",
+      "Remarks": "",
+      "id": "99e7"
+    },
+    {
+      "Full Name": "Deepika Raj",
+      "Phone No": "9876543210",
+      "Email ID": "deepika.raj@example.com",
+      "Alternative Phone No": "9876543211",
+      "Alternative Email ID": "deepika.raj.alt@example.com",
+      "Technologies": "C#, .NET",
+      "Sub Skills": "MVC, Entity Framework",
+      "Pan No": "XYZP5678Q",
+      "Aadhar No": "543210987654",
+      "Passport No": "PQ9876543",
+      "PF No": "PF67890",
+      "Current CTC": "9",
+      "Expected CTC": "13",
+      "No of Years Experience": "7",
+      "Relavant Experience": "6",
+      "Notice Period": "2 months",
+      "Date of Birth": "15/06/1988",
+      "Willing to Relocate": "No",
+      "Current Location": "Chennai",
+      "Working Location": "Chennai",
+      "Current Designation": "Senior .NET Developer",
+      "Current Organization": "Tech Solutions Pvt. Ltd.",
+      "Previous Organization": "InnoSoft Solutions",
+      "Highest Degree": "Bachelor of Computer Applications",
+      "Year of Passed Out": "2013",
+      "University/College": "GHI College",
+      "University Percentage": "82%",
+      "Reason of Change": "Career growth",
+      "Submitted Date": "2024-04-05",
+      "Profile Attachment": "C:\\fakepath\\deepika_resume.pdf",
+      "Level of Interview": "HR Round",
+      "Date": "dd-mm-yyyy",
+      "Day": "Friday",
+      "Time": "11:00 AM",
+      "Mode of Interview": "In-Person",
+      "Status": {
+        "options": [
+          "Submitted",
+          "Profile Selected",
+          "Screen Rejected",
+          "Feedback Pending (FB Pending)",
+          "Level 1 (L1) Scheduled",
+          "Level 1 (L1) Shortlisted",
+          "Level 1 (L1) Rejected",
+          "Level 1 (L1) Feedback Pending",
+          "Level 1 (L1) No-Show",
+          "Level 2 (L2) Scheduled",
+          "Level 2 (L2) Shortlisted",
+          "Level 2 (L2) Rejected",
+          "Level 2 (L2) Feedback Pending",
+          "Level 2 (L2) No-Show",
+          "HR Scheduled",
+          "HR Shortlisted",
+          "Offered",
+          "Accepted",
+          "Declined",
+          "No-Show",
+          "Joined",
+          "On Progress"
+        ],
+        "selected": "Available"
+      },
+      "Recruiter Name": "",
+      "Client Name": "",
+      "Remarks": "",
+      "id": "a8dc"
+    },
+    {
+      "Full Name": "Shreya Patel",
+      "Phone No": "0123456789",
+      "Email ID": "shreya.patel@example.com",
+      "Alternative Phone No": "0123456789",
+      "Alternative Email ID": "shreya.patel.alt@example.com",
+      "Technologies": "JavaScript, React",
+      "Sub Skills": "Node.js, Express.js",
+      "Pan No": "ABCP1234Q",
+      "Aadhar No": "987654321012",
+      "Passport No": "XY0987654",
+      "PF No": "PF09876",
+      "Current CTC": "6.5",
+      "Expected CTC": "9",
+      "No of Years Experience": "4",
+      "Relavant Experience": "3",
+      "Notice Period": "1 month",
+      "Date of Birth": "05/12/1993",
+      "Willing to Relocate": "Yes",
+      "Current Location": "Ahmedabad",
+      "Working Location": "Bangalore",
+      "Current Designation": "Frontend Developer",
+      "Current Organization": "Tech Innovations Pvt. Ltd.",
+      "Previous Organization": "XYZ Tech Solutions",
+      "Highest Degree": "Bachelor's in Information Technology",
+      "Year of Passed Out": "2016",
+      "University/College": "LMN University",
+      "University Percentage": "79%",
+      "Reason of Change": "Better opportunities",
+      "Submitted Date": "2024-04-06",
+      "Profile Attachment": "C:\\fakepath\\shreya_resume.pdf",
+      "Level of Interview": "Technical Round 1",
+      "Date": "dd-mm-yyyy",
+      "Day": "Saturday",
+      "Time": "09:30 AM",
+      "Mode of Interview": "Virtual",
+      "Status": {
+        "options": [
+          "Submitted",
+          "Profile Selected",
+          "Screen Rejected",
+          "Feedback Pending (FB Pending)",
+          "Level 1 (L1) Scheduled",
+          "Level 1 (L1) Shortlisted",
+          "Level 1 (L1) Rejected",
+          "Level 1 (L1) Feedback Pending",
+          "Level 1 (L1) No-Show",
+          "Level 2 (L2) Scheduled",
+          "Level 2 (L2) Shortlisted",
+          "Level 2 (L2) Rejected",
+          "Level 2 (L2) Feedback Pending",
+          "Level 2 (L2) No-Show",
+          "HR Scheduled",
+          "HR Shortlisted",
+          "Offered",
+          "Accepted",
+          "Declined",
+          "No-Show",
+          "Joined",
+          "On Progress"
+        ],
+        "selected": "Available"
+      },
+      "Recruiter Name": "",
+      "Client Name": "",
+      "Remarks": "",
+      "id": "81ca"
+    },
+    {
+      "id": "68e9",
+      "Full Name": "Aarti Patel",
+      "Phone No": "+919012345678",
+      "Email ID": "aarti.patel@example.com",
+      "Alternative Phone No": "+919876543210",
+      "Alternative Email ID": "aarti.patel.alt@example.com",
+      "Technologies": "Python, Django, Flask",
+      "Sub Skills": "Web Development",
+      "Pan No": "ABCDE1234F",
+      "Aadhar No": "1234 5678 9012",
+      "Passport No": "P1234567",
+      "PF No": "PF12345",
+      "Current CTC": "₹6,50,000",
+      "Expected CTC": "₹7,50,000",
+      "No of Years Experience": "3 years",
+      "Relavant Experience": "2 years",
+      "Notice Period": "1 month",
+      "Date of Birth": "1993-10-12",
+      "Willing to Relocate": "Yes",
+      "Current Location": "Mumbai",
+      "Working Location": "Mumbai",
+      "Current Designation": "Python Developer",
+      "Current Organization": "CodeCrafters Inc.",
+      "Previous Organization": "Tech Experts Pvt. Ltd.",
+      "Highest Degree": "Bachelor's in Information Technology",
+      "Year of Passed Out": "2017",
+      "University/College": "University of CodeCrafters Inc.",
+      "University Percentage": "80%",
+      "Reason of Change": "Python Developer position",
+      "Submitted Date": "2024-04-04",
+      "Profile Attachment": "C:\\fakepath\\exported_data (2).xlsx",
+      "University/College Percentage": "80%",
+      "Date": "2024-04-11",
+      "Day": "tuesday",
+      "Time": "13:22",
+      "Mode of Interview": "remote",
+      "Recruiter Name": "sruthi",
+      "Client Name": "otm labs",
+      "Remarks": "good communication",
+      "Action": "scheduled"
+    },
+    {
+      "id": "5165",
+      "Full Name": "John Doe",
+      "Phone No": "+919876543210",
+      "Email ID": "john.doe@example.com",
+      "Alternative Phone No": "+919012345678",
+      "Alternative Email ID": "john.doe.alt@example.com",
+      "Technologies": "Java, Spring Boot, Hibernate",
+      "Sub Skills": "Backend Development",
+      "Pan No": "ABCDE1234F",
+      "Aadhar No": "1234 5678 9012",
+      "Passport No": "P1234567",
+      "PF No": "PF12345",
+      "Current CTC": "₹10,00,000",
+      "Expected CTC": "₹12,00,000",
+      "No of Years Experience": "6 years",
+      "Relavant Experience": "5 years",
+      "Notice Period": "3 months",
+      "Date of Birth": "1985-05-15",
+      "Willing to Relocate": "Yes",
+      "Current Location": "Bangalore",
+      "Working Location": "Bangalore",
+      "Current Designation": "Senior Java Developer",
+      "Current Organization": "Innovate Tech",
+      "Previous Organization": "Mobile Innovations",
+      "Highest Degree": "Bachelor's in Computer Applications",
+      "Year of Passed Out": "2013",
+      "University/College": "University of Innovate Tech",
+      "University Percentage": "78%",
+      "Reason of Change": "Java Developer position",
+      "Submitted Date": "2024-04-01",
+      "Profile Attachment": "",
+      "Date": "2024-04-13",
+      "University/College Percentage": "80%",
+      "Day": "saturday",
+      "Time": "16:27",
+      "Mode of Interview": "remote",
+      "Recruiter Name": "sruthi",
+      "Client Name": "otm labs",
+      "Remarks": "good communication",
+      "Action": "scheduled"
+    },
+    {
+      "id": "1bcc",
+      "Full Name": "Padmaja Raju",
+      "Phone No": "+919876543210",
+      "Email ID": "padmaja.raju@example.com",
+      "Alternative Phone No": "+919012345678",
+      "Alternative Email ID": "padmaja.raju.alt@example.com",
+      "Technologies": "React, Node.js, MongoDB",
+      "Sub Skills": "Full-stack Development",
+      "Pan No": "ABCDE1234F",
+      "Aadhar No": "1234 5678 9012",
+      "Passport No": "P1234567",
+      "PF No": "PF12345",
+      "Current CTC": "₹7,50,000",
+      "Expected CTC": "₹8,50,000",
+      "No of Years Experience": "4 years",
+      "Relavant Experience": "3 years",
+      "Notice Period": "1 month",
+      "Date of Birth": "1991-07-18",
+      "Willing to Relocate": "Yes",
+      "Current Location": "Hyderabad",
+      "Working Location": "Hyderabad",
+      "Current Designation": "Full-stack Developer",
+      "Current Organization": "Tech Solutions Ltd.",
+      "Previous Organization": "ABC Corp",
+      "Highest Degree": "Bachelor's in Computer Science",
+      "Year of Passed Out": "2015",
+      "University/College": "University of Tech Solutions Ltd.",
+      "University Percentage": "82%",
+      "Reason of Change": "Full-stack Developer position",
+      "Submitted Date": "2024-04-01",
+      "Profile Attachment": "",
+      "University/College Percentage": "80%",
+      "Date": "2024-04-03",
+      "Day": "tuesday",
+      "Time": "13:40",
+      "Mode of Interview": "remote",
+      "Recruiter Name": "sruthi",
+      "Client Name": "otm labs",
+      "Remarks": "good communication",
+      "Action": "scheduled"
+    },
+    {
+      "id": "78b6",
+      "Full Name": "Suresh Kumar",
+      "Phone No": "+919876543210",
+      "Email ID": "suresh.kumar@example.com",
+      "Alternative Phone No": "+919012345678",
+      "Alternative Email ID": "suresh.kumar.alt@example.com",
+      "Technologies": "C#, .NET, SQL Server",
+      "Sub Skills": "Desktop Application Development",
+      "Pan No": "ABCDE1234F",
+      "Aadhar No": "1234 5678 9012",
+      "Passport No": "P1234567",
+      "PF No": "PF12345",
+      "Current CTC": "₹9,00,000",
+      "Expected CTC": "₹10,00,000",
+      "No of Years Experience": "5 years",
+      "Relavant Experience": "4 years",
+      "Notice Period": "2 months",
+      "Date of Birth": "1988-03-25",
+      "Willing to Relocate": "Yes",
+      "Current Location": "Delhi",
+      "Working Location": "Delhi",
+      "Current Designation": "Software Engineer",
+      "Current Organization": "Tech Solutions Ltd.",
+      "Previous Organization": "ABC Corp",
+      "Highest Degree": "Bachelor's in Computer Engineering",
+      "Year of Passed Out": "2011",
+      "University/College": "University of Tech Solutions Ltd.",
+      "University Percentage": "75%",
+      "Reason of Change": "Software Engineer position",
+      "Submitted Date": "2024-04-05",
+      "Profile Attachment": "C:\\fakepath\\exported_data (2).xlsx",
+      "University/College Percentage": "80%",
+      "Day": "tuesday",
+      "Date": "2024-04-11",
+      "Recruiter Name": "sruthi",
+      "Time": "16:33",
+      "Remarks": "good communication",
+      "Client Name": "otm labs",
+      "Mode of Interview": "remote",
+      "Action": "scheduled"
     }
   ]
-
 }

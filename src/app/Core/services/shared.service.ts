@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +12,8 @@ export class SharedService {
   onHover: Subject<boolean> = new Subject<boolean>();
 
   onHoverIndustries : Subject<boolean> = new Subject<boolean>();
+
+  private formDataSubject = new Subject<any>();
 
 //   showIndustry(){
 //     this.onHoverIndustries.next(true);
@@ -35,6 +38,17 @@ export class SharedService {
 // onHoverHide() {
 //   this.onHover.next(false);
 // }
+
+constructor() { }
+
+
+passFormData(formData: any) {
+  this.formDataSubject.next(formData);
+}
+
+getFormData() {
+  return this.formDataSubject.asObservable();
+}
 
 
 setToTrue(variableName: string) {

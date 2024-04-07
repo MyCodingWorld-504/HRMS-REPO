@@ -1,277 +1,191 @@
-<div class="group-section mt-2 mb-3">
-  <h2>Group</h2>
-  <div class="d-flex justify-content-between">
-    <div>
-      <h4>Dashboard / Group</h4>
-    </div>
-  </div>
-</div>
-
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-6 mb-3 mt-2">
-      <div class="card mt-2">
-        <span></span>
-        <form [formGroup]="groupFormInternal" (ngSubmit)="submitInternalForm()">
-          <div class="d-flex justify-content-end mt-3">
-            <div class="refresh">
-              <div class="icon-tooltip" data-title="Refresh">
-                <fa-icon
-                  [icon]="faArrowsRotateIcon"
-                  (click)="onRefreshInternal()"
-                ></fa-icon>
-              </div>
-            </div>
-            <input
-              type="text"
-              formControlName="searchTermInternal"
-              placeholder="Search..."
-              (input)="searchInternal()"
-            />
-          </div>
-          <table class="table table-bordered mt-3">
-            <thead class="custom-table-header">
-              <tr>
-                <th>Sno</th>
-                <th>Group Name</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr
-                *ngFor="
-                  let entry of internalData
-                    | paginate
-                      : {
-                          id: 'internal-pagination',
-                          itemsPerPage: itemsPerPageInternalPage,
-                          currentPage: internalPage
-                        }
-                "
-              >
-                <td>{{ entry.sno }}</td>
-                <td
-                  class="tooltip-container"
-                  (mouseenter)="showTooltip($event)"
-                  (mouseleave)="hideTooltip($event)"
-                >
-                  {{ entry.groupName }}
-                  <div class="tooltip">{{ entry.groupName }}</div>
-                </td>
-                <td><fa-icon [icon]="faEyeIcon" title="View"></fa-icon></td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="d-flex justify-content-between mt-3">
-            <div class="items-per-page">
-              <select
-                class="form-select"
-                [formGroup]="groupFormInternal"
-                name="itemsPerPageInternal"
-                (change)="onItemsPerPageChangeInternal($event)"
-              >
-                <option
-                  *ngFor="let option of itemsPerPageOptionsInternalPage"
-                  [value]="option"
-                >
-                  {{ option }}
-                </option>
-              </select>
-            </div>
-            <div class="select-show">
-              Showing Results {{ getStartIndexInternal() }} -
-              {{ getEndIndexInternal() }} of {{ internalData.length }} entries.
-            </div>
-            <pagination-controls
-              (pageChange)="pageChangedInternal($event)"
-              [id]="'internal-pagination'"
-            ></pagination-controls>
-          </div>
-        </form>
-      </div>
-    </div>
-
-    <div class="col-md-6 mb-3 mt-2">
-      <div class="card card-external mt-2">
-        <span></span>
-        <form [formGroup]="groupFormExternal" (ngSubmit)="submitInternalForm()">
-          <div class="d-flex justify-content-end mt-3">
-            <div class="refresh">
-              <div class="icon-tooltip" data-title="Refresh">
-                <fa-icon
-                  [icon]="faArrowsRotateIcon"
-                  (click)="onRefreshExternal()"
-                ></fa-icon>
-              </div>
-            </div>
-            <input
-              type="text"
-              formControlName="searchTermExternal"
-              placeholder="Search..."
-              (input)="searchExternal()"
-            />
-          </div>
-          <table class="table table-bordered mt-3">
-            <thead class="custom-table-header">
-              <tr>
-                <th>Sno</th>
-                <th>Group Name</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr
-                *ngFor="
-                  let entry of externalData
-                    | paginate
-                      : {
-                          id: 'external-pagination',
-                          itemsPerPage: itemsPerPageExternalPage,
-                          currentPage: externalPage
-                        }
-                "
-              >
-                <td>
-                  {{ entry.sno }}
-                </td>
-                <td
-                  class="tooltip-container"
-                  (mouseenter)="showTooltip($event)"
-                  (mouseleave)="hideTooltip($event)"
-                >
-                  {{ entry.groupName }}
-                  <div class="tooltip">{{ entry.groupName }}</div>
-                </td>
-                <td><fa-icon [icon]="faEyeIcon" title="View"></fa-icon></td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="d-flex justify-content-between mt-3">
-            <div class="items-per-page">
-              <select
-                class="form-select"
-                [formGroup]="groupFormExternal"
-                name="itemsPerPageExternal"
-                (change)="onItemsPerPageChangeExternal($event)"
-              >
-                <option
-                  *ngFor="let option of itemsPerPageOptionsExternalPage"
-                  [value]="option"
-                >
-                  {{ option }}
-                </option>
-              </select>
-            </div>
-            <div class="select-show">
-              Showing Results {{ getStartIndexExternal() }} -
-              {{ getEndIndexExternal() }} of {{ externalData.length }} entries.
-            </div>
-            <pagination-controls
-              (pageChange)="pageChangedExternal($event)"
-              [id]="'external-pagination'"
-            ></pagination-controls>
-          </div>
-        </form>
-      </div>
+  <h5>Groups</h5>
+  <div class="d-flex justify-content-between">
+    <div>
+      <a class="ribbon" (click)="OnRouteDashboard()">Dashboard</a
+      ><a class="ribbon-1">Groups</a>
     </div>
   </div>
 </div>
 
-<!--
-<div class="container table-container">
-  <h2>Group</h2>
-  <div class="d-flex justify-content-between">
-    <div>
-      <h4>Dashboard / Group</h4>
-    </div>
-    <div>
-      <button class="btn btn-primary">
-        <i class="fa-solid fa-plus"></i> Add Group
-      </button>
-    </div>
-  </div>
-  <div class="card mt-2">
-    <form [formGroup]="groupForm" (ngSubmit)="submitForm()">
-      <div class="d-flex justify-content-end mt-3">
-        <div class="refresh">
-          <div class="icon-tooltip" data-title="Refresh">
-            <fa-icon [icon]="faArrowsRotateIcon" (click)="onRefresh()"></fa-icon>
+<div class="row">
+  <div class="col-md-6 mb-3 mt-2">
+    <div class="card mt-2">
+      <span></span>
+      <form [formGroup]="groupFormInternal" (ngSubmit)="submitInternalForm()">
+        <div class="d-flex justify-content-end mt-3">
+          <div class="refresh">
+            <div class="icon-tooltip" data-title="Refresh">
+              <fa-icon class="icon-refresh"
+                [icon]="faArrowsRotateIcon"
+                (click)="onRefreshInternal()"
+              ></fa-icon>
+            </div>
           </div>
+          <input
+          class="refresh"
+            type="text"
+            formControlName="searchTermInternal"
+            placeholder="Search..."
+            (input)="searchInternal()"
+          />
         </div>
-        <input
-          type="text"
-          formControlName="searchTerm"
-          placeholder="Search..."
-          (input)="search()"
-        />
-      </div>
-      <table class="tables mt-3">
-        <thead>
-          <tr>
-            <th>Sno</th>
-            <th>Group Name</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr
-            *ngFor="
-              let group of filteredGroups
-              | paginate : { itemsPerPage: itemsPerPage, currentPage: page }"
-          >
-            <td
-              class="tooltip-container"
-              (mouseenter)="showTooltip($event)"
-              (mouseleave)="hideTooltip($event)"
+        <table class="table table-bordered mt-3">
+          <thead class="custom-table-header">
+            <tr>
+              <th>Sno</th>
+              <th>Group Name</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="
+                let entry of internalData
+                  | paginate
+                    : {
+                        id: 'internal-pagination',
+                        itemsPerPage: itemsPerPageInternalPage,
+                        currentPage: internalPage
+                      }
+              "
             >
-              {{ group.id }}
-              <div class="tooltip">{{ group.id }}</div>
-            </td>
-            <td
-              class="tooltip-container"
-              (mouseenter)="showTooltip($event)"
-              (mouseleave)="hideTooltip($event)"
+              <td>{{ entry.sno }}</td>
+              <td
+                class="tooltip-container"
+                (mouseenter)="showTooltip($event)"
+                (mouseleave)="hideTooltip($event)"
+              >
+                {{ entry.groupName }}
+                <div class="tooltip">{{ entry.groupName }}</div>
+              </td>
+              <td class="d-flex justify-content-center">
+                <fa-icon
+                  [icon]="faEyeIcon"
+                  title="View"
+                  class="icon-fa"
+                ></fa-icon>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="d-flex justify-content-between mt-3">
+          <div class="items-per-page">
+            <select
+              class="form-select"
+              [formGroup]="groupFormInternal"
+              name="itemsPerPageInternal"
+              (change)="onItemsPerPageChangeInternal($event)"
             >
-              {{ group.name }}
-              <div class="tooltip">{{ group.name }}</div>
-            </td>
-            <td class="tooltip-container-icon">
-              <a (mouseenter)="showTooltipIcon('View', $event)" (mouseleave)="hideTooltipIcon()">
-                <fa-icon [icon]="faEyeIcon"></fa-icon>
-                <div class="tooltip-icon" *ngIf="isTooltipVisible && currentTooltip === 'View'">View</div>
-              </a>
-              <a (mouseenter)="showTooltipIcon('Edit', $event)" (mouseleave)="hideTooltipIcon()">
-                <fa-icon [icon]="faPenIcon"></fa-icon>
-                <div class="tooltip-icon" *ngIf="isTooltipVisible && currentTooltip === 'Edit'">Edit</div>
-              </a>
-              <a (mouseenter)="showTooltipIcon('Delete', $event)" (mouseleave)="hideTooltipIcon()">
-                <fa-icon [icon]="faTrashIcon"></fa-icon>
-                <div class="tooltip-icon" *ngIf="isTooltipVisible && currentTooltip === 'Delete'">Delete</div>
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="d-flex justify-content-between mt-3">
-        <div class="items-per-page">
-          <select class="form-select" [formGroup]="groupForm" name="itemsPerPage" (change)="onItemsPerPageChange($event)">
-            <option *ngFor="let option of itemsPerPageOptions" [value]="option">
-              {{ option }}
-            </option>
-          </select>
-
-        </div>
-        <div class="select-show">
-
-            Showing Results {{ getStartIndex() }} - {{ getEndIndex() }} of {{ filteredGroups.length }} entries.
-
-        </div>
-        <div class="pagination-container">
+              <option
+                *ngFor="let option of itemsPerPageOptionsInternalPage"
+                [value]="option"
+              >
+                {{ option }}
+              </option>
+            </select>
+          </div>
+          <div class="select-show">
+            Showing Results {{ getStartIndexInternal() }} -
+            {{ getEndIndexInternal() }} of {{ internalData.length }} entries.
+          </div>
           <pagination-controls
-            (pageChange)="pageChanged($event)"
+            (pageChange)="pageChangedInternal($event)"
+            [id]="'internal-pagination'"
           ></pagination-controls>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
-</div> -->
+
+  <div class="col-md-6 mb-3 mt-2">
+    <div class="card card-external mt-2">
+      <span></span>
+      <form [formGroup]="groupFormExternal" (ngSubmit)="submitInternalForm()">
+        <div class="d-flex justify-content-end mt-3">
+          <div class="refresh">
+            <div class="icon-tooltip" data-title="Refresh">
+              <fa-icon class="icon-refresh"
+                [icon]="faArrowsRotateIcon"
+                (click)="onRefreshExternal()"
+              ></fa-icon>
+            </div>
+          </div>
+          <input
+          class="refresh"
+            type="text"
+            formControlName="searchTermExternal"
+            placeholder="Search..."
+            (input)="searchExternal()"
+          />
+        </div>
+        <table class="table table-bordered mt-3">
+          <thead class="custom-table-header">
+            <tr>
+              <th>Sno</th>
+              <th>Group Name</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="
+                let entry of externalData
+                  | paginate
+                    : {
+                        id: 'external-pagination',
+                        itemsPerPage: itemsPerPageExternalPage,
+                        currentPage: externalPage
+                      }
+              "
+            >
+              <td>
+                {{ entry.sno }}
+              </td>
+              <td
+                class="tooltip-container"
+                (mouseenter)="showTooltip($event)"
+                (mouseleave)="hideTooltip($event)"
+              >
+                {{ entry.groupName }}
+                <div class="tooltip">{{ entry.groupName }}</div>
+              </td>
+              <td class="d-flex justify-content-center">
+                <fa-icon
+                  [icon]="faEyeIcon"
+                  title="View"
+                  class="icon-fa"
+                ></fa-icon>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="d-flex justify-content-between mt-3">
+          <div class="items-per-page">
+            <select
+              class="form-select"
+              [formGroup]="groupFormExternal"
+              name="itemsPerPageExternal"
+              (change)="onItemsPerPageChangeExternal($event)"
+            >
+              <option
+                *ngFor="let option of itemsPerPageOptionsExternalPage"
+                [value]="option"
+              >
+                {{ option }}
+              </option>
+            </select>
+          </div>
+          <div class="select-show">
+            Showing Results {{ getStartIndexExternal() }} -
+            {{ getEndIndexExternal() }} of {{ externalData.length }} entries.
+          </div>
+          <pagination-controls
+            (pageChange)="pageChangedExternal($event)"
+            [id]="'external-pagination'"
+          ></pagination-controls>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

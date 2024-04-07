@@ -9,6 +9,7 @@ import {
   faPen,
 } from '@fortawesome/free-solid-svg-icons';
 import { GroupService } from 'src/app/Core/services/group.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-groups',
@@ -46,7 +47,8 @@ throw new Error('Method not implemented.');
 
   constructor(
     private groupService: GroupService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router,
   ) {
     this.groupFormInternal = this.formBuilder.group({
       searchTermInternal: [''],
@@ -244,4 +246,11 @@ throw new Error('Method not implemented.');
   submitForm() {
     throw new Error('Method not implemented.');
   }
+
+
+  OnRouteDashboard(){
+    this.router.navigate(['dashboard', 'administration', 'admin-dashboard']);
+  }
+
+
 }

@@ -1,11 +1,12 @@
 
 .container-fluid {
-  margin: 0 auto;
-  border: 1px solid black;
-  padding: 20px;
-  background: rgb(255, 255, 255);
-  border-radius: 10px;
-  z-index: 1000;
+  font-size: smaller;
+
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+  }
   h2 {
     text-align: center;
   }
@@ -23,28 +24,181 @@
 
       input {
         width: 100%;
-        padding: 8px;
+        padding: 4px;
+        font-size: 13px;
         box-sizing: border-box;
+        border-radius: 3px;
+        border: 1px solid #343030;
       }
     }
 
-    .button-container {
-      display: flex;
-      justify-content: space-between;
 
-      button {
-        width: 48%;
+
+
+      .button {
+        width: 100%;
         color: white;
-        background-color: #086594 ;
+        text-decoration: none;
+        background-color:#EA738D;
+        border: 1px solid darken(#EA738D, 10%);
+        padding: 5px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+
+
+        fa-icon {
+          margin-right: 5px;
+        }
+
+        &:hover {
+          background-color: darken(#EA738D, 10%);
+        }
       }
-    }
+      .button-cancel {
+        width: 100%;
+        color: #EA738D;
+        text-decoration: none;
+        background-color:#f9f4f5;
+        border: 1px solid darken(#EA738D, 10%);
+        padding: 5px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+
+        fa-icon {
+          margin-right: 5px;
+        }
+
+        &:hover {
+          background-color: darken(#EA738D, 10%);
+          color: #fff;
+        }
+      }
+
   }
 }
 
-
+.anim{
+  opacity: 1;
+  transform: translateY(15%);
+  animation: moveup 0.4s linear forwards;
+}
+@keyframes moveup{
+  100%{
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
 
 @media(min-width:3750px){
   .container-fluid{
     max-width: 1500px !important;
   }
  }
+
+ .ribbon-1 {
+  position: relative;
+  padding: 6px 30px;
+  margin-left: 23px;
+  background-color: #7492c2;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  &:hover {
+         background: darken(#EA738D, 10%);
+       }
+}
+
+.ribbon-1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -20px;
+  border-width: 16px 0 16px 20px;
+  border-color: transparent transparent transparent #7492c2;
+  border-style: solid;
+
+}
+.ribbon-1:hover::before {
+  border-color:transparent transparent transparent darken(#EA738D, 10%);
+}
+.ribbon-1::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 109px;
+  border-width: 16px 0 16px 20px;
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
+}
+.ribbon-2 {
+  position: relative;
+  padding: 6px 30px;
+  margin-left: 23px;
+  background-color: #7492c2;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  &:hover {
+         background: darken(#EA738D, 10%);
+       }
+}
+
+.ribbon-2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -20px;
+  border-width: 16px 0 16px 20px;
+  border-color: transparent transparent transparent #7492c2;
+  border-style: solid;
+
+}
+.ribbon-2:hover::before {
+  border-color:transparent transparent transparent darken(#EA738D, 10%);
+}
+.ribbon-2::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 198px;
+  border-width: 16px 0 16px 20px;
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
+}
+
+.ribbon {
+  position: relative;
+  padding: 6px 30px;
+  background-color: #7492c2;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  &:hover {
+         background: darken(#EA738D, 10%);
+       }
+}
+
+.ribbon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -20px;
+  border-width: 16px 0 16px 20px;
+  border-color: transparent transparent transparent #7492c2;
+  border-style: solid;
+
+}
+.ribbon:hover::before {
+  border-color:transparent transparent transparent darken(#EA738D, 10%);
+}
+.ribbon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 104px;
+  border-width: 16px 0 16px 20px;
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
+}

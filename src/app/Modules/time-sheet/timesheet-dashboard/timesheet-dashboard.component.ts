@@ -26,4 +26,8 @@ export class TimesheetDashboardComponent {
     this.router.navigate(['dashboard', 'timesheet','leaveManagement']);
   }
 
+  OnRouteDashboard(){
+    this.router.navigate(['dashboard', 'timesheet', 'timesheetDashboard']);
+  }
+
 }

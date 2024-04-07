@@ -1,6 +1,5 @@
 .container-fluid {
-  margin: 0 auto;
-  justify-content: flex-start;
+  font-size: smaller;
 }
 
 .half-card {
@@ -11,9 +10,9 @@
 }
 
 .card-title {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
-  color: #086594;
+  color: #7492c2;
   border:none;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -22,7 +21,7 @@
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
-  color: #086594;
+  color: #7492c2;
 }
 
 .day-name {
@@ -46,6 +45,7 @@
   display: grid;
   justify-content: center;
   align-items: center;
+  font-size: 12px;
   .edit-icon {
     position: absolute;
     top: 5px;
@@ -149,37 +149,37 @@
   margin-bottom: 15px;
 }
 
-.oncanvas-bottom button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: #086594;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+// .oncanvas-bottom button {
+//   display: block;
+//   width: 100%;
+//   padding: 10px;
+//   background-color: #EA738D;
+//   color: #ffffff;
+//   border: none;
+//   border-radius: 5px;
+//   cursor: pointer;
+//   transition: background-color 0.3s ease;
+// }
 
-.oncanvas-bottom button:hover {
-  background-color: #086594;
-}
+// .oncanvas-bottom button:hover {
+//   background-color: darken($color: #EA738D, $amount: 10%);
+// }
 
 
 .btn-custom {
   border: none;
-  padding: 10px 20px;
+  padding: 6px 13px;
   cursor: pointer;
   border-radius: 5px;
 }
 
 .btn-previous-month {
-  background-color:#086594;
+  background-color:#EA738D;
   color: #fff;
 }
 
 .btn-next-month {
-  background-color:#086594;
+  background-color:#EA738D;
   color: #fff;
 }
 
@@ -218,16 +218,38 @@
 }
 
 .button-btn{
+  display: block;
+  width: 100%;
   margin-bottom: 20px;
   margin-top:20px;
-  background-color:#086594;
+  background-color:#EA738D;
   color: #fff;
-  border: none;
+  border: 1px solid #EA738D;
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
+  &:hover{
+    background-color: darken($color: #EA738D, $amount: 10%);
+    color:#fff ;
+  }
 }
 
+.button-cancel{
+  display: block;
+  width: 100%;
+  border: 1px solid #EA738D;
+  margin-bottom: 20px;
+  margin-top:20px;
+  background-color:#f9f4f5;
+  color: #EA738D;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  &:hover{
+    background-color:#EA738D;
+    color:#fff ;
+  }
+}
 .overlay {
   position: fixed;
   top: 0;
@@ -251,5 +273,94 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px #3a3b3b;
   z-index: 1001;
+}
+
+.edit-shift-form {
+  width: 500px;
+  height: 460px;
+  position: fixed;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  left: 50%;
+  font-size: smaller;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px #3a3b3b;
+  z-index: 1001;
+}
+
+
+.ribbon-1 {
+  position: relative;
+  padding: 6px 30px;
+  margin-left: 23px;
+  margin-bottom: 20px;
+  background-color: #7492c2;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  &:hover {
+         background: darken(#EA738D, 10%);
+       }
+}
+
+.ribbon-1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -20px;
+  border-width: 16px 0 20px 20px;
+  border-color: transparent transparent transparent #7492c2;
+  border-style: solid;
+
+}
+.ribbon-1:hover::before {
+  border-color:transparent transparent transparent darken(#EA738D, 10%);
+}
+.ribbon-1::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 191px;
+  border-width: 16px 0 20px 20px;
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
+}
+
+.ribbon {
+  position: relative;
+  padding: 6px 30px;
+  background-color: #7492c2;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  &:hover {
+         background: darken(#EA738D, 10%);
+       }
+}
+
+.ribbon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -20px;
+  border-width: 16px 0 20px 20px;
+  border-color: transparent transparent transparent #7492c2;
+  border-style: solid;
+
+}
+.ribbon:hover::before {
+  border-color:transparent transparent transparent darken(#EA738D, 10%);
+}
+.ribbon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 118px;
+  border-width: 16px 0 20px 20px;
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
 }
 

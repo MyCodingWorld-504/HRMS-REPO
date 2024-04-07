@@ -8,6 +8,7 @@ import {
 import { GroupService } from 'src/app/Core/services/group.service';
 import { TimesheetService } from 'src/app/Core/services/timesheet.service';
 import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-scheduler-dashboard',
@@ -42,7 +43,8 @@ export class SchedulerDashboardComponent implements OnInit {
   constructor(
     private shiftsService: TimesheetService,
     private gourpService: GroupService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private router : Router
   ) {}
 
   ngOnInit(): void {
@@ -281,5 +283,9 @@ export class SchedulerDashboardComponent implements OnInit {
       (holiday) => holiday.date.toString().split('T')[0] === dateString
     );
     return holiday ? holiday.holidayName : '';
+  }
+
+  OnRouteDashboard(){
+    this.router.navigate(['dashboard', 'timesheet', 'timesheetDashboard']);
   }
 }

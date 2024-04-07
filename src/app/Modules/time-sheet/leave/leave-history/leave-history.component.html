@@ -1,11 +1,31 @@
 <div class="container-fluid">
     <h2>Leave History</h2>
-    <table class="table table-bordered mt-3">
+
+    <div>
+      <a class="ribbon" (click)="OnRouteDashboard()">Dashboard</a><a class="ribbon-1"  (click)=" onRouteLeaveDashboard()">Leave Management</a><a class="ribbon-2">Leaves History</a>
+    </div>
+    
+
+    <div class="d-flex justify-content-between">
+      <div class="card">
+        <form [formGroup]="candidateForm" (ngSubmit)="submitForm()">
+        <div class="d-flex justify-content-end">
+          <div class="refresh">
+            <div class="icon-tooltip" data-title="Refresh">
+              <fa-icon class="icon-fa"
+                [icon]="faArrowsRotateIcon"
+                (click)="onRefresh()"
+              ></fa-icon>
+            </div>
+          </div>
+          <input type="text" formControlName="searchTerm" placeholder="Search..." (input)="search()">
+        </div>
+      <table class="table table-bordered mt-3">
       <thead class="custom-table-header">
         <tr>
           <th>Sno</th>
           <th>Leave Type</th>
-          <th>Start Date</th>
+          <th>Start Date</th> 
           <th>End Date</th>
           <th>Reason For Leave</th>
           <th>Admin Action</th>
@@ -24,6 +44,24 @@
         </tr>
       </tbody>
     </table>
+    <div class="d-flex justify-content-between mt-3">
+    <div class="items-per-page">
+      <select
+        class="form-select"
+        [formGroup]="candidateForm"
+        name="itemsPerPage"
+        (change)="onItemsPerPageChange($event)"
+      >
+        <option
+          *ngFor="let option of itemsPerPageOptions"
+          [value]="option"
+        >
+          {{ option }}
+        </option>
+      </select>
+    </div>
     <pagination-controls (pageChange)=" pageChangedDepartments($event)" class="pagination"></pagination-controls>
   </div>
-  
+  </form>
+  </div>
+  </div>

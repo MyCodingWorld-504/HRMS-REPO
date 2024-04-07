@@ -1,7 +1,7 @@
 <div class="side-navbar" [ngClass]="{ collapsed: isExpanded }">
   <div class="logo">
     <img
-      [src]="!isExpanded ? 'assets/Mainlogo.jpg' : 'assets/logo.png'"
+      [src]="!isExpanded ? 'assets/Mainlogo.jpg' : 'assets/logo-new.jpg'"
       alt="Logo"
       [ngClass]="{
         'collapsed-image': isExpanded,
@@ -12,11 +12,7 @@
   <ul>
     <li *ngFor="let item of menuItems">
       <a (click)="handleMenuItemClick(item)">
-        <fa-icon *ngIf="item.label === 'Dashboard'" [icon]="['fas', 'gauge']"></fa-icon>
-        <fa-icon *ngIf="item.label === 'Administration'" [icon]="['fas', 'user-tie']"></fa-icon>
-        <fa-icon *ngIf="item.label === 'Payrol'" [icon]="['fas', 'money-bill']"></fa-icon>
-        <fa-icon *ngIf="item.label === 'Attendance Sheet'" [icon]="['fas', 'clock']"></fa-icon>
-        <fa-icon *ngIf="item.label === 'Recruitment'" [icon]="['fas', 'search']"></fa-icon>
+        <fa-icon class="icon-fa" [icon]="item.icon"></fa-icon>
         <span class="icon-label" *ngIf="!isExpanded" routerLinkActive="active">
           {{ item.label }}
         </span>

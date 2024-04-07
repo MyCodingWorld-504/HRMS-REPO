@@ -1,6 +1,13 @@
-
-<div class="container-fluid mt-5">
-    <h2>Add Employee Resignation</h2>
+<div class="container-fluid anim no-scrollbar">
+  <h5>Add Employee Resignation</h5>
+  <div class="d-flex justify-content-between">
+    <div class="mb-2">
+      <a class="ribbon" (click)="OnRouteDashboard()">Dashboard</a
+      ><a class="ribbon-1" (click)="OnRouteEmployee()">Resignation</a>
+      <a class="ribbon-2">Add Employee Resignation</a>
+    </div>
+  </div>
+  <div class="card mt-2">
     <form (ngSubmit)="onSubmit()" #editForm="ngForm">
      <div class="row">
       <div class="form-group col-md-6">
@@ -32,9 +39,9 @@
           <input type="text" id="reasonForResignation" name="reasonForResignation" [(ngModel)]="newEntry.reasonForResignation" required>
         </div>
       </div>
-      <div class="button-container">
-        <button type="submit" class="btn btn-primary">Save</button>
-        <button type="button" class="btn btn-secondary" (click)="onCancel()">Cancel</button>
+      <div class="row">
+      <div class="col-md-6 mt-2">  <button type="submit" class="button">Save</button></div>
+     <div class="col-md-6 mt-2">   <button type="button" class="button-cancel" (click)="onCancel()">Cancel</button></div>
       </div>
     </form>
   </div>

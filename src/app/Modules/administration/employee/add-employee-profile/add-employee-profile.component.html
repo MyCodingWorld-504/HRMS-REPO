@@ -1,59 +1,127 @@
-<div class="container-fluid mt-5 anim no-scrollbar">
-    <h2>Add Employee Details</h2>
-    <form (ngSubmit)="onSubmit()" #addForm="ngForm" >
-        <div class="row">
-            <div class="form-group col-md-6">
-                <label for="empID">Emp ID:</label>
-                <input type="text" id="empName" name="empName" [(ngModel)]="newEntry.empID" required>
-            </div>
-            <div class="form-group col-md-6">
-                <label for="employeeName">Employee Name:</label>
-                <input type="text" id="bankName" name="bankName" [(ngModel)]="newEntry.employeeName" required>
-            </div>
+<div class="container-fluid anim no-scrollbar">
+  <h5>Add Employee Details</h5>
+  <div class="d-flex justify-content-between">
+    <div class="mb-2">
+      <a class="ribbon" (click)="OnRouteDashboard()">Dashboard</a
+      ><a class="ribbon-1" (click)="OnRouteEmployee()">Employee profiles</a>
+      <a class="ribbon-2">Add Employee profiles</a>
+    </div>
+  </div>
+  <div class="card mt-2">
+    <form (ngSubmit)="onSubmit()" #addForm="ngForm">
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="empID">Emp ID:</label>
+          <input
+            type="text"
+            id="empName"
+            name="empName"
+            [(ngModel)]="newEntry.empID"
+            required
+          />
         </div>
-        <div class="row">
-            <div class="form-group col-md-6">
-                <label for="department">Department:</label>
-                <input type="text" id="accountNo" name="accountNo" [(ngModel)]="newEntry.department" required>
-            </div>
-            <div class="form-group col-md-6">
-                <label for="designation">Designation:</label>
-                <input type="text" id="branch" name="branch" [(ngModel)]="newEntry.designation" required>
-            </div>
+        <div class="form-group col-md-6">
+          <label for="employeeName">Employee Name:</label>
+          <input
+            type="text"
+            id="bankName"
+            name="bankName"
+            [(ngModel)]="newEntry.employeeName"
+            required
+          />
         </div>
-        <div class="row">
-            <div class="form-group col-md-6">
-                <label for="phoneNumber">Phone:</label>
-                <input type="text" id="ifsc" name="ifsc" [(ngModel)]="newEntry.phoneNumber" required>
-            </div>
-            <div class="form-group col-md-6">
-                <label for="email">Email:</label>
-                <input type="text" id="aadhar" name="aadhar"[(ngModel)]="newEntry.email" required>
-            </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="department">Department:</label>
+          <input
+            type="text"
+            id="accountNo"
+            name="accountNo"
+            [(ngModel)]="newEntry.department"
+            required
+          />
         </div>
-        <div class="row">
-            <div class="form-group col-md-6">
-                <label for="workingLocation">Location:</label>
-                <input type="text" id="panno" name="panno" [(ngModel)]="newEntry.workingLocation" required>
-            </div>
-            <div class="form-group col-md-6">
-                <label for="workingClient">Client:</label>
-                <input type="text" id="address" name="address" [(ngModel)]="newEntry.workingClient" required>
-            </div>
-            <div class="form-group col-md-6">
-                <label for="permanentAddress">Permanent Address:</label>
-                <input type="text" id="address" name="address" [(ngModel)]="newEntry.permanentAddress" required>
-            </div>
-            <div class="form-group col-md-6">
-                <label for="bioData">BIO Data:</label>
-                <input type="text" id="bioData" name="bioData"[(ngModel)]="newEntry.bioData" required>
-            </div>
+        <div class="form-group col-md-6">
+          <label for="designation">Designation:</label>
+          <input
+            type="text"
+            id="branch"
+            name="branch"
+            [(ngModel)]="newEntry.designation"
+            required
+          />
         </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="phoneNumber">Phone:</label>
+          <input
+            type="text"
+            id="ifsc"
+            name="ifsc"
+            [(ngModel)]="newEntry.phoneNumber"
+            required
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="email">Email:</label>
+          <input
+            type="text"
+            id="aadhar"
+            name="aadhar"
+            [(ngModel)]="newEntry.email"
+            required
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="workingLocation">Location:</label>
+          <input
+            type="text"
+            id="panno"
+            name="panno"
+            [(ngModel)]="newEntry.workingLocation"
+            required
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="workingClient">Client:</label>
+          <input
+            type="text"
+            id="address"
+            name="address"
+            [(ngModel)]="newEntry.workingClient"
+            required
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="permanentAddress">Permanent Address:</label>
+          <input
+            type="text"
+            id="address"
+            name="address"
+            [(ngModel)]="newEntry.permanentAddress"
+            required
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="bioData">BIO Data:</label>
+          <input
+            type="text"
+            id="bioData"
+            name="bioData"
+            [(ngModel)]="newEntry.bioData"
+            required
+          />
+        </div>
+      </div>
 
-
-        <div class="vstack gap-2 col-md-5 mx-auto">
-            <button type="submit" class="btn btn-secondary">Add</button>
-            <button type="button" class="btn btn-outline-secondary" (click)="onCancel()">Cancel</button>
-          </div>
+      <div class="row">
+        <div class="col-md-6 mt-2">  <button type="submit" class="button">Save</button></div>
+       <div class="col-md-6 mt-2">   <button type="button" class="button-cancel" (click)="onCancel()">Cancel</button></div>
+        </div>
     </form>
+  </div>
 </div>

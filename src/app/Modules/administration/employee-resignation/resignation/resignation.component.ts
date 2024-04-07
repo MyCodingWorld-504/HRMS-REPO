@@ -40,7 +40,7 @@ throw new Error('Method not implemented.');
   page: number = 1;
   itemsPerPageOptionsResignationPage: number[] = [5, 10, 15, 25, 50, 100];
   itemsPerPageResignationPage: number = this.itemsPerPageOptionsResignationPage[0];
- 
+
 
 
   private groupSubscription: Subscription | undefined;
@@ -141,7 +141,7 @@ throw new Error('Method not implemented.');
     return endIndex > this.resignationData.length ? this.resignationData.length : endIndex;
   }
 
-  
+
 
 
   showTooltip(event: MouseEvent): void {
@@ -195,11 +195,11 @@ throw new Error('Method not implemented.');
   }
 
   onEdit(id : number) {
-    this.router.navigate(['dashboard', 'administration', 'edit-resignation',id]);  
+    this.router.navigate(['dashboard', 'administration', 'edit-resignation',id]);
   }
 
   onView(id : number) {
-    this.router.navigate(['dashboard', 'administration', 'view-resignation',id]);  
+    this.router.navigate(['dashboard', 'administration', 'view-resignation',id]);
   }
 
 
@@ -238,5 +238,7 @@ throw new Error('Method not implemented.');
     this.excelService.exportAsExcelFile(this.resignationData, 'Sky-HR_', columns);
     this.toastr.success('EXCEl Exported Successfully', 'Success')
   }
-
+  OnRouteDashboard(){
+    this.router.navigate(['dashboard', 'administration', 'admin-dashboard']);
+  }
 }

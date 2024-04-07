@@ -9,7 +9,10 @@ import { Router } from '@angular/router';
 export class AuthService {
 
   apiUrl = 'http://localhost:3000/user';
-  constructor(private http: HttpClient, private router: Router) { }
+  private baseUrl: string = 'https://localhost:7058/api/User/';
+  private userPayload:any;
+  constructor(private http: HttpClient, private router: Router) {}
+
 
   getAll() {
     return this.http.get(this.apiUrl);
@@ -30,14 +33,14 @@ export class AuthService {
     return this.http.put(this.apiUrl + '/' + data, inputData);
   }
   logout(){
-    sessionStorage.removeItem('userName');
-   
+    sessionStorage.removeItem('username');
+this.router.navigate(['/navbar']);
   }
   isLoggedIn(): boolean {
-    return sessionStorage.getItem('userName')? true: false;
+    return sessionStorage.getItem('username')? true: false;
   }
   getUserRole() {
     return sessionStorage.getItem('userRole') != null ? sessionStorage.getItem('userRole')?.toString() : null;
   }
 
-}
+ }

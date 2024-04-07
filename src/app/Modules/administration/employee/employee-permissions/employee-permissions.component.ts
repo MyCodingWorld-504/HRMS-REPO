@@ -9,7 +9,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./employee-permissions.component.scss']
 })
 export class EmployeePermissionsComponent implements OnInit {
-
+  spanColorClass: string = 'pink-color';
   roleData: any[] = [];
   editFormList: any = {};
   filteredRoleData: any[] = [];
@@ -119,21 +119,27 @@ headerCheckboxes = {
   }
   onAdministration() {
     this.isAdministraion = !this.isAdministraion;
+    this.spanColorClass = this.isAdministraion ?   'blue-color' : 'pink-color';
   }
   onAttendence() {
     this.isAttendence = !this.isAttendence;
+    this.spanColorClass = this.isAdministraion ?   'blue-color' : 'pink-color';
   }
   onPayroll() {
     this.isPayroll = !this.isPayroll;
+    this.spanColorClass = this.isAdministraion ?   'blue-color' : 'pink-color';
   }
   onTimesheet() {
     this.isTimesheet = !this.isTimesheet;
+    this.spanColorClass = this.isAdministraion ?   'blue-color' : 'pink-color';
   }
   onRecruitment() {
     this.isRecruitment = !this.isRecruitment;
+    this.spanColorClass = this.isAdministraion ?   'blue-color' : 'pink-color';
   }
   onLeave() {
     this.isLeave = !this.isLeave;
+    this.spanColorClass = this.isAdministraion ?   'blue-color' : 'pink-color';
   }
   getAdminData(): void {
     this.roleService.getAdmin().subscribe(data => {
@@ -196,7 +202,11 @@ headerCheckboxes = {
     this.router.navigate(['dashboard', 'administration', 'edit-emp-role', id]);
 
   }
-
-
+  OnRoutePermissions(){
+    this.router.navigate(['dashboard', 'administration', 'employee-roles']);
+  }
+  OnRouteDashboard(){
+    this.router.navigate(['dashboard', 'administration', 'admin-dashboard']);
+  }
 
 }

@@ -40,4 +40,9 @@ export class EmployeeRolesComponent {
     onClickUpdate() {
       this.router.navigate(['dashboard', 'administration', 'employee-permissions']);
     }
+
+
+    OnRouteDashboard(){
+      this.router.navigate(['dashboard', 'administration', 'admin-dashboard']);
+    }
 }

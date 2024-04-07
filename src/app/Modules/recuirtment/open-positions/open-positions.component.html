@@ -1,0 +1,227 @@
+<div class="container-fluid">
+  <div class="d-flex justify-content-between">
+    <div>
+      <h4 class="heading">Open Positions</h4>
+    </div>
+    <button class="button" (click)="openOverlay()">Add Position</button>
+  </div>
+
+  <div>
+    <a class="ribbon" (click)="OnRouteDashboard()">Dashboard</a><a class="ribbon-1">Open Positions</a>
+  </div>
+
+  
+    <div class="d-flex justify-content-between">
+      <div class="card">
+        <form [formGroup]="clientForm" (ngSubmit)="submitForm()">
+          <div class="d-flex justify-content-end">
+            <div class="refresh">
+              <div class="icon-tooltip" data-title="Refresh"> 
+                <fa-icon
+                  [icon]="faArrowsRotateIcon"
+                  (click)="onRefresh()"
+                ></fa-icon>
+              </div>
+            </div>
+            <input
+              class="refresh"
+              type="text"
+              formControlName="searchTerm"
+              placeholder="Search..."
+              (input)="search()"
+            />
+          </div>
+          <table class="table table-bordered mt-3">
+            <thead class="custom-table-header">
+            <tr>
+              <th>Sno</th>
+              <th>Client Name</th>
+              <th>Open Pos Id</th>
+              <th>SPOC</th>
+              <th>Pos Start Date</th>
+              <th>Pos End Date</th>
+              <th>Technologies</th>
+              <th>Skills</th>
+              <th>No of Vacancies</th>
+              <th>Status</th>
+              <th>Profiles</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let client of filteredClients; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ client['Client Name'] }}</td>
+                <td>{{ client['Open Pos Id'] }}</td>
+                <td>{{ client['SPOC'] }}</td>
+                <td>{{ client['Pos Start Date'] }}</td>
+                <td>{{ client['Pos End Date'] }}</td>
+                <td>{{ client['Technologies'] }}</td>
+                <td>{{ client['Skills'] }}</td>
+                <td>{{ client['No of Vacancies'] }}</td>
+                <td>{{ client['Status'] }}</td>
+                <td>
+                  <ul>
+                    <li *ngFor="let profile of client['Profiles']">{{ profile }}</li>
+                  </ul>
+                </td>
+              <td class="tooltip-container-icons">
+                <div class="d-flex justify-content-between">
+                  <a (mouseenter)="showTooltipIcon('View', $event)" (mouseleave)="hideTooltipIcon()">
+                    <fa-icon [icon]="faEyeIcon" (click)="onView(client.id)"  class="icon-fa"></fa-icon>
+                    <span class="tooltip-icons" *ngIf="isTooltipVisible && currentTooltip === 'View'">View</span>
+                  </a>
+                  <a (mouseenter)="showTooltipIcon('Edit', $event)" (mouseleave)="hideTooltipIcon()">
+                    <fa-icon [icon]="faPenIcon" (click)="onEdit(client.id)"  class="icon-fa"></fa-icon>
+                    <span class="tooltip-icons" *ngIf="isTooltipVisible && currentTooltip === 'Edit'">Edit</span>
+                  </a>
+                  <a (mouseenter)="showTooltipIcon('Delete', $event)" (mouseleave)="hideTooltipIcon()">
+                    <fa-icon (click)="openDeleteConfirmation(client.id)" [icon]="faTrashIcon"  class="icon-fa"></fa-icon>
+                    <span class="tooltip-icons" *ngIf="isTooltipVisible && currentTooltip === 'Delete'">Delete</span>
+                  </a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="d-flex justify-content-between mt-3">
+          <div class="items-per-page">
+            <select class="form-select" [formGroup]="clientForm" name="itemsPerPage" (change)="onItemsPerPageChange($event)">
+              <option *ngFor="let option of itemsPerPageOptions" [value]="option">{{ option }}</option>
+            </select>
+          </div>
+          <div class="select-show">Showing Results {{ getStartIndex() }} - {{ getEndIndex() }} of {{ clientData.length }} entries.</div>
+          <div class="pagination-container">
+            <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+          </div>
+        </div>
+   </form>
+
+   <div *ngIf="showOverlay" class="overlay">
+    <div class="overlay-content">
+      <h2>Add Position</h2>
+      <div class="form-columns">
+        <div class="form-column">
+          <div class="form-group">
+            <label>Client Name <span class="required">*</span></label>
+            <input type="text" [(ngModel)]="client.clientName" name="clientName" required />
+          </div>
+          <div class="form-group">
+            <label>Job Designation <span class="required">*</span></label>
+            <select [(ngModel)]="client.jobDesignation" name="jobDesignation" required>
+              <option value="">Select</option>
+              <!-- Add job designations options here -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Technologies <span class="required">*</span></label>
+            <select [(ngModel)]="client.technologies" name="technologies" required>
+              <option value="">Select</option>
+              <option value="Android">Android</option>
+              <option value="DevOps">DevOps</option>
+              <!-- Add more technology options here -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Sub Skills</label>
+            <input type="text" [(ngModel)]="client.subSkills" name="subSkills" />
+          </div>
+        </div>
+        <div class="form-column">
+          <div class="form-group">
+            <label>Position Start Date</label>
+            <input type="text" [(ngModel)]="client.positionStartDate" name="positionStartDate" />
+          </div>
+          <div class="form-group">
+            <label>Position End Date</label>
+            <input type="text" [(ngModel)]="client.positionEndDate" name="positionEndDate" />
+          </div>
+          <div class="form-group">
+            <label>Budget <span class="required">*</span></label>
+            <input type="text" [(ngModel)]="client.budget" name="budget" required />
+          </div>
+          <div class="form-group">
+            <label>Minimum No of Years Experience <span class="required">*</span></label>
+            <input type="text" [(ngModel)]="client.minExperience" name="minExperience" required />
+          </div>
+        </div>
+        <div class="form-column">
+          <div class="form-group">
+            <label>Maximum No of Years Experience <span class="required">*</span></label>
+            <input type="text" [(ngModel)]="client.maxExperience" name="maxExperience" required />
+          </div>
+          <div class="form-group">
+            <label>No of Vacancies <span class="required">*</span></label>
+            <input type="text" [(ngModel)]="client.vacancies" name="vacancies" required />
+          </div>
+          <div class="form-group">
+            <label>Status <span class="required">*</span></label>
+            <select [(ngModel)]="client.status" name="status" required>
+              <option value="">Select</option>
+              <!-- Add status options here -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Location/Branch <span class="required">*</span></label>
+            <input type="text" [(ngModel)]="client.locationBranch" name="locationBranch" required />
+          </div>
+        </div>
+        <div class="form-column">
+          <div class="form-group">
+            <label>Willing to Relocate <span class="required">*</span></label>
+            <select [(ngModel)]="client.willingToRelocate" name="willingToRelocate" required>
+              <option value="">Select</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Shift</label>
+            <select [(ngModel)]="client.shift" name="shift">
+              <option value="">Select</option>
+              <!-- Add shift options here -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Domain</label>
+            <input type="text" [(ngModel)]="client.domain" name="domain" />
+          </div>
+          <div class="form-group">
+            <label>SPOC</label>
+            <input type="text" [(ngModel)]="client.spoc" name="spoc" />
+          </div>
+        </div>
+        <div class="form-column">
+          <div class="form-group">
+            <label>Email ID</label>
+            <input type="email" [(ngModel)]="client.email" name="email" />
+          </div>
+          <div class="form-group">
+            <label>Phone No</label>
+            <input type="text" [(ngModel)]="client.phoneNo" name="phoneNo" />
+          </div>
+          <div class="form-group">
+            <label>Mode of Hire <span class="required">*</span></label>
+            <select [(ngModel)]="client.modeOfHire" name="modeOfHire" required>
+              <option value="">Select</option>
+              <!-- Add mode of hire options here -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <textarea [(ngModel)]="client.description" name="description"></textarea>
+          </div>
+        </div>
+      </div>
+      <button class="button" (click)="submitForm()">Submit</button>
+      <button class="button" (click)="closeOverlay()">Close</button>
+    </div>
+  </div>
+
+
+  </div>
+  
+
+  
+
+  

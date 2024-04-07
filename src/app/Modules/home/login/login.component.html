@@ -1,72 +1,138 @@
-
-<div class="overlay">
-      <div class="login p-5 col-md-4">
-        <form
-          [formGroup]="loginForm"
-          (ngSubmit)="proceedLogin()"
-          class="login-form"
-        >
-       <div class="close-icon">
-        <fa-icon class="fa-2x" routerLink="" [icon]="faXIcon"></fa-icon>
-       </div>
-          <div class="mb-3 p-2">
-            <label for="exampleInputEmail1" class="form-label"
-              >User Name</label
-            >
-            <input
-              type="Name"
-              class="form-control"
-              formControlName="userName"
-              placeholder="Enter Your Name"
-            />
-            <div
-              class="error"
-              *ngIf="
-                loginForm.get('userName')?.hasError('required') &&
-                loginForm.get('userName')?.touched
-              "
-            >
-              Name is required.
+<div class="outer">
+  <div class="container">
+    <div class="row">
+      <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+        <div class="panel border bg-white">
+          <fa-icon [icon]="faXIcon" class="d-flex justify-content-end icon-x" (click)="onClose()"></fa-icon>
+          <div class="panel-heading">
+            <h4 class="pt-3 font-weight-bold">Login</h4>
+          </div>
+          <div class="panel-body p-3">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+              <div class="form-group pt-3">
+                <div
+                  class="input-field"
+                  [class.error]="
+                    loginForm.controls['username'].dirty &&
+                    loginForm.hasError('required', 'username')
+                  "
+                >
+                <fa-icon [icon]="faUserIcon" class="icon"></fa-icon>
+                  <input
+                    formControlName="username"
+                    type="text"
+                    placeholder="Username"
+                    required
+                  />
+                </div>
+              </div>
+              <small
+                *ngIf="
+                  loginForm.controls['username'].dirty &&
+                  loginForm.hasError('required', 'username')
+                "
+                class="text-danger"
+                >*Username is required*</small
+              >
+              <div class="form-group pt-3">
+                <div
+                  class="input-field"
+                  [class.error]="
+                    loginForm.controls['password'].dirty &&
+                    loginForm.hasError('required', 'password')
+                  "
+                >
+                  <fa-icon [icon]="faLockIcon" class="icon"></fa-icon>
+                  <input
+                    formControlName="password"
+                    [type]="isText ? 'text' : 'password'"
+                    placeholder="Password"
+                  />
+                  <fa-icon
+                    [icon]="!isText ? faEyeSlashIcon : faEyeIcon"
+                    (click)="hideShowPass()"
+                    class="bg-white text-muted"
+                  ></fa-icon>
+                </div>
+              </div>
+              <small
+                *ngIf="
+                  loginForm.controls['password'].dirty &&
+                  loginForm.hasError('required', 'password')
+                "
+                class="text-danger"
+                >*Password is required*</small
+              >
+              <div class="form-inline fr mt-4">
+                <a
+                  id="forgot"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                  class="font-weight-bold"
+                  >Forgot password?</a
+                >
+              </div>
+              <button
+                type="submit"
+                class="button btn-block mt-4 w-100"
+              >
+                Login
+              </button>
+              <div class="text-center pt-4 text-muted">
+                Don't have an account?
+                <a id="forgot" href="#" routerLink="/register">Sign up</a>
+              </div>
+            </form>
+          </div>
+          <div class="mx-3 my-2 py-2 bordert">
+            <div class="text-center py-3">
+              <a href="https://wwww.facebook.com" target="_blank" class="px-2">
+                <img
+                  src="https://www.dpreview.com/files/p/articles/4698742202/facebook.jpeg"
+                  alt=""
+                />
+              </a>
+              <a href="https://www.google.com" target="_blank" class="px-2">
+                <img
+                  src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png"
+                  alt=""
+                />
+              </a>
+              <a href="https://www.github.com" target="_blank" class="px-2">
+                <img
+                  src="https://www.freepnglogos.com/uploads/512x512-logo-png/512x512-logo-github-icon-35.png"
+                  alt=""
+                />
+              </a>
             </div>
           </div>
-          <div class="mb-3 p-2">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input
-              type="password"
-              class="form-control"
-              formControlName="password"
-              placeholder="Enter Your Password"
-            />
-            <div
-              class="error"
-              *ngIf="
-                loginForm.get('password')?.hasError('required') &&
-                loginForm.get('password')?.touched
-              "
-            >
-              Password is required.
-            </div>
-            <div
-              class="error"
-              *ngIf="
-                loginForm.get('password')?.hasError('pattern') &&
-                loginForm.get('password')?.touched
-              "
-            >
-              Password must contain at least 8 characters, including one uppercase
-              letter, one lowercase letter, one number, and one special character.
-            </div>
-          </div>
-          <div class="p-4 d-flex justify-content-between">
-            <button type="submit" class="button">Submit</button>
-            <a routerLink="/register" class="button">New User?</a>
-          </div>
-          <div>
-            <a type="submit" routerLink="/forgotPassword" class="forgot-pass">Forgot Password ?</a>
-          </div>
-        </form>
+        </div>
       </div>
     </div>
+  </div>
+</div>
 
+ <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <p class="modal-title" id="exampleModalLabel"> <span style="font-size: 25px;font-weight:700">Forget your password?</span><br>
+                  <small>Please provide your E-mail we will send the reset link</small></p>
 
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 
+          </div>
+
+          <div class="modal-body">
+              <div class="form-group pt-3">
+                  <div class="input-field"> <span class="fa fa-user p-2"></span> <input type="text" placeholder="Email"> </div>
+              </div>
+              <small class="text-danger">*Email is required*</small>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Send</button>
+          </div>
+      </div>
+  </div>
+</div>

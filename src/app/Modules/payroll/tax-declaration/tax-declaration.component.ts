@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-tax-declaration',
   templateUrl: './tax-declaration.component.html',
@@ -37,7 +38,7 @@ houseProperties =[{label: 'Interest paid on Housing Loan  (If Joint Property % o
 {label :'Home loan intrest provisional certificate'},
 {label :'If house property is let out'},
 {label :'Total Amount'},
-] 
+]
 
 investmentsUnderSection =[{label: 'Life Insurance premiums Paid (Self / Spouse / Children)'},
 {label :'Contribution To PPF (Self / Spouse / Minor Children)'},
@@ -56,11 +57,10 @@ investmentsUnderSection =[{label: 'Life Insurance premiums Paid (Self / Spouse /
 ]
 
 investmentsQualifyingForDeduction =[
-{section: '80D' },{section: '80D' },{section: '80E' },
-{label :'Subscription To Mediclaim Policy For Self, Spouse, Dependent Children --> 25,000'},
-{label :'Subscription To Mediclaim Policy For Parents (Rs.5000/- more for Sr.Citizens)	-->  25,000'},
-{label :'Repayment Interest on Education Loan taken For Higher Education for Self, Spouse or Children (Provide Educational Loan Provisional Cerficate with principle & Interest breakup)	-->    Full Int. paid in F.Y'},
-]		
+{section: '80D' ,label :'Subscription To Mediclaim Policy For Self, Spouse, Dependent Children --> 25,000'},
+{section: '80D',label :'Subscription To Mediclaim Policy For Parents (Rs.5000/- more for Sr.Citizens)	-->  25,000' },
+{section: '80E',label :'Repayment Interest on Education Loan taken For Higher Education for Self, Spouse or Children (Provide Educational Loan Provisional Cerficate with principle & Interest breakup)	-->    Full Int. paid in F.Y' },
+]
 
 entry = { modeOfPayment: "" };
 showAllRows: boolean = false;
@@ -69,7 +69,8 @@ selectedModeOfPayment: string = "";
 commonValue: any;
 ownerDetails: any;
 ownerDetailsPlaceholder: any;
-constructor(private toastr: ToastrService) {
+constructor(private toastr: ToastrService,
+  private router: Router) {
   for (let i = 1; i <= 12; i++) {
     const monthName = this.getMonthName(i);
     const entryExists = this.rentEntries.some(entry => entry.month === monthName);
@@ -162,6 +163,8 @@ generatePDF() {
   });
 }
 
-
+OnRouteDashboard(){
+  this.router.navigate(['dashboard', 'payroll', 'payrollDashboard']);
+}
 
 }

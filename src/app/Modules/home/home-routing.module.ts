@@ -11,12 +11,17 @@ import { IndustriesBlogComponent } from './industries-blog/industries-blog.compo
 const routes: Routes = [
   {
     path: '',
-    component: NavbarComponent,
+    component: LayoutComponent,
     children: [
+      {
+        path: 'navbar',
+        component: NavbarComponent,
+      },
       {
         path: 'login',
         component: LoginComponent,
       },
+
       {
         path: 'register',
         component: RegisterComponent,
@@ -37,9 +42,10 @@ const routes: Routes = [
         path: 'industries',
         component: IndustriesBlogComponent,
       },
+
       {
         path: '',
-        redirectTo: 'layout',
+        redirectTo: 'navbar',
         pathMatch: 'full',
       },
     ],

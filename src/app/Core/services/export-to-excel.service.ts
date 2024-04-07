@@ -30,4 +30,31 @@ export class ExportToExcelService {
     XLSX.writeFile(workbook, dateTimeFilename);
   }
 
+
+  exportToExcel(filteredCandidates: any[], selectedColumns: string[]) {
+    // Create worksheet from filtered candidates
+    const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(filteredCandidates);
+  
+    // Create workbook
+    const workbook: XLSX.WorkBook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
+  
+    // If selected columns are specified, remove columns not in selectedColumns
+    if (selectedColumns.length > 0) {
+      const headerRow = Object.keys(filteredCandidates[0]);
+      headerRow.forEach((header, index) => {
+        // If header is not in selectedColumns, remove it from the worksheet
+        if (!selectedColumns.includes(header)) {
+          delete worksheet[XLSX.utils.encode_cell({ r: 0, c: index })];
+          // Delete the corresponding data cells in other rows
+          filteredCandidates.forEach((candidate) => {
+            delete candidate[header];
+          });
+        }
+      });
+    }
+  
+    // Write workbook to file
+    XLSX.writeFile(workbook, 'candidates.xlsx');
+  }
+
 }

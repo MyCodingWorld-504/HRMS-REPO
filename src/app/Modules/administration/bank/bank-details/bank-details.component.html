@@ -1,24 +1,22 @@
 <div class="container-fluid">
-  <h2>Bank Details</h2>
-  <div class="d-flex justify-content-between">
-    <div>
-      <h4>Dashboard / Bank Details</h4>
-    </div>
-    <div>
-      <!-- <input type="file" (change)="onFileChange($event)" /> -->
-      <!-- <input type="file" (change)="onFileChange($event)" accept=".xlsx, .xls"> -->
-      <a (click)="exportToPDF()" class="button">Export to pdf</a>
-      <a (click)="exportToExcel()" class="button">Export to excel</a>
-      <a class="button" (click)="onAdd()" routerLink="/bank-details/edit" ><fa-icon [icon]="faPlusIcon"></fa-icon>Add</a>
+    <h5>Bank Details</h5>
+    <div class="d-flex justify-content-between">
+      <div>
+        <a class="ribbon" (click)="OnRouteDashboard()">Dashboard</a><a class="ribbon-1">Bank Details</a>
+      </div>
+      <div>
+        <a (click)="exportToPDF()" class="button">Export to pdf</a>
+        <a (click)="exportToExcel()" class="button">Export to excel</a>
+        <a class="button" (click)="onAdd()" routerLink="/bank-details/edit" ><fa-icon [icon]="faPlusIcon"></fa-icon>Add</a>
 
+      </div>
     </div>
-  </div>
   <div class="card mt-2">
     <form [formGroup]="groupForm" (ngSubmit)="submitForm()">
-      <div class="d-flex justify-content-end mt-3">
+      <div class="d-flex justify-content-end mt-2">
         <div class="refresh">
           <div class="icon-tooltip" data-title="Refresh">
-            <fa-icon
+            <fa-icon class="icon-refresh"
               [icon]="faArrowsRotateIcon"
               (click)="onRefresh()"
             ></fa-icon>
@@ -32,7 +30,7 @@
           (input)="search()"
         />
       </div>
-      <table class="table table-bordered">
+      <table class="table table-bordered mt-2">
         <thead class="custom-table-header">
           <tr>
             <th>Sno</th>
@@ -126,7 +124,7 @@
                 (mouseenter)="showTooltipIcon('View', $event)"
                 (mouseleave)="hideTooltipIcon()"
               >
-                <fa-icon [icon]="faEyeIcon" (click)="onView(group.id)"></fa-icon>
+                <fa-icon class="icon-fa" [icon]="faEyeIcon" (click)="onView(group.id)"></fa-icon>
                 <span
                   class="tooltip-icons"
                   *ngIf="isTooltipVisible && currentTooltip === 'View'"
@@ -138,7 +136,7 @@
                 (mouseenter)="showTooltipIcon('Edit', $event)"
                 (mouseleave)="hideTooltipIcon()"
               >
-                <fa-icon [icon]="faPenIcon" (click)="onEdit(group.id)"></fa-icon>
+                <fa-icon class="icon-fa" [icon]="faPenIcon" (click)="onEdit(group.id)"></fa-icon>
                 <span
                   class="tooltip-icons"
                   *ngIf="isTooltipVisible && currentTooltip === 'Edit'"
@@ -151,7 +149,7 @@
                 (mouseenter)="showTooltipIcon('Delete', $event)"
                 (mouseleave)="hideTooltipIcon()"
           >
-                <fa-icon (click)="openDeleteConfirmation(group.id)" [icon]="faTrashIcon"></fa-icon>
+                <fa-icon class="icon-fa" (click)="openDeleteConfirmation(group.id)" [icon]="faTrashIcon"></fa-icon>
                 <span
                   class="tooltip-icons"
                   *ngIf="isTooltipVisible && currentTooltip === 'Delete'"
